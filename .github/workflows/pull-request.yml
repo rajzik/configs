@@ -33,6 +33,22 @@ jobs:
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
+      - name: Restore yarn cache
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./.yarn
+            .pnp.*
+          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
       # Workaround for danger
       - run: rm babel.config.js
 
