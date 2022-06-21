@@ -33,12 +33,10 @@ jobs:
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
-      - run: npx danger ci --use-github-checks
+      - name: Danger
+        uses: danger/danger-js@9.1.6
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          DANGER_FAKE_CI: GitHub
-          DANGER_TEST_REPO: rajzik/configs
-          DANGER_TEST_PR: ${{ github.event.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
