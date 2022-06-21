@@ -49,9 +49,6 @@ jobs:
       - name: Build
         run: yarn build
 
-      # Workaround for danger
-      - run: rm babel.config.js
-
       - name: Danger
         uses: danger/danger-js@9.1.6
         env:
