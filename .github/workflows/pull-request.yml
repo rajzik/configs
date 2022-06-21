@@ -127,6 +127,9 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Fix entry points
+        run: yarn prepack
+
       - name: Run Monodeploy in Dry Run Mode
         id: run-monodeploy
         run: |
