@@ -1,6 +1,7 @@
+import path from 'node:path';
+
 import { create } from 'babel-test';
 import { toMatchFile } from 'jest-file-snapshot';
-import path from 'node:path';
 
 import { getConfig } from './test-utils';
 

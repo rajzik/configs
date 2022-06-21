@@ -11,16 +11,12 @@ exports.default = exports.another = exports.Component = void 0;
 
 var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/helpers/classPrivateFieldGet"));
 
-var _jsxRuntime = require("react/jsx-runtime");
-
 function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
 
 function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
 
 function App() {
-  return (0, _jsxRuntime.jsx)("div", {
-    children: "This is my app"
-  });
+  return <div>This is my app</div>;
 }
 
 const test = '';
@@ -50,9 +46,7 @@ const another = a => {
 exports.another = another;
 
 const Component = () => {
-  return (0, _jsxRuntime.jsx)("div", {
-    children: "test"
-  });
+  return <div>test</div>;
 };
 
 exports.Component = Component;
