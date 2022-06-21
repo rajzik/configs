@@ -1,0 +1,46 @@
+{
+  "name": "configs-root",
+  "description": "personal sharable configs",
+  "version": "0.0.0",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.18.0",
+    "eslint-find-rules": "^4.1.0",
+    "fs-extra": "^10.1.0",
+    "graphql": "^16.5.0",
+    "graphql-tag": "^2.12.6",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "monodeploy": "^3.0.2",
+    "packemon": "^2.3.1",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "syncpack": "^8.0.0",
+    "typescript": "^4.7.4"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "packageManager": "yarn@3.2.1",
+  "private": true,
+  "repository": "git@github.com:rajzik/configs.git",
+  "scripts": {
+    "build": "packemon build --addEngines --declaration",
+    "check-eslint-deprecations": "eslint-find-rules --deprecated .eslintrc.js",
+    "find-unused-eslint-rules": "yarn workspace eslint-config-rajzik run check-rules",
+    "clean": "rimraf packages/*/{lib,dts,*.tsbuildinfo,node_modules}",
+    "format-package-json": "syncpack format",
+    "jest": "jest",
+    "lint": "eslint --cache --fix packages/*/{src,test}/**/*.ts",
+    "pack": "cross-env NODE_ENV=production packemon pack --addEngines --addFiles --declaration",
+    "postinstall": "husky install",
+    "prepack": "yarn workspaces foreach -vpi run prepack",
+    "prepare": "yarn build && husky install",
+    "prettier": "prettier . --write",
+    "test": "yarn run pack && yarn run lint && yarn run jest"
+  },
+  "workspaces": [
+    "./packages/*"
+  ]
+}

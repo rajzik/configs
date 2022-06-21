@@ -1,0 +1,39 @@
+# Logs
+logs/
+*.log
+
+# Cache
+.eslintcache
+.idea
+.npm
+.vscode
+.yarnclean
+
+# Directories
+node_modules/
+lib/
+build*/
+coverage/
+dts/
+
+# Configs
+.babelrc
+*.tsbuildinfo
+webpack.config.js
+.npmrc
+junit.xml
+TEST-RESULTS.xml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# yarn@>=2
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

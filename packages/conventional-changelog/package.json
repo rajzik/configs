@@ -1,0 +1,48 @@
+{
+  "name": "conventional-changelog-rajzik",
+  "description": "Conventional changelog preset for my personal projects",
+  "version": "0.0.0",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "dependencies": {
+    "@rajzik/conventional-changelog-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/shelljs": "^0.7.0",
+    "@types/tmp": "^0.2.3",
+    "conventional-changelog-core": "^4.2.4",
+    "conventional-recommended-bump": "^6.1.0",
+    "shelljs": "^0.8.5",
+    "tmp": "^0.2.1"
+  },
+  "engines": {
+    "node": ">=16.12.0",
+    "npm": ">=8.1.0"
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx,json}",
+    "templates/**/*.hbs"
+  ],
+  "group": "changelog",
+  "keywords": [
+    "conventional-changelog",
+    "preset",
+    "rajzik"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "support": "current"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git@github.com:rajzik/configs.git",
+  "scripts": {
+    "prepack": "node ../../scripts/pre-pack.js"
+  },
+  "types": "./dts/index.d.ts"
+}

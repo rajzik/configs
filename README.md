@@ -1,1 +1,1 @@
-# Rajzik configs
+# Personal sharable configs

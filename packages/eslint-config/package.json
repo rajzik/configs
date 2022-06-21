@@ -1,0 +1,83 @@
+{
+  "name": "eslint-config-rajzik",
+  "description": "Reusable ESLint config for personal projects",
+  "version": "0.0.0",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "dependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/eslint-parser": "^7.18.2",
+    "@rajzik/configs-shared": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "confusing-browser-globals": "^1.0.11",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.5.1",
+    "eslint-plugin-unicorn": "^42.0.0"
+  },
+  "devDependencies": {
+    "@types/confusing-browser-globals": "^1.0.0",
+    "@types/eslint": "^8.4.3",
+    "@types/node": "^16.11.41",
+    "eslint": "^8.18.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.8.1",
+    "tsconfig-rajzik": "workspace:*"
+  },
+  "engines": {
+    "node": ">=16.12.0",
+    "npm": ">=8.1.0"
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "future.js",
+    "lib/**/*.{js,map}",
+    "node.js",
+    "prettier.js",
+    "react.js",
+    "src/**/*.{ts,tsx,json}",
+    "typescript.js"
+  ],
+  "group": "configs",
+  "keywords": [
+    "config",
+    "eslint",
+    "lumos"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "support": "current"
+  },
+  "peerDependencies": {
+    "eslint": "^8.4.0",
+    "prettier": "^2.5.1",
+    "typescript": ">=4.5"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git@github.com:rajzik/configs.git",
+  "scripts": {
+    "check-rules": "ts-node tools/check-rules/index.ts"
+  },
+  "types": "./dts/index.d.ts"
+}
