@@ -30,8 +30,7 @@
   "main": "./lib/index.js",
   "packemon": {
     "format": "lib",
-    "platform": "node",
-    "support": "current"
+    "platform": "node"
   },
   "publishConfig": {
     "access": "public"
