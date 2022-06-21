@@ -33,6 +33,9 @@ jobs:
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
+      # Workaround for danger
+      - run: rm babel.config.js
+
       - name: Danger
         uses: danger/danger-js@9.1.6
         env:
