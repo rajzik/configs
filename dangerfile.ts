@@ -2,7 +2,7 @@ import {
   checkForInvalidLocks,
   checkForConventionalPrefix,
   checkForConventionalSquashCommit,
-} from '@oriflame/config-danger';
+} from '@rajzik/config-danger';
 
 checkForInvalidLocks();
 checkForConventionalPrefix();
