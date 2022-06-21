@@ -33,15 +33,12 @@ jobs:
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
-      - name: Run Commit Watch
+      - run: npx danger ci --use-github-checks
         env:
-          COMMIT_WATCH_OUTPUT_DIR: ${{ env.ARTIFACT_DIR }}/
-          COMMITWATCH_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CI_REPO_OWNER: ${{ github.repository_owner }}
-          CI_REPO_NAME: ${{ github.event.repository.name }}
-          CI_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
-          CI_BASE_BRANCH: origin/${{ github.base_ref }}
-        run: yarn dlx commit-watch
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          DANGER_FAKE_CI: GitHub
+          DANGER_TEST_REPO: rajzik/configs
+          DANGER_TEST_PR: ${{ github.event.number }}
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
