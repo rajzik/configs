@@ -10,8 +10,9 @@ const createPackage = async () => {
   const pckg = JSON.parse(packageData);
 
   pckg.main = 'index.js';
-  if (pckg.exports?.['.']?.node != undefined) {
-    pckg.exports['.'].node = './index.js'
+  if (pckg.exports?.['.']?.node !== undefined) {
+    pckg.exports['.'].node = './index.js';
+    pckg.exports['.'].default = './index.js';
   }
 
   await fse.writeFile(
