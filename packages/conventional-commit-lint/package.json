@@ -7,7 +7,7 @@
     "@rajzik/conventional-changelog-types": "workspace:*"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.3"
+    "@commitlint/cli": "^16.3.0"
   },
   "engines": {
     "node": ">=16.12.0",
