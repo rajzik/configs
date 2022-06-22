@@ -4,7 +4,7 @@ import { checkCommitFormat } from 'conventional-changelog-rajzik';
 export function checkForConventionalPrefix() {
   if (!checkCommitFormat(danger.github.pr.title)) {
     fail(
-      'Pull request title requires a conventional changelog prefix. [View commit message format](https://github.com/beemojs/conventional-changelog-beemo#commit-message-format).',
+      'Pull request title requires a conventional changelog prefix. [View commit message format](https://github.com/rajzik/configs/tree/main/packages/conventional-changelog#commit-message-format).',
     );
   }
 }
