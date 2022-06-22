@@ -1,5 +1,5 @@
 {
-  "name": "@rajzik/config-danger",
+  "name": "@rajzik/danger-configuration",
   "description": "Reusable Danger.js scripts",
   "version": "0.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",

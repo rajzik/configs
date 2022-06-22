@@ -3121,16 +3121,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@rajzik/config-danger@workspace:packages/config-danger":
-  version: 0.0.0-use.local
-  resolution: "@rajzik/config-danger@workspace:packages/config-danger"
-  dependencies:
-    "@rajzik/conventional-changelog-types": "workspace:*"
-    "@types/node": ^16.11.41
-    danger: ^11.0.7
-  languageName: unknown
-  linkType: soft
-
 "@rajzik/configs-shared@workspace:*, @rajzik/configs-shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@rajzik/configs-shared@workspace:packages/shared"
@@ -3155,6 +3145,16 @@ __metadata:
     "@rajzik/conventional-changelog-types": "workspace:*"
   peerDependencies:
     "@commitlint/cli": ">=12"
+  languageName: unknown
+  linkType: soft
+
+"@rajzik/danger-configuration@workspace:packages/config-danger":
+  version: 0.0.0-use.local
+  resolution: "@rajzik/danger-configuration@workspace:packages/config-danger"
+  dependencies:
+    "@rajzik/conventional-changelog-types": "workspace:*"
+    "@types/node": ^16.11.41
+    danger: ^11.0.7
   languageName: unknown
   linkType: soft
 
