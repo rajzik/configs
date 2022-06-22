@@ -1,8 +1,9 @@
-import {
+/* eslint-disable import/extensions, unicorn/import-index */
+const {
   checkForInvalidLocks,
   checkForConventionalPrefix,
   checkForConventionalSquashCommit,
-} from '@rajzik/config-danger';
+} = require('./packages/config-danger/lib/index.js');
 
 checkForInvalidLocks();
 checkForConventionalPrefix();
