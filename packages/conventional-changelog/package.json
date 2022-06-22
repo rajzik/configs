@@ -7,7 +7,7 @@
     "@rajzik/conventional-changelog-types": "workspace:^1.0.0"
   },
   "devDependencies": {
-    "@types/shelljs": "^0.7.0",
+    "@types/shelljs": "^0.8.11",
     "@types/tmp": "^0.2.3",
     "conventional-changelog-core": "^4.2.4",
     "conventional-recommended-bump": "^6.1.0",
