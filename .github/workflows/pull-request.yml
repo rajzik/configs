@@ -168,7 +168,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           comment-author: 'rajzik-bot'
-          body-includes: <!-- CHANGELOG_PREVIEW -->
+          body-includes: <!-- MONODEPLOY_CHANGELOG_PREVIEW -->
 
       - name: Post Changelog to PR
         uses: peter-evans/create-or-update-comment@v1
@@ -179,7 +179,7 @@ jobs:
           issue-number: ${{ github.event.pull_request.number }}
           edit-mode: replace
           body: |
-            <!-- CHANGELOG_PREVIEW -->
+            <!-- MONODEPLOY_CHANGELOG_PREVIEW -->
             # Monodeploy Publish Preview
             This Pull Request introduces the following changes:
             ${{ steps.run-monodeploy.outputs.changelog }}
