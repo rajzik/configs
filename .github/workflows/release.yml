@@ -48,8 +48,9 @@ jobs:
             git config --global user.name rajzik-bot
             git config --global user.email silhanu+releasebot@gmail.com
             git config --global init.defaultBranch main
+
         - name: Tests
-          run: yarn test:ci
+          run: yarn test
 
   release:
     name: Publish configs
