@@ -56,7 +56,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: commit-watch-artifacts
           path: ${{ env.ARTIFACT_DIR }}
@@ -99,7 +99,7 @@ jobs:
         run: yarn test
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: coverage-unit-tests
           path: ./raw-coverage/jest
@@ -185,7 +185,7 @@ jobs:
             ${{ steps.run-monodeploy.outputs.changelog }}
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: ${{ env.ARTIFACT_DIR }}
