@@ -79,5 +79,16 @@
   "scripts": {
     "check-rules": "ts-node tools/check-rules/index.ts"
   },
-  "types": "./dts/index.d.ts"
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js"
+    }
+  }
 }

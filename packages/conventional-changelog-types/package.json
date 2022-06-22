@@ -28,5 +28,16 @@
     "access": "public"
   },
   "repository": "git@github.com:rajzik/configs.git",
-  "types": "./dts/index.d.ts"
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js"
+    }
+  }
 }

@@ -31,7 +31,7 @@
     "rajzik"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "packemon": {
     "format": "lib",
     "platform": "node",
@@ -44,5 +44,16 @@
   "scripts": {
     "prepack": "node ../../scripts/pre-pack.js"
   },
-  "types": "./dts/index.d.ts"
+  "types": "./dts/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "node": "./lib/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "node": "./lib/index.js"
+    }
+  }
 }
