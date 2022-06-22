@@ -90,6 +90,10 @@ jobs:
         - name: Fix entry points
           run: yarn prepack
 
+        - run: ls packages/conventional-changelog
+
+        - run: ls packages/conventional-changelog/lib
+
         - name: Configure Git
           run: |
             git config --global user.name rajzik-bot
