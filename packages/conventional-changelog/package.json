@@ -53,7 +53,7 @@
     },
     ".": {
       "types": "./dts/index.d.ts",
-      "node": "./lib/index.js"
+      "node": "./index.js"
     }
   }
 }
