@@ -1,4 +1,4 @@
-# `@rajzik/config-danger`
+# `@rajzik/danger-configuration`
 
 ## Usage
 
@@ -9,7 +9,7 @@ import {
   checkForInvalidLocks,
   checkForConventionalPrefix,
   checkForConventionalSquashCommit,
-} from '@rajzik/config-danger';
+} from '@rajzik/danger-configuration';
 
 checkForInvalidLocks();
 checkForConventionalPrefix();
