@@ -14,7 +14,7 @@ jobs:
     steps:
         - uses: actions/checkout@v2
           with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+            token: ${{ secrets.GH_TOKEN }}
             fetch-depth: 0
 
         - uses: ./.github/actions/detect-env
@@ -59,7 +59,7 @@ jobs:
     steps:
         - uses: actions/checkout@v2
           with:
-            token: ${{ secrets.GITHUB_TOKEN }}
+            token: ${{ secrets.GH_TOKEN }}
             fetch-depth: 0
 
         - uses: ./.github/actions/detect-env
@@ -104,7 +104,7 @@ jobs:
           if: github.ref != 'refs/heads/main'
           env:
             NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
           run: |
             yarn monodeploy \
               --log-level 0 \
@@ -115,7 +115,7 @@ jobs:
           if: github.ref == 'refs/heads/main'
           env:
             NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}
           run: |
             yarn monodeploy \
               --log-level 0 \
