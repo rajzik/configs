@@ -1,8 +1,9 @@
+/* eslint-disable import/extensions, unicorn/import-index */
 // This is ugly, but we can't use `export =` and named exports
 // within TypeScript, so we need to fake it here so our types
 // resolve correctly in consumers.
 
-const imports = require('./lib');
+const imports = require('./lib/index.js');
 
 Object.assign(imports.config, imports);
 
