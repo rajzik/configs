@@ -7,7 +7,7 @@ exports.default = void 0;
 const test = '';
 
 const another = a => {
-  return a !== null && a !== void 0 ? a : '';
+  return a ?? '';
 };
 
 var _default = test;
