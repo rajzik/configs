@@ -7,21 +7,24 @@
   "semanticCommitType": "deps",
   "prCreation": "immediate",
   "github-actions": {
+    "enabled": true,
     "fileMatch": [
       "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.ya?ml$",
       "(^|\\/)action\\.ya?ml$"
-    ],
-    "semanticCommitType": "ci"
+    ]
   },
   "npm": {
-    "enabled": true,
-    "semanticCommitType": "build"
+    "enabled": true
   },
   "semanticCommits": "enabled",
   "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}}{{{commitMessageSuffix}}}",
   "updateLockFiles": true,
   "commitMessageSuffix": ".",
   "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "semanticCommitType": "ci"
+    },
     {
       "matchDepTypes": [
         "peerDependencies"
