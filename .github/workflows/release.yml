@@ -85,7 +85,7 @@ jobs:
           run: yarn install --immutable
 
         - name: Build
-          run: yarn pack
+          run: yarn run pack
 
         - name: Fix entry points
           run: yarn prepack
