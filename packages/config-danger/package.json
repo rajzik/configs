@@ -1,0 +1,40 @@
+{
+  "name": "@rajzik/config-danger",
+  "description": "Reusable Danger.js scripts",
+  "version": "0.0.0",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "dependencies": {
+    "conventional-changelog-rajzik": "workspace:*",
+    "danger": "^11.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.41"
+  },
+  "engines": {
+    "node": ">=14.15.0",
+    "npm": ">=6.14.0"
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "group": "configs",
+  "keywords": [
+    "config",
+    "danger",
+    "lumos",
+    "scripts"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "packemon": {
+    "format": "lib",
+    "platform": "node"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git@github.com:rajzik/configs.git",
+  "types": "./dts/index.d.ts"
+}

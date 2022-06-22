@@ -1,0 +1,191 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  CI: 1
+  ARTIFACT_DIR: ./artifacts
+
+jobs:
+  commit-watch:
+    name: Run Commit Watch
+    runs-on: ubuntu-latest
+    if:
+      "github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip
+      ci]')"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - uses: ./.github/actions/detect-env
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Create artifacts directory
+        run: mkdir -p ${{ env.ARTIFACT_DIR }}
+
+      - name: Restore yarn cache
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./.yarn
+            .pnp.*
+          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - run: rm babel.config.js
+
+      - run: npx danger ci --use-github-checks
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: commit-watch-artifacts
+          path: ${{ env.ARTIFACT_DIR }}
+
+  tests:
+    name: Lint & Tests
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/detect-env
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Create artifacts directory
+        run: mkdir -p ${{ env.ARTIFACT_DIR }}
+
+      - name: Restore yarn cache
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./.yarn
+            .pnp.*
+          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: |
+          yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - name: Tests
+        run: yarn test
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-unit-tests
+          path: ./raw-coverage/jest
+
+  publish_preview:
+    name: Publish Preview
+    runs-on: ubuntu-latest
+    needs: [tests]
+    if:
+      "github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip
+      ci]')"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: ./.github/actions/detect-env
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Create artifacts directory
+        run: mkdir -p ${{ env.ARTIFACT_DIR }}
+
+      - name: Restore yarn cache
+        id: yarn-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./.yarn
+            .pnp.*
+          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - name: Fix entry points
+        run: yarn prepack
+
+      - name: Run Monodeploy in Dry Run Mode
+        id: run-monodeploy
+        run: |
+          echo "<!-- MONODEPLOY:BELOW -->" > ${{ env.ARTIFACT_DIR }}/CHANGELOG.md
+          yarn monodeploy \
+            --dry-run \
+            --log-level 0 \
+            --git-base-branch origin/${{ github.base_ref }} \
+            --changelog-filename ${{ env.ARTIFACT_DIR }}/CHANGELOG.md \
+            --force-write-change-files
+          changelog_body=$(cat ${{ env.ARTIFACT_DIR }}/CHANGELOG.md)
+          changelog_body="${changelog_body//'%'/'%25'}"
+          changelog_body="${changelog_body//$'\n'/'%0A'}"
+          changelog_body="${changelog_body//$'\r'/'%0D'}"
+          echo ::set-output name=changelog::$changelog_body
+
+      - name: Check for Changelog Comment
+        uses: peter-evans/find-comment@v1
+        id: found-comment
+        if: github.event_name == 'pull_request'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'rajzik-bot'
+          body-includes: <!-- CHANGELOG_PREVIEW -->
+
+      - name: Post Changelog to PR
+        uses: peter-evans/create-or-update-comment@v1
+        if: github.event_name == 'pull_request'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          comment-id: ${{ steps.found-comment.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          edit-mode: replace
+          body: |
+            <!-- CHANGELOG_PREVIEW -->
+            # Monodeploy Publish Preview
+            This Pull Request introduces the following changes:
+            ${{ steps.run-monodeploy.outputs.changelog }}
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: ${{ env.ARTIFACT_DIR }}

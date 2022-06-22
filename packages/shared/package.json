@@ -1,0 +1,38 @@
+{
+  "name": "@rajzik/configs-shared",
+  "description": "Shared functionality for personal configs.",
+  "version": "0.0.0",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "dependencies": {
+    "@beemo/core": "^2.1.4",
+    "json5": "^2.2.1"
+  },
+  "devDependencies": {
+    "tsconfig-rajzik": "workspace:*"
+  },
+  "engines": {
+    "node": ">=16.12.0",
+    "npm": ">=8.1.0"
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "group": "configs",
+  "keywords": [
+    "private"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "support": "current"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git@github.com:rajzik/configs.git",
+  "types": "./dts/index.d.ts"
+}

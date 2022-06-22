@@ -1,0 +1,17 @@
+{
+  "name": "prettier-config-rajzik",
+  "description": "Reusable Prettier config for personal projects",
+  "version": "0.0.0",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "files": [
+    "prettier.json"
+  ],
+  "group": "configs",
+  "keywords": [],
+  "license": "MIT",
+  "main": "./prettier.json",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git@github.com:rajzik/configs.git"
+}

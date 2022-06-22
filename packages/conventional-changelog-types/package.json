@@ -1,0 +1,32 @@
+{
+  "name": "@rajzik/conventional-changelog-types",
+  "description": "Internal package for rajzik conventional changelog tools",
+  "version": "0.0.0",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "engines": {
+    "node": ">=16.12.0",
+    "npm": ">=8.1.0"
+  },
+  "files": [
+    "dts/**/*.d.ts",
+    "lib/**/*.{js,map}",
+    "src/**/*.{ts,tsx,json}"
+  ],
+  "group": "changelog",
+  "keywords": [
+    "internal",
+    "private"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "packemon": {
+    "format": "lib",
+    "platform": "node",
+    "support": "current"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "git@github.com:rajzik/configs.git",
+  "types": "./dts/index.d.ts"
+}
