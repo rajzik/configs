@@ -16,10 +16,7 @@
   ],
   "references": [
     {
-      "path": "../shared"
-    },
-    {
-      "path": "../conventional-changelog"
+      "path": "../conventional-changelog-types"
     }
   ]
 }

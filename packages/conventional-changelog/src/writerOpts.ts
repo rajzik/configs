@@ -3,9 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { GROUPS } from '@rajzik/conventional-changelog-types';
-
-import getTypeGroup from './getTypeGroup';
+import { GROUPS, getTypeGroup } from '@rajzik/conventional-changelog-types';
 
 import type {
   CommitGroupLabel,

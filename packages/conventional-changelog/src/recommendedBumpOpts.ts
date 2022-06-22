@@ -1,4 +1,5 @@
-import getTypeGroup from './getTypeGroup';
+import { getTypeGroup } from '@rajzik/conventional-changelog-types';
+
 import parserOpts from './parserOpts';
 
 import type { BumpOptions } from './types';

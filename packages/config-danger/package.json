@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
-    "conventional-changelog-rajzik": "workspace:*",
+    "@rajzik/conventional-changelog-types": "workspace:*",
     "danger": "^11.0.7"
   },
   "devDependencies": {

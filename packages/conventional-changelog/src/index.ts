@@ -5,13 +5,9 @@ import writerOpts from './writerOpts';
 
 export * from './types';
 
-export const config = Promise.resolve({
+export default Promise.resolve({
   conventionalChangelog,
   parserOpts,
   recommendedBumpOpts,
   writerOpts,
 });
-
-export { COMMIT_FORMAT_PREFIX } from '@rajzik/conventional-changelog-types';
-export { default as getTypeGroup } from './getTypeGroup';
-export { default as checkCommitFormat } from './checkCommitFormat';

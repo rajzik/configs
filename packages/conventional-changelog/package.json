@@ -31,7 +31,7 @@
     "rajzik"
   ],
   "license": "MIT",
-  "main": "./index.js",
+  "main": "./lib/index.js",
   "packemon": {
     "format": "lib",
     "platform": "node",
@@ -41,9 +41,6 @@
     "access": "public"
   },
   "repository": "git@github.com:rajzik/configs.git",
-  "scripts": {
-    "prepack": "node ../../scripts/pre-pack.js"
-  },
   "types": "./dts/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
@@ -54,8 +51,8 @@
     },
     ".": {
       "types": "./dts/index.d.ts",
-      "node": "./index.js",
-      "default": "./index.js"
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
     }
   }
 }

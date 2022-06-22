@@ -1,4 +1,4 @@
-import { checkCommitFormat } from 'conventional-changelog-rajzik';
+import { checkCommitFormat } from '@rajzik/conventional-changelog-types';
 
 // Verify the PR title contains the conventional-changelog required prefix.
 export function checkForConventionalPrefix() {

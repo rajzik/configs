@@ -3125,8 +3125,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rajzik/config-danger@workspace:packages/config-danger"
   dependencies:
+    "@rajzik/conventional-changelog-types": "workspace:*"
     "@types/node": ^16.11.41
-    conventional-changelog-rajzik: "workspace:*"
     danger: ^11.0.7
   languageName: unknown
   linkType: soft
@@ -5741,7 +5741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-rajzik@workspace:*, conventional-changelog-rajzik@workspace:packages/conventional-changelog":
+"conventional-changelog-rajzik@workspace:packages/conventional-changelog":
   version: 0.0.0-use.local
   resolution: "conventional-changelog-rajzik@workspace:packages/conventional-changelog"
   dependencies:
