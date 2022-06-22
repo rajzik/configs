@@ -1,6 +1,6 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _interopRequireDefault = require("C:/git/github/personal/configs/node_modules/@babel/runtime/helpers/interopRequireDefault.js").default;
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -9,30 +9,37 @@ exports.Ahoj = void 0;
 exports.App = App;
 exports.default = exports.another = exports.Component = void 0;
 
-var _classPrivateFieldGet2 = _interopRequireDefault(require("@babel/runtime/helpers/classPrivateFieldGet"));
+var _classPrivateFieldLooseBase2 = _interopRequireDefault(require("C:/git/github/personal/configs/node_modules/@babel/runtime/helpers/classPrivateFieldLooseBase.js"));
 
-function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }
+var _classPrivateFieldLooseKey2 = _interopRequireDefault(require("C:/git/github/personal/configs/node_modules/@babel/runtime/helpers/classPrivateFieldLooseKey.js"));
 
-function _checkPrivateRedeclaration(obj, privateCollection) { if (privateCollection.has(obj)) { throw new TypeError("Cannot initialize the same private elements twice on an object"); } }
+var _jsxFileName = "C:\\git\\github\\personal\\configs\\packages\\babel-preset\\test\\fixtures\\react-jsx-transform\\code.js";
 
 function App() {
-  return <div>This is my app</div>;
+  return React.createElement("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 2,
+      columnNumber: 10
+    }
+  }, "This is my app");
 }
 
 const test = '';
 
-var _totally = new WeakMap();
+var _totally = (0, _classPrivateFieldLooseKey2.default)("totally");
 
 class Ahoj {
   constructor() {
-    _classPrivateFieldInitSpec(this, _totally, {
+    Object.defineProperty(this, _totally, {
       writable: true,
       value: 'test'
     });
   }
 
   get Totally() {
-    return (0, _classPrivateFieldGet2.default)(this, _totally);
+    return (0, _classPrivateFieldLooseBase2.default)(this, _totally)[_totally];
   }
 
 }
@@ -40,13 +47,20 @@ class Ahoj {
 exports.Ahoj = Ahoj;
 
 const another = a => {
-  return a ?? '';
+  return a !== null && a !== void 0 ? a : '';
 };
 
 exports.another = another;
 
 const Component = () => {
-  return <div>test</div>;
+  return React.createElement("div", {
+    __self: void 0,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 10
+    }
+  }, "test");
 };
 
 exports.Component = Component;

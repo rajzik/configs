@@ -5,6 +5,8 @@ import { toMatchFile } from 'jest-file-snapshot';
 
 import { getConfig } from './test-utils';
 
+expect.extend({ toMatchFile });
+
 const { fixtures } = create({ configFile: true });
 const { test } = create({
   ...getConfig({ library: true, node: true, esm: false }),
@@ -12,7 +14,6 @@ const { test } = create({
   babelrc: false,
 });
 
-expect.extend({ toMatchFile });
 fixtures('babel-config', path.join(__dirname, 'fixtures'));
 
 describe('babel typescript test', () => {
