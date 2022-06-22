@@ -2802,6 +2802,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monodeploy/plugin-github@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@monodeploy/plugin-github@npm:0.4.1"
+  dependencies:
+    "@monodeploy/git": ^3.0.1
+    "@monodeploy/io": ^3.0.1
+    "@monodeploy/logging": ^3.0.1
+    "@monodeploy/types": ^3.0.1
+    "@octokit/core": ^3.6.0
+    "@octokit/plugin-throttling": ^3.6.1
+    "@yarnpkg/core": ^3.2.1
+    "@yarnpkg/fslib": ^2.6.2
+    "@yarnpkg/shell": ^3.2.2
+  checksum: 2fb1a2ef022de335e4bfd44eaf629eca85fa5b8cc443ba4647b97cc2748e5527ba240f68ec5f9572d803e78e26d6663d27cf7c5bff7576380def866b686b6abc
+  languageName: node
+  linkType: hard
+
 "@monodeploy/publish@npm:^3.0.1":
   version: 3.0.1
   resolution: "@monodeploy/publish@npm:3.0.1"
@@ -2913,7 +2930,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/core@npm:^3.5.1":
+"@octokit/core@npm:^3.5.1, @octokit/core@npm:^3.6.0":
   version: 3.6.0
   resolution: "@octokit/core@npm:3.6.0"
   dependencies:
@@ -2957,6 +2974,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/openapi-types@npm:^12.4.0":
+  version: 12.4.0
+  resolution: "@octokit/openapi-types@npm:12.4.0"
+  checksum: 80c45bb8a63acd58c752b366915ed34c79948722eaf8bb018845949b3871ba3eaa7b8f629f4cb0c9e7eb564225a85116ffd6ae470c1cc17683bf707ae361c200
+  languageName: node
+  linkType: hard
+
 "@octokit/plugin-paginate-rest@npm:^2.16.8":
   version: 2.18.0
   resolution: "@octokit/plugin-paginate-rest@npm:2.18.0"
@@ -2986,6 +3010,18 @@ __metadata:
   peerDependencies:
     "@octokit/core": ">=3"
   checksum: 3fbd33aadcd136dbf45175fe24795d2aaab39a3ae6d6832bf49883089f08fb000d1b97ddd293e4a6d694f44c62cc1abaa239551b613b7a226f6f62a074ece6dc
+  languageName: node
+  linkType: hard
+
+"@octokit/plugin-throttling@npm:^3.6.1":
+  version: 3.7.0
+  resolution: "@octokit/plugin-throttling@npm:3.7.0"
+  dependencies:
+    "@octokit/types": ^6.0.1
+    bottleneck: ^2.15.3
+  peerDependencies:
+    "@octokit/core": ^3.5.0
+  checksum: a1c29094d060f1c221c2795b899cb86cd83dc71ea61c6e2a272aabed4f7856bfac2696f3e8f31beccc7c99bbe14d172d3175cd68ae939ae5ff1d01fadf8df00b
   languageName: node
   linkType: hard
 
@@ -3023,6 +3059,15 @@ __metadata:
     "@octokit/plugin-request-log": ^1.0.4
     "@octokit/plugin-rest-endpoint-methods": ^5.12.0
   checksum: c18bd6676a60b66819b016b0f969fcd04d8dfa04d01b7af9af9a7410ff028c621c995185e29454c23c47906da506c1e01620711259989a964ebbfd9106f5b715
+  languageName: node
+  linkType: hard
+
+"@octokit/types@npm:^6.0.1":
+  version: 6.37.0
+  resolution: "@octokit/types@npm:6.37.0"
+  dependencies:
+    "@octokit/openapi-types": ^12.4.0
+  checksum: 7de86fbe0de8c3ec72cdf0b95f6abb1f088d5bc76c8a130ec2d139897470821559726b092399f3dd0a3540d97393dd2088a6c12778411129d0879781f314445d
   languageName: node
   linkType: hard
 
@@ -5050,6 +5095,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bottleneck@npm:^2.15.3":
+  version: 2.19.5
+  resolution: "bottleneck@npm:2.19.5"
+  checksum: c5eef1bbea12cef1f1405e7306e7d24860568b0f7ac5eeab706a86762b3fc65ef6d1c641c8a166e4db90f412fc5c948fc5ce8008a8cd3d28c7212ef9c3482bda
+  languageName: node
+  linkType: hard
+
 "brace-expansion@npm:^1.1.7":
   version: 1.1.11
   resolution: "brace-expansion@npm:1.1.11"
@@ -5607,6 +5659,7 @@ __metadata:
   resolution: "configs-root@workspace:."
   dependencies:
     "@commitlint/cli": ^17.0.2
+    "@monodeploy/plugin-github": ^0.4.1
     cross-env: ^7.0.3
     danger: ^11.0.7
     eslint: ^8.18.0
