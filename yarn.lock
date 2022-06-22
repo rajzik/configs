@@ -3560,13 +3560,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/shelljs@npm:^0.7.0":
-  version: 0.7.9
-  resolution: "@types/shelljs@npm:0.7.9"
+"@types/shelljs@npm:^0.8.11":
+  version: 0.8.11
+  resolution: "@types/shelljs@npm:0.8.11"
   dependencies:
     "@types/glob": "*"
     "@types/node": "*"
-  checksum: 1faf8eb03955885495e4b6bad19b4616bb0db551280a2af48b6f1a22c90255908fac5cbe6443cae9af7e6b1797c91bd41379d40177e7ebe5e05ba7bf35498015
+  checksum: 559b81efba72f2b231485b26510aad68cccfe98dc74087d67dafd5511462997884db0ef18e0e56bf61a3a5789aa65a54dc04845a488bb0528d4a699e6151b99c
   languageName: node
   linkType: hard
 
@@ -5489,7 +5489,7 @@ __metadata:
   resolution: "conventional-changelog-rajzik@workspace:packages/conventional-changelog"
   dependencies:
     "@rajzik/conventional-changelog-types": "workspace:^1.0.0"
-    "@types/shelljs": ^0.7.0
+    "@types/shelljs": ^0.8.11
     "@types/tmp": ^0.2.3
     conventional-changelog-core: ^4.2.4
     conventional-recommended-bump: ^6.1.0
