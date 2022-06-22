@@ -18,6 +18,7 @@
     "semanticCommitType": "build"
   },
   "semanticCommits": "enabled",
+  "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}}{{{commitMessageSuffix}}}",
   "updateLockFiles": true,
   "commitMessageSuffix": ".",
   "packageRules": [
