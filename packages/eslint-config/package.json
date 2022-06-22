@@ -1,12 +1,12 @@
 {
   "name": "eslint-config-rajzik",
   "description": "Reusable ESLint config for personal projects",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
     "@babel/core": "^7.18.5",
     "@babel/eslint-parser": "^7.18.2",
-    "@rajzik/configs-shared": "workspace:*",
+    "@rajzik/configs-shared": "workspace:^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "confusing-browser-globals": "^1.0.11",

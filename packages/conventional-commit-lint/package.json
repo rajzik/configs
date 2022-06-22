@@ -1,10 +1,10 @@
 {
   "name": "@rajzik/conventional-commit-lint-config",
   "description": "Conventional commit lint config for personal projects",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
-    "@rajzik/conventional-changelog-types": "workspace:*"
+    "@rajzik/conventional-changelog-types": "workspace:^1.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.3.0"

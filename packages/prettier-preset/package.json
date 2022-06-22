@@ -1,7 +1,7 @@
 {
   "name": "prettier-config-rajzik",
   "description": "Reusable Prettier config for personal projects",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "files": [
     "prettier.json"

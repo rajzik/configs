@@ -1,7 +1,7 @@
 {
   "name": "@rajzik/configs-shared",
   "description": "Shared functionality for personal configs.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
     "@beemo/core": "^2.1.4",
