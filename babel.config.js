@@ -1,8 +1,21 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
 module.exports = {
   babelrc: true,
   babelrcRoots: ['packages/*'],
   comments: false,
-  presets: ['react-app']
+  presets: [
+    [
+      '@rajzik/babel-preset',
+      {
+        modules: false,
+        react: false,
+        library: true,
+        graphql: false,
+        removePropTypes: false,
+        targets: {
+          node: '14',
+        },
+        srcFolder: 'src',
+      },
+    ],
+  ],
 };
