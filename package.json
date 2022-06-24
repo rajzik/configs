@@ -34,7 +34,7 @@
     "clean": "rimraf packages/*/{lib,dts,*.tsbuildinfo,node_modules}",
     "format-package-json": "syncpack format",
     "jest": "jest",
-    "lint": "eslint --cache --fix packages/*/{src,test}/**/*.ts",
+    "lint": "eslint --cache --fix packages/*/{src,test}/**/*.{ts,tsx}",
     "pack": "cross-env NODE_ENV=production packemon pack --addEngines --addExports --declaration",
     "postinstall": "husky install",
     "prepack": "yarn workspaces foreach -vpi run prepack",
