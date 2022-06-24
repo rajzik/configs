@@ -8,6 +8,7 @@ lib/
 tmp/
 dist/
 build/
+fixtures/
 npm-shrinkwrap.json
 package-lock.json
 yarn.lock

@@ -4,7 +4,8 @@ Commit message guidelines and changelog structure. _Now with more emojis!_
 
 ## Azure devops prefix
 
-This changelog accounts with azure devops PR message format. And will release accordingly to the following documentation.
+This changelog accounts with azure devops PR message format. And will release accordingly to the
+following documentation.
 
 ## Commit Message Format
 
@@ -18,8 +19,7 @@ Merged PR 1: <type>(<scope>): <message>
 Merged PR 1: <type>: <message>
 ```
 
-> ⚠️
-> Azure devops message format is allowed but not required.
+> ⚠️ Azure devops message format is allowed but not required.
 
 ### Type
 

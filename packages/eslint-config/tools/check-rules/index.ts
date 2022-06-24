@@ -9,7 +9,6 @@ import unicornPreset from '../../src/presets/future';
 
 import prettierConfig from '../../src/presets/prettier';
 
-
 const jestRules = Object.entries(jestRulesConfig!).map(([ruleName]) => ruleName);
 const nodeRules = Object.entries(nodeRulesConfig!).map(([ruleName]) => ruleName);
 const prettierRules = Object.entries(prettierConfig.rules!).map(([ruleName]) => ruleName);

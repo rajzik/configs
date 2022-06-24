@@ -1,9 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    ":semanticCommitScopeDisabled"
-  ],
+  "extends": ["config:base", ":semanticCommitScopeDisabled"],
   "semanticCommitType": "deps",
   "prCreation": "immediate",
   "github-actions": {
@@ -26,36 +23,26 @@
       "semanticCommitType": "ci"
     },
     {
-      "matchDepTypes": [
-        "peerDependencies"
-      ],
+      "matchDepTypes": ["peerDependencies"],
       "rangeStrategy": "widen",
       "semanticCommitType": "deps"
     },
     {
-      "matchDepTypes": [
-        "packageManager"
-      ],
+      "matchDepTypes": ["packageManager"],
       "semanticCommitType": "build"
     },
     {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
+      "matchDepTypes": ["devDependencies"],
       "rangeStrategy": "bump",
       "semanticCommitType": "build"
     },
     {
-      "matchDepTypes": [
-        "dependencies"
-      ],
+      "matchDepTypes": ["dependencies"],
       "rangeStrategy": "bump",
       "semanticCommitType": "deps"
     },
     {
-      "matchDepTypes": [
-        "resolutions"
-      ],
+      "matchDepTypes": ["resolutions"],
       "rangeStrategy": "bump",
       "semanticCommitType": "build"
     }
