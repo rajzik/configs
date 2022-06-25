@@ -1,7 +1,7 @@
 {
   "name": "conventional-changelog-rajzik",
   "description": "Conventional changelog preset for my personal projects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
     "@rajzik/conventional-changelog-types": "workspace:^1.0.0"

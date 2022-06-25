@@ -2,6 +2,16 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.1 - 2022-06-25
+
+#### 🐞 Fixes
+
+- **[Changelog]** Handlebars templates. (#20) ([0e6c0f4](https://github.com/rajzik/configs/commit/0e6c0f4ae08a6a072e42977bbd3010b636c78729)), closes [#20](https://github.com/rajzik/configs/issues/20)
+
+
+
+
+
 # 1.0.0 - 2022-06-22
 
 # Initial implementation
