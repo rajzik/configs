@@ -2,6 +2,19 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+###1.0.1 - 2022-06-25
+
+#### 📦 Dependencies
+
+-
+update dependency @types/jest to ^28.1.3. (#3)([d14ed3f](https://github.com/rajzik/configs/commit/d14ed3fcf7c29bad85707af6476d9047d5490398)), work items[#3](https://github.com/rajzik/configs/issues/3)
+-
+update dependency jest-junit to v14. (#16)([4b86fe7](https://github.com/rajzik/configs/commit/4b86fe79d2ccf7dbfef92a7c9100cb042807e432)), work items[#16](https://github.com/rajzik/configs/issues/16)
+
+
+
+
+
 # 1.0.0 - 2022-06-22
 
 # Initial implementation

@@ -1,7 +1,7 @@
 {
   "name": "jest-preset-rajzik",
   "description": "Jest preset for lumos configured projects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
     "@jest/types": "^28.1.1",
