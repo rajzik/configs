@@ -10,7 +10,7 @@
     "jest-junit": "^14.0.0"
   },
   "devDependencies": {
-    "jest": "^28.1.1",
+    "jest": "^28.1.2",
     "tsconfig-rajzik": "workspace:*"
   },
   "engines": {
