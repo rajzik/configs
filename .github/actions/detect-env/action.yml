@@ -1,5 +1,5 @@
 name: detect-env
-description: Sets node and yarn version from nvmrc and yvmrc files.
+description: Sets node and yarn version from nvmrc and yarn files.
 runs:
   using: 'composite'
   steps:
@@ -7,5 +7,5 @@ runs:
       run: echo NODE_VERSION=$(cat .nvmrc | tr -d '\n') >> $GITHUB_ENV
       shell: bash
     - name: Determine Yarn Version
-      run: echo YARN_VERSION=$(cat .yvmrc | tr -d '\n') >> $GITHUB_ENV
+      run: echo YARN_VERSION=$(yarn --version) >> $GITHUB_ENV
       shell: bash
