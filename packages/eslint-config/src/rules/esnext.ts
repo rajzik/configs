@@ -1,6 +1,6 @@
 import type eslint from 'eslint';
 
-const futureRules: eslint.Linter.Config['rules'] = {
+const unicornRules: eslint.Linter.Config['rules'] = {
   // eslint-plugin-unicorn rules
   'unicorn/no-array-for-each': 'off', // prefer for…of over Array#forEach(…)
   'unicorn/no-array-method-this-argument': 'error', // disallow using the this argument in array methods
@@ -42,13 +42,14 @@ const futureRules: eslint.Linter.Config['rules'] = {
   'unicorn/prefer-dom-node-dataset': 'warn', // prefer using .dataset on DOM elements over .setAttribute(…)
   'unicorn/prefer-dom-node-remove': 'warn', // prefer childNode.remove() over parentNode.removeChild(childNode)
   'unicorn/prefer-dom-node-text-content': 'warn', // prefer .textContent over .innerText
+  'unicorn/prefer-event-target': 'error', // Prefer EventTarget over EventEmitter
   'unicorn/prefer-export-from': ['error', { ignoreUsedVariables: true }], // prefer export…from when re-exporting
   'unicorn/prefer-includes': 'warn', // prefer .includes() over .indexOf() when checking for existence or non-existence
   'unicorn/prefer-json-parse-buffer': 'off', // prefer reading a JSON file as a buffer
   'unicorn/prefer-keyboard-event-key': 'warn', // prefer KeyboardEvent#key over KeyboardEvent#keyCode
   'unicorn/prefer-math-trunc': 'warn', // enforce the use of Math.trunc instead of bitwise operators
-  'unicorn/prefer-modern-dom-apis': 'error',
-  'unicorn/prefer-modern-math-apis': 'error',
+  'unicorn/prefer-modern-dom-apis': 'error', // Prefer .before() over .insertBefore(), .replaceWith() over .replaceChild(), prefer one of .before(), .after(), .append() or .prepend() over insertAdjacentText() and insertAdjacentElement()
+  'unicorn/prefer-modern-math-apis': 'error', // Prefer modern Math APIs over legacy patterns
   // FIXME [@rajzik]: This is good rule but adoption isn't great so far
   'unicorn/prefer-module': 'off', // Prefer JavaScript modules (ESM) over CommonJS
   'unicorn/prefer-node-protocol': 'warn', // Prefer using the `node:` protocol when importing Node.js builtin modules
@@ -60,6 +61,7 @@ const futureRules: eslint.Linter.Config['rules'] = {
   'unicorn/prefer-query-selector': 'off', // prefer .querySelector() over .getElementById(), .querySelectorAll() over .getElementsByClassName() and .getElementsByTagName()
   'unicorn/prefer-reflect-apply': 'off', // prefer Reflect.apply() over Function#apply()
   'unicorn/prefer-regexp-test': 'warn', // prefer RegExp#test() over String#match() and RegExp#exec()
+  'unicorn/prefer-logical-operator-over-ternary': 'error', // Prefer using a logical operator over a ternary
   'unicorn/prefer-set-has': 'warn', // prefer Set#has() over Array#includes() when checking for existence or non-existence
   'unicorn/prefer-spread': 'error', // prefer the spread operator over Array.from()
   'unicorn/prefer-string-replace-all': 'warn', // prefer String#replaceAll() over regex searches with the global flag
@@ -81,4 +83,8 @@ const futureRules: eslint.Linter.Config['rules'] = {
   'unicorn/throw-new-error': 'error', // require new when throwing an error
 };
 
-export default futureRules;
+const config = {
+  ...unicornRules,
+};
+
+export default config;
