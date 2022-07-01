@@ -1,4 +1,4 @@
-/* eslint-disable import/extensions, unicorn/import-index */
+/* eslint-disable import/extensions */
 const {
   checkForInvalidLocks,
   checkForConventionalPrefix,

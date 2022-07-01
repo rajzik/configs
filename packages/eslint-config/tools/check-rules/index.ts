@@ -5,7 +5,7 @@ import nodeRulesConfig from '../../src/rules/node';
 import baseRulesConfig from '../../src/rules/base';
 import reactRulesConfig from '../../src/rules/react';
 import typescriptRulesPreset from '../../src/presets/typescript';
-import unicornPreset from '../../src/presets/future';
+import esnextPreset from '../../src/presets/esnext';
 
 import prettierConfig from '../../src/presets/prettier';
 
@@ -18,7 +18,7 @@ const reactRules = Object.entries(reactRulesConfig!).map(([ruleName]) => ruleNam
 const typescriptRules = Object.entries(typescriptRulesPreset!.overrides![0]!.rules!).map(
   ([ruleName]) => ruleName,
 );
-const unicornRules = Object.entries(unicornPreset.rules!).map(([ruleName]) => ruleName);
+const esnextRules = Object.entries(esnextPreset.rules!).map(([ruleName]) => ruleName);
 
 const usedRules = [
   ...jestRules,
@@ -27,7 +27,7 @@ const usedRules = [
   ...baseRules,
   ...reactRules,
   ...typescriptRules,
-  ...unicornRules,
+  ...esnextRules,
 ].sort();
 
 const missingRules: string[] = [];

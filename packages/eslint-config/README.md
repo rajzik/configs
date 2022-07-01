@@ -20,7 +20,7 @@ module.exports = {
     'rajzik',
     'rajzik/node',
     'rajzik/react',
-    'rajzik/future',
+    'rajzik/esnext',
     'rajzik/typescript',
     'rajzik/prettier',
   ],
@@ -35,7 +35,7 @@ module.exports = {
   - Enable rules for react
 - node
   - Enable rules for node
-- future
+- esnext
   - Enable esnext support
 - typescript
   - Enable support for typescript

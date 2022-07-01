@@ -420,8 +420,7 @@ const importRules: eslint.Linter.Config['rules'] = {
   'import/group-exports': 'off', // prefer named exports to be grouped together in a single export declaration
   'import/max-dependencies': 'off', // limit the maximum number of dependencies a module can have
   'import/no-internal-modules': 'off', // prevent importing the submodules of other modules
-  /* TODO [enable this when https://github.com/benmosher/eslint-plugin-import/issues/1998 is fixed]: 'import/named': 'error', // ensure named imports correspond to a named export in the remote file */
-  'import/named': 'off', // ensure named imports correspond to a named export in the remote file
+  'import/named': 'error', // ensure named imports correspond to a named export in the remote file
   'import/namespace': 'off', // ensure imported namespaces contain dereferenced properties as they are dereferenced
   'import/newline-after-import': 'warn', // enforce a newline after import statements
   'import/no-absolute-path': 'error', // forbid import of modules using absolute paths
@@ -492,7 +491,6 @@ const unicornRules: eslint.Linter.Config['rules'] = {
   'unicorn/escape-case': 'warn', // require escape sequences to use uppercase values
   'unicorn/explicit-length-check': 'off', // enforce explicitly comparing the length property of a value
   'unicorn/filename-case': 'off', // enforce a case style for filenames
-  'unicorn/import-index': 'error', // enforce importing index files with .
   'unicorn/import-style': 'warn', // enforce specific import styles per module
   'unicorn/new-for-builtins': 'warn', // enforce the use of new for all builtins, except String, Number, Boolean, Symbol and BigInt
   'unicorn/no-abusive-eslint-disable': 'error', // enforce specifying rules to disable in eslint-disable comments

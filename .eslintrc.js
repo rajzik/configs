@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['rajzik', 'rajzik/node', 'rajzik/typescript', 'rajzik/future', 'rajzik/prettier'],
+  extends: ['rajzik', 'rajzik/node', 'rajzik/esnext', 'rajzik/typescript', 'rajzik/prettier'],
   env: {
     node: true,
   },
