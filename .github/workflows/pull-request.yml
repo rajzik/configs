@@ -167,7 +167,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'rajzik-bot'
+          comment-author: 'github-actions'
           body-includes: <!-- MONODEPLOY_CHANGELOG_PREVIEW -->
 
       - name: Post Changelog to PR
