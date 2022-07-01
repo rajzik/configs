@@ -37,7 +37,6 @@
     "lint": "eslint --cache --fix packages/*/{src,test}/**/*.{ts,tsx}",
     "pack": "cross-env NODE_ENV=production packemon pack --addEngines --addExports --declaration",
     "postinstall": "husky install",
-    "prepack": "yarn workspaces foreach -vpi run prepack",
     "prepare": "yarn build && husky install",
     "prettier": "prettier . --write",
     "test": "yarn run pack && yarn run lint && yarn run jest"
