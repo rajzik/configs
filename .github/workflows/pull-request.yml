@@ -141,9 +141,6 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Fix entry points
-        run: yarn prepack
-
       - name: Run Monodeploy in Dry Run Mode
         id: run-monodeploy
         run: |
@@ -167,8 +164,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'rajzik-bot'
           body-includes: <!-- MONODEPLOY_CHANGELOG_PREVIEW -->
+          direction: last
 
       - name: Post Changelog to PR
         uses: peter-evans/create-or-update-comment@v2
