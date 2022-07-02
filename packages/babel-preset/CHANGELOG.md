@@ -2,6 +2,16 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.2 - 2022-07-02
+
+#### 📦 Dependencies
+
+- update babel monorepo to ^7.18.6. (#24) ([11de068](https://github.com/rajzik/configs/commit/11de068e46348ce748dadd63295cb21383548ad4)), closes [#24](https://github.com/rajzik/configs/issues/24)
+
+
+
+
+
 # 1.0.0 - 2022-06-22
 
 # Initial implementation
