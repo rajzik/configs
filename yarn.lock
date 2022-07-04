@@ -3719,32 +3719,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monodeploy/changelog@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@monodeploy/changelog@npm:3.0.1"
+"@monodeploy/changelog@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/changelog@npm:3.1.0"
   dependencies:
     conventional-changelog-writer: ^5.0.1
     conventional-commits-parser: ^3.2.4
     p-limit: ^3.1.0
   peerDependencies:
-    "@monodeploy/git": ^3.0.1
-    "@monodeploy/io": ^3.0.1
+    "@monodeploy/git": ^3.1.0
+    "@monodeploy/io": ^3.1.0
     "@monodeploy/logging": ^3.0.1
-    "@monodeploy/types": ^3.0.1
+    "@monodeploy/types": ^3.1.0
     "@yarnpkg/core": ^3.2.1
     "@yarnpkg/fslib": ^2.6.2
-  checksum: 098dbfde89201fdd0805de38b8d97ead451f1348ff32664c7276654e74da07e121d3302c57cb2e5fe45e3f10e8c9659f243122efc4fab116abfef4a4b37a67cb
+  checksum: 2910e69ba798120fa318407d128c5a853a467c2635b1c9a4eec38658af6153512f07fee3333cdde27d6cbb8781f8c46aa633725909650d6f7c02a92cea95e304
   languageName: node
   linkType: hard
 
-"@monodeploy/dependencies@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@monodeploy/dependencies@npm:3.0.1"
+"@monodeploy/dependencies@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/dependencies@npm:3.1.0"
   peerDependencies:
     "@monodeploy/logging": ^3.0.1
-    "@monodeploy/types": ^3.0.1
+    "@monodeploy/types": ^3.1.0
     "@yarnpkg/core": ^3.2.1
-  checksum: be55bfbb10a87f45d6513dc189c80cf928842d1876d3c4abb67e1f80306ebf9680a804d5f161f61012c1a8275479664b937e25ecc4bebb35e496194d52c51de1
+  checksum: 8587a2cc11a2c0a50e9268414987003bc9e9d04e6fbf7609c1d2e0189b2be91ceb7a2aeb1626c5fbc8e7f6f31af2b866ca80353b1d8f4529f5c1de2947824b1e
   languageName: node
   linkType: hard
 
@@ -3763,6 +3763,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monodeploy/git@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/git@npm:3.1.0"
+  dependencies:
+    micromatch: ^4.0.4
+  peerDependencies:
+    "@monodeploy/io": ^3.1.0
+    "@monodeploy/logging": ^3.0.1
+    "@monodeploy/types": ^3.1.0
+    "@yarnpkg/core": ^3.2.1
+    "@yarnpkg/fslib": ^2.6.2
+  checksum: 92fda14a6de579d033cdeca18b5d2eaabe0ef57e135a805f36cea4a1f26a41b917f3f319cc38a4ad7a0f3b3cdc44d0285cb18ec37fe6a572f694b34dd2ed1746
+  languageName: node
+  linkType: hard
+
 "@monodeploy/io@npm:^3.0.1":
   version: 3.0.1
   resolution: "@monodeploy/io@npm:3.0.1"
@@ -3776,6 +3791,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monodeploy/io@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/io@npm:3.1.0"
+  peerDependencies:
+    "@monodeploy/logging": ^3.0.1
+    "@monodeploy/types": ^3.1.0
+    "@yarnpkg/core": ^3.2.1
+    "@yarnpkg/fslib": ^2.6.2
+    "@yarnpkg/shell": ^3.2.2
+  checksum: f06e40dabf28f77d7d908d82a596720b6430a22b2dcc0202b449132858510c12079cf8fb1e4e3546a922455d9b24d065dbff47ab6ff02642cbeb13935e561569
+  languageName: node
+  linkType: hard
+
 "@monodeploy/logging@npm:^3.0.1":
   version: 3.0.1
   resolution: "@monodeploy/logging@npm:3.0.1"
@@ -3785,18 +3813,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monodeploy/node@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "@monodeploy/node@npm:3.0.2"
+"@monodeploy/node@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/node@npm:3.1.0"
   dependencies:
-    "@monodeploy/changelog": ^3.0.1
-    "@monodeploy/dependencies": ^3.0.1
-    "@monodeploy/git": ^3.0.1
-    "@monodeploy/io": ^3.0.1
+    "@monodeploy/changelog": ^3.1.0
+    "@monodeploy/dependencies": ^3.1.0
+    "@monodeploy/git": ^3.1.0
+    "@monodeploy/io": ^3.1.0
     "@monodeploy/logging": ^3.0.1
-    "@monodeploy/publish": ^3.0.1
-    "@monodeploy/types": ^3.0.1
-    "@monodeploy/versions": ^3.0.2
+    "@monodeploy/publish": ^3.1.0
+    "@monodeploy/types": ^3.1.0
+    "@monodeploy/versions": ^3.1.0
     "@yarnpkg/cli": ^3.2.1
     "@yarnpkg/core": ^3.2.1
     "@yarnpkg/fslib": ^2.6.2
@@ -3804,7 +3832,7 @@ __metadata:
     "@yarnpkg/plugin-pack": ^3.1.2
     "@yarnpkg/shell": ^3.2.2
     tapable: ^2.2.1
-  checksum: c4619728c3d1cba3aacbcaf784b53f75a54c2127536cff8c24ebf5c162918e5cdf5e519303a17b3368b8f6ddcbc2867263513599ee9ed976908530870d7d31c8
+  checksum: 55c8967c9a67350d066100533bf539dfeb08545f816488a9ef902bb0381a4dbd1d60630595f544ff912d4ea4982903e14cf37c588f9dea6291e27a6d874d7b75
   languageName: node
   linkType: hard
 
@@ -3825,23 +3853,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monodeploy/publish@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "@monodeploy/publish@npm:3.0.1"
+"@monodeploy/publish@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/publish@npm:3.1.0"
   dependencies:
     p-limit: ^3.1.0
   peerDependencies:
-    "@monodeploy/dependencies": ^3.0.1
-    "@monodeploy/git": ^3.0.1
-    "@monodeploy/io": ^3.0.1
+    "@monodeploy/dependencies": ^3.1.0
+    "@monodeploy/git": ^3.1.0
+    "@monodeploy/io": ^3.1.0
     "@monodeploy/logging": ^3.0.1
-    "@monodeploy/types": ^3.0.1
+    "@monodeploy/types": ^3.1.0
     "@yarnpkg/cli": ^3.2.1
     "@yarnpkg/core": ^3.2.1
     "@yarnpkg/fslib": ^2.6.2
     "@yarnpkg/plugin-npm": ^2.7.1
     "@yarnpkg/plugin-pack": ^3.1.2
-  checksum: 341f97269d2d147c57c2bc4bdde615bbda89a076f55ebe720c670bc74a74ac7e78fd6961730df4db67a3a3d004c1b27bddada0592e15801b486543afbda89c4f
+  checksum: 21834fc1682f048357df0d0a96c05459b6a8fe2c833baaccd9b29cfcf0faf9e39c2e5369cd2fbcefc6cc9b42118457459e142d498fbaa013a51211fdc9f09082
   languageName: node
   linkType: hard
 
@@ -3856,27 +3884,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monodeploy/versions@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "@monodeploy/versions@npm:3.0.2"
+"@monodeploy/types@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/types@npm:3.1.0"
+  dependencies:
+    tapable: ^2.2.1
+  peerDependencies:
+    "@yarnpkg/core": ^3.2.1
+  checksum: 4c861c5fe054be70f646d8e281315da0f6c990033aa1b64f78135552725bda5879e376e3920c1b7d9b2c7825ad5df35109aed2f9d6511023356e0785bc214ec5
+  languageName: node
+  linkType: hard
+
+"@monodeploy/versions@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@monodeploy/versions@npm:3.1.0"
   dependencies:
     conventional-commits-parser: ^3.2.4
     micromatch: ^4.0.4
     p-limit: ^3.1.0
     semver: ^7.3.5
   peerDependencies:
-    "@monodeploy/changelog": ^3.0.1
-    "@monodeploy/dependencies": ^3.0.1
-    "@monodeploy/git": ^3.0.1
-    "@monodeploy/io": ^3.0.1
+    "@monodeploy/changelog": ^3.1.0
+    "@monodeploy/dependencies": ^3.1.0
+    "@monodeploy/git": ^3.1.0
+    "@monodeploy/io": ^3.1.0
     "@monodeploy/logging": ^3.0.1
-    "@monodeploy/types": ^3.0.1
+    "@monodeploy/types": ^3.1.0
     "@yarnpkg/cli": ^3.2.1
     "@yarnpkg/core": ^3.2.1
     "@yarnpkg/fslib": ^2.6.2
     "@yarnpkg/plugin-npm": ^2.7.1
     "@yarnpkg/plugin-pack": ^3.1.2
-  checksum: b4659858e3b7c2ba978383b91055264171d3fc6549eee8d296907793ede89d4abf2f980f8c44e8de40a482a2f8fc1af0fd9fcca116886b38b5d78bd1bdb4c294
+  checksum: d513e871a94a83bfd7f8088bd73972d97b15bab7cfe33f760f47460c7effe1dd3bee238b78b469ca9676c89d604f1b16b72b5bb2337dc468943a1c09a7ed7bbe
   languageName: node
   linkType: hard
 
@@ -6672,7 +6711,7 @@ __metadata:
     graphql-tag: ^2.12.6
     husky: ^8.0.1
     jest: ^28.1.2
-    monodeploy: ^3.0.2
+    monodeploy: ^3.1.0
     packemon: ^2.3.1
     prettier: ^2.7.1
     rimraf: ^3.0.2
@@ -11039,12 +11078,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"monodeploy@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "monodeploy@npm:3.0.2"
+"monodeploy@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "monodeploy@npm:3.1.0"
   dependencies:
-    "@monodeploy/node": ^3.0.2
-    "@monodeploy/types": ^3.0.1
+    "@monodeploy/node": ^3.1.0
+    "@monodeploy/types": ^3.1.0
     "@yarnpkg/core": ^3.2.1
     "@yarnpkg/fslib": ^2.6.2
     ajv: ^8.11.0
@@ -11052,7 +11091,7 @@ __metadata:
     typanion: ^3.9.0
   bin:
     monodeploy: ./lib/index.js
-  checksum: db57433bfb52a68af7e5eb751e6c362cc3a841316c61d2fece37074fab8a083b1959dd0447bd4df20a71d1dc4ad4d9a890baa302f238dd81d07148c3e99fe9bd
+  checksum: 68c065fd6f62a207e2ecf4ace70d91e48269234668d92debfe87f9a5ac1ddaa6e625ac62c702b3eb11303747473978da58cd41ab15761348a6ac406cd136b2ef
   languageName: node
   linkType: hard
 
