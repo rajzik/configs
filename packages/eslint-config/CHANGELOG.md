@@ -2,6 +2,23 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.3 - 2022-07-15
+
+#### 📦 Dependencies
+
+- update dependency eslint-import-resolver-typescript to ^3.2.0. (#41) ([5c4c7f7](https://github.com/rajzik/configs/commit/5c4c7f7c26a387c3ac6ba607e862dd9f00c2f58d)), closes [#41](https://github.com/rajzik/configs/issues/41)
+- update dependency eslint-import-resolver-typescript to ^3.2.1. (#46) ([44dfea5](https://github.com/rajzik/configs/commit/44dfea59a2c9f2c02d4310b1b22aa5fce31669e4)), closes [#46](https://github.com/rajzik/configs/issues/46)
+- update dependency eslint-import-resolver-typescript to ^3.2.4. (#48) ([925d32d](https://github.com/rajzik/configs/commit/925d32d30f4a2fe954217aaf538434c8521fc48a)), closes [#48](https://github.com/rajzik/configs/issues/48)
+- update dependency eslint-import-resolver-typescript to ^3.2.5. (#51) ([5eb8f0c](https://github.com/rajzik/configs/commit/5eb8f0c28c4f78081da0842a32fe1629154bacc5)), closes [#51](https://github.com/rajzik/configs/issues/51)
+- update dependency eslint-plugin-unicorn to ^43.0.1. (#50) ([1aa126f](https://github.com/rajzik/configs/commit/1aa126fcc2a6f72997c17338892cc2fa07dc02e0)), closes [#50](https://github.com/rajzik/configs/issues/50)
+- update typescript-eslint monorepo to ^5.30.4. (#43) ([5e73294](https://github.com/rajzik/configs/commit/5e732943d2359c8a8664f59d45b977d7aeeb766f)), closes [#43](https://github.com/rajzik/configs/issues/43)
+- update typescript-eslint monorepo to ^5.30.5. (#47) ([eb86442](https://github.com/rajzik/configs/commit/eb8644265130058e8790276001893b37aa2ebccc)), closes [#47](https://github.com/rajzik/configs/issues/47)
+- update typescript-eslint monorepo to ^5.30.6. (#52) ([c205af7](https://github.com/rajzik/configs/commit/c205af7aa11bd131b4e64586f495769c82212697)), closes [#52](https://github.com/rajzik/configs/issues/52)
+
+
+
+
+
 ### 1.0.2 - 2022-07-02
 
 #### 📦 Dependencies

@@ -2,6 +2,17 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.3 - 2022-07-15
+
+#### 📦 Dependencies
+
+- update dependency @types/jest to ^28.1.5. (#53) ([f9f87e0](https://github.com/rajzik/configs/commit/f9f87e0c5c8d52de0138db07cca97c171285e9c9)), closes [#53](https://github.com/rajzik/configs/issues/53)
+- update jest monorepo to ^28.1.3. (#54) ([80268a8](https://github.com/rajzik/configs/commit/80268a816b4cf8e23902744a70849dab207b04d6)), closes [#54](https://github.com/rajzik/configs/issues/54)
+
+
+
+
+
 ### 1.0.2 - 2022-07-02
 
 #### 📦 Dependencies
