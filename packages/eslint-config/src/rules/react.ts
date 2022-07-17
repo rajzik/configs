@@ -40,7 +40,7 @@ const reactRules: eslint.Linter.Config['rules'] = {
   'react/jsx-max-depth': 'off', // validate JSX maximum depth
   'react/jsx-max-props-per-line': 'off', // limit maximum of props on a single line in JSX
   'react/jsx-newline': 'off', // enforce a new line after jsx elements and expressions
-  'react/jsx-no-bind': ['warn', { ignoreDOMComponents: true }], // prevents usage of Function.prototype.bind and arrow functions in React component props
+  'react/jsx-no-bind': ['off', { ignoreDOMComponents: true }], // prevents usage of Function.prototype.bind and arrow functions in React component props
   'react/jsx-no-constructed-context-values': 'warn', // prevents JSX context provider values from taking values that will cause needless rerenders
   'react/jsx-no-comment-textnodes': 'warn', // comments inside children section of tag should be placed inside braces
   'react/jsx-no-duplicate-props': ['error', { ignoreCase: true }], // enforce no duplicate props
