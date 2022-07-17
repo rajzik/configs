@@ -2,6 +2,17 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.4 - 2022-07-17
+
+#### 📦 Dependencies
+
+- update dependency eslint-import-resolver-typescript to ^3.2.6. (#58) ([f4808f4](https://github.com/rajzik/configs/commit/f4808f4dc4421e8e6f630c747f438b3e8921b17a)), closes [#58](https://github.com/rajzik/configs/issues/58)
+- update dependency eslint-plugin-jest to ^26.6.0. (#57) ([222127c](https://github.com/rajzik/configs/commit/222127cf55c8a68ed9e822b689828e4955eaaab3)), closes [#57](https://github.com/rajzik/configs/issues/57)
+
+
+
+
+
 ### 1.0.3 - 2022-07-15
 
 #### 📦 Dependencies

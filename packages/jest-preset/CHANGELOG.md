@@ -2,6 +2,16 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.4 - 2022-07-17
+
+#### 📦 Dependencies
+
+- update dependency @types/jest to ^28.1.6. (#59) ([e759456](https://github.com/rajzik/configs/commit/e7594567c72f814d873e8d4959646163c1d43749)), closes [#59](https://github.com/rajzik/configs/issues/59)
+
+
+
+
+
 ### 1.0.3 - 2022-07-15
 
 #### 📦 Dependencies
