@@ -24,7 +24,7 @@
     "react-refresh": "^0.14.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.18.13",
     "babel-test": "^0.2.4",
     "jest-file-snapshot": "^0.5.0",
     "tsconfig-rajzik": "workspace:*"
