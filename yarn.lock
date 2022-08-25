@@ -6290,7 +6290,7 @@ __metadata:
     husky: ^8.0.1
     jest: ^28.1.3
     monodeploy: ^3.3.0
-    packemon: ^2.3.4
+    packemon: ^2.3.7
     prettier: ^2.7.1
     rimraf: ^3.0.2
     syncpack: ^8.2.4
@@ -11229,9 +11229,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"packemon@npm:^2.3.4":
-  version: 2.3.4
-  resolution: "packemon@npm:2.3.4"
+"packemon@npm:^2.3.7":
+  version: 2.3.7
+  resolution: "packemon@npm:2.3.7"
   dependencies:
     "@babel/core": ^7.18.10
     "@babel/plugin-proposal-decorators": ^7.18.10
@@ -11283,7 +11283,7 @@ __metadata:
       optional: true
   bin:
     packemon: cjs/bin.cjs
-  checksum: 35f31964b288af01655562013aea7fc55802337ce74f8e418859d48b1ca113a36fb071eaef79c29a3becb563dfbdf10e1ca833ce5d495e8d3cab7adf88f76670
+  checksum: f92e91aa22f76b47f5daa9d46dd01d7f53c080e947eb9e61fd42a32b3d3afbf4e13ff6825c3c83927d7e79523198d0253c4e35feee0f6f48489356a1a4a7c379
   languageName: node
   linkType: hard
 
