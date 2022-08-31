@@ -17,7 +17,7 @@ const jestRules: eslint.Linter.Config['rules'] = {
   'jest/consistent-test-it': 'off', // have control over test and it usages
   'jest/expect-expect': 'warn', // enforce assertion to be made in a test body
   'jest/max-nested-describe': ['error', { max: 3 }], // enforces a maximum depth to nested describe calls
-  'jest/no-alias-methods': 'warn', // disallow alias methods
+  'jest/no-alias-methods': 'error', // disallow alias methods
   'jest/no-commented-out-tests': 'warn', // disallow commented out tests
   'jest/no-conditional-expect': 'error', // prevent calling expect conditionally
   'jest/no-conditional-in-test': 'off', // disallow conditional logic in tests
@@ -31,7 +31,6 @@ const jestRules: eslint.Linter.Config['rules'] = {
   'jest/no-identical-title': 'error', // disallow identical titles
   'jest/no-interpolation-in-snapshots': 'error', // disallow string interpolation inside snapshots
   'jest/no-jasmine-globals': 'error', // disallow Jasmine globals
-  'jest/no-jest-import': 'error', // disallow importing Jest
   'jest/no-large-snapshots': 'off', // disallow large snapshots
   'jest/no-mocks-import': 'error', // disallow manually importing from __mocks__
   'jest/no-restricted-matchers': 'off', // disallow specific matchers & modifiers
