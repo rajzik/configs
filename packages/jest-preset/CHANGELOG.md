@@ -2,6 +2,23 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.5 - 2022-09-11
+
+#### 📦 Dependencies
+
+- update dependency @types/jest to ^28.1.7. (#94) ([5bec609](https://github.com/rajzik/configs/commit/5bec60939b4d82df77fb7d33f969925fe5632bad)), closes [#94](https://github.com/rajzik/configs/issues/94)
+- update dependency @types/jest to ^28.1.8. (#110) ([c119390](https://github.com/rajzik/configs/commit/c119390e4e4c353110a2606425d26f1afb9c0078)), closes [#110](https://github.com/rajzik/configs/issues/110)
+- update dependency @types/jest to ^29.0.1. (#145) ([89c5162](https://github.com/rajzik/configs/commit/89c5162793b7df5d7eb235b933f010a1423ddd7e)), closes [#145](https://github.com/rajzik/configs/issues/145)
+- update dependency @types/jest to v29. (#125) ([5258581](https://github.com/rajzik/configs/commit/5258581dd81b9ab8cedd6e097991fa4225b7944d)), closes [#125](https://github.com/rajzik/configs/issues/125)
+- update dependency jest-junit to ^14.0.1. (#117) ([e7e9f2a](https://github.com/rajzik/configs/commit/e7e9f2a5e05229db0c0f0b8ac01889f690708eb2)), closes [#117](https://github.com/rajzik/configs/issues/117)
+- update jest monorepo to ^29.0.2. (#128) ([c10add1](https://github.com/rajzik/configs/commit/c10add18e1cf96488f5c664ff0d55c1c42c1a4cc)), closes [#128](https://github.com/rajzik/configs/issues/128)
+- update jest monorepo to ^29.0.3. (#144) ([31adb9c](https://github.com/rajzik/configs/commit/31adb9cef41bb76d465b658c87243ff5c72150a2)), closes [#144](https://github.com/rajzik/configs/issues/144)
+- update jest monorepo to v29. (major) (#115) ([b17f9da](https://github.com/rajzik/configs/commit/b17f9da52505a6cd8ef139b805ae8dac941e4b77)), closes [#115](https://github.com/rajzik/configs/issues/115)
+
+
+
+
+
 ### 1.0.4 - 2022-07-17
 
 #### 📦 Dependencies
