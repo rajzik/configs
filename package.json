@@ -8,7 +8,7 @@
     "@monodeploy/plugin-github": "^0.6.1",
     "cross-env": "^7.0.3",
     "danger": "^11.1.2",
-    "eslint": "^8.23.0",
+    "eslint": "^8.23.1",
     "eslint-find-rules": "^4.1.0",
     "fs-extra": "^10.1.0",
     "graphql": "^16.6.0",
