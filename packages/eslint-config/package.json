@@ -4,8 +4,8 @@
   "version": "1.0.5",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
-    "@babel/core": "^7.19.0",
-    "@babel/eslint-parser": "^7.18.9",
+    "@babel/core": "^7.19.1",
+    "@babel/eslint-parser": "^7.19.1",
     "@rajzik/configs-shared": "workspace:^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
