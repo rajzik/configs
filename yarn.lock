@@ -4061,7 +4061,7 @@ __metadata:
   resolution: "@rajzik/danger-configuration@workspace:packages/config-danger"
   dependencies:
     "@rajzik/conventional-changelog-types": "workspace:^1.0.0"
-    "@types/node": ^16.11.68
+    "@types/node": ^18.11.5
     danger: ^11.1.4
   languageName: unknown
   linkType: soft
@@ -4636,17 +4636,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.11.68":
-  version: 16.11.68
-  resolution: "@types/node@npm:16.11.68"
-  checksum: a35293b6b8867e10ab9e10b6cd5f0e4224a86256d5ef102581dcb9f79f35f255ad87443e8584ddf8dce1229ee28885c58187e41822cf8d1e82495e7897c47c3f
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:^17.0.19":
   version: 17.0.45
   resolution: "@types/node@npm:17.0.45"
   checksum: aa04366b9103b7d6cfd6b2ef64182e0eaa7d4462c3f817618486ea0422984c51fc69fd0d436eae6c9e696ddfdbec9ccaa27a917f7c2e8c75c5d57827fe3d95e8
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.5":
+  version: 18.11.5
+  resolution: "@types/node@npm:18.11.5"
+  checksum: ac54e9287dd4549ea3dc8aabc0cf7bfa04c52f02925d7fd68414789617ec770f034c8ae2e111e8bd00d446a46fcac42587b5a316a1303e2f6ea094854248c9ff
   languageName: node
   linkType: hard
 
@@ -7619,7 +7619,7 @@ __metadata:
     "@rajzik/configs-shared": "workspace:^1.0.0"
     "@types/confusing-browser-globals": ^1.0.0
     "@types/eslint": ^8.4.6
-    "@types/node": ^16.11.68
+    "@types/node": ^18.11.5
     "@typescript-eslint/eslint-plugin": ^5.40.1
     "@typescript-eslint/parser": ^5.40.1
     confusing-browser-globals: ^1.0.11
