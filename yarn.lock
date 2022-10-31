@@ -6807,7 +6807,7 @@ __metadata:
     packemon: ^2.4.1
     prettier: ^2.7.1
     rimraf: ^3.0.2
-    syncpack: ^8.3.8
+    syncpack: ^8.3.9
     typescript: ^4.8.4
   languageName: unknown
   linkType: soft
@@ -13442,7 +13442,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"syncpack@npm:^8.3.8":
+"syncpack@npm:^8.3.9":
   version: 8.3.9
   resolution: "syncpack@npm:8.3.9"
   dependencies:
