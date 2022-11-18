@@ -1,7 +1,7 @@
 {
   "name": "@rajzik/danger-configuration",
   "description": "Reusable Danger.js scripts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
     "@rajzik/conventional-changelog-types": "workspace:^1.0.0",

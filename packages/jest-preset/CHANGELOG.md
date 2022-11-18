@@ -2,6 +2,25 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.6 - 2022-11-18
+
+#### 📦 Dependencies
+
+- update dependency @types/jest to ^29.0.2. (#149) ([04ad6b5](https://github.com/rajzik/configs/commit/04ad6b5c8b4f8c4e99a554da16d133678c6d99d9)), closes [#149](https://github.com/rajzik/configs/issues/149)
+- update dependency @types/jest to ^29.0.3. (#152) ([43839ec](https://github.com/rajzik/configs/commit/43839ec4294f828c3ad7778d9c53a9cce6b89c22)), closes [#152](https://github.com/rajzik/configs/issues/152)
+- update dependency @types/jest to ^29.1.2. (#176) ([64e0e8f](https://github.com/rajzik/configs/commit/64e0e8faa37abd6e45859c08885dc40270705fe4)), closes [#176](https://github.com/rajzik/configs/issues/176)
+- update dependency @types/jest to ^29.2.2. (#210) ([83067a6](https://github.com/rajzik/configs/commit/83067a6a13aa84200babea7e537b108bee501e00)), closes [#210](https://github.com/rajzik/configs/issues/210)
+- update dependency @types/jest to ^29.2.3. (#221) ([7c3115b](https://github.com/rajzik/configs/commit/7c3115b66d2eb0257363f4cb91b078754fb20846)), closes [#221](https://github.com/rajzik/configs/issues/221)
+- update jest monorepo . (#162) ([8aa226b](https://github.com/rajzik/configs/commit/8aa226bdda52dda49243d334a72baa5d341a150a)), closes [#162](https://github.com/rajzik/configs/issues/162)
+- update jest monorepo . (#163) ([4e5e5e1](https://github.com/rajzik/configs/commit/4e5e5e117f5b9f968e191a49f6eda16fb68166f0)), closes [#163](https://github.com/rajzik/configs/issues/163)
+- update jest monorepo . (#191) ([60e4b31](https://github.com/rajzik/configs/commit/60e4b31b0fb5678427756b2f004a62a7157b2478)), closes [#191](https://github.com/rajzik/configs/issues/191)
+- update jest monorepo to ^29.2.0. (#186) ([cfb528d](https://github.com/rajzik/configs/commit/cfb528df3ae38f62e7069e0cc92a2c4d1a90a066)), closes [#186](https://github.com/rajzik/configs/issues/186)
+- update jest monorepo to ^29.3.1. (#217) ([2b7d0dd](https://github.com/rajzik/configs/commit/2b7d0dd63234c780fdaa52c951e73dbe430503b0)), closes [#217](https://github.com/rajzik/configs/issues/217)
+
+
+
+
+
 ### 1.0.5 - 2022-09-11
 
 #### 📦 Dependencies

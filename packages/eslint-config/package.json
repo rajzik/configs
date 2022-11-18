@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-rajzik",
   "description": "Reusable ESLint config for personal projects",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
     "@babel/core": "^7.19.3",
