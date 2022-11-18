@@ -2,6 +2,18 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.6 - 2022-11-18
+
+#### 📦 Dependencies
+
+- update dependency danger to ^11.1.3. (#165) ([d4f1940](https://github.com/rajzik/configs/commit/d4f1940cee13dbe0edb4141baab2a5859557368a)), closes [#165](https://github.com/rajzik/configs/issues/165)
+- update dependency danger to ^11.1.4. (#172) ([f79c241](https://github.com/rajzik/configs/commit/f79c24118a48b775247d35acf99eae308395674d)), closes [#172](https://github.com/rajzik/configs/issues/172)
+- update dependency danger to ^11.2.0. (#219) ([461f539](https://github.com/rajzik/configs/commit/461f53935ca137fc331edfa8a89cd0e36cbe28a0)), closes [#219](https://github.com/rajzik/configs/issues/219)
+
+
+
+
+
 ### 1.0.5 - 2022-09-11
 
 #### 📦 Dependencies

@@ -2,6 +2,46 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.6 - 2022-11-18
+
+#### 📦 Dependencies
+
+- update babel monorepo to ^7.19.1. (#151) ([c8510df](https://github.com/rajzik/configs/commit/c8510df96c75f189960e9b77ac1ee01a842a5e01)), closes [#151](https://github.com/rajzik/configs/issues/151)
+- update babel monorepo to ^7.19.3. (#160) ([090710d](https://github.com/rajzik/configs/commit/090710d11d27aaa1064ab129e0a6d7cacebd3b70)), closes [#160](https://github.com/rajzik/configs/issues/160)
+- update dependency eslint-import-resolver-typescript to ^3.5.2. (#198) ([582681f](https://github.com/rajzik/configs/commit/582681f5e61f2887e893021099947a2c333601a7)), closes [#198](https://github.com/rajzik/configs/issues/198)
+- update dependency eslint-plugin-jest to ^27.1.0. (#171) ([1a4bdb6](https://github.com/rajzik/configs/commit/1a4bdb690debca309cc9a94599b901ee26430bb4)), closes [#171](https://github.com/rajzik/configs/issues/171)
+- update dependency eslint-plugin-jest to ^27.1.1. (#175) ([1891113](https://github.com/rajzik/configs/commit/1891113169c479f95229782f699ccbc0883652c0)), closes [#175](https://github.com/rajzik/configs/issues/175)
+- update dependency eslint-plugin-jest to ^27.1.2. (#187) ([17a1c15](https://github.com/rajzik/configs/commit/17a1c15981c39d928bf06fb583193aa9101603a2)), closes [#187](https://github.com/rajzik/configs/issues/187)
+- update dependency eslint-plugin-jest to ^27.1.3. (#192) ([9154641](https://github.com/rajzik/configs/commit/9154641bb1ca10da9c7f431c978330458e51a6fe)), closes [#192](https://github.com/rajzik/configs/issues/192)
+- update dependency eslint-plugin-jest to ^27.1.4. (#213) ([1d6daf1](https://github.com/rajzik/configs/commit/1d6daf11a450a219a80f536b62722f8d389a643d)), closes [#213](https://github.com/rajzik/configs/issues/213)
+- update dependency eslint-plugin-jest to ^27.1.5. (#218) ([0f9560b](https://github.com/rajzik/configs/commit/0f9560bc6874eb5b2e1b6c85ee42bce844d5c417)), closes [#218](https://github.com/rajzik/configs/issues/218)
+- update dependency eslint-plugin-promise to ^6.1.0. (#183) ([8f8c66a](https://github.com/rajzik/configs/commit/8f8c66a8168c734e5a1514022ea36d9095300aae)), closes [#183](https://github.com/rajzik/configs/issues/183)
+- update dependency eslint-plugin-promise to ^6.1.1. (#195) ([e5f47e6](https://github.com/rajzik/configs/commit/e5f47e6766669d1c74d7d7f0805b350e71f06936)), closes [#195](https://github.com/rajzik/configs/issues/195)
+- update dependency eslint-plugin-react to ^7.31.10. (#179) ([4f9285c](https://github.com/rajzik/configs/commit/4f9285c674eecddef2e22e7d2f6582429a157882)), closes [#179](https://github.com/rajzik/configs/issues/179)
+- update dependency eslint-plugin-testing-library to ^5.6.4. (#148) ([a4ff912](https://github.com/rajzik/configs/commit/a4ff912e6d03242d62bc5521523d97338efd7653)), closes [#148](https://github.com/rajzik/configs/issues/148)
+- update dependency eslint-plugin-testing-library to ^5.7.0. (#154) ([7409188](https://github.com/rajzik/configs/commit/740918858b87af1c66edb27a162601fb01f3137e)), closes [#154](https://github.com/rajzik/configs/issues/154)
+- update dependency eslint-plugin-testing-library to ^5.7.1. (#166) ([54e8f84](https://github.com/rajzik/configs/commit/54e8f8476955bc7bc15cc3b6cc6073ee02e14878)), closes [#166](https://github.com/rajzik/configs/issues/166)
+- update dependency eslint-plugin-testing-library to ^5.7.2. (#168) ([f37cfd9](https://github.com/rajzik/configs/commit/f37cfd9fd32409e30e2b57b87ddd7927b9755ecc)), closes [#168](https://github.com/rajzik/configs/issues/168)
+- update dependency eslint-plugin-testing-library to ^5.7.3. (#190) ([1aaeb34](https://github.com/rajzik/configs/commit/1aaeb34fa112f89d9f2b7bcf5e6e24b8531530e5)), closes [#190](https://github.com/rajzik/configs/issues/190)
+- update dependency eslint-plugin-testing-library to ^5.9.1. (#194) ([3e072d6](https://github.com/rajzik/configs/commit/3e072d6e5ea62d58436930fc822a9f93396e3af7)), closes [#194](https://github.com/rajzik/configs/issues/194)
+- update dependency eslint-plugin-unicorn to ^44.0.1. (#173) ([5ba5f45](https://github.com/rajzik/configs/commit/5ba5f4520d84d4f1840229315ae194ee22c92411)), closes [#173](https://github.com/rajzik/configs/issues/173)
+- update dependency eslint-plugin-unicorn to ^44.0.2. (#177) ([d106e5b](https://github.com/rajzik/configs/commit/d106e5b9fa9421f7bb0b30b478283c7498f04484)), closes [#177](https://github.com/rajzik/configs/issues/177)
+- update dependency eslint-plugin-unicorn to v44. (#164) ([cc4137f](https://github.com/rajzik/configs/commit/cc4137fd8bed91fb0c4f38b162350bdd64d5e494)), closes [#164](https://github.com/rajzik/configs/issues/164)
+- update typescript-eslint monorepo to ^5.37.0. (#147) ([2104a6a](https://github.com/rajzik/configs/commit/2104a6ac49d6ea0d39918fae9245dad9f18cfbeb)), closes [#147](https://github.com/rajzik/configs/issues/147)
+- update typescript-eslint monorepo to ^5.38.0. (#153) ([fecc275](https://github.com/rajzik/configs/commit/fecc275edff5bef7de11f3e9f88c51c953ed23e4)), closes [#153](https://github.com/rajzik/configs/issues/153)
+- update typescript-eslint monorepo to ^5.38.1. (#158) ([d9c0a72](https://github.com/rajzik/configs/commit/d9c0a725cca58e1d0c1ae422e9e8e2b5f024da31)), closes [#158](https://github.com/rajzik/configs/issues/158)
+- update typescript-eslint monorepo to ^5.39.0. (#169) ([44e579f](https://github.com/rajzik/configs/commit/44e579f6ffd1d8a00d260444ef4274ff660c00a0)), closes [#169](https://github.com/rajzik/configs/issues/169)
+- update typescript-eslint monorepo to ^5.40.0. (#181) ([6e04288](https://github.com/rajzik/configs/commit/6e04288f9d35bab1a30a060b185f4f536e214767)), closes [#181](https://github.com/rajzik/configs/issues/181)
+- update typescript-eslint monorepo to ^5.40.1. (#189) ([47f414b](https://github.com/rajzik/configs/commit/47f414b4e92f9a7e79c5c233fbfa52af250a0131)), closes [#189](https://github.com/rajzik/configs/issues/189)
+- update typescript-eslint monorepo to ^5.41.0. (#200) ([142ac2b](https://github.com/rajzik/configs/commit/142ac2bf910423818314b2e35930b11bd82a4df3)), closes [#200](https://github.com/rajzik/configs/issues/200)
+- update typescript-eslint monorepo to ^5.42.0. (#209) ([6bcf594](https://github.com/rajzik/configs/commit/6bcf5948d79b6764306d9e8dd7c7d0eeb0583035)), closes [#209](https://github.com/rajzik/configs/issues/209)
+- update typescript-eslint monorepo to ^5.42.1. (#214) ([2ec3b37](https://github.com/rajzik/configs/commit/2ec3b378052b94d39a2d5646d125abcb2f509ad5)), closes [#214](https://github.com/rajzik/configs/issues/214)
+- update typescript-eslint monorepo to ^5.43.0. (#220) ([4984658](https://github.com/rajzik/configs/commit/49846585277bbedebba60f1a55fcac092bf0a09e)), closes [#220](https://github.com/rajzik/configs/issues/220)
+
+
+
+
+
 ### 1.0.5 - 2022-09-11
 
 #### 📦 Dependencies

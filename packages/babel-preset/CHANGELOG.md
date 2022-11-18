@@ -2,6 +2,19 @@
 
 <!-- MONODEPLOY:BELOW -->
 
+### 1.0.6 - 2022-11-18
+
+#### 📦 Dependencies
+
+- update babel monorepo to ^7.19.1. (#151) ([c8510df](https://github.com/rajzik/configs/commit/c8510df96c75f189960e9b77ac1ee01a842a5e01)), closes [#151](https://github.com/rajzik/configs/issues/151)
+- update babel monorepo to ^7.19.3. (#160) ([090710d](https://github.com/rajzik/configs/commit/090710d11d27aaa1064ab129e0a6d7cacebd3b70)), closes [#160](https://github.com/rajzik/configs/issues/160)
+- update dependency @babel/preset-env to ^7.19.4. (#180) ([88c91d2](https://github.com/rajzik/configs/commit/88c91d2ef8ee3f2663950868b8aea7e8461d2b2f)), closes [#180](https://github.com/rajzik/configs/issues/180)
+- update dependency @emotion/babel-plugin to ^11.10.5. (#204) ([01fce09](https://github.com/rajzik/configs/commit/01fce09dea476be99cbb95d5004883ffe7c3bc96)), closes [#204](https://github.com/rajzik/configs/issues/204)
+
+
+
+
+
 ### 1.0.5 - 2022-09-11
 
 #### 📦 Dependencies
