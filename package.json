@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "main": "index.js",
-  "packageManager": "yarn@3.2.4",
+  "packageManager": "yarn@3.3.0",
   "private": true,
   "repository": "git@github.com:rajzik/configs.git",
   "scripts": {
