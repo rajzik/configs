@@ -5,7 +5,7 @@
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
-    "@monodeploy/plugin-github": "^0.6.2",
+    "@monodeploy/plugin-github": "^0.6.3",
     "cross-env": "^7.0.3",
     "danger": "^11.2.0",
     "eslint": "^8.28.0",
