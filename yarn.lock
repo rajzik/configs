@@ -6899,7 +6899,7 @@ __metadata:
     packemon: ^2.4.1
     prettier: ^2.8.0
     rimraf: ^3.0.2
-    syncpack: ^8.3.9
+    syncpack: ^8.4.10
     typescript: ^4.9.3
   languageName: unknown
   linkType: soft
@@ -13707,9 +13707,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"syncpack@npm:^8.3.9":
-  version: 8.3.9
-  resolution: "syncpack@npm:8.3.9"
+"syncpack@npm:^8.4.10":
+  version: 8.4.10
+  resolution: "syncpack@npm:8.4.10"
   dependencies:
     chalk: 4.1.2
     commander: 9.4.1
@@ -13729,7 +13729,7 @@ __metadata:
     syncpack-list: dist/bin-list/index.js
     syncpack-list-mismatches: dist/bin-list-mismatches/index.js
     syncpack-set-semver-ranges: dist/bin-set-semver-ranges/index.js
-  checksum: 3885f804d444c54d94686425096238db70ea09c4cc17cacd4be5a682f5d3a065be8d3af7b3272e56055be94019024c0fe462a7a2b20d79e571f3c50aab7bf977
+  checksum: 60b803bc8095eb6c51603007ef4b7c4f5cdf98e8d8819ba8ae04ce912d23e8a50efa3ffc6eb6562f6d30d54385f38ec02920f64ce8001cb8c3aa6b688618dddd
   languageName: node
   linkType: hard
 
