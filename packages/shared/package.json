@@ -5,7 +5,7 @@
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
     "@beemo/core": "^2.1.4",
-    "json5": "^2.2.1"
+    "json5": "^2.2.2"
   },
   "devDependencies": {
     "tsconfig-rajzik": "workspace:*"
