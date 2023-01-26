@@ -7,7 +7,7 @@
     "@commitlint/cli": "^17.4.2",
     "@monodeploy/plugin-github": "^0.8.0",
     "cross-env": "^7.0.3",
-    "danger": "^11.2.2",
+    "danger": "^11.2.3",
     "eslint": "^8.32.0",
     "eslint-find-rules": "^4.1.0",
     "fs-extra": "^11.1.0",
