@@ -3683,6 +3683,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monodeploy/git@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@monodeploy/git@npm:3.7.0"
+  dependencies:
+    micromatch: ^4.0.5
+  peerDependencies:
+    "@monodeploy/io": ^3.7.0
+    "@monodeploy/logging": ^3.7.0
+    "@monodeploy/types": ^3.7.0
+    "@yarnpkg/core": ^3.4.0
+    "@yarnpkg/fslib": ^2.10.1
+  checksum: 25e92f602f4119bd3d435d239b950dc2f7bb4fc3b35c510fce05d205decbb5ce148ab6872e71f2609db7e906065d70dfdf9d2d3c8176fb7985ae073e7c9ee752
+  languageName: node
+  linkType: hard
+
 "@monodeploy/io@npm:^3.6.0":
   version: 3.6.0
   resolution: "@monodeploy/io@npm:3.6.0"
@@ -3696,12 +3711,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monodeploy/io@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@monodeploy/io@npm:3.7.0"
+  peerDependencies:
+    "@monodeploy/logging": ^3.7.0
+    "@monodeploy/types": ^3.7.0
+    "@yarnpkg/core": ^3.4.0
+    "@yarnpkg/fslib": ^2.10.1
+    "@yarnpkg/shell": ^3.2.5
+  checksum: 4a221ca31a8f93185fbe34524bcbd5d2f16a53343383dece963f06653746e21ee987447becc83de1a33831f1a3749c3df55152b72adbd5608a44c6950dfed0ae
+  languageName: node
+  linkType: hard
+
 "@monodeploy/logging@npm:^3.6.0":
   version: 3.6.0
   resolution: "@monodeploy/logging@npm:3.6.0"
   peerDependencies:
     "@yarnpkg/core": ^3.3.1
   checksum: 6f3b7f50205fd793557aa05dd646d741a47cd0cd1a957b5f4fd4c67298d220c7e8d747b4022be3f92f2014a95569edb245c67c8411f3200a9f00255208565cd4
+  languageName: node
+  linkType: hard
+
+"@monodeploy/logging@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@monodeploy/logging@npm:3.7.0"
+  peerDependencies:
+    "@yarnpkg/core": ^3.4.0
+  checksum: ff4fd4b09712a10b530bca49cb8461bd9c7a21032a97fa41e2d9b478a63d83d65da08cd6f65339f067f3f7f5bdeba75a05735f0dc7eecd7f8178ac5da42777b4
   languageName: node
   linkType: hard
 
@@ -3728,20 +3765,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monodeploy/plugin-github@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "@monodeploy/plugin-github@npm:0.8.0"
+"@monodeploy/plugin-github@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@monodeploy/plugin-github@npm:0.9.0"
   dependencies:
-    "@monodeploy/git": ^3.6.0
-    "@monodeploy/io": ^3.6.0
-    "@monodeploy/logging": ^3.6.0
-    "@monodeploy/types": ^3.6.0
+    "@monodeploy/git": ^3.7.0
+    "@monodeploy/io": ^3.7.0
+    "@monodeploy/logging": ^3.7.0
+    "@monodeploy/types": ^3.7.0
     "@octokit/core": ^4.1.0
     "@octokit/plugin-throttling": ^4.3.2
-    "@yarnpkg/core": ^3.3.1
-    "@yarnpkg/fslib": ^2.10.0
+    "@yarnpkg/core": ^3.4.0
+    "@yarnpkg/fslib": ^2.10.1
     "@yarnpkg/shell": ^3.2.5
-  checksum: abcf879b593221f08c5f38bace5cca4fb8af86ee2eef0de3e87eeeb2fcfbb4ef410f7adf826aff007fa90f2489914f7ccb9b03556fa623a56fedb97cc6e38803
+  checksum: 26236dce302cea7c5bd55fb7f77419f5a5072c41b9bfa1178c12a73e20332e9750ce96f1bf39a143c81352eb8d37e223079b2f7dbed302ac6b8aaa2258c2aca3
   languageName: node
   linkType: hard
 
@@ -3773,6 +3810,17 @@ __metadata:
   peerDependencies:
     "@yarnpkg/core": ^3.3.1
   checksum: 3ac04359bd398b6fbc3912fced6edbf810f4f7acae509df84bb19f72518d56b69c58cb98c5a971c4ef66adb5685cbf8c9ad93700a249d1157d2150832218006b
+  languageName: node
+  linkType: hard
+
+"@monodeploy/types@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@monodeploy/types@npm:3.7.0"
+  dependencies:
+    tapable: ^2.2.1
+  peerDependencies:
+    "@yarnpkg/core": ^3.4.0
+  checksum: 17b1e20216e9aecfda2276bbb05c12dd697f5c2d18e40c2306c093117e103e96b087e31924b0094bcfd7df151b2b1b2b1e79970e07201218b84a145cb9c7b2bd
   languageName: node
   linkType: hard
 
@@ -5241,6 +5289,46 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@yarnpkg/core@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@yarnpkg/core@npm:3.4.0"
+  dependencies:
+    "@arcanis/slice-ansi": ^1.1.1
+    "@types/semver": ^7.1.0
+    "@types/treeify": ^1.0.0
+    "@yarnpkg/fslib": ^2.10.1
+    "@yarnpkg/json-proxy": ^2.1.1
+    "@yarnpkg/libzip": ^2.2.4
+    "@yarnpkg/parsers": ^2.5.1
+    "@yarnpkg/pnp": ^3.3.0
+    "@yarnpkg/shell": ^3.2.5
+    camelcase: ^5.3.1
+    chalk: ^3.0.0
+    ci-info: ^3.2.0
+    clipanion: 3.2.0-rc.4
+    cross-spawn: 7.0.3
+    diff: ^5.1.0
+    globby: ^11.0.1
+    got: ^11.7.0
+    json-file-plus: ^3.3.1
+    lodash: ^4.17.15
+    micromatch: ^4.0.2
+    mkdirp: ^0.5.1
+    p-limit: ^2.2.0
+    pluralize: ^7.0.0
+    pretty-bytes: ^5.1.0
+    semver: ^7.1.2
+    stream-to-promise: ^2.2.0
+    strip-ansi: ^6.0.0
+    tar: ^6.0.5
+    tinylogic: ^1.0.3
+    treeify: ^1.1.0
+    tslib: ^1.13.0
+    tunnel: ^0.0.6
+  checksum: 024fc0ffc5b971b31e742df979aa011b12c4f46b5031fd8fba6d037184abe2f55b082b96f6938c700295e52e588f4241fcdcc4ea75dfaa5ced6ea1ce146ed039
+  languageName: node
+  linkType: hard
+
 "@yarnpkg/extensions@npm:^1.1.2":
   version: 1.1.2
   resolution: "@yarnpkg/extensions@npm:1.1.2"
@@ -5257,6 +5345,16 @@ __metadata:
     "@yarnpkg/libzip": ^2.2.4
     tslib: ^1.13.0
   checksum: 7c08938b442cb93ecb710f0b1e877836c3c0ead492a1d120e7ae62f96575630fa93e18f3189086156373bb03b04a1833135a7065fdd7160874b0b2b22eb34f71
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/fslib@npm:^2.10.1":
+  version: 2.10.1
+  resolution: "@yarnpkg/fslib@npm:2.10.1"
+  dependencies:
+    "@yarnpkg/libzip": ^2.2.4
+    tslib: ^1.13.0
+  checksum: 76a4e094cdde790edf9c1609c63c4ab4e7d518fc13e05da2de9431ece15ccd442a941b505e90d62731edef8ce7a0e491c60fc824f4383dcecf69d4cec74a8ba6
   languageName: node
   linkType: hard
 
@@ -5636,6 +5734,16 @@ __metadata:
     "@types/node": ^13.7.0
     "@yarnpkg/fslib": ^2.10.0
   checksum: 3d866a7f6c85277560d74269a6e2d660a173931c71516dae0ab4620bdc9eec1672d352f7a8be395d1d2b27f33f7ac7bd58161135998e38d7ce393a825105207b
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/pnp@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@yarnpkg/pnp@npm:3.3.0"
+  dependencies:
+    "@types/node": ^13.7.0
+    "@yarnpkg/fslib": ^2.10.1
+  checksum: 231f65f50684c9b4f994096483540ca276172f27f0dbc43b4c8ff65b66aed2cb59f547165e1f1b627108deef4c2204f16f429b3486d0c375e384380679407c3b
   languageName: node
   linkType: hard
 
@@ -7015,7 +7123,7 @@ __metadata:
   resolution: "configs-root@workspace:."
   dependencies:
     "@commitlint/cli": ^17.4.3
-    "@monodeploy/plugin-github": ^0.8.0
+    "@monodeploy/plugin-github": ^0.9.0
     cross-env: ^7.0.3
     danger: ^11.2.3
     eslint: ^8.34.0
