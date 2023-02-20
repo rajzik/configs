@@ -1361,17 +1361,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-jsx@npm:^7.17.12":
-  version: 7.17.12
-  resolution: "@babel/plugin-syntax-jsx@npm:7.17.12"
-  dependencies:
-    "@babel/helper-plugin-utils": ^7.17.12
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: 6acd0bbca8c3e0100ad61f3b7d0b0111cd241a0710b120b298c4aa0e07be02eccbcca61ede1e7678ade1783a0979f20305b62263df6767fa3fbf658670d82af5
-  languageName: node
-  linkType: hard
-
 "@babel/plugin-syntax-logical-assignment-operators@npm:^7.10.4, @babel/plugin-syntax-logical-assignment-operators@npm:^7.8.3":
   version: 7.10.4
   resolution: "@babel/plugin-syntax-logical-assignment-operators@npm:7.10.4"
@@ -3088,12 +3077,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/babel-plugin@npm:^11.10.5":
-  version: 11.10.5
-  resolution: "@emotion/babel-plugin@npm:11.10.5"
+"@emotion/babel-plugin@npm:^11.10.6":
+  version: 11.10.6
+  resolution: "@emotion/babel-plugin@npm:11.10.6"
   dependencies:
     "@babel/helper-module-imports": ^7.16.7
-    "@babel/plugin-syntax-jsx": ^7.17.12
     "@babel/runtime": ^7.18.3
     "@emotion/hash": ^0.9.0
     "@emotion/memoize": ^0.8.0
@@ -3104,9 +3092,7 @@ __metadata:
     find-root: ^1.1.0
     source-map: ^0.5.7
     stylis: 4.1.3
-  peerDependencies:
-    "@babel/core": ^7.0.0
-  checksum: e3353499c76c4422d6e900c0dfab73607056d9da86161a3f27c3459c193c4908050c5d252c68fcde231e13f02a9d8e0dc07d260317ae0e5206841e331cc4caae
+  checksum: 3eed138932e8edf2598352e69ad949b9db3051a4d6fcff190dacbac9aa838d7ef708b9f3e6c48660625d9311dae82d73477ae4e7a31139feef5eb001a5528421
   languageName: node
   linkType: hard
 
@@ -4121,7 +4107,7 @@ __metadata:
     "@babel/preset-env": ^7.19.4
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.18.6
-    "@emotion/babel-plugin": ^11.10.5
+    "@emotion/babel-plugin": ^11.10.6
     "@rajzik/configs-shared": "workspace:^1.0.0"
     babel-plugin-graphql-tag: ^3.3.0
     babel-plugin-module-resolver: ^5.0.0
