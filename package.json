@@ -17,7 +17,7 @@
     "jest": "^29.5.0",
     "monodeploy": "^3.7.5",
     "packemon": "^2.4.1",
-    "prettier": "^2.8.6",
+    "prettier": "^2.8.7",
     "rimraf": "^4.4.0",
     "syncpack": "^9.8.4",
     "typescript": "^5.0.2"
