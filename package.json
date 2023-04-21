@@ -15,7 +15,7 @@
     "graphql-tag": "^2.12.6",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
-    "monodeploy": "^3.8.0",
+    "monodeploy": "^3.9.0",
     "packemon": "^2.4.1",
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
