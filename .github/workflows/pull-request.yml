@@ -168,7 +168,7 @@ jobs:
           direction: last
 
       - name: Post Changelog to PR
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@v3
         if: github.event_name == 'pull_request'
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
