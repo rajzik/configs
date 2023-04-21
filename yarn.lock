@@ -3701,6 +3701,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@monodeploy/git@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@monodeploy/git@npm:3.9.0"
+  dependencies:
+    micromatch: ^4.0.5
+  peerDependencies:
+    "@monodeploy/io": ^3.9.0
+    "@monodeploy/logging": ^3.8.0
+    "@monodeploy/types": ^3.9.0
+    "@yarnpkg/core": ^3.5.0
+    "@yarnpkg/fslib": ^2.10.2
+  checksum: 93e4ab84b428eff0ef74fffcf77e8e148ae2df753c10628586570fba788cc277f692748e505fccccec8e4da45eb5daee8af38b8f720fb65c2b1e714b07329b08
+  languageName: node
+  linkType: hard
+
 "@monodeploy/io@npm:^3.8.0":
   version: 3.8.0
   resolution: "@monodeploy/io@npm:3.8.0"
@@ -3711,6 +3726,21 @@ __metadata:
     "@yarnpkg/fslib": ^2.10.2
     "@yarnpkg/shell": ^3.2.5
   checksum: 80ec325ee96255724eb74bcc78f6843e7a52ae70918556896f12225c4d2448c46435d9ecf1348201a5c365925fc901d8adef0bebd8508e3fd024914182f3ec51
+  languageName: node
+  linkType: hard
+
+"@monodeploy/io@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@monodeploy/io@npm:3.9.0"
+  dependencies:
+    semver: ^7.3.8
+  peerDependencies:
+    "@monodeploy/logging": ^3.8.0
+    "@monodeploy/types": ^3.9.0
+    "@yarnpkg/core": ^3.5.0
+    "@yarnpkg/fslib": ^2.10.2
+    "@yarnpkg/shell": ^3.2.5
+  checksum: aa5e489b193de24d40b254564a17c7cdb3b42ac28140705dc1f7d31dd11f42c9c3941add884221aed729771d5b1a54fd82df58d83f5601e6499d15428de6fd7b
   languageName: node
   linkType: hard
 
@@ -3746,20 +3776,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@monodeploy/plugin-github@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "@monodeploy/plugin-github@npm:0.10.0"
+"@monodeploy/plugin-github@npm:^0.10.1":
+  version: 0.10.1
+  resolution: "@monodeploy/plugin-github@npm:0.10.1"
   dependencies:
-    "@monodeploy/git": ^3.8.0
-    "@monodeploy/io": ^3.8.0
+    "@monodeploy/git": ^3.9.0
+    "@monodeploy/io": ^3.9.0
     "@monodeploy/logging": ^3.8.0
-    "@monodeploy/types": ^3.8.0
-    "@octokit/core": ^4.1.0
-    "@octokit/plugin-throttling": ^4.3.2
+    "@monodeploy/types": ^3.9.0
+    "@octokit/core": ^4.2.0
+    "@octokit/plugin-throttling": ^5.0.1
     "@yarnpkg/core": ^3.5.0
     "@yarnpkg/fslib": ^2.10.2
     "@yarnpkg/shell": ^3.2.5
-  checksum: b0ce44562b512cdf538496e226aae7b1062102f181ba5937fa31e18535d38e300b977b89061c27819583daddf5b7a71822d3b8a142c67a3434b5106bb65e7e94
+  checksum: ba7dab33d5adbc316ae679f9def56bd38a44e926a66ce9ba57c94fc1460db03ae721b429b0ad92cddf10172ab2d76913d4061962697d537da95abf6f53bff2cb
   languageName: node
   linkType: hard
 
@@ -3791,6 +3821,17 @@ __metadata:
   peerDependencies:
     "@yarnpkg/core": ^3.5.0
   checksum: 15ab36d2776e8a7e6d6a601b278185a99255cef8526ef05a74152019682b2fc0d9a49f76653bd128b6e4b4a269d78f355f1ba9764a6149b8acae1a079a9b2b77
+  languageName: node
+  linkType: hard
+
+"@monodeploy/types@npm:^3.9.0":
+  version: 3.9.0
+  resolution: "@monodeploy/types@npm:3.9.0"
+  dependencies:
+    tapable: ^2.2.1
+  peerDependencies:
+    "@yarnpkg/core": ^3.5.0
+  checksum: 156daebedc7e3b35e216ef33daceed58d2b1bdfc64865c7daf2676845535b8d962b6401a65a727aab816f76fa60144d39fc4e3212e8eb5a2b0577277aa2190f1
   languageName: node
   linkType: hard
 
@@ -3907,18 +3948,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/core@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@octokit/core@npm:4.1.0"
+"@octokit/core@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@octokit/core@npm:4.2.0"
   dependencies:
     "@octokit/auth-token": ^3.0.0
     "@octokit/graphql": ^5.0.0
     "@octokit/request": ^6.0.0
     "@octokit/request-error": ^3.0.0
-    "@octokit/types": ^8.0.0
+    "@octokit/types": ^9.0.0
     before-after-hook: ^2.2.0
     universal-user-agent: ^6.0.0
-  checksum: 4e53e02ff3ebe808b74385be0055cc1cce4b548060b20e3f2d5dd1bf7877ff7b6556f11278edc070842bf24aa869f9f59a02638f1b14083eb290b9e297447a2d
+  checksum: 5ac56e7f14b42a5da8d3075a2ae41483521a78bee061a01f4a81d8c0ecd6a684b2e945d66baba0cd1fdf264639deedc3a96d0f32c4d2fc39b49ca10f52f4de39
   languageName: node
   linkType: hard
 
@@ -3980,6 +4021,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/openapi-types@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "@octokit/openapi-types@npm:17.0.0"
+  checksum: 64d8500891b18e9866f1e662a65041a37381c3f9e6e5ce070cd26416a85f1b93340feb068ec2e8a5d0c0f4196df02ee2de1e73c87234e3d17edf33e7483d9b69
+  languageName: node
+  linkType: hard
+
 "@octokit/plugin-paginate-rest@npm:^2.16.8":
   version: 2.19.0
   resolution: "@octokit/plugin-paginate-rest@npm:2.19.0"
@@ -4012,15 +4060,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@octokit/plugin-throttling@npm:^4.3.2":
-  version: 4.3.2
-  resolution: "@octokit/plugin-throttling@npm:4.3.2"
+"@octokit/plugin-throttling@npm:^5.0.1":
+  version: 5.1.0
+  resolution: "@octokit/plugin-throttling@npm:5.1.0"
   dependencies:
-    "@octokit/types": ^8.0.0
+    "@octokit/types": ^9.0.0
     bottleneck: ^2.15.3
   peerDependencies:
     "@octokit/core": ^4.0.0
-  checksum: 2c9ef9be2cc1b9cb01d4d9f04e82246ccaa41ab05a4dc315f926b11abf5a99e3a38a98756fbb7f9e8d4c4f5e43f052c1dbd11c062017096dd943b8896c9e414c
+  checksum: da103c5fb02ca5bcbca440e66b2468e36d94a59ea29f014547a7934347aa3987fd4a8d2d778b064faf6e846edeeefcf1fad35355aef78714c26e289bb247388d
   languageName: node
   linkType: hard
 
@@ -4101,6 +4149,15 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^14.0.0
   checksum: 1a0197b2c4c522ac90f145e02b3f8cb048a47f71c2c6bdbf021a03db7dd30ca92a899c0186acb401337f218efe44e60d33cc1cc68715b622bb75bc1a4e79515d
+  languageName: node
+  linkType: hard
+
+"@octokit/types@npm:^9.0.0":
+  version: 9.1.1
+  resolution: "@octokit/types@npm:9.1.1"
+  dependencies:
+    "@octokit/openapi-types": ^17.0.0
+  checksum: e28f0b00b89cf637e10dc487d3e6864aa18941f64b72af54ee1601aca889b8caaf3eb1cc323cbec0ef9d2c41a79e2885439b9c1db4a34d48c7d9202f784b202f
   languageName: node
   linkType: hard
 
@@ -7092,7 +7149,7 @@ __metadata:
   resolution: "configs-root@workspace:."
   dependencies:
     "@commitlint/cli": ^17.5.1
-    "@monodeploy/plugin-github": ^0.10.0
+    "@monodeploy/plugin-github": ^0.10.1
     cross-env: ^7.0.3
     danger: ^11.2.4
     eslint: ^8.38.0
