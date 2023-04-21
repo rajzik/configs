@@ -20,7 +20,7 @@
     "prettier": "^2.8.7",
     "rimraf": "^4.4.1",
     "syncpack": "^9.8.4",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   },
   "license": "MIT",
   "main": "index.js",
