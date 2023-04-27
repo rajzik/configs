@@ -4248,7 +4248,7 @@ __metadata:
   dependencies:
     "@rajzik/conventional-changelog-types": "workspace:^1.0.0"
     "@types/node": ^18.15.11
-    danger: ^11.2.4
+    danger: ^11.2.6
   languageName: unknown
   linkType: soft
 
@@ -7162,7 +7162,7 @@ __metadata:
     "@commitlint/cli": ^17.5.1
     "@monodeploy/plugin-github": ^0.10.1
     cross-env: ^7.0.3
-    danger: ^11.2.4
+    danger: ^11.2.6
     eslint: ^8.38.0
     eslint-find-rules: ^4.1.0
     fs-extra: ^11.1.1
@@ -7456,9 +7456,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"danger@npm:^11.2.4":
-  version: 11.2.4
-  resolution: "danger@npm:11.2.4"
+"danger@npm:^11.2.6":
+  version: 11.2.6
+  resolution: "danger@npm:11.2.6"
   dependencies:
     "@gitbeaker/node": ^21.3.0
     "@octokit/rest": ^18.12.0
@@ -7507,7 +7507,7 @@ __metadata:
     danger-process: distribution/commands/danger-process.js
     danger-reset-status: distribution/commands/danger-reset-status.js
     danger-runner: distribution/commands/danger-runner.js
-  checksum: db30506dde0ec3a9b92e77fdeaecbda3cbb1da6006872f3224d14b22ad40098d99ff6258278a5406bba372ba45a7b20dbe4d205b47f156e1de33ca2ce869342b
+  checksum: 606b92bce7618edc5d7d1500c5108d57ee86fd9d81d385c45b9acba5aac46e97c81c0687392ad117c296a581afb55c8e729d8ba283b770f1c6e7747be07fdaf4
   languageName: node
   linkType: hard
 
