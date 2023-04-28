@@ -18,7 +18,7 @@
     "monodeploy": "^3.9.0",
     "packemon": "^2.4.1",
     "prettier": "^2.8.8",
-    "rimraf": "^4.4.1",
+    "rimraf": "^5.0.0",
     "syncpack": "^9.8.4",
     "typescript": "^5.0.4"
   },
