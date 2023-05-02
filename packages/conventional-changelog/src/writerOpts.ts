@@ -171,7 +171,7 @@ const options: Partial<WriterOptions> = {
 
     // Link users
     if (context.host) {
-      commit.message = commit.message.replace(
+      commit.message = commit.message.replaceAll(
         /\B@([a-z0-9](?:-?[a-z0-9/]){0,38})/gu,
         (match, username: string, index: number) => {
           if (
