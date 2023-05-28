@@ -7615,7 +7615,7 @@ __metadata:
     packemon: ^2.4.1
     prettier: ^2.8.8
     rimraf: ^5.0.1
-    syncpack: ^9.8.6
+    syncpack: ^10.0.0
     typescript: ^5.0.4
   languageName: unknown
   linkType: soft
@@ -14751,9 +14751,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"syncpack@npm:^9.8.6":
-  version: 9.8.6
-  resolution: "syncpack@npm:9.8.6"
+"syncpack@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "syncpack@npm:10.0.0"
   dependencies:
     chalk: 4.1.2
     commander: 10.0.1
@@ -14764,7 +14764,7 @@ __metadata:
     read-yaml-file: 2.1.0
     semver: 7.5.0
     tightrope: 0.1.0
-    zod: 3.21.4
+    ts-toolbelt: 9.6.0
   bin:
     syncpack: dist/bin.js
     syncpack-fix-mismatches: dist/bin-fix-mismatches/index.js
@@ -14773,7 +14773,7 @@ __metadata:
     syncpack-list: dist/bin-list/index.js
     syncpack-list-mismatches: dist/bin-list-mismatches/index.js
     syncpack-set-semver-ranges: dist/bin-set-semver-ranges/index.js
-  checksum: c49f637cac814264b033cc58fea453195af53806e6905dfd7050d78cad0e55d96853cb77b7e585ab13edb179ca4a729ed42155edcc688b82ac28e0871a75862c
+  checksum: e41ed7365df1286b7a9913175f3772c1da2f37a8c29f1b75e628db7a58de25564fdfdb6d02d5dfe4449ae8e299e5332a3876783874ae5a753e566dff04650a87
   languageName: node
   linkType: hard
 
@@ -15009,6 +15009,13 @@ __metadata:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: 090adff1302ab20bd3486e6b4799e90f97726ed39e02b39e566f8ab674fd5bd5f727f43615debbfc580d33c6d9d1c6b1b3ce7d8e3cca3e20530a145ffa232c35
+  languageName: node
+  linkType: hard
+
+"ts-toolbelt@npm:9.6.0":
+  version: 9.6.0
+  resolution: "ts-toolbelt@npm:9.6.0"
+  checksum: 9f35fd95d895a5d32ea9fd2e532a695b0bae6cbff6832b77292efa188a0ed1ed6e54f63f74a8920390f3d909a7a3adb20a144686372a8e78b420246a9bd3d58a
   languageName: node
   linkType: hard
 
@@ -15719,12 +15726,5 @@ __metadata:
     property-expr: ^2.0.4
     toposort: ^2.0.2
   checksum: 43a16786b47cc910fed4891cebdd89df6d6e31702e9462e8f969c73eac88551ce750732608012201ea6b93802c8847cb0aa27b5d57370640f4ecf30f9f97d4b0
-  languageName: node
-  linkType: hard
-
-"zod@npm:3.21.4":
-  version: 3.21.4
-  resolution: "zod@npm:3.21.4"
-  checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f
   languageName: node
   linkType: hard
