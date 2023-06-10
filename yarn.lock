@@ -7615,7 +7615,7 @@ __metadata:
     packemon: ^2.4.1
     prettier: ^2.8.8
     rimraf: ^5.0.1
-    syncpack: ^10.0.0
+    syncpack: ^10.5.1
     typescript: ^5.1.3
   languageName: unknown
   linkType: soft
@@ -8327,7 +8327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enquirer@npm:^2.3.6":
+"enquirer@npm:2.3.6, enquirer@npm:^2.3.6":
   version: 2.3.6
   resolution: "enquirer@npm:2.3.6"
   dependencies:
@@ -9685,20 +9685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:8.1.0, glob@npm:^8.0.3":
-  version: 8.1.0
-  resolution: "glob@npm:8.1.0"
-  dependencies:
-    fs.realpath: ^1.0.0
-    inflight: ^1.0.4
-    inherits: 2
-    minimatch: ^5.0.1
-    once: ^1.3.0
-  checksum: 92fbea3221a7d12075f26f0227abac435de868dd0736a17170663783296d0dd8d3d532a5672b4488a439bf5d7fb85cdd07c11185d6cd39184f0385cbdfb86a47
-  languageName: node
-  linkType: hard
-
-"glob@npm:^10.2.5":
+"glob@npm:10.2.6, glob@npm:^10.2.5":
   version: 10.2.6
   resolution: "glob@npm:10.2.6"
   dependencies:
@@ -9737,6 +9724,19 @@ __metadata:
     minimatch: ^5.0.1
     once: ^1.3.0
   checksum: 50bcdea19d8e79d8de5f460b1939ffc2b3299eac28deb502093fdca22a78efebc03e66bf54f0abc3d3d07d8134d19a32850288b7440d77e072aa55f9d33b18c5
+  languageName: node
+  linkType: hard
+
+"glob@npm:^8.0.3":
+  version: 8.1.0
+  resolution: "glob@npm:8.1.0"
+  dependencies:
+    fs.realpath: ^1.0.0
+    inflight: ^1.0.4
+    inherits: 2
+    minimatch: ^5.0.1
+    once: ^1.3.0
+  checksum: 92fbea3221a7d12075f26f0227abac435de868dd0736a17170663783296d0dd8d3d532a5672b4488a439bf5d7fb85cdd07c11185d6cd39184f0385cbdfb86a47
   languageName: node
   linkType: hard
 
@@ -12211,12 +12211,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:6.2.0":
-  version: 6.2.0
-  resolution: "minimatch@npm:6.2.0"
+"minimatch@npm:9.0.1, minimatch@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "minimatch@npm:9.0.1"
   dependencies:
     brace-expansion: ^2.0.1
-  checksum: 0ffb77d05bd483fcc344ba3e64a501d569e658fa6c592d94e9716ffc7925de7a8c2ac294cafa822b160bd8b2cbf7e01012917e06ffb9a85cfa9604629b3f2c04
+  checksum: 97f5f5284bb57dc65b9415dec7f17a0f6531a33572193991c60ff18450dcfad5c2dad24ffeaf60b5261dccd63aae58cc3306e2209d57e7f88c51295a532d8ec3
   languageName: node
   linkType: hard
 
@@ -12235,15 +12235,6 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: 15ce53d31a06361e8b7a629501b5c75491bc2b59712d53e802b1987121d91b433d73fcc5be92974fde66b2b51d8fb28d75a9ae900d249feb792bb1ba2a4f0a90
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^9.0.1":
-  version: 9.0.1
-  resolution: "minimatch@npm:9.0.1"
-  dependencies:
-    brace-expansion: ^2.0.1
-  checksum: 97f5f5284bb57dc65b9415dec7f17a0f6531a33572193991c60ff18450dcfad5c2dad24ffeaf60b5261dccd63aae58cc3306e2209d57e7f88c51295a532d8ec3
   languageName: node
   linkType: hard
 
@@ -14148,6 +14139,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:7.5.1":
+  version: 7.5.1
+  resolution: "semver@npm:7.5.1"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: d16dbedad53c65b086f79524b9ef766bf38670b2395bdad5c957f824dcc566b624988013564f4812bcace3f9d405355c3635e2007396a39d1bffc71cfec4a2fc
+  languageName: node
+  linkType: hard
+
 "semver@npm:^6.0.0, semver@npm:^6.1.0, semver@npm:^6.1.1, semver@npm:^6.1.2, semver@npm:^6.3.0":
   version: 6.3.0
   resolution: "semver@npm:6.3.0"
@@ -14751,29 +14753,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"syncpack@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "syncpack@npm:10.0.0"
+"syncpack@npm:^10.5.1":
+  version: 10.5.1
+  resolution: "syncpack@npm:10.5.1"
   dependencies:
     chalk: 4.1.2
     commander: 10.0.1
     cosmiconfig: 8.1.3
+    enquirer: 2.3.6
     fs-extra: 11.1.1
-    glob: 8.1.0
-    minimatch: 6.2.0
+    glob: 10.2.6
+    minimatch: 9.0.1
     read-yaml-file: 2.1.0
-    semver: 7.5.0
+    semver: 7.5.1
     tightrope: 0.1.0
     ts-toolbelt: 9.6.0
   bin:
     syncpack: dist/bin.js
     syncpack-fix-mismatches: dist/bin-fix-mismatches/index.js
     syncpack-format: dist/bin-format/index.js
+    syncpack-lint: dist/bin-lint/index.js
     syncpack-lint-semver-ranges: dist/bin-lint-semver-ranges/index.js
     syncpack-list: dist/bin-list/index.js
     syncpack-list-mismatches: dist/bin-list-mismatches/index.js
+    syncpack-prompt: dist/bin-prompt/index.js
     syncpack-set-semver-ranges: dist/bin-set-semver-ranges/index.js
-  checksum: e41ed7365df1286b7a9913175f3772c1da2f37a8c29f1b75e628db7a58de25564fdfdb6d02d5dfe4449ae8e299e5332a3876783874ae5a753e566dff04650a87
+  checksum: ccb5bcd33abe60e19fd10e306becf531a3489cea31259ad22b02708ee97e96175be0ed33d3cb6664eaa515881b1cdca702d2f753fca4c3ac0de6600d6ea73109
   languageName: node
   linkType: hard
 
