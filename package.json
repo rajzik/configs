@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "devDependencies": {
-    "@commitlint/cli": "^17.6.3",
+    "@commitlint/cli": "^17.6.5",
     "@monodeploy/plugin-github": "^1.0.1",
     "cross-env": "^7.0.3",
     "danger": "^11.2.6",
