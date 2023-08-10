@@ -19,7 +19,7 @@
     "packemon": "^2.4.1",
     "prettier": "^3.0.1",
     "rimraf": "^5.0.1",
-    "syncpack": "^10.7.3",
+    "syncpack": "^10.9.3",
     "typescript": "^5.1.6"
   },
   "license": "MIT",
