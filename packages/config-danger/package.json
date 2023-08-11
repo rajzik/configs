@@ -8,7 +8,7 @@
     "danger": "^11.2.8"
   },
   "devDependencies": {
-    "@types/node": "^18.17.4"
+    "@types/node": "^18.17.5"
   },
   "engines": {
     "node": ">=14.15.0",
