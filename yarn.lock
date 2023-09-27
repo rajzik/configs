@@ -4273,40 +4273,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect/data@npm:0.17.1, @effect/data@npm:^0.17.0, @effect/data@npm:^0.17.1":
+"@effect/data@npm:0.17.1":
   version: 0.17.1
   resolution: "@effect/data@npm:0.17.1"
   checksum: 4410cc7201beb65ff2e08b3ccbcabeaaa48ba2434288d17231dfbb8a33cfaf54838a8f5d2ed0f8b31d3c78f502eced2c1ef8991bd7900a0b70f5e2b91877f75d
   languageName: node
   linkType: hard
 
-"@effect/io@npm:0.37.1, @effect/io@npm:^0.37.0":
-  version: 0.37.1
-  resolution: "@effect/io@npm:0.37.1"
-  dependencies:
-    "@effect/data": ^0.17.0
-  checksum: 9b861f1b899f66e346ecbfe10e0debe3655ebdb3cc0b669be6c954f1fb88058f11b34a590996491993ac12038d700379166a1a2aabdac6f32df4f12b1ff4460f
-  languageName: node
-  linkType: hard
-
-"@effect/match@npm:0.31.0":
-  version: 0.31.0
-  resolution: "@effect/match@npm:0.31.0"
-  dependencies:
+"@effect/io@npm:0.38.0":
+  version: 0.38.0
+  resolution: "@effect/io@npm:0.38.0"
+  peerDependencies:
     "@effect/data": ^0.17.1
-    "@effect/schema": ^0.32.0
-  checksum: e2162ce493662a9bf395820dfb7c9659a216694d2ca22cee0809e446a91d1198d66bf60ac68825de1f17a9518766ef97cd1ae2dda6da6572546c64d28f0d2233
+  checksum: 6882fa53b91f918038793fb8d26ab6cfe4c995754fc52c2e5779587d47a3f6cc440e4e3b300592c47f700d58b8b09d5dd899ea77f29b0ba70ceb35b661320d65
   languageName: node
   linkType: hard
 
-"@effect/schema@npm:0.32.0, @effect/schema@npm:^0.32.0":
+"@effect/match@npm:0.32.0":
   version: 0.32.0
-  resolution: "@effect/schema@npm:0.32.0"
-  dependencies:
+  resolution: "@effect/match@npm:0.32.0"
+  peerDependencies:
     "@effect/data": ^0.17.1
-    "@effect/io": ^0.37.0
+    "@effect/schema": ^0.33.0
+  checksum: 4ca3ff8335be0f6e0a46c2fde73a915c279f35a28aa1bf585f7790759d9569a081046344f05aeab27dada6f0cdd9ec6f82b4bbc56752395b50f77f44a8a1d2ec
+  languageName: node
+  linkType: hard
+
+"@effect/schema@npm:0.33.1":
+  version: 0.33.1
+  resolution: "@effect/schema@npm:0.33.1"
+  dependencies:
     fast-check: ^3.12.0
-  checksum: 8e9e2652ce5f96372c7c3f6aa21f99e70822770864420c629db64d91aa4e77220091c9915661f0c3b2efabdf116af455c3432d13e73667d3e0f49d275fbaf7de
+  peerDependencies:
+    "@effect/data": ^0.17.1
+    "@effect/io": ^0.38.0
+  checksum: f8211b29aaf6bf8c170459761c7bc5876d22d242afa867cb4557f75ff5a561ecdb3a96dd15ac457e35badecbc90e5d664c05f6136a823be55eda408b78e4b548
   languageName: node
   linkType: hard
 
@@ -8510,7 +8511,7 @@ __metadata:
     packemon: ^2.4.1
     prettier: ^3.0.3
     rimraf: ^5.0.1
-    syncpack: ^10.9.3
+    syncpack: ^11.2.1
     typescript: ^5.1.6
   languageName: unknown
   linkType: soft
@@ -10554,17 +10555,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:11.1.1, fs-extra@npm:^11.1.1":
-  version: 11.1.1
-  resolution: "fs-extra@npm:11.1.1"
-  dependencies:
-    graceful-fs: ^4.2.0
-    jsonfile: ^6.0.1
-    universalify: ^2.0.0
-  checksum: fb883c68245b2d777fbc1f2082c9efb084eaa2bbf9fddaa366130d196c03608eebef7fb490541276429ee1ca99f317e2d73e96f5ca0999eefedf5a624ae1edfd
-  languageName: node
-  linkType: hard
-
 "fs-extra@npm:^10.0.0, fs-extra@npm:^10.0.1, fs-extra@npm:^10.1.0":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
@@ -10584,6 +10574,17 @@ __metadata:
     jsonfile: ^6.0.1
     universalify: ^2.0.0
   checksum: 5ca476103fa1f5ff4a9b3c4f331548f8a3c1881edaae323a4415d3153b5dc11dc6a981c8d1dd93eec8367ceee27b53f8bd27eecbbf66ffcdd04927510c171e7f
+  languageName: node
+  linkType: hard
+
+"fs-extra@npm:^11.1.1":
+  version: 11.1.1
+  resolution: "fs-extra@npm:11.1.1"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^6.0.1
+    universalify: ^2.0.0
+  checksum: fb883c68245b2d777fbc1f2082c9efb084eaa2bbf9fddaa366130d196c03608eebef7fb490541276429ee1ca99f317e2d73e96f5ca0999eefedf5a624ae1edfd
   languageName: node
   linkType: hard
 
@@ -16259,19 +16260,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"syncpack@npm:^10.9.3":
-  version: 10.9.3
-  resolution: "syncpack@npm:10.9.3"
+"syncpack@npm:^11.2.1":
+  version: 11.2.1
+  resolution: "syncpack@npm:11.2.1"
   dependencies:
     "@effect/data": 0.17.1
-    "@effect/io": 0.37.1
-    "@effect/match": 0.31.0
-    "@effect/schema": 0.32.0
+    "@effect/io": 0.38.0
+    "@effect/match": 0.32.0
+    "@effect/schema": 0.33.1
     chalk: 4.1.2
     commander: 11.0.0
     cosmiconfig: 8.2.0
     enquirer: 2.4.1
-    fs-extra: 11.1.1
     globby: 11.1.0
     minimatch: 9.0.3
     npm-package-arg: 10.1.0
@@ -16292,7 +16292,7 @@ __metadata:
     syncpack-prompt: dist/bin-prompt/index.js
     syncpack-set-semver-ranges: dist/bin-set-semver-ranges/index.js
     syncpack-update: dist/bin-update/index.js
-  checksum: 69f7e501aa35d1572fd6e830f17c4aad602c845917bec7056400cdf01cc1dffab278d7fa1f5eb2c0adb3239a9d8f08d9cb83d44add6e1b87aba07ba357f92f64
+  checksum: 135a76e9313985abc38a67d1de891ac99baa83ca7b8611485589806b1d4345644e008e0493c5467b255ba030de580514e21b15bdb6e0d889c90ce42ed0622fd9
   languageName: node
   linkType: hard
 
