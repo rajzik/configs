@@ -4,13 +4,13 @@
   "version": "1.0.6",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
-    "@jest/types": "^29.6.1",
+    "@jest/types": "^29.6.3",
     "@rajzik/configs-shared": "workspace:^1.0.0",
-    "@types/jest": "^29.5.3",
+    "@types/jest": "^29.5.5",
     "jest-junit": "^16.0.0"
   },
   "devDependencies": {
-    "jest": "^29.6.2",
+    "jest": "^29.7.0",
     "tsconfig-rajzik": "workspace:*"
   },
   "engines": {
