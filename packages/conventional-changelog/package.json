@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/shelljs": "^0.8.13",
     "@types/tmp": "^0.2.4",
-    "conventional-changelog-core": "^5.0.2",
+    "conventional-changelog-core": "^7.0.0",
     "conventional-recommended-bump": "^7.0.1",
     "shelljs": "^0.8.5",
     "tmp": "^0.2.1"
