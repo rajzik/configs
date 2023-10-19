@@ -5912,10 +5912,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/confusing-browser-globals@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@types/confusing-browser-globals@npm:1.0.1"
-  checksum: 721f215baebc302e5531e9924e3ad73ad6ef9b821ad22cfcd3424b665d8c9dcec3757ea3cc7c84c4bb603c9c12b211d7dcda0be6ff54b718bd9c978a35152686
+"@types/confusing-browser-globals@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@types/confusing-browser-globals@npm:1.0.2"
+  checksum: 9e708d09944b2ce1edf8468aabc481773fc793659eb34ae5b723fd73c38950a0e395d7834a1e158d71e53f0f059be82359337226be38ce62fa6e9f110b3d778e
   languageName: node
   linkType: hard
 
@@ -9681,7 +9681,7 @@ __metadata:
     "@babel/core": ^7.22.10
     "@babel/eslint-parser": ^7.22.10
     "@rajzik/configs-shared": "workspace:^1.0.0"
-    "@types/confusing-browser-globals": ^1.0.1
+    "@types/confusing-browser-globals": ^1.0.2
     "@types/eslint": ^8.44.6
     "@types/node": ^18.18.5
     "@typescript-eslint/eslint-plugin": ^5.62.0
