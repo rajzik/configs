@@ -6,7 +6,7 @@
   "dependencies": {
     "@jest/types": "^29.6.3",
     "@rajzik/configs-shared": "workspace:^1.0.0",
-    "@types/jest": "^29.5.5",
+    "@types/jest": "^29.5.6",
     "jest-junit": "^16.0.0"
   },
   "devDependencies": {
