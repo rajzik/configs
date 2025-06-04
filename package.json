@@ -24,24 +24,24 @@
   },
   "license": "MIT",
   "main": "index.js",
-  "packageManager": "yarn@3.6.4",
   "private": true,
   "repository": "git@github.com:rajzik/configs.git",
   "scripts": {
     "build": "packemon build --addEngines --declaration",
     "check-eslint-deprecations": "eslint-find-rules --deprecated .eslintrc.js",
-    "find-unused-eslint-rules": "yarn workspace eslint-config-rajzik run check-rules",
+    "find-unused-eslint-rules": "pnpm workspace eslint-config-rajzik run check-rules",
     "clean": "rimraf packages/*/{lib,dts,*.tsbuildinfo,node_modules}",
     "format-package-json": "syncpack format",
     "jest": "jest",
     "lint": "eslint --cache --fix packages/*/{src,test}/**/*.{ts,tsx} *.{js,jsx,ts,tsx}",
     "pack": "cross-env NODE_ENV=production packemon pack --addEngines --addExports --declaration",
     "postinstall": "husky install",
-    "prepare": "yarn build && husky install",
+    "prepare": "pnpm build && husky install",
     "prettier": "prettier . --write",
-    "test": "yarn run pack && yarn run lint && yarn run jest"
+    "test": "pnpm run pack && pnpm run lint && pnpm run jest"
   },
   "workspaces": [
     "./packages/*"
-  ]
+  ],
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
 }

@@ -1,0 +1,8 @@
+packages:
+  - packages/*
+  - '!**/test/**'
+  - '!**/__test__/**'
+onlyBuiltDependencies:
+  - '@swc/core'
+  - core-js
+  - unrs-resolver

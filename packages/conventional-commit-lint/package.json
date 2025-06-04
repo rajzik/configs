@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "dependencies": {
-    "@rajzik/conventional-changelog-types": "workspace:^1.0.0"
+    "@rajzik/conventional-changelog-types": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.0.0"
