@@ -66,10 +66,10 @@ importers:
         specifier: ^7.18.6
         version: 7.18.6(@babel/core@7.27.4)
       '@babel/plugin-proposal-decorators':
-        specifier: ^7.22.10
+        specifier: ^7.27.1
         version: 7.27.1(@babel/core@7.27.4)
       '@babel/plugin-proposal-export-default-from':
-        specifier: ^7.22.5
+        specifier: ^7.27.1
         version: 7.27.1(@babel/core@7.27.4)
       '@babel/plugin-proposal-export-namespace-from':
         specifier: ^7.18.9
@@ -78,16 +78,16 @@ importers:
         specifier: ^7.18.6
         version: 7.18.6(@babel/core@7.27.4)
       '@babel/plugin-transform-runtime':
-        specifier: ^7.22.10
+        specifier: ^7.27.4
         version: 7.27.4(@babel/core@7.27.4)
       '@babel/preset-env':
-        specifier: ^7.22.10
+        specifier: ^7.27.2
         version: 7.27.2(@babel/core@7.27.4)
       '@babel/preset-react':
-        specifier: ^7.22.5
+        specifier: ^7.27.1
         version: 7.27.1(@babel/core@7.27.4)
       '@babel/preset-typescript':
-        specifier: ^7.22.5
+        specifier: ^7.27.1
         version: 7.27.1(@babel/core@7.27.4)
       '@emotion/babel-plugin':
         specifier: ^11.10.8
@@ -127,7 +127,7 @@ importers:
         version: 5.8.3
     devDependencies:
       '@babel/core':
-        specifier: ^7.22.10
+        specifier: ^7.27.4
         version: 7.27.4
       babel-test:
         specifier: ^0.2.4
@@ -192,10 +192,10 @@ importers:
   packages/eslint-config:
     dependencies:
       '@babel/core':
-        specifier: ^7.22.10
+        specifier: ^7.27.4
         version: 7.27.4
       '@babel/eslint-parser':
-        specifier: ^7.22.10
+        specifier: ^7.27.5
         version: 7.27.5(@babel/core@7.27.4)(eslint@8.57.1)
       '@rajzik/configs-shared':
         specifier: workspace:*
