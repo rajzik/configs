@@ -1,7 +1,7 @@
+import type eslint from 'eslint';
+
 import { JSX_EXTS_GROUP } from '@rajzik/configs-shared';
 import confusingBrowserGlobals from 'confusing-browser-globals';
-
-import type eslint from 'eslint';
 
 const eslintRules: eslint.Linter.Config['rules'] = {
   // ESLint rules

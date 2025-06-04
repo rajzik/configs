@@ -13,8 +13,8 @@ export const EXTS = [
   '.jsx',
   '.cjs',
   '.cjsx',
-  '.mjs',
-  '.mjsx',
+  '.js',
+  '.jsx',
   '.json',
 ];
 

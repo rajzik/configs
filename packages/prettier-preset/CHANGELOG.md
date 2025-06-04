@@ -1,4 +1,4 @@
-# `prettier-config-rajzik` CHANGELOG
+# `@rajzik/prettier-config` CHANGELOG
 
 <!-- MONODEPLOY:BELOW -->
 
@@ -10,8 +10,6 @@ Initial configs without too many bugs, documentation lacking. Will be added late
 
 #### 💥 Breaking
 
-- Initial implementation. (#1) ([288db0e](https://github.com/rajzik/configs/commit/288db0e500fd2c2a9d52a2e9d7570fa37099ab5e)), work items [#1](https://github.com/rajzik/configs/issues/1)
-
-
-
-
+- Initial implementation. (#1)
+  ([288db0e](https://github.com/rajzik/configs/commit/288db0e500fd2c2a9d52a2e9d7570fa37099ab5e)),
+  work items [#1](https://github.com/rajzik/configs/issues/1)

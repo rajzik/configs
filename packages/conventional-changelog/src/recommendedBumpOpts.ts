@@ -1,9 +1,9 @@
+import type { Group, SemverLevel } from '@rajzik/conventional-changelog-types';
+
 import { getTypeGroup } from '@rajzik/conventional-changelog-types';
 
-import parserOpts from './parserOpts';
-
 import type { BumpOptions } from './types';
-import type { SemverLevel, Group } from '@rajzik/conventional-changelog-types';
+import parserOpts from './parserOpts';
 
 const options: BumpOptions = {
   parserOpts,

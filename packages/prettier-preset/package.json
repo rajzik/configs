@@ -1,17 +1,43 @@
 {
-  "name": "prettier-config-rajzik",
-  "description": "Reusable Prettier config for personal projects",
+  "name": "@rajzik/prettier-config",
   "version": "1.0.0",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
-  "files": [
-    "prettier.json"
-  ],
-  "group": "configs",
+  "description": "Reusable Prettier config for personal projects",
   "keywords": [],
+  "repository": "git@github.com:rajzik/configs.git",
   "license": "MIT",
-  "main": "./prettier.json",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "./dist/index.js",
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
+    "prettier-plugin-packagejson": "^2.5.15",
+    "prettier-plugin-tailwindcss": "^0.6.12"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "prettier": "catalog:",
+    "tsconfig-rajzik": "workspace:*",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "repository": "git@github.com:rajzik/configs.git"
+  "group": "configs"
 }

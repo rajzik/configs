@@ -1,18 +1,30 @@
 {
   "name": "@rajzik/conventional-commit-lint-config",
-  "description": "Conventional commit lint config for personal projects",
   "version": "1.0.0",
+  "description": "Conventional commit lint config for personal projects",
+  "keywords": [
+    "commitlint",
+    "conventional-changelog",
+    "preset"
+  ],
+  "repository": "git@github.com:rajzik/configs.git",
+  "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
-  "dependencies": {
-    "@rajzik/conventional-changelog-types": "workspace:*"
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "require": "./dist/*.js",
+      "default": "./dist/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
   },
-  "devDependencies": {
-    "@commitlint/cli": "^18.0.0"
-  },
-  "engines": {
-    "node": ">=16.12.0",
-    "npm": ">=8.1.0"
-  },
+  "types": "./dts/index.d.ts",
   "files": [
     "dts",
     "dts/**/*.d.ts",
@@ -22,38 +34,31 @@
     "src",
     "src/**/*.{ts,tsx,json}"
   ],
-  "group": "changelog",
-  "keywords": [
-    "commitlint",
-    "conventional-changelog",
-    "preset"
-  ],
-  "license": "MIT",
-  "main": "./lib/index.js",
-  "packemon": {
-    "format": "lib",
-    "platform": "node",
-    "support": "current"
+  "scripts": {
+    "build": "tsdown",
+    "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@rajzik/prettier-config",
+  "dependencies": {
+    "@rajzik/conventional-changelog-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@rajzik/prettier-config": "workspace:*",
+    "prettier": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
     "@commitlint/cli": ">=12"
   },
+  "engines": {
+    "node": ">=20.11.0",
+    "npm": ">=8.1.0"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "repository": "git@github.com:rajzik/configs.git",
-  "types": "./dts/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./dts/*.d.ts",
-      "node": "./lib/*.js",
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
-      "default": "./lib/index.js"
-    }
-  }
+  "group": "changelog"
 }

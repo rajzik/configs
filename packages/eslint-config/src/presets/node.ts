@@ -1,6 +1,6 @@
-import nodeRules from '../rules/node';
-
 import type eslint from 'eslint';
+
+import nodeRules from '../rules/node';
 
 const config: eslint.Linter.Config = {
   env: {
@@ -9,7 +9,7 @@ const config: eslint.Linter.Config = {
   },
   settings: {
     node: {
-      tryExtensions: ['.js', '.jsx', '.json', '.mjs', '.cjs'],
+      tryExtensions: ['.js', '.jsx', '.json', '.js', '.cjs'],
     },
     convertPath: {
       'src/**/*.ts': ['^src/(.+?)\\.ts$', 'lib/$1.js'],

@@ -6,9 +6,9 @@ dangerfile.js
 
 ```javascript
 import {
-  checkForInvalidLocks,
   checkForConventionalPrefix,
   checkForConventionalSquashCommit,
+  checkForInvalidLocks,
 } from '@rajzik/danger-configuration';
 
 checkForInvalidLocks();

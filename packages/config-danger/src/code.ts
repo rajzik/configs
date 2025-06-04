@@ -1,18 +1,17 @@
 import path from 'node:path';
 
+import type { CommonOptions } from './types';
 import {
-  updatedFiles,
-  touchedFiles,
-  isRevert,
-  SRC_EXT,
-  TEST_EXT,
   GLOBAL_IGNORE,
   IS_SRC,
   IS_TEST,
+  isRevert,
   JS_EXT,
+  SRC_EXT,
+  TEST_EXT,
+  touchedFiles,
+  updatedFiles,
 } from './helpers';
-
-import type { CommonOptions } from './types';
 
 const changedSrcFiles = updatedFiles.filter((file) => IS_SRC.test(file) && SRC_EXT.test(file));
 
@@ -29,8 +28,8 @@ export function checkForInvalidLocks() {
     fail('Your PR contains changes to package-lock.json, but not package.json.');
   } else if (fileNames.has('npm-shrinkwrap.json') && !fileNames.has('package.json')) {
     fail('Your PR contains changes to npm-shrinkwrap.json, but not package.json.');
-  } else if (fileNames.has('yarn.lock') && !fileNames.has('package.json')) {
-    fail('Your PR contains changes to yarn.lock, but not package.json.');
+  } else if (fileNames.has('pnpm-lock.yaml') && !fileNames.has('package.json')) {
+    fail('Your PR contains changes to pnpm-lock.yaml, but not package.json.');
   }
 }
 

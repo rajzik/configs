@@ -12,9 +12,6 @@
       "path": "packages/conventional-changelog"
     },
     {
-      "path": "packages/conventional-changelog/test"
-    },
-    {
       "path": "packages/conventional-changelog-types"
     },
     {

@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 
-import { TSCONFIG_JSON_PATH, PACKAGE_JSON_PATH } from './constants';
-
 import type { CompilerOptions, ProjectReference } from 'typescript';
+
+import { PACKAGE_JSON_PATH, TSCONFIG_JSON_PATH } from './constants';
 
 export function parseJSON<T>(filePath: string): T {
   const content = fs

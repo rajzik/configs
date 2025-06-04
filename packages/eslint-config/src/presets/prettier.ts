@@ -1,6 +1,6 @@
-import prettierRules from '../rules/prettier';
-
 import type eslint from 'eslint';
+
+import prettierRules from '../rules/prettier';
 
 const config: eslint.Linter.Config = {
   extends: ['eslint-config-prettier'],

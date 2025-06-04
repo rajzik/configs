@@ -3,14 +3,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { GROUPS, getTypeGroup } from '@rajzik/conventional-changelog-types';
-
 import type {
   CommitGroupLabel,
   Context,
   Reference,
   WriterOptions,
 } from '@rajzik/conventional-changelog-types';
+
+import { getTypeGroup, GROUPS } from '@rajzik/conventional-changelog-types';
 
 type GroupMap<T> = { [K in CommitGroupLabel]: T };
 

@@ -1,6 +1,6 @@
-import { COMMIT_FORMAT_PREFIX } from '@rajzik/conventional-changelog-types';
-
 import type { ParserOptions } from '@rajzik/conventional-changelog-types';
+
+import { COMMIT_FORMAT_PREFIX } from '@rajzik/conventional-changelog-types';
 
 const options: Partial<ParserOptions> = {
   headerCorrespondence: ['azure', 'type', 'scope', 'message'],

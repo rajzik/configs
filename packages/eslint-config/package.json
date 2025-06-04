@@ -1,8 +1,47 @@
 {
   "name": "eslint-config-rajzik",
-  "description": "Reusable ESLint config for personal projects",
   "version": "1.0.6",
+  "description": "Reusable ESLint config for personal projects",
+  "keywords": [
+    "config",
+    "eslint",
+    "lumos"
+  ],
+  "repository": "git@github.com:rajzik/configs.git",
+  "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "require": "./dist/*.js",
+      "default": "./dist/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dts/index.d.ts",
+  "files": [
+    "dts/**/*.d.ts",
+    "future.js",
+    "lib/**/*.{js,map}",
+    "node.js",
+    "prettier.js",
+    "react.js",
+    "src/**/*.{ts,tsx,json}",
+    "typescript.js"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "check-rules": "ts-node tools/check-rules/index.ts",
+    "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@rajzik/prettier-config",
   "dependencies": {
     "@babel/core": "^7.22.10",
     "@babel/eslint-parser": "^7.22.10",
@@ -24,40 +63,16 @@
     "eslint-plugin-unicorn": "^48.0.1"
   },
   "devDependencies": {
+    "@rajzik/prettier-config": "workspace:*",
     "@types/confusing-browser-globals": "^1.0.2",
     "@types/eslint": "^8.44.6",
-    "@types/node": "^20.8.8",
+    "@types/node": "catalog:",
     "eslint": "^8.52.0",
-    "prettier": "^3.0.3",
+    "prettier": "catalog:",
     "ts-node": "^10.9.1",
-    "tsconfig-rajzik": "workspace:*"
-  },
-  "engines": {
-    "node": ">=16.12.0",
-    "npm": ">=8.1.0"
-  },
-  "files": [
-    "dts/**/*.d.ts",
-    "future.js",
-    "lib/**/*.{js,map}",
-    "node.js",
-    "prettier.js",
-    "react.js",
-    "src/**/*.{ts,tsx,json}",
-    "typescript.js"
-  ],
-  "group": "configs",
-  "keywords": [
-    "config",
-    "eslint",
-    "lumos"
-  ],
-  "license": "MIT",
-  "main": "./lib/index.js",
-  "packemon": {
-    "format": "lib",
-    "platform": "node",
-    "support": "current"
+    "tsconfig-rajzik": "workspace:*",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
     "eslint": "^8.4.0",
@@ -72,25 +87,12 @@
       "optional": true
     }
   },
+  "engines": {
+    "node": ">=16.12.0",
+    "npm": ">=8.1.0"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "repository": "git@github.com:rajzik/configs.git",
-  "scripts": {
-    "check-rules": "ts-node tools/check-rules/index.ts"
-  },
-  "types": "./dts/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./dts/*.d.ts",
-      "node": "./lib/*.js",
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
-      "default": "./lib/index.js"
-    }
-  }
+  "group": "configs"
 }

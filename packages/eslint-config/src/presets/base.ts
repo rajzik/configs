@@ -1,9 +1,9 @@
+import type eslint from 'eslint';
+
 import { TJSX_EXTS_GROUP } from '@rajzik/configs-shared';
 
 import baseRules from '../rules/base';
 import jestRules from '../rules/jest-rules';
-
-import type eslint from 'eslint';
 
 const config: eslint.Linter.Config = {
   rules: baseRules,

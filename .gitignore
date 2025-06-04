@@ -15,9 +15,11 @@ lib/
 build*/
 coverage/
 dts/
+dist/
+.cache/
+.turbo/
 
 # Configs
-.babelrc
 *.tsbuildinfo
 webpack.config.js
 .npmrc

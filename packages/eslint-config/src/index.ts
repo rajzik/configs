@@ -1,6 +1,6 @@
-import { ASSET_EXT_PATTERN, CSS_EXT_PATTERN, GQL_EXT_PATTERN } from '@rajzik/configs-shared';
-
 import type eslint from 'eslint';
+
+import { ASSET_EXT_PATTERN, CSS_EXT_PATTERN, GQL_EXT_PATTERN } from '@rajzik/configs-shared';
 
 const config: eslint.Linter.Config = {
   parser: '@babel/eslint-parser',

@@ -2,16 +2,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import type eslint from 'eslint';
+
 import {
   EXTS,
-  TSX_EXTS_GROUP,
-  ROOT,
   getRootProjectReferences,
-  TSCONFIG_JSON_PATH,
+  ROOT,
   TJSX_EXTS_GROUP,
+  TSCONFIG_JSON_PATH,
+  TSX_EXTS_GROUP,
 } from '@rajzik/configs-shared';
-
-import type eslint from 'eslint';
 
 let project: string[] | string = '';
 
@@ -98,8 +98,6 @@ const config: eslint.Linter.Config = {
             '.ts': 'never',
             '.tsx': 'never',
             '.mtsx': 'never',
-            '.mjs': 'never',
-            '.mjsx': 'never',
             '.cjs': 'never',
             '.cjsx': 'never',
             '.mts': 'never',

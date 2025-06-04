@@ -1,13 +1,11 @@
-import { allRules } from './allRules';
-
+import esnextPreset from '../../src/presets/esnext';
+import prettierConfig from '../../src/presets/prettier';
+import typescriptRulesPreset from '../../src/presets/typescript';
+import baseRulesConfig from '../../src/rules/base';
 import jestRulesConfig from '../../src/rules/jest-rules';
 import nodeRulesConfig from '../../src/rules/node';
-import baseRulesConfig from '../../src/rules/base';
 import reactRulesConfig from '../../src/rules/react';
-import typescriptRulesPreset from '../../src/presets/typescript';
-import esnextPreset from '../../src/presets/esnext';
-
-import prettierConfig from '../../src/presets/prettier';
+import { allRules } from './allRules';
 
 const jestRules = Object.entries(jestRulesConfig!).map(([ruleName]) => ruleName);
 const nodeRules = Object.entries(nodeRulesConfig!).map(([ruleName]) => ruleName);

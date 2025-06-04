@@ -49,8 +49,6 @@ jobs:
       - name: Build
         run: yarn build
 
-      - run: rm babel.config.js
-
       - run: npx danger ci --use-github-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

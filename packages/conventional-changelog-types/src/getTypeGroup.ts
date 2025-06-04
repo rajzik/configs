@@ -1,6 +1,5 @@
-import { GROUPS } from './constants';
-
 import type { CommitType, Group } from './types';
+import { GROUPS } from './constants';
 
 export function getTypeGroup(type: CommitType): Group {
   const group = GROUPS.find((g) => g.types.includes(type));

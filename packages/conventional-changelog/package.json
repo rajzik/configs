@@ -1,58 +1,62 @@
 {
   "name": "conventional-changelog-rajzik",
-  "description": "Conventional changelog preset for my personal projects",
   "version": "1.0.1",
+  "description": "Conventional changelog preset for my personal projects",
+  "keywords": [
+    "conventional-changelog",
+    "preset",
+    "rajzik"
+  ],
+  "repository": "git@github.com:rajzik/configs.git",
+  "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
-  "dependencies": {
-    "@rajzik/conventional-changelog-types": "workspace:*"
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dts/*.d.ts",
+      "require": "./dist/*.js",
+      "default": "./dist/*.js"
+    },
+    ".": {
+      "types": "./dts/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
   },
-  "devDependencies": {
-    "@types/shelljs": "^0.8.14",
-    "@types/tmp": "^0.2.5",
-    "conventional-changelog-core": "^7.0.0",
-    "conventional-recommended-bump": "^9.0.0",
-    "shelljs": "^0.8.5",
-    "tmp": "^0.2.1"
-  },
-  "engines": {
-    "node": ">=16.12.0",
-    "npm": ">=8.1.0"
-  },
+  "types": "./dts/index.d.ts",
   "files": [
     "dts/**/*.d.ts",
     "lib/**/*.{js,map}",
     "src/**/*.{ts,tsx,json}",
     "templates/**/*.hbs"
   ],
-  "group": "changelog",
-  "keywords": [
-    "conventional-changelog",
-    "preset",
-    "rajzik"
-  ],
-  "license": "MIT",
-  "main": "./lib/index.js",
-  "packemon": {
-    "format": "lib",
-    "platform": "node",
-    "support": "current"
+  "scripts": {
+    "build": "tsdown",
+    "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@rajzik/conventional-changelog-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@rajzik/prettier-config": "workspace:*",
+    "@types/shelljs": "^0.8.16",
+    "@types/tmp": "^0.2.6",
+    "conventional-changelog-core": "^9.0.0",
+    "conventional-recommended-bump": "^11.1.0",
+    "prettier": "catalog:",
+    "shelljs": "^0.10.0",
+    "tmp": "^0.2.3",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=16.12.0",
+    "npm": ">=8.1.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "repository": "git@github.com:rajzik/configs.git",
-  "types": "./dts/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./dts/*.d.ts",
-      "node": "./lib/*.js",
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
-      "default": "./lib/index.js"
-    }
-  }
+  "group": "changelog"
 }

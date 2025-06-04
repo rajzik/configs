@@ -1,10 +1,10 @@
-# `prettier-config-rajzik`
+# `@rajzik/prettier-config`
 
 ## Installation
 
 ```sh
-npm install --save-dev prettier-config-rajzik prettier
-yarn add --dev prettier-config-rajzik prettier
+npm install --save-dev @rajzik/prettier-config prettier
+yarn add --dev @rajzik/prettier-config prettier
 ```
 
 ## Usage
@@ -13,21 +13,21 @@ yarn add --dev prettier-config-rajzik prettier
 
 ```json
 {
-  "prettier": "prettier-config-rajzik"
+  "prettier": "@rajzik/prettier-config"
 }
 ```
 
 `.prettierrc`:
 
 ```javascript
-module.exports = 'prettier-config-rajzik';
+module.exports = '@rajzik/prettier-config';
 ```
 
 or you can override part of the config
 
 ```javascript
 module.exports = {
-  ...require('prettier-config-rajzik'),
+  ...require('@rajzik/prettier-config'),
   semi: false,
 };
 ```

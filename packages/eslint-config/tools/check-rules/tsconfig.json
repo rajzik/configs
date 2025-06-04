@@ -5,14 +5,7 @@
     "rootDir": "../../",
     "module": "commonjs"
   },
-  "exclude": [
-    "dts",
-    "test"
-  ],
+  "exclude": ["dts", "test"],
   "extends": "tsconfig-rajzik/tsconfig.workspaces.json",
-  "include": [
-    "src/**/*",
-    "types/**/*",
-    "../../types/**/*"
-  ],
+  "include": ["src/**/*", "types/**/*", "../../types/**/*"]
 }

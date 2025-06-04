@@ -1,15 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import type { Config } from '@jest/types';
+
 import {
-  IGNORE_PATHS,
-  EXTS,
   ASSET_EXT_PATTERN,
   CSS_EXT_PATTERN,
+  EXTS,
+  IGNORE_PATHS,
   ROOT,
 } from '@rajzik/configs-shared';
-
-import type { Config } from '@jest/types';
 
 const exts = EXTS.map((ext) => ext.slice(1));
 const extsWithoutJSON = exts.filter((ext) => ext !== 'json');

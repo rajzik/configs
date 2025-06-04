@@ -5,14 +5,7 @@
     "outDir": "dts",
     "rootDir": "src"
   },
-  "exclude": [
-    "dts",
-    "test"
-  ],
-  "include": [
-    "src/**/*",
-    "types/**/*",
-    "../../types/**/*"
-  ],
+  "exclude": ["dts", "test"],
+  "include": ["src/**/*", "types/**/*", "../../types/**/*"],
   "references": []
 }

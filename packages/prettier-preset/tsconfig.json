@@ -6,10 +6,5 @@
     "rootDir": "src"
   },
   "exclude": ["dts", "test"],
-  "include": ["src/**/*", "types/**/*", "../../types/**/*"],
-  "references": [
-    {
-      "path": "../conventional-changelog-types"
-    }
-  ]
+  "include": ["src/**/*", "types/**/*", "../../types/**/*"]
 }

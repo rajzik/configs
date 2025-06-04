@@ -1,6 +1,5 @@
-import { touchedFiles, countChangesInFile, debug, isRevert, TEST_EXT, SNAP_EXT } from './helpers';
-
 import type { CommonOptions } from './types';
+import { countChangesInFile, debug, isRevert, SNAP_EXT, TEST_EXT, touchedFiles } from './helpers';
 
 // Check that large PRs have an associated ADR file documenting the change.
 // Ignore lock, tests, and snapshot files in the calculation.

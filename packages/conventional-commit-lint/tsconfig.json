@@ -5,16 +5,9 @@
     "rootDir": "src",
     "emitDeclarationOnly": true
   },
-  "exclude": [
-    "dts",
-    "tests"
-  ],
+  "exclude": ["dts", "tests"],
   "extends": "tsconfig-rajzik/tsconfig.workspaces.json",
-  "include": [
-    "src/**/*",
-    "types/**/*",
-    "../../types/**/*"
-  ],
+  "include": ["src/**/*", "types/**/*", "../../types/**/*"],
   "references": [
     {
       "path": "../conventional-changelog-types"

@@ -7,10 +7,7 @@
     "noEmit": true,
     "rootDir": "."
   },
-  "include": [
-    "**/*",
-    "../../../types/**/*"
-  ],
+  "include": ["**/*", "../../../types/**/*"],
   "references": [
     {
       "path": ".."
