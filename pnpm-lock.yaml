@@ -90,7 +90,7 @@ importers:
         specifier: ^7.22.5
         version: 7.27.1(@babel/core@7.27.4)
       '@emotion/babel-plugin':
-        specifier: ^11.10.8
+        specifier: ^11.13.5
         version: 11.13.5
       '@rajzik/configs-shared':
         specifier: workspace:*
