@@ -1,9 +1,0 @@
-{
-  "extends": "tsconfig-rajzik/tsconfig.workspaces.json",
-  "include": [
-    "types/**/*",
-    "packages/*/src/**/*",
-    "packages/*/test/**/*",
-    "packages/*/types/**/*"
-  ]
-}

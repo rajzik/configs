@@ -1,9 +1,10 @@
 /* eslint @stylistic/migrate/migrate-js: "error" */
 
+import type { ConfigArray } from 'typescript-eslint';
+
 import nextPlugin from '@next/eslint-plugin-next';
 
-/** @type {Awaited<import('typescript-eslint').Config>} */
-export default [
+const config: ConfigArray = [
   {
     files: ['**/*.ts', '**/*.tsx'],
     plugins: {
@@ -17,3 +18,5 @@ export default [
     },
   },
 ];
+
+export default config;

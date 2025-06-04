@@ -1,11 +1,12 @@
 /* eslint @stylistic/migrate/migrate-js: "error" */
+import type { ConfigArray } from 'typescript-eslint';
+
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 
-/** @type {Awaited<import('typescript-eslint').Config>} */
-export default [
+const config: ConfigArray = [
   {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     plugins: {
@@ -79,3 +80,5 @@ export default [
     },
   },
 ];
+
+export default config;

@@ -1,21 +1,20 @@
 {
-  "name": "tsconfig-rajzik",
-  "description": "Pre-packaged tsconfig.json's for personal configured projects",
+  "name": "@rajzik/tsconfig",
   "version": "1.0.0",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
-  "files": [
-    "tsconfig.json",
-    "tsconfig.workspaces.json"
-  ],
-  "group": "configs",
+  "description": "Pre-packaged tsconfig.json's for personal configured projects",
   "keywords": [
     "tsconfig",
     "sharable",
     "config"
   ],
+  "repository": "git@github.com:rajzik/configs.git",
   "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "files": [
+    "*.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "repository": "git@github.com:rajzik/configs.git"
+  "group": "configs"
 }

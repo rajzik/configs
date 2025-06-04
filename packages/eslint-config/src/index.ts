@@ -1,24 +1,21 @@
 /* eslint @stylistic/migrate/migrate-js: "error" */
 // @ts-check
-/// <reference types="./types.d.ts" />
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+
+import type { ConfigArray } from 'typescript-eslint';
 
 import { includeIgnoreFile } from '@eslint/compat';
 import eslint from '@eslint/js';
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
-import tailwind from 'eslint-plugin-tailwindcss';
 import testingLibrary from 'eslint-plugin-testing-library';
-import turboPlugin from 'eslint-plugin-turbo';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
 
-/**
- * All packages that leverage t3-env should use this rule
- */
-export const restrictEnvAccess = tseslint.config(
+export * from 'typescript-eslint';
+
+export const restrictEnvAccess: ConfigArray = tseslint.config(
   { ignores: ['**/env.ts'] },
   {
     files: ['**/*.js', '**/*.ts', '**/*.tsx'],
@@ -43,18 +40,16 @@ export const restrictEnvAccess = tseslint.config(
   },
 );
 
-export default tseslint.config(
+const config: ConfigArray = tseslint.config(
   includeIgnoreFile(path.join(import.meta.dirname, '../../../.gitignore')),
   {
     ignores: ['vitest.config.mjs*'],
   },
   {
-    files: ['**/*.js', '**/*.ts', '**/*.tsx'],
+    files: ['**/*.js', '**/*.mjs', '**/*.jsx', '**/*.mts', '**/*.ts', '**/*.tsx'],
     plugins: {
       import: importPlugin,
-      turbo: turboPlugin,
       unicorn: eslintPluginUnicorn,
-      tailwind,
       '@stylistic': stylisticPlugin,
     },
     extends: [
@@ -64,7 +59,6 @@ export default tseslint.config(
       ...tseslint.configs.stylisticTypeChecked,
     ],
     rules: {
-      ...turboPlugin.configs.recommended.rules,
       ...eslintPluginUnicorn.configs.recommended.rules,
       ...stylisticPlugin.configs['disable-legacy'].rules,
       // Eslint
@@ -142,13 +136,12 @@ export default tseslint.config(
       '@typescript-eslint/no-shadow': 'error',
       '@typescript-eslint/unbound-method': 'off',
 
-      // TODO: Enable following rules in the future
-      '@typescript-eslint/no-unsafe-assignment': 'off',
-      '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-non-null-assertion': 'off',
-      '@typescript-eslint/no-unsafe-return': 'off',
-      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'error',
+      '@typescript-eslint/no-unsafe-call': 'error',
+      '@typescript-eslint/no-unsafe-member-access': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'error',
+      '@typescript-eslint/no-unsafe-return': 'error',
+      '@typescript-eslint/no-unsafe-argument': 'error',
 
       // Unicorn
       'unicorn/prefer-ternary': 'off',
@@ -170,7 +163,7 @@ export default tseslint.config(
           checkAllIndexAccess: true,
         },
       ],
-      // TODO: Remove in the future
+
       'unicorn/no-null': 'off',
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-array-reduce': 'off',
@@ -178,37 +171,11 @@ export default tseslint.config(
 
       // Import
       'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
-
-      // Tailwind
-      'tailwind/no-custom-classname': [
-        'warn',
-        {
-          callees: ['twMerge', 'classnames', 'clsx', 'ctl', 'cva', 'tv', 'cn'],
-          whitelist: [
-            'ag-theme-balham',
-            'ag-grid',
-            'icon-cell-renderer',
-            'border-left-1px',
-            'border-left-2px',
-            'ag-row-checkbox-disable',
-            'ag-overlay-loading-center',
-          ],
-        },
-      ],
-      'tailwind/no-unnecessary-arbitrary-value': 'error',
-      'tailwind/no-contradicting-classname': 'error',
-      'tailwind/enforces-shorthand': 'error',
     },
   },
   {
     linterOptions: { reportUnusedDisableDirectives: true },
     languageOptions: { parserOptions: { projectService: true } },
-    settings: {
-      tailwindcss: {
-        callees: ['twMerge', 'classnames', 'clsx', 'ctl', 'cva', 'tv', 'cn'],
-        config: fileURLToPath(new URL('../../../tooling/tailwind/index.ts', import.meta.url)),
-      },
-    },
   },
   {
     files: ['*.test.{ts,js,tsx,jsx}'],
@@ -227,3 +194,5 @@ export default tseslint.config(
     },
   },
 );
+
+export default config;

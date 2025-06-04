@@ -87,7 +87,7 @@ export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: T
 
     updatedFiles.forEach((file) => {
       if (regex.test(file)) {
-        missingTestFiles.push(`- ${srcFile.split(IS_SRC)[1]}`);
+        missingTestFiles.push(`- ${srcFile.split(IS_SRC).at(1)}`);
       }
     });
   });

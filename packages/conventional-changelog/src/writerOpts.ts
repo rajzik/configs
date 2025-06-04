@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion -- needed */
-/* eslint-disable no-param-reassign -- needed */
+
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -12,7 +12,7 @@ import type {
 
 import { getTypeGroup, GROUPS } from '@rajzik/conventional-changelog-types';
 
-type GroupMap<T> = { [K in CommitGroupLabel]: T };
+type GroupMap<T> = Record<CommitGroupLabel, T>;
 
 const groupEmojis = Object.fromEntries(
   GROUPS.map((group) => [group.label, group.emoji]),
@@ -75,7 +75,7 @@ function createLink(paths: string[], context: Context, reference: Partial<Refere
     'src',
   ].forEach((browsePart) => {
     if (base.includes(`/${browsePart}/`)) {
-      base = base.split(`/${browsePart}/`)[0]!;
+      base = base.split(`/${browsePart}/`).at(0)!;
     }
   });
 
@@ -83,10 +83,13 @@ function createLink(paths: string[], context: Context, reference: Partial<Refere
 }
 
 const options: Partial<WriterOptions> = {
-  mainTemplate: fs.readFileSync(path.join(__dirname, '../templates/template.hbs'), 'utf8'),
-  commitPartial: fs.readFileSync(path.join(__dirname, '../templates/commit.hbs'), 'utf8'),
-  headerPartial: fs.readFileSync(path.join(__dirname, '../templates/header.hbs'), 'utf8'),
-  footerPartial: fs.readFileSync(path.join(__dirname, '../templates/footer.hbs'), 'utf8'),
+  mainTemplate: fs.readFileSync(
+    path.join(import.meta.dirname, '../templates/template.hbs'),
+    'utf8',
+  ),
+  commitPartial: fs.readFileSync(path.join(import.meta.dirname, '../templates/commit.hbs'), 'utf8'),
+  headerPartial: fs.readFileSync(path.join(import.meta.dirname, '../templates/header.hbs'), 'utf8'),
+  footerPartial: fs.readFileSync(path.join(import.meta.dirname, '../templates/footer.hbs'), 'utf8'),
 
   // Commits
   groupBy: 'label',
@@ -177,8 +180,8 @@ const options: Partial<WriterOptions> = {
           if (
             username.includes('/') ||
             // Avoid when wrapped in backticks (inline code)
-            commit.message.charAt(index - 1) === '`' ||
-            commit.message.charAt(index + match.length + 1) === '`'
+            commit.message.at(index - 1) === '`' ||
+            commit.message.at(index + match.length + 1) === '`'
           ) {
             return match;
           }

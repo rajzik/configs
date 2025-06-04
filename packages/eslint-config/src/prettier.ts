@@ -1,7 +1,8 @@
+import type { ConfigArray } from 'typescript-eslint';
+
 import eslintConfigPrettier from 'eslint-config-prettier';
 
-/** @type {Awaited<import('typescript-eslint').Config>} */
-export default [
+const config: ConfigArray = [
   eslintConfigPrettier,
   {
     rules: {
@@ -9,4 +10,6 @@ export default [
       curly: ['error', 'all'],
     },
   },
-];
+] as ConfigArray;
+
+export default config;

@@ -1,10 +1,10 @@
-/** @typedef {import('prettier').Config} PrettierConfig */
-/** @typedef {import('prettier-plugin-tailwindcss').PluginOptions} TailwindConfig */
-/** @typedef {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig */
-/** @typedef {import('prettier-plugin-sort-json').SortJsonOptions} SortJsonConfig */
+import type { PluginConfig } from '@ianvs/prettier-plugin-sort-imports';
+import type { Config } from 'prettier';
+import type { PluginOptions } from 'prettier-plugin-tailwindcss';
 
-/** @type { PrettierConfig | SortImportsConfig | TailwindConfig | SortJsonConfig } */
-const config = {
+export type ExtendedConfig = Config | PluginOptions | PluginConfig;
+
+const config: ExtendedConfig = {
   arrowParens: 'always',
   bracketSpacing: true,
   plugins: ['prettier-plugin-packagejson', '@ianvs/prettier-plugin-sort-imports'],

@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["SYSTEM_TASKDEFINITIONSURI", "NODE_ENV"],
   "tasks": {
     "topo": {
       "dependsOn": ["^topo"]

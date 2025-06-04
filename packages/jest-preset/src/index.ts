@@ -47,9 +47,9 @@ const config: Config.InitialOptions = {
     [`__PROD__`]: true,
   },
   moduleNameMapper: {
-    // eslint-disable-next-line node/no-missing-require -- needed
+    // eslint-disable-next-line unicorn/prefer-module
     [`^.+${ASSET_EXT_PATTERN.source}`]: require.resolve('./fileMock.js'),
-    // eslint-disable-next-line node/no-missing-require -- needed
+    // eslint-disable-next-line unicorn/prefer-module
     [`^.+${CSS_EXT_PATTERN.source}`]: require.resolve('./fileMock.js'),
   },
   setupFilesAfterEnv,

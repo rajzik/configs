@@ -1,6 +1,7 @@
 import config from '@rajzik/prettier-config';
 
-export default {
+/** @type {import('@rajzik/prettier-config').ExtendedConfig} */
+const finalConfig = {
   ...config,
   overrides: [
     {
@@ -11,3 +12,5 @@ export default {
     },
   ],
 };
+
+export default finalConfig;

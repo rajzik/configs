@@ -1,11 +1,10 @@
 {
-  "name": "eslint-config-rajzik",
+  "name": "@rajzik/eslint-config",
   "version": "1.0.6",
   "description": "Reusable ESLint config for personal projects",
   "keywords": [
     "config",
-    "eslint",
-    "lumos"
+    "eslint"
   ],
   "repository": "git@github.com:rajzik/configs.git",
   "license": "MIT",
@@ -14,82 +13,64 @@
   "exports": {
     "./package.json": "./package.json",
     "./*": {
-      "types": "./dts/*.d.ts",
-      "require": "./dist/*.js",
+      "types": "./dist/*.d.ts",
       "default": "./dist/*.js"
     },
     ".": {
-      "types": "./dts/index.d.ts",
-      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
-  "types": "./dts/index.d.ts",
   "files": [
-    "dts/**/*.d.ts",
-    "future.js",
-    "lib/**/*.{js,map}",
-    "node.js",
-    "prettier.js",
-    "react.js",
-    "src/**/*.{ts,tsx,json}",
-    "typescript.js"
+    "dist"
   ],
   "scripts": {
     "build": "tsdown",
     "check-rules": "ts-node tools/check-rules/index.ts",
+    "clean": "git clean -xdf .cache dist dts .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "lint": "eslint --max-warnings 0 --cache --cache-location .cache/.eslintcache",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@rajzik/prettier-config",
   "dependencies": {
-    "@babel/core": "^7.22.10",
-    "@babel/eslint-parser": "^7.22.10",
+    "@eslint/compat": "^1.2.9",
+    "@eslint/js": "^9.28.0",
+    "@next/eslint-plugin-next": "^15.3.3",
     "@rajzik/configs-shared": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "confusing-browser-globals": "^1.0.11",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jest": "^27.4.3",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-testing-library": "^5.11.1",
-    "eslint-plugin-unicorn": "^48.0.1"
+    "@stylistic/eslint-plugin": "^4.4.1",
+    "@vitest/eslint-plugin": "^1.2.1",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-typescript": "^4.4.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-n": "^17.19.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^6.0.0-rc.1",
+    "eslint-plugin-tailwindcss": "^3.18.0",
+    "eslint-plugin-testing-library": "^7.3.0",
+    "eslint-plugin-turbo": "^2.5.4",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "json5": "^2.2.3",
+    "typescript-eslint": "^8.33.1"
   },
   "devDependencies": {
     "@rajzik/prettier-config": "workspace:*",
-    "@types/confusing-browser-globals": "^1.0.2",
-    "@types/eslint": "^8.44.6",
+    "@rajzik/tsconfig": "workspace:*",
+    "@stylistic/eslint-plugin-migrate": "^4.4.1",
     "@types/node": "catalog:",
-    "eslint": "^8.52.0",
+    "eslint": "catalog:",
     "prettier": "catalog:",
-    "ts-node": "^10.9.1",
-    "tsconfig-rajzik": "workspace:*",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
   "peerDependencies": {
-    "eslint": "^8.4.0",
-    "prettier": "^2.5.1 || ^3.0.0",
-    "typescript": ">=4.5"
-  },
-  "peerDependenciesMeta": {
-    "eslint": {
-      "optional": true
-    },
-    "typescript": {
-      "optional": true
-    }
+    "eslint": ">=9"
   },
   "engines": {
-    "node": ">=16.12.0",
-    "npm": ">=8.1.0"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

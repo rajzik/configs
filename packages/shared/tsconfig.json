@@ -1,11 +1,8 @@
 {
-  "extends": "tsconfig-rajzik/tsconfig.workspaces.json",
+  "extends": "@rajzik/tsconfig/tsconfig.package.json",
   "compilerOptions": {
-    "declarationDir": "dts",
-    "outDir": "dts",
-    "rootDir": "src"
+    "lib": ["ES2024", "dom", "dom.iterable"]
   },
-  "exclude": ["dts", "test"],
-  "include": ["src/**/*", "types/**/*", "../../types/**/*"],
-  "references": []
+  "include": ["src", "tsdown.config.ts", "eslint.config.js"],
+  "exclude": ["node_modules"]
 }

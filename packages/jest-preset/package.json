@@ -13,26 +13,22 @@
   "exports": {
     "./package.json": "./package.json",
     "./*": {
-      "types": "./dts/*.d.ts",
-      "require": "./dist/*.js",
+      "types": "./dist/*.d.ts",
       "default": "./dist/*.js"
     },
     ".": {
-      "types": "./dts/index.d.ts",
-      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
-  "types": "./dts/index.d.ts",
   "files": [
-    "dts/**/*.d.ts",
-    "jest-preset.js",
-    "lib/**/*.{js,map}",
-    "src/**/*.{ts,tsx,json}"
+    "dist"
   ],
   "scripts": {
     "build": "tsdown",
+    "clean": "git clean -xdf .cache dist dts .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "lint": "eslint --max-warnings 0 --cache --cache-location .cache/.eslintcache",
     "test": "jest",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
@@ -44,10 +40,12 @@
     "jest-junit": "^16.0.0"
   },
   "devDependencies": {
+    "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
+    "@rajzik/tsconfig": "workspace:*",
+    "eslint": "catalog:",
     "jest": "^29.7.0",
     "prettier": "catalog:",
-    "tsconfig-rajzik": "workspace:*",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
@@ -55,8 +53,7 @@
     "jest": "^29.7.0"
   },
   "engines": {
-    "node": ">=16.12.0",
-    "npm": ">=8.1.0"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

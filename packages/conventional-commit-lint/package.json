@@ -14,29 +14,22 @@
   "exports": {
     "./package.json": "./package.json",
     "./*": {
-      "types": "./dts/*.d.ts",
-      "require": "./dist/*.js",
+      "types": "./dist/*.d.ts",
       "default": "./dist/*.js"
     },
     ".": {
-      "types": "./dts/index.d.ts",
-      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
-  "types": "./dts/index.d.ts",
   "files": [
-    "dts",
-    "dts/**/*.d.ts",
-    "dts/**/*.{d.ts,d.ts.map}",
-    "lib",
-    "lib/**/*.{js,map}",
-    "src",
-    "src/**/*.{ts,tsx,json}"
+    "dist"
   ],
   "scripts": {
     "build": "tsdown",
+    "clean": "git clean -xdf .cache dist dts .turbo node_modules",
     "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "lint": "eslint --max-warnings 0 --cache --cache-location .cache/.eslintcache",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "prettier": "@rajzik/prettier-config",
@@ -45,7 +38,9 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
+    "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
+    "eslint": "catalog:",
     "prettier": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
@@ -54,8 +49,7 @@
     "@commitlint/cli": ">=12"
   },
   "engines": {
-    "node": ">=20.11.0",
-    "npm": ">=8.1.0"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

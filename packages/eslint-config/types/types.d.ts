@@ -82,6 +82,7 @@ declare module 'eslint-plugin-tailwindcss' {
 
   export const configs: {
     recommended: { rules: Linter.RulesRecord };
+    'flat/recommended': { rules: Linter.RulesRecord };
   };
   export const rules: Record<string, Rule.RuleModule>;
 }
