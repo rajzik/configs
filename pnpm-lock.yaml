@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@commitlint/cli':
-        specifier: ^18.0.0
+        specifier: ^18.6.1
         version: 18.6.1(@types/node@20.17.57)(typescript@5.8.3)
       '@monodeploy/plugin-github':
         specifier: ^1.2.0
@@ -186,7 +186,7 @@ importers:
         version: link:../conventional-changelog-types
     devDependencies:
       '@commitlint/cli':
-        specifier: ^18.0.0
+        specifier: ^18.6.1
         version: 18.6.1(@types/node@20.17.57)(typescript@5.8.3)
 
   packages/eslint-config:
