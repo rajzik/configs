@@ -1,7 +1,5 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
-<!-- MONODEPLOY:BELOW -->
-
 ### 1.0.1 - 2022-06-25
 
 #### 🐞 Fixes

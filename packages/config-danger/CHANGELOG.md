@@ -1,7 +1,5 @@
 # `@rajzik/config-danger` CHANGELOG
 
-<!-- MONODEPLOY:BELOW -->
-
 ### 1.0.6 - 2022-11-18
 
 #### 📦 Dependencies
