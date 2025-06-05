@@ -24,12 +24,6 @@ runs:
       shell: bash
       run: pnpm install --frozen-lockfile
 
-    - name: 🔐 Setup npm auth
-      shell: bash
-      run: |
-        echo "registry=https://registry.npmjs.org" >> ~/.npmrc
-        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" >> ~/.npmrc
-
     - name: Build
       id: build
       shell: bash
