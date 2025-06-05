@@ -1,53 +1,61 @@
 {
   "name": "@rajzik/danger-configuration",
-  "description": "Reusable Danger.js scripts",
   "version": "1.0.6",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
-  "dependencies": {
-    "@rajzik/conventional-changelog-types": "workspace:*",
-    "danger": "^11.3.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.8.8"
-  },
-  "engines": {
-    "node": ">=14.15.0",
-    "npm": ">=6.14.0"
-  },
-  "files": [
-    "dts/**/*.d.ts",
-    "lib/**/*.{js,map}",
-    "src/**/*.{ts,tsx,json}"
-  ],
-  "group": "configs",
+  "description": "Reusable Danger.js scripts",
   "keywords": [
     "config",
     "danger",
     "lumos",
     "scripts"
   ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/config-danger",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajzik/configs.git",
+    "directory": "packages/config-danger"
+  },
   "license": "MIT",
-  "main": "./lib/index.js",
-  "packemon": {
-    "format": "lib",
-    "platform": "node"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": "git@github.com:rajzik/configs.git",
-  "types": "./dts/index.d.ts",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "type": "module",
   "exports": {
     "./package.json": "./package.json",
     "./*": {
-      "types": "./dts/*.d.ts",
-      "node": "./lib/*.js",
-      "default": "./lib/*.js"
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
     },
     ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
-      "default": "./lib/index.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache dist dts .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "lint": "eslint --max-warnings 0 --cache --cache-location .cache/.eslintcache"
+  },
+  "prettier": "@rajzik/prettier-config",
+  "dependencies": {
+    "@rajzik/conventional-changelog-types": "workspace:*",
+    "danger": "^13.0.4"
+  },
+  "devDependencies": {
+    "@rajzik/eslint-config": "workspace:*",
+    "@rajzik/prettier-config": "workspace:*",
+    "@rajzik/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -6,7 +6,10 @@ export const TEST_EXT = /\.test\.(t|j)sx?$/;
 export const SNAP_EXT = /\.snap$/;
 export const GLOBAL_IGNORE = /Icon[A-Z][A-Za-z]+\.(t|j)sx$/;
 
-export const updatedFiles = [...danger.git.created_files, ...danger.git.modified_files];
+export const updatedFiles = [
+  ...danger.git.created_files,
+  ...danger.git.modified_files,
+];
 
 export const touchedFiles = [
   ...danger.git.created_files,
@@ -29,7 +32,7 @@ export function isRevert(): boolean {
 
 export async function countChangesInFile(file: string): Promise<number> {
   return new Promise((resolve) => {
-    danger.git.diffForFile(file).then((d) => {
+    void danger.git.diffForFile(file).then((d) => {
       const added = d?.added.split('\n').length ?? 0;
       const removed = d?.removed.split('\n').length ?? 0;
 

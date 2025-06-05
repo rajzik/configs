@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 
-import { TSCONFIG_JSON_PATH, PACKAGE_JSON_PATH } from './constants';
-
 import type { CompilerOptions, ProjectReference } from 'typescript';
+
+import { PACKAGE_JSON_PATH, TSCONFIG_JSON_PATH } from './constants';
 
 export function parseJSON<T>(filePath: string): T {
   const content = fs
@@ -23,10 +23,9 @@ interface TSConfigJSON {
 let tsconfigJson: TSConfigJSON | undefined;
 
 export function getRootTSConfig(): TSConfigJSON {
-  if (tsconfigJson === undefined) {
-    tsconfigJson = parseJSON(TSCONFIG_JSON_PATH);
-  }
+  tsconfigJson ??= parseJSON(TSCONFIG_JSON_PATH);
 
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return tsconfigJson!;
 }
 
@@ -43,10 +42,9 @@ interface PackageJSON {
 let packageJson: PackageJSON | undefined;
 
 export function getRootPackageJson(): PackageJSON {
-  if (packageJson === undefined) {
-    packageJson = parseJSON(PACKAGE_JSON_PATH);
-  }
+  packageJson ??= parseJSON(PACKAGE_JSON_PATH);
 
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   return packageJson!;
 }
 

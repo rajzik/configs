@@ -6,3 +6,10 @@ onlyBuiltDependencies:
   - '@swc/core'
   - core-js
   - unrs-resolver
+
+catalog:
+  "@types/node": ^22.15.29
+  prettier: ^3.5.3
+  tsdown: ^0.12.6
+  typescript: ^5.8.3
+  eslint: ^9.28.0

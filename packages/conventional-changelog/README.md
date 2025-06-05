@@ -4,13 +4,13 @@ Commit message guidelines and changelog structure. _Now with more emojis!_
 
 ## Azure devops prefix
 
-This changelog accounts with azure devops PR message format. And will release accordingly to the
-following documentation.
+This changelog accounts with azure devops PR message format. And will release
+accordingly to the following documentation.
 
 ## Commit Message Format
 
-The commit message format consists of a **type**, optional **scope** in parenthesis, and a required
-**message**:
+The commit message format consists of a **type**, optional **scope** in
+parenthesis, and a required **message**:
 
 ```
 <type>: <message>
@@ -23,8 +23,8 @@ Merged PR 1: <type>: <message>
 
 ### Type
 
-The type is a way to group commits and flag semver changes. The following types must be used when
-prefixing your commit message.
+The type is a way to group commits and flag semver changes. The following types
+must be used when prefixing your commit message.
 
 #### Major
 
@@ -57,12 +57,12 @@ prefixing your commit message.
 
 ### Scope
 
-The scope is optional but useful in defining granularity in a commit message. Scope is ideally used
-to target a specific feature or module within the project, for example:
-`new(Button): Add a new Button component`.
+The scope is optional but useful in defining granularity in a commit message.
+Scope is ideally used to target a specific feature or module within the project,
+for example: `new(Button): Add a new Button component`.
 
-Scopes will appear in the changelog before each line item and accept the following characters:
-`A-Z`, `a-z`, `0-9`, `-`, `.`, `,`, and spaces.
+Scopes will appear in the changelog before each line item and accept the
+following characters: `A-Z`, `a-z`, `0-9`, `-`, `.`, `,`, and spaces.
 
 ### Message
 

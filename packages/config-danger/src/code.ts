@@ -1,20 +1,21 @@
 import path from 'node:path';
 
+import type { CommonOptions } from './types';
 import {
-  updatedFiles,
-  touchedFiles,
-  isRevert,
-  SRC_EXT,
-  TEST_EXT,
   GLOBAL_IGNORE,
   IS_SRC,
   IS_TEST,
+  isRevert,
   JS_EXT,
+  SRC_EXT,
+  TEST_EXT,
+  touchedFiles,
+  updatedFiles,
 } from './helpers';
 
-import type { CommonOptions } from './types';
-
-const changedSrcFiles = updatedFiles.filter((file) => IS_SRC.test(file) && SRC_EXT.test(file));
+const changedSrcFiles = updatedFiles.filter(
+  (file) => IS_SRC.test(file) && SRC_EXT.test(file),
+);
 
 export interface TestOptions extends CommonOptions {
   ignorePattern?: RegExp;
@@ -26,11 +27,21 @@ export function checkForInvalidLocks() {
   const fileNames = new Set(touchedFiles.map((file) => path.basename(file)));
 
   if (fileNames.has('package-lock.json') && !fileNames.has('package.json')) {
-    fail('Your PR contains changes to package-lock.json, but not package.json.');
-  } else if (fileNames.has('npm-shrinkwrap.json') && !fileNames.has('package.json')) {
-    fail('Your PR contains changes to npm-shrinkwrap.json, but not package.json.');
-  } else if (fileNames.has('yarn.lock') && !fileNames.has('package.json')) {
-    fail('Your PR contains changes to yarn.lock, but not package.json.');
+    fail(
+      'Your PR contains changes to package-lock.json, but not package.json.',
+    );
+  } else if (
+    fileNames.has('npm-shrinkwrap.json') &&
+    !fileNames.has('package.json')
+  ) {
+    fail(
+      'Your PR contains changes to npm-shrinkwrap.json, but not package.json.',
+    );
+  } else if (
+    fileNames.has('pnpm-lock.yaml') &&
+    !fileNames.has('package.json')
+  ) {
+    fail('Your PR contains changes to pnpm-lock.yaml, but not package.json.');
   }
 }
 
@@ -40,13 +51,16 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
     return;
   }
 
-  const hasTestFiles = touchedFiles.some((file) => Boolean(TEST_EXT.test(file)));
+  const hasTestFiles = touchedFiles.some((file) =>
+    Boolean(TEST_EXT.test(file)),
+  );
   const srcFiles = root
     ? changedSrcFiles.filter((srcFile) => srcFile.startsWith(root))
     : changedSrcFiles;
 
   if (srcFiles.length > 0 && !hasTestFiles) {
-    const msg = 'Your PR contains changes to source files, but no test changes were found.';
+    const msg =
+      'Your PR contains changes to source files, but no test changes were found.';
 
     if (options.fail) {
       fail(msg);
@@ -57,7 +71,11 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
 }
 
 // Check that all touched source files have an accompanying test file change.
-export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: TestOptions = {}) {
+export function checkSourceFilesHaveTests({
+  ignorePattern,
+  root,
+  ...options
+}: TestOptions = {}) {
   if (isRevert()) {
     return;
   }
@@ -77,7 +95,8 @@ export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: T
       // Foo/index.tsx -> Foo.test.tsx | Foo/index.test.tsx
       .replace(
         /(\w+)\/index\.((t|j)sx?)$/,
-        (match, name, ext) => `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
+        (match, name, ext) =>
+          `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
       )
       // Foo.tsx -> Foo.test.tsx
       .replace(/(\w+)\.((t|j)sx?)$/, (match, name, ext) =>
@@ -88,7 +107,7 @@ export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: T
 
     updatedFiles.forEach((file) => {
       if (regex.test(file)) {
-        missingTestFiles.push(`- ${srcFile.split(IS_SRC)[1]}`);
+        missingTestFiles.push(`- ${srcFile.split(IS_SRC).at(1)}`);
       }
     });
   });
@@ -111,7 +130,8 @@ export interface SnapshotOptions {
   docsUrl?: string;
 }
 
-const fileFilter = (file: string) => file.endsWith('jsx.snap') || file.endsWith('tsx.snap');
+const fileFilter = (file: string) =>
+  file.endsWith('jsx.snap') || file.endsWith('tsx.snap');
 
 export function disableComponentSnapshots(options: SnapshotOptions = {}) {
   if (isRevert()) {
@@ -125,7 +145,8 @@ export function disableComponentSnapshots(options: SnapshotOptions = {}) {
     return;
   }
 
-  let message = 'Snapshot testing has been deprecated. Please migrate to standard React testing.';
+  let message =
+    'Snapshot testing has been deprecated. Please migrate to standard React testing.';
 
   if (options.docsUrl) {
     message += ` [View for more information](${options.docsUrl})`;

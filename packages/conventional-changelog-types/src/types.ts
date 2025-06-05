@@ -69,7 +69,7 @@ export interface Commit {
   merge: string | null;
   notes: Note[];
   references: Reference[];
-  revert: { [key: string]: string } | null;
+  revert: Record<string, string> | null;
   // Beemo
   hash: string;
   hashLink: string;
@@ -90,7 +90,7 @@ export interface Context {
   isMajor: boolean;
   issue: string;
   linkReferences: boolean;
-  options: { [key: string]: unknown };
+  options: Record<string, unknown>;
   owner: string;
   repository: string;
   repoUrl: string;
@@ -98,7 +98,7 @@ export interface Context {
   version: string;
   // Beemo
   headerLevel?: '#' | '##' | '###';
-  groupEmojis?: { [K in CommitGroupLabel]: string };
+  groupEmojis?: Record<CommitGroupLabel, string>;
 }
 
 export type Pattern = RegExp | string | null;
@@ -131,12 +131,22 @@ export interface WriterOptions {
   debug: () => void;
   doFlush: boolean;
   finalizeContext:
-    | ((context: Context, options: WriterOptions, commits: Commit[], keyCommit: Commit) => Context)
+    | ((
+        context: Context,
+        options: WriterOptions,
+        commits: Commit[],
+        keyCommit: Commit,
+      ) => Context)
     | undefined;
   footerPartial: string;
   generateOn:
     | string
-    | ((commit: Commit, commits: Commit[], context: Context, options: WriterOptions) => unknown);
+    | ((
+        commit: Commit,
+        commits: Commit[],
+        context: Context,
+        options: WriterOptions,
+      ) => unknown);
   groupBy: string;
   headerPartial: string;
   ignoreReverted: boolean;
@@ -147,7 +157,7 @@ export interface WriterOptions {
     notes: Note[];
   }>;
   notesSort: Sorter<Note>;
-  partials: { [key: string]: unknown };
+  partials: Record<string, unknown>;
   reverse: boolean;
   transform: (commit: Commit, context: Context) => Commit | undefined;
 }

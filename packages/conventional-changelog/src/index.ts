@@ -3,7 +3,7 @@ import parserOpts from './parserOpts';
 import recommendedBumpOpts from './recommendedBumpOpts';
 import writerOpts from './writerOpts';
 
-export * from './types';
+export type * from './types';
 
 export default Promise.resolve({
   conventionalChangelog,

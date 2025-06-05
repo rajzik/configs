@@ -1,4 +1,4 @@
-# `tsconfig-rajzik` CHANGELOG
+# `@rajzik/tsconfig` CHANGELOG
 
 <!-- MONODEPLOY:BELOW -->
 

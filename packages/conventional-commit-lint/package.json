@@ -1,59 +1,62 @@
 {
   "name": "@rajzik/conventional-commit-lint-config",
-  "description": "Conventional commit lint config for personal projects",
   "version": "1.0.0",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
-  "dependencies": {
-    "@rajzik/conventional-changelog-types": "workspace:*"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^18.0.0"
-  },
-  "engines": {
-    "node": ">=16.12.0",
-    "npm": ">=8.1.0"
-  },
-  "files": [
-    "dts",
-    "dts/**/*.d.ts",
-    "dts/**/*.{d.ts,d.ts.map}",
-    "lib",
-    "lib/**/*.{js,map}",
-    "src",
-    "src/**/*.{ts,tsx,json}"
-  ],
-  "group": "changelog",
+  "description": "Conventional commit lint config for personal projects",
   "keywords": [
     "commitlint",
     "conventional-changelog",
     "preset"
   ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/conventional-commit-lint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajzik/configs.git",
+    "directory": "packages/conventional-commit-lint"
+  },
   "license": "MIT",
-  "main": "./lib/index.js",
-  "packemon": {
-    "format": "lib",
-    "platform": "node",
-    "support": "current"
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache dist dts .turbo node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "lint": "eslint --max-warnings 0 --cache --cache-location .cache/.eslintcache",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "prettier": "@rajzik/prettier-config",
+  "dependencies": {
+    "@rajzik/conventional-changelog-types": "workspace:*"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@rajzik/eslint-config": "workspace:*",
+    "@rajzik/prettier-config": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
   },
   "peerDependencies": {
     "@commitlint/cli": ">=12"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "publishConfig": {
     "access": "public"
-  },
-  "repository": "git@github.com:rajzik/configs.git",
-  "types": "./dts/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    "./*": {
-      "types": "./dts/*.d.ts",
-      "node": "./lib/*.js",
-      "default": "./lib/*.js"
-    },
-    ".": {
-      "types": "./dts/index.d.ts",
-      "node": "./lib/index.js",
-      "default": "./lib/index.js"
-    }
   }
 }

@@ -1,22 +1,15 @@
 {
-  "extends": "tsconfig-rajzik/tsconfig.workspaces.json",
+  "extends": "@rajzik/tsconfig/tsconfig.package.json",
   "compilerOptions": {
-    "declarationDir": "dts",
-    "outDir": "dts",
-    "rootDir": "src"
+    "lib": ["ES2024", "dom", "dom.iterable"],
+    "rootDir": "."
   },
-  "exclude": [
-    "dts",
-    "test"
-  ],
   "include": [
-    "src/**/*",
-    "types/**/*",
-    "../../types/**/*"
+    "src",
+    "tsdown.config.ts",
+    "eslint.config.js",
+    "prettier.config.js",
+    "types"
   ],
-  "references": [
-    {
-      "path": "../shared"
-    }
-  ]
+  "exclude": ["node_modules"]
 }

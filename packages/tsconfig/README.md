@@ -1,12 +1,12 @@
-# `tsconfig-rajzik`
+# `@rajzik/tsconfig`
 
 Sharable typescript configuration.
 
 ## Installation
 
 ```sh
-npm install --save-dev tsconfig-rajzik typescript
-yarn add --dev tsconfig-rajzik typescript
+npm install --save-dev @rajzik/tsconfig typescript
+yarn add --dev @rajzik/tsconfig typescript
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ yarn add --dev tsconfig-rajzik typescript
 
 ```json
 {
-  "extends": "tsconfig-rajzik"
+  "extends": "@rajzik/tsconfig"
 }
 ```
 
@@ -23,6 +23,6 @@ Or
 
 ```json
 {
-  "extends": "tsconfig-rajzik/tsconfig.workspace.json"
+  "extends": "@rajzik/tsconfig/tsconfig.workspace.json"
 }
 ```

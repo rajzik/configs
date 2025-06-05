@@ -1,8 +1,9 @@
+import type { CommitType } from './types';
 import { COMMIT_FORMAT_PREFIX } from './constants';
 
-import type { CommitType } from './types';
-
-export function checkCommitFormat(commit: string): { scope: string; type: CommitType } | null {
+export function checkCommitFormat(
+  commit: string,
+): { scope: string; type: CommitType } | null {
   const match = new RegExp(`${COMMIT_FORMAT_PREFIX.source}`, 'u').exec(commit);
 
   if (!match) {
