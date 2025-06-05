@@ -17,6 +17,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
     }
   },
   "files": [
@@ -38,8 +42,17 @@
     "@rajzik/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "prettier": "catalog:",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "tsdown": "catalog:",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "prettier-plugin-tailwindcss": "^0.6.12"
+  },
+  "peerDependenciesMeta": {
+    "prettier-plugin-tailwindcss": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"

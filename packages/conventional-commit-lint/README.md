@@ -5,13 +5,27 @@ Config for [rajzik preset](../conventional-changelog).
 ## Getting started
 
 ```sh
-# Install commitlint cli and conventional config
 npm install --save-dev @commitlint/cli @rajzik/conventional-commit-lint-config
-# Or use yarn
+pnpm install --save-dev @commitlint/cli @rajzik/conventional-commit-lint-config
 yarn add --dev @commitlint/cli @rajzik/conventional-commit-lint-config
+```
 
 # Configure commitlint to use conventional config
-echo "module.exports = {extends: ['@rajzik/conventional-commit-lint-config']}" > commitlint.config.js
+
+`commitlint.config.cjs`
+
+```js
+module.exports = {
+  extends: ['@rajzik/conventional-commit-lint-config'],
+};
+```
+
+`commitlint.config.mjs`
+
+```js
+export default {
+  extends: ['@rajzik/conventional-commit-lint-config'],
+};
 ```
 
 ## Further instructions

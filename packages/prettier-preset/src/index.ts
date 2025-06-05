@@ -1,10 +1,9 @@
 import type { PluginConfig } from '@ianvs/prettier-plugin-sort-imports';
 import type { Config } from 'prettier';
-import type { PluginOptions } from 'prettier-plugin-tailwindcss';
 
-export type ExtendedConfig = Config | PluginOptions | PluginConfig;
+export type ExtendedConfig = Config | PluginConfig;
 
-const config: ExtendedConfig = {
+const config = {
   arrowParens: 'always',
   bracketSpacing: true,
   plugins: [
@@ -35,6 +34,6 @@ const config: ExtendedConfig = {
     '^[../]',
     '^[./]',
   ],
-};
+} as const satisfies ExtendedConfig;
 
 export default config;

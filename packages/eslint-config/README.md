@@ -1,45 +1,54 @@
-# `eslint-config-rajzik`
+# `@rajzik/eslint-config`
 
 Sharable configuration for eslint.
+
+> Only for eslint v9 and newer
 
 ## Installation
 
 ```sh
-npm install --save-dev eslint-config-rajzik eslint
-yarn add --dev eslint-config-rajzik eslint
+npm install --save-dev @rajzik/eslint-config eslint
+pnpm install --save-dev @rajzik/eslint-config eslint
+yarn add --dev @rajzik/eslint-config eslint
 ```
 
 ## Usage
 
-`.eslintrc.js`:
+`eslint.config.js`:
 
 ```javascript
-module.exports = {
-  root: true,
-  extends: [
-    'rajzik',
-    'rajzik/node',
-    'rajzik/react',
-    'rajzik/esnext',
-    'rajzik/typescript',
-    'rajzik/prettier',
-  ],
-};
+import baseConfig from '@rajzik/eslint-config';
+import nodeConfig from '@rajzik/eslint-config/node';
+import prettierConfig from '@rajzik/eslint-config/prettier';
+import turboConfig from '@rajzik/eslint-config/turbo';
+
+/** @type {import('@rajzik/eslint-config').Config} */
+const config = [
+  ...baseConfig,
+  ...nodeConfig,
+  ...turboConfig,
+  // Always last
+  ...prettierConfig,
+];
+
+export default config;
 ```
 
 ## Presets
 
 - rajzik
-  - Base preset containing bare configuration
+  - Base preset containing bare configuration for typescript, javascript and
+    tests
 - React
   - Enable rules for react
+- Next js
+  - Enable rulse for next js
 - node
   - Enable rules for node
-- esnext
-  - Enable esnext support
-- typescript
-  - Enable support for typescript
-  - Needs to before prettier or last
+- tailwind
+  - Enable rules for tailwind
+- turbo
+  - Enable rules for turbo
 - prettier
   - Enable integration with prettier
   - Prettier has to be last
