@@ -11,6 +11,8 @@
   ],
   "scripts": {
     "build": "turbo build",
+    "changeset:beta": "changeset pre enter beta",
+    "changeset:canary": "changeset pre enter canary",
     "check-eslint-deprecations": "eslint-find-rules --deprecated .eslintrc.js",
     "clean": "git clean -xdf .cache dist dts .turbo node_modules",
     "clean:workspaces": "turbo run clean",
@@ -22,13 +24,22 @@
     "lint:fix": "turbo lint --continue -- --fix",
     "lint:ws": "pnpm dlx sherif@latest",
     "prepare": "pnpm build",
+    "release": "changeset publish",
+    "release:canary": "changeset publish --snapshot --no-git-tag --tag canary",
     "test": "turbo test",
     "test:all": "pnpm run lint:ws && turbo run test lint format typecheck --continue",
     "test:fix": "turbo test -- -u",
-    "typecheck": "turbo typecheck"
+    "typecheck": "turbo typecheck",
+    "version": "changeset version",
+    "version:canary": "changeset version --snapshot canary"
   },
   "prettier": "@rajzik/prettier-config",
   "devDependencies": {
+    "@changesets/changelog-github": "0.5.0",
+    "@changesets/cli": "2.27.10",
+    "@changesets/get-github-info": "0.6.0",
+    "@changesets/get-release-plan": "4.0.5",
+    "@changesets/types": "6.0.0",
     "@commitlint/cli": "^19.8.1",
     "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",

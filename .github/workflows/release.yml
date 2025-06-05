@@ -1,4 +1,4 @@
-name: Release
+name: 🦋 Changesets Release
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - ".changeset/**"
       - "packages/**"
     branches:
-      - canary
+      - main
 
 env:
   CI: 1
@@ -14,13 +14,17 @@ env:
 
 jobs:
   release:
-    name: Release
+    name: 🦋 Changesets Release
     runs-on: ubuntu-latest
+    outputs:
+      published_packages: ${{ steps.changesets.outputs.publishedPackages }}
+      published: ${{ steps.changesets.outputs.published }}
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
@@ -29,17 +33,48 @@ jobs:
       - name: Tests
         run: pnpm test:all
 
-      - name: Create Release Pull Request or Publish to NPM
-        # Run only if the build is successful
+      # This action has two responsibilities. The first time the workflow runs
+      # (initial push to a `release-*` branch) it will create a new branch and
+      # then open a PR with the related changes for the new version. After the
+      # PR is merged, the workflow will run again and this action will build +
+      # publish to npm.
+      - name: 🚀 PR / Publish
         if: success()
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm release
-          title: "ci(changesets): :package: version packages"
-          commit: "ci(changesets): version packages"
-          setupGitUser: false
+          version: pnpm run changeset:version
+          commit: "chore: Update version for release"
+          title: "chore: Update version for release"
+          createGithubReleases: false
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  find_package_version:
+    name: 🦋 Find Package
+    needs: [release]
+    runs-on: ubuntu-latest
+    if: github.repository == 'remix-run/remix' && needs.release.outputs.published == 'true'
+    outputs:
+      package_version: ${{ steps.find_package_version.outputs.package_version }}
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - uses: ./.github/common-actions/install
+
+      - id: find_package_version
+        run: |
+          package_version=$(node ./scripts/find-release-from-changeset.js)
+          echo "package_version=${package_version}" >> $GITHUB_OUTPUT
+        env:
+          PACKAGE_VERSION_TO_FOLLOW: "rajzik"
+          PUBLISHED_PACKAGES: ${{ needs.release.outputs.published_packages }}
+
+  comment:
+    name: 📝 Comment on related issues and pull requests
+    if: github.repository == 'rajzik/configs' && needs.find_package_version.outputs.package_version != ''
+    needs: [release, find_package_version]
+    uses: ./.github/workflows/release-comments.yml

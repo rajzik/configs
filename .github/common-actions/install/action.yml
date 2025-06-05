@@ -4,10 +4,10 @@ description: "Sets up Node.js and runs install"
 runs:
   using: composite
   steps:
-    - name: Install dependencies
+    - name: 📦 Setup pnpm
       uses: pnpm/action-setup@v4
 
-    - name: Setup Node.js
+    - name: ⎔ Setup node
       uses: actions/setup-node@v4
       with:
         node-version-file: ".nvmrc"
@@ -20,9 +20,15 @@ runs:
         git config --global user.name rajzik-bot
         git config --global user.email silhanu+releasebot@gmail.com
 
-    - name: Install dependencies
+    - name: 📥 Install deps
       shell: bash
       run: pnpm install --frozen-lockfile
+
+    - name: 🔐 Setup npm auth
+      shell: bash
+      run: |
+        echo "registry=https://registry.npmjs.org" >> ~/.npmrc
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
 
     - name: Build
       id: build

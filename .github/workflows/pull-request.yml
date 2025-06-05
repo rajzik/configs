@@ -44,36 +44,36 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Install
+      - name: 📥 Setup
         uses: ./.github/common-actions/install
 
       - name: Run tests
         run: pnpm test
 
   eslint:
-    name: ESLint
+    name: ⬣ ESLint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Install
+      - name: 📥 Setup
         uses: ./.github/common-actions/install
 
-      - name: Run ESLint
+      - name: 🔬 Lint
         run: pnpm lint
 
   types:
-    name: TypeScript
+    name: ʦ TypeScript
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Install
+      - name: 📥 Setup
         uses: ./.github/common-actions/install
 
-      - name: Run typecheck
+      - name: 🔎 Type check
         run: pnpm typecheck
 
   prettier:
@@ -83,7 +83,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Install
+      - name: 📥 Setup
         uses: ./.github/common-actions/install
 
       - name: Run prettier
@@ -96,11 +96,8 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
 
-      - name: Install
+      - name: 📥 Setup
         uses: ./.github/common-actions/install
 
-      - name: Build packages
-        run: pnpm build
-
-      - name: Release
+      - name: 🚀 PR Release
         run: pnpx pkg-pr-new publish --compact --pnpm './packages/*'
