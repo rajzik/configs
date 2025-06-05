@@ -21,21 +21,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
-      - uses: ./.github/actions/detect-env
-
-      - name: Prepare pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: |
-          pnpm install --frozen-lockfile
+      - uses: ./.github/common-actions/install
 
       - name: Build
         run: pnpm build
@@ -50,119 +36,56 @@ jobs:
           name: commit-watch-artifacts
           path: ${{ env.ARTIFACT_DIR }}
 
+
   tests:
-    name: Lint & Tests
+    name: Tests
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout branch
+        uses: actions/checkout@v4
 
-      - uses: ./.github/actions/detect-env
+      - name: Install
+        uses: ./.github/common-actions/install
 
-      - name: Prepare pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: Create artifacts directory
-        run: mkdir -p ${{ env.ARTIFACT_DIR }}
-
-      - name: Install dependencies
-        run: |
-          pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm build
-
-      - name: Tests
+      - name: Run tests
         run: pnpm test
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-unit-tests
-          path: ./raw-coverage/jest
-
-  publish_preview:
-    name: Publish Preview
+  eslint:
+    name: ESLint
     runs-on: ubuntu-latest
-    needs: [tests]
-    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout branch
+        uses: actions/checkout@v4
 
-      - uses: ./.github/actions/detect-env
+      - name: Install
+        uses: ./.github/common-actions/install
 
-      - name: Prepare pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
+      - name: Run ESLint
+        run: pnpm lint
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
+  types:
+    name: TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
 
-      - name: Create artifacts directory
-        run: mkdir -p ${{ env.ARTIFACT_DIR }}
+      - name: Install
+        uses: ./.github/common-actions/install
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Run typecheck
+        run: pnpm typecheck
 
-      - name: Build
-        run: pnpm build
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
 
-      - name: Run Monodeploy in Dry Run Mode
-        id: run-monodeploy
-        run: |
-          echo "<!-- MONODEPLOY:BELOW -->" > ${{ env.ARTIFACT_DIR }}/CHANGELOG.md
-          yarn monodeploy \
-            --dry-run \
-            --log-level 0 \
-            --git-base-branch origin/${{ github.base_ref }} \
-            --changelog-filename ${{ env.ARTIFACT_DIR }}/CHANGELOG.md \
-            --force-write-change-files
-          changelog_body=$(cat ${{ env.ARTIFACT_DIR }}/CHANGELOG.md)
-          changelog_body="${changelog_body//'%'/'%25'}"
-          changelog_body="${changelog_body//$'\n'/'%0A'}"
-          changelog_body="${changelog_body//$'\r'/'%0D'}"
-          echo ::set-output name=changelog::$changelog_body
+      - name: Install
+        uses: ./.github/common-actions/install
 
-      - name: Check for Changelog Comment
-        uses: peter-evans/find-comment@v3
-        id: found-comment
-        if: github.event_name == 'pull_request'
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body-includes: <!-- MONODEPLOY_CHANGELOG_PREVIEW -->
-          direction: last
+      - name: Run prettier
+        run: pnpm format:check
 
-      - name: Post Changelog to PR
-        uses: peter-evans/create-or-update-comment@v4
-        if: github.event_name == 'pull_request'
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          comment-id: ${{ steps.found-comment.outputs.comment-id }}
-          issue-number: ${{ github.event.pull_request.number }}
-          edit-mode: replace
-          body: |
-            <!-- MONODEPLOY_CHANGELOG_PREVIEW -->
-            # Monodeploy Publish Preview
-            This Pull Request introduces the following changes:
-            ${{ steps.run-monodeploy.outputs.changelog }}
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: ${{ env.ARTIFACT_DIR }}

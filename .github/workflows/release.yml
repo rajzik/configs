@@ -1,120 +1,45 @@
 name: Release
 
 on:
-  workflow_dispatch:
+  push:
+    paths:
+      - ".changeset/**"
+      - "packages/**"
+    branches:
+      - canary
 
 env:
   CI: 1
   ARTIFACT_DIR: ./artifacts
 
 jobs:
-  pre-release-check:
-    name: Publish configs (Precheck)
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-
-      - uses: ./.github/actions/detect-env
-
-      - name: Prepare pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
-      - name: Install dependencies
-        run: |
-          pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm build
-
-      - name: Configure Git
-        run: |
-          git config --global user.name rajzik-bot
-          git config --global user.email silhanu+releasebot@gmail.com
-          git config --global init.defaultBranch main
+      - uses: ./.github/common-actions/install
 
       - name: Tests
-        run: pnpm test
+        run: pnpm test:all
 
-  release:
-    name: Publish configs
-    runs-on: ubuntu-latest
-    needs: [pre-release-check]
-    steps:
-      - uses: actions/checkout@v4
+      - name: Create Release Pull Request or Publish to NPM
+        # Run only if the build is successful
+        if: success()
+        id: changesets
+        uses: changesets/action@v1
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          fetch-depth: 0
-
-      - uses: ./.github/actions/detect-env
-
-      - name: Prepare pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: Create artifacts directory
-        run: mkdir -p ${{ env.ARTIFACT_DIR }}
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Configure Git
-        run: |
-          git config --global user.name rajzik-bot
-          git config --global user.email silhanu+releasebot@gmail.com
-          git config --global init.defaultBranch main
-
-      - name: Publish via Monodeploy (Pre-release)
-        if: github.ref != 'refs/heads/main'
+          publish: pnpm release
+          title: "ci(changesets): :package: version packages"
+          commit: "ci(changesets): version packages"
+          setupGitUser: false
         env:
-          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          pnpm monodeploy \
-            --log-level 0 \
-            --push \
-            --prerelease
-
-      - name: Publish via Monodeploy
-        if: github.ref == 'refs/heads/main'
-        env:
-          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          pnpm monodeploy \
-            --log-level 0 \
-            --changelog-filename "<packageDir>/CHANGELOG.md" \
-            --persist-versions \
-            --auto-commit \
-            --auto-commit-message "internal: Release configs [skip ci]." \
-            --plugins "@monodeploy/plugin-github" \
-            --push
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: ${{ env.ARTIFACT_DIR }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

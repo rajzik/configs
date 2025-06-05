@@ -8,7 +8,7 @@ const config: ExtendedConfig = {
   arrowParens: 'always',
   bracketSpacing: true,
   plugins: ['prettier-plugin-packagejson', '@ianvs/prettier-plugin-sort-imports'],
-  printWidth: 100,
+  printWidth: 80,
   proseWrap: 'always',
   semi: true,
   singleAttributePerLine: true,

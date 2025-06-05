@@ -52,6 +52,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "group": "configs"
+  }
 }
