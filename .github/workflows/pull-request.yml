@@ -100,4 +100,4 @@ jobs:
         uses: ./.github/common-actions/install
 
       - name: 🚀 PR Release
-        run: pnpx pkg-pr-new publish --compact --pnpm './packages/*'
+        run: pnpx pkg-pr-new publish --pnpm './packages/*'
