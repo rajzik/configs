@@ -14,9 +14,7 @@ jobs:
   commit-watch:
     name: Run Commit Watch
     runs-on: ubuntu-latest
-    if:
-      "github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip
-      ci]')"
+    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,36 +23,24 @@ jobs:
 
       - uses: ./.github/actions/detect-env
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-
-      - name: Create artifacts directory
-        run: mkdir -p ${{ env.ARTIFACT_DIR }}
-
-      - name: Restore yarn cache
-        id: yarn-cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ./.yarn
-            .pnp.*
-          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: |
-          yarn install --immutable
+          pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - run: npx danger ci --use-github-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: commit-watch-artifacts
           path: ${{ env.ARTIFACT_DIR }}
@@ -62,42 +48,35 @@ jobs:
   tests:
     name: Lint & Tests
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - uses: ./.github/actions/detect-env
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
 
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
-      - name: Restore yarn cache
-        id: yarn-cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ./.yarn
-            .pnp.*
-          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
-
       - name: Install dependencies
         run: |
-          yarn install --immutable
+          pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - name: Tests
-        run: yarn test
+        run: pnpm test
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-unit-tests
           path: ./raw-coverage/jest
@@ -106,9 +85,7 @@ jobs:
     name: Publish Preview
     runs-on: ubuntu-latest
     needs: [tests]
-    if:
-      "github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip
-      ci]')"
+    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - uses: actions/checkout@v4
         with:
@@ -120,24 +97,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
 
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
-      - name: Restore yarn cache
-        id: yarn-cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ./.yarn
-            .pnp.*
-          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
-
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - name: Run Monodeploy in Dry Run Mode
         id: run-monodeploy
@@ -156,7 +125,7 @@ jobs:
           echo ::set-output name=changelog::$changelog_body
 
       - name: Check for Changelog Comment
-        uses: peter-evans/find-comment@v2
+        uses: peter-evans/find-comment@v3
         id: found-comment
         if: github.event_name == 'pull_request'
         with:
@@ -166,7 +135,7 @@ jobs:
           direction: last
 
       - name: Post Changelog to PR
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         if: github.event_name == 'pull_request'
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -180,7 +149,7 @@ jobs:
             ${{ steps.run-monodeploy.outputs.changelog }}
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: ${{ env.ARTIFACT_DIR }}

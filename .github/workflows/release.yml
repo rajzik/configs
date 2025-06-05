@@ -23,25 +23,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
 
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
-      - name: Restore yarn cache
-        id: yarn-cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ./.yarn
-            .pnp.*
-          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
-
       - name: Install dependencies
         run: |
-          yarn install --immutable
+          pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: pnpm build
 
       - name: Configure Git
         run: |
@@ -50,7 +42,7 @@ jobs:
           git config --global init.defaultBranch main
 
       - name: Tests
-        run: yarn test
+        run: pnpm test
 
   release:
     name: Publish configs
@@ -68,24 +60,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
 
       - name: Create artifacts directory
         run: mkdir -p ${{ env.ARTIFACT_DIR }}
 
-      - name: Restore yarn cache
-        id: yarn-cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ./.yarn
-            .pnp.*
-          key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
-
       - name: Install dependencies
-        run: yarn install --immutable
+        run: pnpm install --frozen-lockfile
 
       - name: Build
-        run: yarn run pack
+        run: pnpm run build
 
       - name: Configure Git
         run: |
@@ -99,7 +83,7 @@ jobs:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          yarn monodeploy \
+          pnpm monodeploy \
             --log-level 0 \
             --push \
             --prerelease
@@ -110,7 +94,7 @@ jobs:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          yarn monodeploy \
+          pnpm monodeploy \
             --log-level 0 \
             --changelog-filename "<packageDir>/CHANGELOG.md" \
             --persist-versions \
@@ -120,7 +104,7 @@ jobs:
             --push
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: ${{ env.ARTIFACT_DIR }}

@@ -125,7 +125,6 @@ const config: ConfigArray = tseslint.config(
         },
       ],
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-
       '@typescript-eslint/no-explicit-any': ['warn', { ignoreRestArgs: true }],
       '@typescript-eslint/no-deprecated': 'error',
       '@typescript-eslint/consistent-type-exports': [
@@ -163,7 +162,13 @@ const config: ConfigArray = tseslint.config(
           checkAllIndexAccess: true,
         },
       ],
-
+      'unicorn/expiring-todo-comments': [
+        'error',
+        {
+          ignoreDatesOnPullRequests: true,
+          allowWarningComments: false,
+        },
+      ],
       'unicorn/no-null': 'off',
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-array-reduce': 'off',
