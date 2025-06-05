@@ -14,7 +14,7 @@ runs:
         registry-url: "https://registry.npmjs.org"
         cache: "pnpm"
 
-    - name: Setup Git User
+    - name: 🔐 Setup Git User
       shell: bash
       run: |
         git config --global user.name rajzik-bot
@@ -24,7 +24,7 @@ runs:
       shell: bash
       run: pnpm install --frozen-lockfile
 
-    - name: Build
+    - name: 🔨 Build
       id: build
       shell: bash
       continue-on-error: false
