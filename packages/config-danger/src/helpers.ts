@@ -6,7 +6,10 @@ export const TEST_EXT = /\.test\.(t|j)sx?$/;
 export const SNAP_EXT = /\.snap$/;
 export const GLOBAL_IGNORE = /Icon[A-Z][A-Za-z]+\.(t|j)sx$/;
 
-export const updatedFiles = [...danger.git.created_files, ...danger.git.modified_files];
+export const updatedFiles = [
+  ...danger.git.created_files,
+  ...danger.git.modified_files,
+];
 
 export const touchedFiles = [
   ...danger.git.created_files,

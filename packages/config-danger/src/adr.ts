@@ -1,5 +1,12 @@
 import type { CommonOptions } from './types';
-import { countChangesInFile, debug, isRevert, SNAP_EXT, TEST_EXT, touchedFiles } from './helpers';
+import {
+  countChangesInFile,
+  debug,
+  isRevert,
+  SNAP_EXT,
+  TEST_EXT,
+  touchedFiles,
+} from './helpers';
 
 // Check that large PRs have an associated ADR file documenting the change.
 // Ignore lock, tests, and snapshot files in the calculation.
@@ -16,14 +23,21 @@ export function checkForADR(docsPath: string, options: CheckAdrOptions = {}) {
 
   const { changeThreshold = 200, docsUrl = '', exclusions = [] } = options;
   const hasDocsFiles = touchedFiles.some((file) => file.includes(docsPath));
-  const docsExclusions = [...exclusions, 'package-lock.json', 'yarn.lock', TEST_EXT, SNAP_EXT];
+  const docsExclusions = [
+    ...exclusions,
+    'package-lock.json',
+    'yarn.lock',
+    TEST_EXT,
+    SNAP_EXT,
+  ];
   const modifiedExclusions = danger.git.modified_files.filter((file) =>
     // eslint-disable-next-line unicorn/prefer-regexp-test
     docsExclusions.some((ex) => Boolean(file.match(ex))),
   );
 
   void Promise.all(modifiedExclusions.map(countChangesInFile)).then((vals) => {
-    const totalChangeCount = danger.github.pr.additions + danger.github.pr.deletions;
+    const totalChangeCount =
+      danger.github.pr.additions + danger.github.pr.deletions;
     const exclusionChangeCount = vals.reduce((acc, val) => acc + val, 0);
     const changeCount = totalChangeCount - exclusionChangeCount;
 

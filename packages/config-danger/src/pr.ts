@@ -14,7 +14,9 @@ export function checkForConventionalPrefix() {
 export function checkForConventionalSquashCommit() {
   if (
     danger.github.pr.commits <= 1 &&
-    !danger.github.commits.at(0)?.commit.message.includes(danger.github.pr.title)
+    !danger.github.commits
+      .at(0)
+      ?.commit.message.includes(danger.github.pr.title)
   ) {
     fail(
       'Automatic releases requires commit message to match PR title if PR contains only 1 commit.',

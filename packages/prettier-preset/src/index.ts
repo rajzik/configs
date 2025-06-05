@@ -7,7 +7,10 @@ export type ExtendedConfig = Config | PluginOptions | PluginConfig;
 const config: ExtendedConfig = {
   arrowParens: 'always',
   bracketSpacing: true,
-  plugins: ['prettier-plugin-packagejson', '@ianvs/prettier-plugin-sort-imports'],
+  plugins: [
+    'prettier-plugin-packagejson',
+    '@ianvs/prettier-plugin-sort-imports',
+  ],
   printWidth: 80,
   proseWrap: 'always',
   semi: true,

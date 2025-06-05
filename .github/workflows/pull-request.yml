@@ -103,4 +103,4 @@ jobs:
         run: pnpm build
 
       - name: Release
-        run: pnpx dlx pkg-pr-new publish --compact --pnpm './packages/*'
+        run: pnpm dlx pkg-pr-new publish --compact --pnpm './packages/*'

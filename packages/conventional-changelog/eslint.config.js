@@ -4,6 +4,11 @@ import prettierConfig from '@rajzik/eslint-config/prettier';
 import turboConfig from '@rajzik/eslint-config/turbo';
 
 /** @type {import('@rajzik/eslint-config').Config} */
-const config = [...baseConfig, ...nodeConfig, ...turboConfig, ...prettierConfig];
+const config = [
+  ...baseConfig,
+  ...nodeConfig,
+  ...turboConfig,
+  ...prettierConfig,
+];
 
 export default config;

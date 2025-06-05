@@ -336,7 +336,8 @@
 
 # Initial implementation
 
-Initial configs without too many bugs, documentation lacking. Will be added later (I promise 😇).
+Initial configs without too many bugs, documentation lacking. Will be added
+later (I promise 😇).
 
 #### 💥 Breaking
 

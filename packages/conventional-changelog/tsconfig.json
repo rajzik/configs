@@ -3,6 +3,12 @@
   "compilerOptions": {
     "lib": ["ES2024", "dom", "dom.iterable"]
   },
-  "include": ["src", "tsdown.config.ts", "types", "eslint.config.js", "prettier.config.js"],
+  "include": [
+    "src",
+    "tsdown.config.ts",
+    "types",
+    "eslint.config.js",
+    "prettier.config.js"
+  ],
   "exclude": ["node_modules"]
 }

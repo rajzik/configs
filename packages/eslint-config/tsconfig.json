@@ -4,6 +4,12 @@
     "lib": ["ES2024", "dom", "dom.iterable"],
     "rootDir": "."
   },
-  "include": ["src", "tsdown.config.ts", "eslint.config.js", "prettier.config.js", "types"],
+  "include": [
+    "src",
+    "tsdown.config.ts",
+    "eslint.config.js",
+    "prettier.config.js",
+    "types"
+  ],
   "exclude": ["node_modules"]
 }

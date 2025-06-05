@@ -131,12 +131,22 @@ export interface WriterOptions {
   debug: () => void;
   doFlush: boolean;
   finalizeContext:
-    | ((context: Context, options: WriterOptions, commits: Commit[], keyCommit: Commit) => Context)
+    | ((
+        context: Context,
+        options: WriterOptions,
+        commits: Commit[],
+        keyCommit: Commit,
+      ) => Context)
     | undefined;
   footerPartial: string;
   generateOn:
     | string
-    | ((commit: Commit, commits: Commit[], context: Context, options: WriterOptions) => unknown);
+    | ((
+        commit: Commit,
+        commits: Commit[],
+        context: Context,
+        options: WriterOptions,
+      ) => unknown);
   groupBy: string;
   headerPartial: string;
   ignoreReverted: boolean;

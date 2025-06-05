@@ -45,7 +45,11 @@ function createWorkItemLink(workItemId: string) {
   return '';
 }
 
-function createLink(paths: string[], context: Context, reference: Partial<Reference> = {}): string {
+function createLink(
+  paths: string[],
+  context: Context,
+  reference: Partial<Reference> = {},
+): string {
   const owner = reference.owner ?? context.owner;
   const repository = reference.repository ?? context.repository;
   const url: string[] = [];
@@ -87,9 +91,18 @@ const options: Partial<WriterOptions> = {
     path.join(import.meta.dirname, '../templates/template.hbs'),
     'utf8',
   ),
-  commitPartial: fs.readFileSync(path.join(import.meta.dirname, '../templates/commit.hbs'), 'utf8'),
-  headerPartial: fs.readFileSync(path.join(import.meta.dirname, '../templates/header.hbs'), 'utf8'),
-  footerPartial: fs.readFileSync(path.join(import.meta.dirname, '../templates/footer.hbs'), 'utf8'),
+  commitPartial: fs.readFileSync(
+    path.join(import.meta.dirname, '../templates/commit.hbs'),
+    'utf8',
+  ),
+  headerPartial: fs.readFileSync(
+    path.join(import.meta.dirname, '../templates/header.hbs'),
+    'utf8',
+  ),
+  footerPartial: fs.readFileSync(
+    path.join(import.meta.dirname, '../templates/footer.hbs'),
+    'utf8',
+  ),
 
   // Commits
   groupBy: 'label',
@@ -160,7 +173,11 @@ const options: Partial<WriterOptions> = {
       if (SYSTEM_TASKDEFINITIONSURI) {
         reference.issueLink = createWorkItemLink(reference.issue);
       } else {
-        reference.issueLink = createLink([context.issue, reference.issue], context, reference);
+        reference.issueLink = createLink(
+          [context.issue, reference.issue],
+          context,
+          reference,
+        );
       }
 
       let source = `${reference.repository ?? ''}#${reference.issue}`;

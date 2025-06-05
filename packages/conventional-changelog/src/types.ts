@@ -1,4 +1,8 @@
-import type { Commit, ParserOptions, SemverLevel } from '@rajzik/conventional-changelog-types';
+import type {
+  Commit,
+  ParserOptions,
+  SemverLevel,
+} from '@rajzik/conventional-changelog-types';
 
 export interface BumpOptions {
   parserOpts: Partial<ParserOptions>;
