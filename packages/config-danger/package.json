@@ -8,6 +8,7 @@
     "lumos",
     "scripts"
   ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/config-danger",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",

@@ -5,6 +5,7 @@
   "keywords": [
     "private"
   ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/shared",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",

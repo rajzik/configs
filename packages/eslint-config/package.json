@@ -6,6 +6,7 @@
     "config",
     "eslint"
   ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/eslint-config",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",

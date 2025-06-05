@@ -7,6 +7,7 @@
     "conventional-changelog",
     "preset"
   ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/conventional-commit-lint",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",

@@ -7,6 +7,7 @@
     "sharable",
     "config"
   ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/tsconfig",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
