@@ -1,5 +1,17 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
+## 2.0.0
+
+### Major Changes
+
+- 8b86e7a: Project restructure, update dependencies, rework eslint and migrate
+  to v9, rework prettier config
+
+### Patch Changes
+
+- Updated dependencies [8b86e7a]
+  - @rajzik/conventional-changelog-types@2.0.0
+
 <!-- MONODEPLOY:BELOW -->
 
 ### 1.0.1 - 2022-06-25

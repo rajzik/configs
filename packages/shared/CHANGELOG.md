@@ -1,5 +1,12 @@
 # `@rajzik/configs-shared` CHANGELOG
 
+## 2.0.0
+
+### Major Changes
+
+- 8b86e7a: Project restructure, update dependencies, rework eslint and migrate
+  to v9, rework prettier config
+
 <!-- MONODEPLOY:BELOW -->
 
 # 1.0.0 - 2022-06-22

@@ -1,5 +1,18 @@
 # `@rajzik/config-danger` CHANGELOG
 
+## 2.0.0
+
+### Major Changes
+
+- 8b86e7a: Project restructure, update dependencies, rework eslint and migrate
+  to v9, rework prettier config
+
+### Patch Changes
+
+- 341bf1d: Update documentation and add tailwind support
+- Updated dependencies [8b86e7a]
+  - @rajzik/conventional-changelog-types@2.0.0
+
 <!-- MONODEPLOY:BELOW -->
 
 ### 1.0.6 - 2022-11-18
