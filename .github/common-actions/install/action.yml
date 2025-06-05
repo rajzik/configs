@@ -28,7 +28,7 @@ runs:
       shell: bash
       run: |
         echo "registry=https://registry.npmjs.org" >> ~/.npmrc
-        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" >> ~/.npmrc
 
     - name: Build
       id: build
