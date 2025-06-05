@@ -37,7 +37,8 @@ export default config;
 ## Presets
 
 - rajzik
-  - Base preset containing bare configuration for typescript, javascript and tests
+  - Base preset containing bare configuration for typescript, javascript and
+    tests
 - React
   - Enable rules for react
 - Next js

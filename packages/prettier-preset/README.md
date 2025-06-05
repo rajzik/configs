@@ -45,7 +45,6 @@ export default {
 
 ### Usage with tailwind
 
-
 `package.json`:
 
 ```json
