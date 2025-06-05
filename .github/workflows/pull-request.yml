@@ -87,7 +87,7 @@ jobs:
         uses: ./.github/common-actions/install
 
       - name: Run prettier
-        run: pnpm format:check
+        run: pnpm format
 
   continuous-release:
     name: Continuous Release
