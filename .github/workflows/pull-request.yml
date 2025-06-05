@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: 🦋 Continuous Integration
 
 on:
   push:
@@ -11,50 +11,52 @@ env:
   ARTIFACT_DIR: ./artifacts
 
 jobs:
-  commit-watch:
-    name: Run Commit Watch
+  danger:
+    name: 🔥 Danger
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
-      - uses: actions/checkout@v4
+      - name: ⬇️ Checkout branch
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
       - uses: ./.github/common-actions/install
 
-      - name: Build
+      - name: 🔨 Build
         run: pnpm build
 
-      - run: npx danger ci --use-github-checks
+      - name: 🔥 Run Danger
+        run: npx danger ci --use-github-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Artifacts
+      - name: 📤 Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: commit-watch-artifacts
+          name: danger-artifacts
           path: ${{ env.ARTIFACT_DIR }}
 
 
   tests:
-    name: Tests
+    name: 🧪 Tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
+      - name: ⬇️ Checkout branch
         uses: actions/checkout@v4
 
       - name: 📥 Setup
         uses: ./.github/common-actions/install
 
-      - name: Run tests
+      - name: 🧪 Run tests
         run: pnpm test
 
   eslint:
     name: ⬣ ESLint
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
+      - name: ⬇️ Checkout branch
         uses: actions/checkout@v4
 
       - name: 📥 Setup
@@ -67,7 +69,7 @@ jobs:
     name: ʦ TypeScript
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
+      - name: ⬇️ Checkout branch
         uses: actions/checkout@v4
 
       - name: 📥 Setup
@@ -77,23 +79,24 @@ jobs:
         run: pnpm typecheck
 
   prettier:
-    name: Prettier
+    name: 📝 Prettier
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
+      - name: ⬇️ Checkout branch
         uses: actions/checkout@v4
 
       - name: 📥 Setup
         uses: ./.github/common-actions/install
 
-      - name: Run prettier
+      - name: 📝 Run prettier
         run: pnpm format
 
   continuous-release:
-    name: Continuous Release
+    name: 🦋 Continuous Release
+    if: github.repository == 'rajzik/configs'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch
+      - name: ⬇️ Checkout branch
         uses: actions/checkout@v4
 
       - name: 📥 Setup
