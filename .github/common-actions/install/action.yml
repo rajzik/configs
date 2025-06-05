@@ -26,6 +26,7 @@ runs:
 
     - name: Build
       id: build
+      shell: bash
       continue-on-error: false
       # Custom turbo build failure information
       run: |
