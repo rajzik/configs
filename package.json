@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "build": "turbo build",
+    "changeset": "changeset",
     "changeset:beta": "changeset pre enter beta",
     "changeset:canary": "changeset pre enter canary",
     "check-eslint-deprecations": "eslint-find-rules --deprecated .eslintrc.js",

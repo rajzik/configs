@@ -15,6 +15,11 @@
   },
   "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
+  "exports": {
+    ".": "./base.json",
+    "./tsconfig.package.json": "./tsconfig.package.json"
+  },
+  "main": "base.json",
   "files": [
     "*.json"
   ],
