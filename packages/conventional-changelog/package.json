@@ -7,7 +7,11 @@
     "preset",
     "rajzik"
   ],
-  "repository": "git@github.com:rajzik/configs.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajzik/configs.git",
+    "directory": "packages/conventional-changelog"
+  },
   "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "type": "module",

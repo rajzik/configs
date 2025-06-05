@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "description": "personal sharable configs",
-  "repository": "git@github.com:rajzik/configs.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajzik/configs.git"
+  },
   "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "workspaces": [
