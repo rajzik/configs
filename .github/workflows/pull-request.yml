@@ -1,4 +1,4 @@
-name: 🦋 Continuous Integration
+name: 🔥 Pull requests
 
 on:
   push:
@@ -14,7 +14,6 @@ jobs:
   danger:
     name: 🔥 Danger
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && !contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - name: ⬇️ Checkout branch
         uses: actions/checkout@v4
