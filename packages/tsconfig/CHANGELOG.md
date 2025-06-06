@@ -1,5 +1,13 @@
 # `@rajzik/tsconfig` CHANGELOG
 
+## 2.0.1
+
+### Patch Changes
+
+- [#515](https://github.com/rajzik/configs/pull/515)
+  [`5b984ab`](https://github.com/rajzik/configs/commit/5b984ab35e86ff798a0386066db744044238bcc5)
+  Thanks [@rajzik](https://github.com/rajzik)! - Fix release
+
 ## 2.0.0
 
 ### Major Changes
