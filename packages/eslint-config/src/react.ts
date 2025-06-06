@@ -19,7 +19,6 @@ const config: ConfigArray = [
       ...reactPlugin.configs['jsx-runtime'].rules,
       ...hooksPlugin.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
-      ...stylisticPlugin.configs['disable-legacy'].rules,
 
       '@stylistic/jsx-quotes': ['error', 'prefer-double'],
       '@stylistic/jsx-sort-props': 'warn',
@@ -61,21 +60,6 @@ const config: ConfigArray = [
     settings: {
       react: {
         version: 'detect',
-      },
-      'jsx-a11y': {
-        polymorphicPropName: 'as',
-        components: {
-          Button: 'button',
-          CancelButton: 'button',
-          DeleteButton: 'button',
-          SaveButton: 'button',
-          EditButton: 'button',
-          ShareButton: 'button',
-          ImportButton: 'button',
-          NumberInput: 'input',
-          TextInput: 'input',
-          TextField: 'input',
-        },
       },
     },
   },
