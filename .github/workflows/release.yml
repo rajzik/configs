@@ -49,6 +49,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
+          publish: pnpm release
           commit: "chore: Update version for release"
           title: "chore: Update version for release"
           createGithubReleases: false
