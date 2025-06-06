@@ -1,5 +1,17 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
+## 2.0.2
+
+### Patch Changes
+
+- [#518](https://github.com/rajzik/configs/pull/518)
+  [`73f2ae3`](https://github.com/rajzik/configs/commit/73f2ae32a4dfa4942de2139951854844fc050676)
+  Thanks [@rajzik](https://github.com/rajzik)! - Enable release to github
+
+- Updated dependencies
+  [[`73f2ae3`](https://github.com/rajzik/configs/commit/73f2ae32a4dfa4942de2139951854844fc050676)]:
+  - @rajzik/conventional-changelog-types@2.0.2
+
 ## 2.0.1
 
 ### Patch Changes
