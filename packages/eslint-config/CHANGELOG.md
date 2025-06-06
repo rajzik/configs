@@ -1,5 +1,17 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.0.3
+
+### Patch Changes
+
+- [#521](https://github.com/rajzik/configs/pull/521)
+  [`db57048`](https://github.com/rajzik/configs/commit/db570488eab41adbdd8c1e3df20cc40a7bb741ab)
+  Thanks [@rajzik](https://github.com/rajzik)! - Remove duplicate rules remove
+  a11y settings and enable next rule
+
+- Updated dependencies []:
+  - @rajzik/configs-shared@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes
