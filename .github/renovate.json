@@ -11,5 +11,29 @@
     ]
   },
   "npm": { "enabled": true },
-  "updateLockFiles": true
+  "updateLockFiles": true,
+  "packageRules": [
+    { "matchManagers": ["github-actions"], "semanticCommitType": "ci" },
+    {
+      "matchDepTypes": ["peerDependencies"],
+      "rangeStrategy": "widen",
+      "semanticCommitType": "deps"
+    },
+    { "matchDepTypes": ["packageManager"], "semanticCommitType": "build" },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "bump",
+      "semanticCommitType": "build"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "bump",
+      "semanticCommitType": "deps"
+    },
+    {
+      "matchDepTypes": ["resolutions"],
+      "rangeStrategy": "bump",
+      "semanticCommitType": "build"
+    }
+  ]
 }
