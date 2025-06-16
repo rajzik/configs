@@ -8,7 +8,8 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
+  pull-requests: write
 
 env:
   CI: 1
@@ -33,7 +34,7 @@ jobs:
       - name: 🔥 Run Danger
         run: npx danger ci --use-github-checks
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: 📤 Upload Artifacts
         uses: actions/upload-artifact@v4
