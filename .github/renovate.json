@@ -6,7 +6,7 @@
   "github-actions": {
     "enabled": true,
     "fileMatch": [
-      "^(workflow-templates|\\.github\\/workflows)\\/[^/]+\\.ya?ml$",
+      "^(workflow-templates|common-actions|\\.github\\/workflows)\\/[^/]+\\.ya?ml$",
       "(^|\\/)action\\.ya?ml$"
     ]
   },

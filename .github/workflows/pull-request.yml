@@ -33,7 +33,7 @@ jobs:
       - name: 🔥 Run Danger
         run: npx danger ci --use-github-checks
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: 📤 Upload Artifacts
         uses: actions/upload-artifact@v4
