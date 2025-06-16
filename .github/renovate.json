@@ -1,36 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":semanticCommitScopeDisabled"],
+  "extends": ["config:recommended", ":semanticCommitScopeDisabled"],
   "semanticCommitType": "deps",
   "prCreation": "immediate",
   "github-actions": {
     "enabled": true,
-    "fileMatch": [
-      "^(workflow-templates|common-actions|\\.github\\/workflows)\\/[^/]+\\.ya?ml$",
-      "(^|\\/)action\\.ya?ml$"
+    "managerFilePatterns": [
+      "/^(workflow-templates|common-actions|\\.github\\/workflows)\\/[^/]+\\.ya?ml$/",
+      "/(^|\\/)action\\.ya?ml$/"
     ]
   },
-  "npm": {
-    "enabled": true
-  },
-  "semanticCommits": "enabled",
-  "commitMessage": "{{{commitMessagePrefix}}} {{{commitMessageAction}}} {{{commitMessageTopic}}} {{{commitMessageExtra}}}{{{commitMessageSuffix}}}",
+  "npm": { "enabled": true },
   "updateLockFiles": true,
-  "commitMessageSuffix": ".",
   "packageRules": [
-    {
-      "matchManagers": ["github-actions"],
-      "semanticCommitType": "ci"
-    },
+    { "matchManagers": ["github-actions"], "semanticCommitType": "ci" },
     {
       "matchDepTypes": ["peerDependencies"],
       "rangeStrategy": "widen",
       "semanticCommitType": "deps"
     },
-    {
-      "matchDepTypes": ["packageManager"],
-      "semanticCommitType": "build"
-    },
+    { "matchDepTypes": ["packageManager"], "semanticCommitType": "build" },
     {
       "matchDepTypes": ["devDependencies"],
       "rangeStrategy": "bump",
