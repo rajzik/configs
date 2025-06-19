@@ -36,13 +36,13 @@
   "dependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
     "prettier-plugin-packagejson": "^2.5.15",
-    "prettier-plugin-tailwindcss": "^0.6.12"
+    "prettier-plugin-tailwindcss": "^0.6.13"
   },
   "devDependencies": {
     "@rajzik/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "prettier": "catalog:",
-    "prettier-plugin-tailwindcss": "^0.6.12",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
