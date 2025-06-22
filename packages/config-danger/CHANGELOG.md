@@ -1,5 +1,12 @@
 # `@rajzik/config-danger` CHANGELOG
 
+## 2.0.4
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.0.3
+
 ## 2.0.3
 
 ### Patch Changes
