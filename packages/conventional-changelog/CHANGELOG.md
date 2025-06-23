@@ -1,5 +1,17 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
+## 2.0.3
+
+### Patch Changes
+
+- [#523](https://github.com/rajzik/configs/pull/523)
+  [`b77cf4b`](https://github.com/rajzik/configs/commit/b77cf4bee183921f71f1d3fa7866a3184dac22b8)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `conventional-recommended-bump` to `^11.2.0`.
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes
