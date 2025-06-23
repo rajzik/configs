@@ -1,4 +1,3 @@
-/* eslint @stylistic/migrate/migrate-js: "error" */
 import type { ConfigArray } from 'typescript-eslint';
 
 import stylisticPlugin from '@stylistic/eslint-plugin';
