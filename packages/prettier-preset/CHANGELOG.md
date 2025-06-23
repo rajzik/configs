@@ -1,5 +1,13 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.1.0
+
+### Minor Changes
+
+- [#552](https://github.com/rajzik/configs/pull/552)
+  [`0fdace6`](https://github.com/rajzik/configs/commit/0fdace6eaae6c7f9ed99767a997d6d2e858184d9)
+  Thanks [@rajzik](https://github.com/rajzik)! - Add css support to eslint
+
 ## 2.0.4
 
 ## 2.0.3
