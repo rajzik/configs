@@ -65,7 +65,6 @@
   "devDependencies": {
     "@rajzik/prettier-config": "workspace:*",
     "@rajzik/tsconfig": "workspace:*",
-    "@stylistic/eslint-plugin-migrate": "^4.4.1",
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",

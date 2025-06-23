@@ -1,5 +1,3 @@
-/* eslint @stylistic/migrate/migrate-js: "error" */
-
 import type { ConfigArray } from 'typescript-eslint';
 
 import nextPlugin from '@next/eslint-plugin-next';

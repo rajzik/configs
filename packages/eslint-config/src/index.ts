@@ -1,4 +1,3 @@
-/* eslint @stylistic/migrate/migrate-js: "error" */
 // @ts-check
 import path from 'node:path';
 
