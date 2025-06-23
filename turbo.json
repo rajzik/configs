@@ -1,6 +1,10 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["SYSTEM_TASKDEFINITIONSURI", "NODE_ENV"],
+  "globalEnv": [
+    "SYSTEM_TASKDEFINITIONSURI",
+    "NODE_ENV",
+    "PRETTIER_EXPERIMENTAL_CLI"
+  ],
   "tasks": {
     "topo": {
       "dependsOn": ["^topo"]
