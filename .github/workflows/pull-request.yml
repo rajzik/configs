@@ -1,9 +1,9 @@
 name: 🔥 Pull requests
 
 on:
-  pull_request:
+  # pull_request:
   check_run:
-    types: [completed]
+    types: [requested_action]
   push:
     branches: [main]
 
