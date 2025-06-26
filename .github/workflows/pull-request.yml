@@ -1,7 +1,6 @@
 name: 🔥 Pull requests
 
 on:
-  pull_request:
   push:
 
 permissions:
