@@ -1,5 +1,17 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.1.1
+
+### Patch Changes
+
+- [#558](https://github.com/rajzik/configs/pull/558)
+  [`489bf7c`](https://github.com/rajzik/configs/commit/489bf7cfb7d71ea97485085945e086e9d5482d68)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-import-resolver-typescript` to `^4.4.4`.
+
+- Updated dependencies []:
+  - @rajzik/configs-shared@2.1.1
+
 ## 2.1.0
 
 ### Minor Changes
