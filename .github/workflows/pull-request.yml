@@ -1,11 +1,7 @@
 name: 🔥 Pull requests
 
 on:
-  pull_request:
-  check_run:
-    types: [completed]
   push:
-    branches: [main]
 
 permissions:
   contents: read
