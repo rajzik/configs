@@ -1,8 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":semanticCommitScopeDisabled"],
-  "semanticCommitType": "deps",
-  "prCreation": "immediate",
+  "extends": ["config:recommended", "group:monorepos"],
+  "rebaseWhen": "behind-base-branch",
+  "rangeStrategy": "bump",
+  "prConcurrentLimit": 8,
+  "prHourlyLimit": 4,
+  "semanticCommits": "enabled",
+  "semanticCommitScope": "",
+  "semanticCommitType": "build",
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "github-actions": {
     "enabled": true,
     "managerFilePatterns": [
@@ -10,6 +18,8 @@
       "/(^|\\/)action\\.ya?ml$/"
     ]
   },
+  "dependencyDashboard": true,
+  "osvVulnerabilityAlerts": true,
   "npm": { "enabled": true },
   "updateLockFiles": true,
   "packageRules": [
