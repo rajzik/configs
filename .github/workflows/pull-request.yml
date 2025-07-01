@@ -1,7 +1,15 @@
 name: 🔥 Pull requests
 
 on:
-  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  check_run:
+    types:
+      - requested_action
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
