@@ -4,3 +4,5 @@ const {
 } = require('./packages/config-danger/dist/index.js');
 
 checkForInvalidLocks();
+
+fail('Test fail');
