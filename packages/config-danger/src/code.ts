@@ -39,7 +39,8 @@ export function checkForInvalidLocks() {
     );
   } else if (
     fileNames.has('pnpm-lock.yaml') &&
-    (!fileNames.has('package.json') || !fileNames.has('pnpm-workspace.yaml'))
+    !fileNames.has('package.json') &&
+    !fileNames.has('pnpm-workspace.yaml')
   ) {
     fail(
       'Your PR contains changes to pnpm-lock.yaml, but not package.json or pnpm-workspace.yaml.',
