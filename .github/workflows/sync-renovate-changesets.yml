@@ -106,7 +106,7 @@ jobs:
             const pnpmWorkspaceFiles = diffFiles.filter((file) =>
               file.includes("pnpm-workspace.yaml")
             );
-            const packageNames = await getPackagesNames(files);
+            const packageNames = await getPackagesNames([...files, ...pnpmWorkspaceFiles]);
             if (!packageNames.length) {
               console.log("No package.json changes to published packages, skipping");
               return;
