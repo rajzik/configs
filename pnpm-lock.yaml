@@ -57,8 +57,8 @@ importers:
         specifier: ^7.0.3
         version: 7.0.3
       danger:
-        specifier: ^13.0.4
-        version: 13.0.4
+        specifier: ^13.0.3
+        version: 13.0.3
       eslint:
         specifier: 'catalog:'
         version: 9.29.0(jiti@2.4.2)
