@@ -70,6 +70,25 @@ jobs:
               return bumps;
             }
 
+
+            async function getYamlBumps(files) {
+              const bumps = new Map();
+              for (const file of files) {
+                const { stdout: changes } = await exec.getExecOutput("git", [
+                  "show",
+                  file,
+                ]);
+                for (const change of changes.split("\n")) {
+                  if (!change.startsWith("+ ")) {
+                    continue;
+                  }
+                  const match = change.match(/^\+\s*(?<name>[^:]+):\s*(?<version>[^\s]+)$/);
+                  bumps.set(match?.groups?.name, match?.groups?.version);
+                }
+              }
+              return bumps;
+            }
+
             const branch = await exec.getExecOutput("git branch --show-current");
             if (!branch.stdout.startsWith("renovate/")) {
               console.log("Not a renovate branch, skipping");
@@ -84,6 +103,9 @@ jobs:
             const files = diffFiles
               .filter((file) => file !== "package.json") // skip root package.json
               .filter((file) => file.includes("package.json"));
+            const pnpmWorkspaceFiles = diffFiles.filter((file) =>
+              file.includes("pnpm-workspace.yaml")
+            );
             const packageNames = await getPackagesNames(files);
             if (!packageNames.length) {
               console.log("No package.json changes to published packages, skipping");
@@ -95,7 +117,9 @@ jobs:
             const fileName = `.changeset/renovate-${shortHash.trim()}.md`;
 
             const packageBumps = await getBumps(files);
-            await createChangeset(fileName, packageBumps, packageNames);
+            const yamlBumps = await getYamlBumps(pnpmWorkspaceFiles);
+            const bumps = new Map([...packageBumps, ...yamlBumps]);
+            await createChangeset(fileName, bumps, packageNames);
             await exec.exec("git", ["add", fileName]);
             await exec.exec("git commit -C HEAD --amend --no-edit");
             await exec.exec("git push --force");
