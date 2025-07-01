@@ -6,7 +6,7 @@ packages:
 catalog:
   '@types/node': ^24.0.9
   prettier: ^3.6.2
-  tsdown: ^0.12.8
+  tsdown: ^0.12.9
   typescript: ^5.8.3
   eslint: ^9.30.0
 
