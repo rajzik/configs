@@ -1,5 +1,18 @@
 # `@rajzik/config-danger` CHANGELOG
 
+## 2.2.0
+
+### Minor Changes
+
+- [#570](https://github.com/rajzik/configs/pull/570)
+  [`2859a9e`](https://github.com/rajzik/configs/commit/2859a9e3b94e0406e36ebcd7a6e8285f03d8341e)
+  Thanks [@rajzik](https://github.com/rajzik)! - Add support for pnpm workspaces
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.0.4
+
 ## 2.1.0
 
 ### Patch Changes
