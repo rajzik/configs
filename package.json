@@ -49,7 +49,7 @@
     "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
     "@rajzik/tsconfig": "workspace:*",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
     "danger": "^13.0.4",
     "eslint": "catalog:",
     "eslint-find-rules": "^5.0.0",
