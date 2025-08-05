@@ -41,13 +41,14 @@
     "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
     "@rajzik/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {
-    "node": ">=22.17.1"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

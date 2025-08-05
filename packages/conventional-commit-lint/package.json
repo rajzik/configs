@@ -45,6 +45,7 @@
     "@commitlint/cli": "^19.8.1",
     "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
+    "@types/node": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "tsdown": "catalog:",
@@ -54,7 +55,7 @@
     "@commitlint/cli": ">=12"
   },
   "engines": {
-    "node": ">=22.17.1"
+    "node": ">=22"
   },
   "publishConfig": {
     "access": "public"

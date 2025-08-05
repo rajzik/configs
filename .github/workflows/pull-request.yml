@@ -2,7 +2,6 @@ name: 🔥 Pull requests
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
   check_run:
     types:
       - requested_action

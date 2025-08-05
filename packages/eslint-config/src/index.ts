@@ -1,4 +1,5 @@
 // @ts-check
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 
 import type { ConfigArray } from 'typescript-eslint';
@@ -14,8 +15,13 @@ import tseslint from 'typescript-eslint';
 
 export * from 'typescript-eslint';
 
+const cwd =
+  typeof process.cwd === 'function' ? process.cwd() : (process.env.PWD ?? '');
+
 const config: ConfigArray = tseslint.config(
-  includeIgnoreFile(path.join(import.meta.dirname, '../../../.gitignore')),
+  existsSync(path.join(cwd, '.gitignore'))
+    ? includeIgnoreFile(path.join(cwd, '.gitignore'))
+    : {},
   {
     ignores: ['vitest.config.mjs*'],
   },
@@ -185,3 +191,5 @@ const config: ConfigArray = tseslint.config(
 );
 
 export default config;
+
+export { includeIgnoreFile } from '@eslint/compat';
