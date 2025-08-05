@@ -86,3 +86,10 @@ declare module 'eslint-plugin-tailwindcss' {
   };
   export const rules: Record<string, Rule.RuleModule>;
 }
+
+declare module 'tailwind-csstree' {
+  import type { NodeSyntaxConfig } from '@eslint/css-tree';
+
+  export const tailwind3: Partial<NodeSyntaxConfig>;
+  export const tailwind4: Partial<NodeSyntaxConfig>;
+}

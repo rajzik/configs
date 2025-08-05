@@ -1,9 +1,9 @@
 import type { ConfigArray } from 'typescript-eslint';
 
 import css from '@eslint/css';
-import { tailwindSyntax } from '@eslint/css/syntax';
+import { tailwind3, tailwind4 } from 'tailwind-csstree';
 
-export const cssTailwindConfig: ConfigArray = [
+export const cssTailwindConfig3: ConfigArray = [
   {
     files: ['**/*.css'],
     plugins: {
@@ -12,7 +12,24 @@ export const cssTailwindConfig: ConfigArray = [
     language: 'css/css',
     languageOptions: {
       // @ts-expect-error - customSyntax is not typed
-      customSyntax: tailwindSyntax,
+      customSyntax: tailwind3,
+    },
+    rules: {
+      ...css.configs.recommended.rules,
+    },
+  },
+];
+
+export const cssTailwindConfig4: ConfigArray = [
+  {
+    files: ['**/*.css'],
+    plugins: {
+      css,
+    },
+    language: 'css/css',
+    languageOptions: {
+      // @ts-expect-error - customSyntax is not typed
+      customSyntax: tailwind4,
     },
     rules: {
       ...css.configs.recommended.rules,

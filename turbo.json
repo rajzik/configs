@@ -3,7 +3,8 @@
   "globalEnv": [
     "SYSTEM_TASKDEFINITIONSURI",
     "NODE_ENV",
-    "PRETTIER_EXPERIMENTAL_CLI"
+    "PRETTIER_EXPERIMENTAL_CLI",
+    "PWD"
   ],
   "tasks": {
     "topo": {
