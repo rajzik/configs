@@ -49,7 +49,7 @@ export default config;
   - Enable rules for tailwind
 - css
   - Enable rules for CSS
-  - `import { cssTailwindConfig } from '@rajzik/eslint-config/css'` instead if
+  - `import { cssTailwindConfig4, cssTailwindConfig3 } from '@rajzik/eslint-config/css'` instead if
     you use tailwind
 - turbo
   - Enable rules for turbo
