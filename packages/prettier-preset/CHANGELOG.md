@@ -1,5 +1,29 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.3.0
+
+### Patch Changes
+
+- [#597](https://github.com/rajzik/configs/pull/597)
+  [`2e44077`](https://github.com/rajzik/configs/commit/2e44077fb42a6edb37e1ce1005c4b211cbcb61a4)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@ianvs/prettier-plugin-sort-imports` to `^4.5.1`.
+
+- [#612](https://github.com/rajzik/configs/pull/612)
+  [`3f87b1a`](https://github.com/rajzik/configs/commit/3f87b1ae066a75fa08a1afd9cb6e834a96299fee)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-packagejson` to `^2.5.19`.
+
+- [#587](https://github.com/rajzik/configs/pull/587)
+  [`0914063`](https://github.com/rajzik/configs/commit/091406380dc2781e0bfee981be25ccd784d2d429)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-packagejson` to `^2.5.18`.
+
+- [#595](https://github.com/rajzik/configs/pull/595)
+  [`7626970`](https://github.com/rajzik/configs/commit/7626970dc28a29cd8d962e3f330a4814a0299e77)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-tailwindcss` to `^0.6.14`.
+
 ## 2.2.0
 
 ### Patch Changes

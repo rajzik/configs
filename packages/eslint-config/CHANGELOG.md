@@ -1,5 +1,130 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.3.0
+
+### Minor Changes
+
+- [#627](https://github.com/rajzik/configs/pull/627)
+  [`e32476e`](https://github.com/rajzik/configs/commit/e32476e80d40de37a9ccae95040b4350d486f357)
+  Thanks [@rajzik](https://github.com/rajzik)! - Add support for tailwind v3 and
+  v4 with new exports from the `@rajzik/eslint-config/css`: `cssTailwindConfig3`
+  and `cssTailwindConfig4`
+
+### Patch Changes
+
+- [#627](https://github.com/rajzik/configs/pull/627)
+  [`e32476e`](https://github.com/rajzik/configs/commit/e32476e80d40de37a9ccae95040b4350d486f357)
+  Thanks [@rajzik](https://github.com/rajzik)! - Fix eslint gitignore resolution
+  step
+
+- [#602](https://github.com/rajzik/configs/pull/602)
+  [`2847dd1`](https://github.com/rajzik/configs/commit/2847dd109293002be4ae96a0e5cb70d0ba317e76)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `typescript-eslint` to `^8.37.0`.
+
+- [#620](https://github.com/rajzik/configs/pull/620)
+  [`de0c8e4`](https://github.com/rajzik/configs/commit/de0c8e408c66e59a5dece747037dfdc2b8ae6055)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@next/eslint-plugin-next` to `^15.4.5`.
+
+- [#615](https://github.com/rajzik/configs/pull/615)
+  [`48d3814`](https://github.com/rajzik/configs/commit/48d38140080449371fb66ca234658da7aeabded8)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-testing-library` to `^7.6.3`.
+
+- [#596](https://github.com/rajzik/configs/pull/596)
+  [`629f75d`](https://github.com/rajzik/configs/commit/629f75d26bb17dda868a8791afc49aac07f4d631)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-testing-library` to `^7.5.4`.
+
+- [#586](https://github.com/rajzik/configs/pull/586)
+  [`1a92c48`](https://github.com/rajzik/configs/commit/1a92c4843df0b7c2ef3d23f82d1b8c8d047c051e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@next/eslint-plugin-next` to `^15.3.5`.
+
+- [#617](https://github.com/rajzik/configs/pull/617)
+  [`49057a0`](https://github.com/rajzik/configs/commit/49057a0f6a832a492093e8a2796a7d507f0bd06c)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `typescript-eslint` to `^8.38.0`.
+
+- [#610](https://github.com/rajzik/configs/pull/610)
+  [`d88a785`](https://github.com/rajzik/configs/commit/d88a785120798462cb579fd4ca6f46c6a4472ebd)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@next/eslint-plugin-next` to `^15.4.4`.
+
+- [#591](https://github.com/rajzik/configs/pull/591)
+  [`78c1a16`](https://github.com/rajzik/configs/commit/78c1a1606c58b0c3dff2a1e38364c5f5a45eea45)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `typescript-eslint` to `^8.36.0`.
+
+- [#606](https://github.com/rajzik/configs/pull/606)
+  [`1a744f1`](https://github.com/rajzik/configs/commit/1a744f13d78ede01eb18a78bb8f5f1d6a9c41950)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-tailwindcss` to `^3.18.2`.
+
+- [#603](https://github.com/rajzik/configs/pull/603)
+  [`4eb8a5a`](https://github.com/rajzik/configs/commit/4eb8a5abd80e68ed92ba2b3d2c03e6f37a7fc736)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@next/eslint-plugin-next` to `^15.4.1`.
+
+- [#613](https://github.com/rajzik/configs/pull/613)
+  [`0567504`](https://github.com/rajzik/configs/commit/0567504a6ed3cd79d3f6d01645f453a84997f1a8)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@stylistic/eslint-plugin` to `^5.2.2`.
+
+- [#621](https://github.com/rajzik/configs/pull/621)
+  [`c85358d`](https://github.com/rajzik/configs/commit/c85358d5934fcf79e907879014c3c12cbf8549fb)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-n` to `^17.21.3`.
+
+- [#608](https://github.com/rajzik/configs/pull/608)
+  [`2a58ed2`](https://github.com/rajzik/configs/commit/2a58ed21c5718328f5fec7c1fe97b71ff9518bcc)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-turbo` to `^2.5.5`.
+
+- [#601](https://github.com/rajzik/configs/pull/601)
+  [`32a0bbe`](https://github.com/rajzik/configs/commit/32a0bbec10ca44fffc8b5cf0ad769f4d6c6384d9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-testing-library` to `^7.6.0`.
+
+- [#607](https://github.com/rajzik/configs/pull/607)
+  [`4df2c86`](https://github.com/rajzik/configs/commit/4df2c86e368b6a0e589b3ed529a7df5a8ff2928f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@stylistic/eslint-plugin` to `^5.2.0`.
+
+- [#588](https://github.com/rajzik/configs/pull/588)
+  [`94f3756`](https://github.com/rajzik/configs/commit/94f375603980d09ef62837401761de114479ff26)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-n` to `^17.21.0`.
+
+- [#626](https://github.com/rajzik/configs/pull/626)
+  [`61683ed`](https://github.com/rajzik/configs/commit/61683ed5ef367e0ff1c796aa040e0b6a5c05d7c3)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `typescript-eslint` to `^8.39.0`.
+
+- [#618](https://github.com/rajzik/configs/pull/618)
+  [`9fd0c8a`](https://github.com/rajzik/configs/commit/9fd0c8a0c2c0fee460176be0c7fbc1297ade8007)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@eslint/js` to `^9.32.0`. Updated dependency `eslint` to `^9.32.0`.
+
+- [#609](https://github.com/rajzik/configs/pull/609)
+  [`5f0b9f7`](https://github.com/rajzik/configs/commit/5f0b9f7c4d8dfb39d83c929ff1109e22f64388f9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-config-prettier` to `^10.1.8`.
+
+- [#614](https://github.com/rajzik/configs/pull/614)
+  [`5f24f85`](https://github.com/rajzik/configs/commit/5f24f8583cc79bf4525c8f72438c5d4ccc1ab735)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-unicorn` to `^60.0.0`.
+
+- [#599](https://github.com/rajzik/configs/pull/599)
+  [`a1e6b9a`](https://github.com/rajzik/configs/commit/a1e6b9a4df4c56311e936c4575132501f22c3904)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@eslint/js` to `^9.31.0`. Updated dependency `eslint` to `^9.31.0`.
+- Updated dependencies
+  [[`e32476e`](https://github.com/rajzik/configs/commit/e32476e80d40de37a9ccae95040b4350d486f357)]:
+  - @rajzik/configs-shared@2.3.0
+
 ## 2.2.0
 
 ### Patch Changes
