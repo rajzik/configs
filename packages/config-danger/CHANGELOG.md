@@ -1,5 +1,18 @@
 # `@rajzik/config-danger` CHANGELOG
 
+## 2.3.0
+
+### Patch Changes
+
+- [#627](https://github.com/rajzik/configs/pull/627)
+  [`e32476e`](https://github.com/rajzik/configs/commit/e32476e80d40de37a9ccae95040b4350d486f357)
+  Thanks [@rajzik](https://github.com/rajzik)! - Fix eslint gitignore resolution
+  step
+
+- Updated dependencies
+  [[`e32476e`](https://github.com/rajzik/configs/commit/e32476e80d40de37a9ccae95040b4350d486f357)]:
+  - @rajzik/conventional-changelog-types@2.0.5
+
 ## 2.2.0
 
 ### Minor Changes
