@@ -1,5 +1,17 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.3.1
+
+### Patch Changes
+
+- [#631](https://github.com/rajzik/configs/pull/631)
+  [`2a8750e`](https://github.com/rajzik/configs/commit/2a8750e48cdf1e957c64ce8342c4dc3974141d35)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@next/eslint-plugin-next` to `^15.4.6`.
+
+- Updated dependencies []:
+  - @rajzik/configs-shared@2.3.1
+
 ## 2.3.0
 
 ### Minor Changes
