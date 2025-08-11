@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📥 Setup
         uses: ./.github/common-actions/install
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📥 Setup
         uses: ./.github/common-actions/install
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📥 Setup
         uses: ./.github/common-actions/install
@@ -91,7 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📥 Setup
         uses: ./.github/common-actions/install
@@ -105,7 +105,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📥 Setup
         uses: ./.github/common-actions/install
