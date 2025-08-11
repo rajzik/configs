@@ -1,5 +1,12 @@
 # `@rajzik/conventional-commit-lint-config` CHANGELOG
 
+## 2.0.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.0.6
+
 ## 2.0.5
 
 ### Patch Changes

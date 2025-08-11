@@ -1,5 +1,22 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
+## 2.0.6
+
+### Patch Changes
+
+- [#628](https://github.com/rajzik/configs/pull/628)
+  [`0806984`](https://github.com/rajzik/configs/commit/0806984c4615dee4495a73c068e6e14abaf847c3)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `tmp` to `^0.2.5`.
+
+- [#633](https://github.com/rajzik/configs/pull/633)
+  [`d2f3d2d`](https://github.com/rajzik/configs/commit/d2f3d2da0c1f58a5771cf6ee22b5bceaa4afd6f6)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `tmp` to `^0.2.4`.
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.0.6
+
 ## 2.0.5
 
 ### Patch Changes
