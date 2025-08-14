@@ -307,14 +307,14 @@ importers:
   packages/prettier-preset:
     dependencies:
       '@ianvs/prettier-plugin-sort-imports':
-        specifier: ^4.6.1
-        version: 4.6.1(prettier@3.6.2)
+        specifier: ^4.6.2
+        version: 4.6.2(prettier@3.6.2)
       prettier-plugin-packagejson:
         specifier: ^2.5.19
         version: 2.5.19(prettier@3.6.2)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.14
-        version: 0.6.14(@ianvs/prettier-plugin-sort-imports@4.6.1(prettier@3.6.2))(prettier@3.6.2)
+        version: 0.6.14(@ianvs/prettier-plugin-sort-imports@4.6.2(prettier@3.6.2))(prettier@3.6.2)
     devDependencies:
       '@rajzik/tsconfig':
         specifier: workspace:*
@@ -731,8 +731,8 @@ packages:
     resolution: {integrity: sha512-e5+YUKENATs1JgYHMzTr2MW/NDcXGfYFAuOQU8gJgF/kEh4EqKgfGrfLI67bMD4tbhZVlkigz/9YYwWcbOFthg==}
     engines: {node: '>=10.13.0'}
 
-  '@ianvs/prettier-plugin-sort-imports@4.6.1':
-    resolution: {integrity: sha512-Q0gujs/g6tw1uOGd1bTVLGDzAwb/UwrCehhPCQevTCYDkho8+eQSOhA0zcy9AM0XnXM1ChBWsZeE4P7Nym0pyw==}
+  '@ianvs/prettier-plugin-sort-imports@4.6.2':
+    resolution: {integrity: sha512-kHiL1IghIodo43clNQaJJU2rPqXEioPG+Ink4/T5za46A0ggSNvIx4NM3hGgciQ2VpDaR/X8cTJIZDKRurWjPw==}
     peerDependencies:
       '@prettier/plugin-oxc': ^0.0.4
       '@vue/compiler-sfc': 2.7.x || 3.x
@@ -4242,7 +4242,7 @@ snapshots:
 
   '@hutson/parse-repository-url@5.0.0': {}
 
-  '@ianvs/prettier-plugin-sort-imports@4.6.1(prettier@3.6.2)':
+  '@ianvs/prettier-plugin-sort-imports@4.6.2(prettier@3.6.2)':
     dependencies:
       '@babel/generator': 7.28.0
       '@babel/parser': 7.28.0
@@ -6631,11 +6631,11 @@ snapshots:
     optionalDependencies:
       prettier: 3.6.2
 
-  prettier-plugin-tailwindcss@0.6.14(@ianvs/prettier-plugin-sort-imports@4.6.1(prettier@3.6.2))(prettier@3.6.2):
+  prettier-plugin-tailwindcss@0.6.14(@ianvs/prettier-plugin-sort-imports@4.6.2(prettier@3.6.2))(prettier@3.6.2):
     dependencies:
       prettier: 3.6.2
     optionalDependencies:
-      '@ianvs/prettier-plugin-sort-imports': 4.6.1(prettier@3.6.2)
+      '@ianvs/prettier-plugin-sort-imports': 4.6.2(prettier@3.6.2)
 
   prettier@2.8.8: {}
 
