@@ -1,5 +1,27 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.3.2
+
+### Patch Changes
+
+- [#650](https://github.com/rajzik/configs/pull/650)
+  [`745d0b8`](https://github.com/rajzik/configs/commit/745d0b8921c5e0482a2291c0ee3b7efdb88eae89)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-turbo` to `^2.5.6`.
+
+- [#647](https://github.com/rajzik/configs/pull/647)
+  [`e8b68fc`](https://github.com/rajzik/configs/commit/e8b68fca508150d52f0818c899b94e1b54341d66)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-testing-library` to `^7.6.6`.
+
+- [#645](https://github.com/rajzik/configs/pull/645)
+  [`2b4e398`](https://github.com/rajzik/configs/commit/2b4e3988eb29419280580b9e3dbb66c596052081)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `typescript-eslint` to `^8.39.1`.
+
+- Updated dependencies []:
+  - @rajzik/configs-shared@2.3.2
+
 ## 2.3.1
 
 ### Patch Changes
