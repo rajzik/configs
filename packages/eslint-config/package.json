@@ -64,7 +64,7 @@
     "typescript-eslint": "^8.40.0"
   },
   "devDependencies": {
-    "@eslint/css-tree": "^3.6.3",
+    "@eslint/css-tree": "^3.6.5",
     "@rajzik/prettier-config": "workspace:*",
     "@rajzik/tsconfig": "workspace:*",
     "@types/node": "catalog:",
