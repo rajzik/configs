@@ -1,11 +1,11 @@
-import type { ConfigArray } from 'typescript-eslint';
+import type { Linter } from 'eslint';
 
 import stylisticPlugin from '@stylistic/eslint-plugin';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 
-const config: ConfigArray = [
+const config: Linter.Config[] = [
   {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
     plugins: {

@@ -1,8 +1,8 @@
-import type { ConfigArray } from 'typescript-eslint';
+import type { Linter } from 'eslint';
 
 import nextPlugin from '@next/eslint-plugin-next';
 
-const config: ConfigArray = [
+const config: Linter.Config[] = [
   {
     files: ['**/*.ts', '**/*.tsx'],
     plugins: {

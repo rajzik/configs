@@ -1,8 +1,8 @@
-import type { ConfigArray } from 'typescript-eslint';
+import type { Linter } from 'eslint';
 
 import eslintConfigPrettier from 'eslint-config-prettier';
 
-const config: ConfigArray = [
+const config: Linter.Config[] = [
   eslintConfigPrettier,
   {
     rules: {
@@ -10,6 +10,6 @@ const config: ConfigArray = [
       curly: ['error', 'all'],
     },
   },
-] as ConfigArray;
+] as Linter.Config[];
 
 export default config;

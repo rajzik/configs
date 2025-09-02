@@ -11,6 +11,7 @@ import vitest from '@vitest/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import testingLibrary from 'eslint-plugin-testing-library';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
 export * from 'typescript-eslint';
@@ -18,7 +19,7 @@ export * from 'typescript-eslint';
 const cwd =
   typeof process.cwd === 'function' ? process.cwd() : (process.env.PWD ?? '');
 
-const config: ConfigArray = tseslint.config(
+const config: ConfigArray = defineConfig(
   existsSync(path.join(cwd, '.gitignore'))
     ? includeIgnoreFile(path.join(cwd, '.gitignore'))
     : {},

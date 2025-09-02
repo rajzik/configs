@@ -1,9 +1,9 @@
-import type { ConfigArray } from 'typescript-eslint';
+import type { Linter } from 'eslint';
 
 import { EXTS } from '@rajzik/configs-shared';
 import node from 'eslint-plugin-n';
 
-const config: ConfigArray = [
+const config: Linter.Config[] = [
   {
     plugins: {
       n: node,

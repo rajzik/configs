@@ -1,8 +1,8 @@
-import type { ConfigArray } from 'typescript-eslint';
+import type { Linter } from 'eslint';
 
 import tailwind from 'eslint-plugin-tailwindcss';
 
-const config: ConfigArray = [
+const config: Linter.Config[] = [
   {
     plugins: {
       tailwind,

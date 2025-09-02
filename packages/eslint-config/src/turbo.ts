@@ -1,8 +1,8 @@
-import type { ConfigArray } from 'typescript-eslint';
+import type { Linter } from 'eslint';
 
 import turbo from 'eslint-plugin-turbo';
 
-const config: ConfigArray = [
+const config: Linter.Config[] = [
   {
     plugins: {
       turbo,
