@@ -1,5 +1,51 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.3.4
+
+### Patch Changes
+
+- [#674](https://github.com/rajzik/configs/pull/674)
+  [`f53b2fb`](https://github.com/rajzik/configs/commit/f53b2fb90cc00edc4609545da393cf2dbd750cef)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `typescript-eslint` to `^8.42.0`.
+
+- [#663](https://github.com/rajzik/configs/pull/663)
+  [`5ff9147`](https://github.com/rajzik/configs/commit/5ff91479a790d27e3f45614fba7703db0894a605)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@next/eslint-plugin-next` to `^15.5.2`.
+
+- [#673](https://github.com/rajzik/configs/pull/673)
+  [`e4b9ed5`](https://github.com/rajzik/configs/commit/e4b9ed53fe1b3f54b5f98a1467be919c8ef778a8)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@stylistic/eslint-plugin` to `^5.3.1`.
+
+- [#667](https://github.com/rajzik/configs/pull/667)
+  [`f26bf33`](https://github.com/rajzik/configs/commit/f26bf337e29a8acdf3f1bf5a8b97864e14ef82fd)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@vitest/eslint-plugin` to `^1.3.6`.
+
+- [#672](https://github.com/rajzik/configs/pull/672)
+  [`de4f600`](https://github.com/rajzik/configs/commit/de4f6001861c7568fdd4eef2a686d3957921fa1d)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `tailwind-csstree` to `^0.1.4`.
+
+- [#669](https://github.com/rajzik/configs/pull/669)
+  [`762951d`](https://github.com/rajzik/configs/commit/762951dcefffeb885b2e70f18fcafb26f8707d51)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@eslint/css` to `^0.11.0`.
+
+- [#675](https://github.com/rajzik/configs/pull/675)
+  [`374652f`](https://github.com/rajzik/configs/commit/374652fbf5d86736fa3090a3687c876167c5f807)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-testing-library` to `^7.6.7`.
+
+- [#676](https://github.com/rajzik/configs/pull/676)
+  [`12398b1`](https://github.com/rajzik/configs/commit/12398b10ff647da87d12983e737481786794ae5a)
+  Thanks [@rajzik](https://github.com/rajzik)! - Update types
+
+- Updated dependencies []:
+  - @rajzik/configs-shared@2.3.4
+
 ## 2.3.3
 
 ### Patch Changes

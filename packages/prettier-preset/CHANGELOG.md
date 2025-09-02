@@ -1,5 +1,19 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.3.4
+
+### Patch Changes
+
+- [#665](https://github.com/rajzik/configs/pull/665)
+  [`325efbc`](https://github.com/rajzik/configs/commit/325efbc6b37ec9e098bdcbf61578254339f9fe37)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@ianvs/prettier-plugin-sort-imports` to `^4.6.3`.
+
+- [#670](https://github.com/rajzik/configs/pull/670)
+  [`266d856`](https://github.com/rajzik/configs/commit/266d856021da6182fa38af904987ed073e43b055)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@ianvs/prettier-plugin-sort-imports` to `^4.7.0`.
+
 ## 2.3.3
 
 ## 2.3.2
