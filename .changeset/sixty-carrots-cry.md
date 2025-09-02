@@ -1,5 +1,5 @@
 ---
-'@rajzik/eslint-config': major
+'@rajzik/eslint-config': patch
 ---
 
 Update types
