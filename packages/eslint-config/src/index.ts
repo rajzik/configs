@@ -47,7 +47,7 @@ const config: ConfigArray = defineConfig(
       ...tseslint.configs.stylisticTypeChecked,
     ],
     rules: {
-      ...eslintPluginUnicorn.configs.recommended.rules,
+      ...eslintPluginUnicorn.configs.unopinionated.rules,
       ...stylisticPlugin.configs['disable-legacy'].rules,
       // Eslint
       camelcase: 'off', // enforce camelcase naming convention
