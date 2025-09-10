@@ -25,10 +25,6 @@ catalogs:
 importers:
 
   .:
-    dependencies:
-      sorvor:
-        specifier: ^0.4.3
-        version: 0.4.3
     devDependencies:
       '@changesets/changelog-github':
         specifier: 0.5.1
@@ -3254,69 +3250,6 @@ packages:
     resolution: {integrity: sha512-97oFRRMM2/Js4oEA9LJhjyMlde+2ewpZQf53pgue27UkbEXfHJnDzHlUxQ/DWUkzqmp7DFwJp8D+wi/TYeQhpA==}
     engines: {node: '>=20'}
     hasBin: true
-
-  sorvor-darwin-64@0.4.3:
-    resolution: {integrity: sha512-3+XqnkNqLyYZCfpdMpjmO5PhhxDG+7Su5AzW+xcD87BN/1wbb83udt5U1E0Iq6jWM6tZATe0A0/wjbAaTxCkwg==}
-    cpu: [x64]
-    os: [darwin]
-    hasBin: true
-
-  sorvor-darwin-arm64@0.4.3:
-    resolution: {integrity: sha512-DTTln0//2oiWE4lWkls6tsCHt88eajzO8mFDja1SmoUvTJZ0r9sgi7q66GeGIzm0B0/9VOIV2dmzI8BUud4aQw==}
-    cpu: [arm64]
-    os: [darwin]
-    hasBin: true
-
-  sorvor-freebsd-64@0.4.3:
-    resolution: {integrity: sha512-P2pfjfNGeARGmXf+0T2tpbEkaCjiwljbzxjyE5ltOpVXGl92x+v5poHNAOLSrtGpI2Ah1Yl7ufDaj6JHQXz1Cg==}
-    cpu: [x64]
-    os: [freebsd]
-    hasBin: true
-
-  sorvor-freebsd-arm64@0.4.3:
-    resolution: {integrity: sha512-zF8nQKtun1YAAjruZg/ofHdxu7ijmgxTNo9RzRfnJPOKPGJQI82WLU+PR5lAzrAokycQ4jcevNtQSVxOXS69CA==}
-    cpu: [arm64]
-    os: [freebsd]
-    hasBin: true
-
-  sorvor-linux-32@0.4.3:
-    resolution: {integrity: sha512-ltO1zZp72otmzfzSk4+gEE8GxA58TqyDfTUQf5FaXxFZmkPnfn8eMkXMz/ftWfTOAUgnDi4hJFHTfE/2OTxebQ==}
-    cpu: [ia32]
-    os: [linux]
-    hasBin: true
-
-  sorvor-linux-64@0.4.3:
-    resolution: {integrity: sha512-bY4Rpo63yob2Y+mfax8/RBih1jzjLIFJmYmVbChv4j89M8IWtKamQv5rin9c9TLEnWAzSxAdFX4d24TgWo3Dhg==}
-    cpu: [x64]
-    os: [linux]
-    hasBin: true
-
-  sorvor-linux-arm64@0.4.3:
-    resolution: {integrity: sha512-h6+vy7t6UDe5XGJm41LTDj/FjQ6sySpI5n5B8oA0u7jSMvVwwbBxwNbct+EMUARJAOe6yn3OO0L+Mzk9aUGYfg==}
-    cpu: [arm64]
-    os: [linux]
-    hasBin: true
-
-  sorvor-linux-arm@0.4.3:
-    resolution: {integrity: sha512-HDcsvWcOxfrfK58B/XoqidT25IRYz9fqgAqetSaRr1dxXf8mMAZYvYzkNohXJoHnsWcPmpBhlXslV6IAorlh+Q==}
-    cpu: [arm]
-    os: [linux]
-    hasBin: true
-
-  sorvor-windows-32@0.4.3:
-    resolution: {integrity: sha512-0C2rKu0lYkFRFKmcYvZ1G+BEpVssVHdGUQRxXJElHezyHJne1R9FIjMMJWSNNPNiqrP3Fmtlc6aMJQox8xrN6w==}
-    cpu: [ia32]
-    os: [win32]
-    hasBin: true
-
-  sorvor-windows-64@0.4.3:
-    resolution: {integrity: sha512-TdXB9Djf0Fg6QZtVmLaQN9NTGiYwrUs/K0A4mBNt96A2YBh3ttxHQdH9788XKmxqgYsiLBs2z8CBDE7If3krOQ==}
-    cpu: [x64]
-    os: [win32]
-    hasBin: true
-
-  sorvor@0.4.3:
-    resolution: {integrity: sha512-HWttx5C7CKOD6E6Xo7bMTgtt31Sp3SyMEA/P6ShPsnBXxG4uFwjovSa0R9EC1On0MKmQwraaqDOhvI4M2amDwQ==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -6921,49 +6854,6 @@ snapshots:
       semver: 7.7.2
       sort-object-keys: 1.1.3
       tinyglobby: 0.2.15
-
-  sorvor-darwin-64@0.4.3:
-    optional: true
-
-  sorvor-darwin-arm64@0.4.3:
-    optional: true
-
-  sorvor-freebsd-64@0.4.3:
-    optional: true
-
-  sorvor-freebsd-arm64@0.4.3:
-    optional: true
-
-  sorvor-linux-32@0.4.3:
-    optional: true
-
-  sorvor-linux-64@0.4.3:
-    optional: true
-
-  sorvor-linux-arm64@0.4.3:
-    optional: true
-
-  sorvor-linux-arm@0.4.3:
-    optional: true
-
-  sorvor-windows-32@0.4.3:
-    optional: true
-
-  sorvor-windows-64@0.4.3:
-    optional: true
-
-  sorvor@0.4.3:
-    optionalDependencies:
-      sorvor-darwin-64: 0.4.3
-      sorvor-darwin-arm64: 0.4.3
-      sorvor-freebsd-64: 0.4.3
-      sorvor-freebsd-arm64: 0.4.3
-      sorvor-linux-32: 0.4.3
-      sorvor-linux-64: 0.4.3
-      sorvor-linux-arm: 0.4.3
-      sorvor-linux-arm64: 0.4.3
-      sorvor-windows-32: 0.4.3
-      sorvor-windows-64: 0.4.3
 
   source-map-js@1.2.1: {}
 
