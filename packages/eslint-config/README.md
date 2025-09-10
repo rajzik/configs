@@ -41,6 +41,8 @@ export default config;
     tests
 - React
   - Enable rules for react
+- React compiler
+  - Enable react compiler config (react config required)
 - Next js
   - Enable rulse for next js
 - node

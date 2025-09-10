@@ -4,6 +4,7 @@ import stylisticPlugin from '@stylistic/eslint-plugin';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 const config: Linter.Config[] = [
   {
@@ -13,11 +14,13 @@ const config: Linter.Config[] = [
       'react-hooks': hooksPlugin,
       'jsx-a11y': jsxA11y,
       '@stylistic': stylisticPlugin,
+      'react-refresh': reactRefresh,
     },
     rules: {
       ...reactPlugin.configs['jsx-runtime'].rules,
       ...hooksPlugin.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
+      ...reactRefresh.configs.recommended.rules,
 
       '@stylistic/jsx-quotes': ['error', 'prefer-double'],
       '@stylistic/jsx-sort-props': 'warn',
