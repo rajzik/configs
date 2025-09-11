@@ -1,5 +1,30 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.4.0
+
+### Minor Changes
+
+- [#693](https://github.com/rajzik/configs/pull/693)
+  [`7c59d86`](https://github.com/rajzik/configs/commit/7c59d86660ffe7b031e2327bb3b024241f4ea6a0)
+  Thanks [@rajzik](https://github.com/rajzik)! - Add eslint plugin react
+  compiler, eslint plugin react refresh, change unicorn plugin to unopinionated
+  version.
+
+### Patch Changes
+
+- [#695](https://github.com/rajzik/configs/pull/695)
+  [`4c9facf`](https://github.com/rajzik/configs/commit/4c9facf88feb80bc6c2da5135f8a5765fbad6806)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@next/eslint-plugin-next` to `^15.5.3`.
+
+- [#690](https://github.com/rajzik/configs/pull/690)
+  [`d3c22e7`](https://github.com/rajzik/configs/commit/d3c22e7eebdc6a79b90fd1d8dc8b6f0f0873624f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `typescript-eslint` to `^8.43.0`.
+
+- Updated dependencies []:
+  - @rajzik/configs-shared@2.4.0
+
 ## 2.3.5
 
 ### Patch Changes
