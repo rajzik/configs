@@ -32,17 +32,17 @@
     { "matchDepTypes": ["packageManager"], "semanticCommitType": "build" },
     {
       "matchDepTypes": ["devDependencies"],
-      "rangeStrategy": "bump",
+      "rangeStrategy": "pin",
       "semanticCommitType": "build"
     },
     {
       "matchDepTypes": ["dependencies"],
-      "rangeStrategy": "bump",
+      "rangeStrategy": "pin",
       "semanticCommitType": "deps"
     },
     {
       "matchDepTypes": ["resolutions"],
-      "rangeStrategy": "bump",
+      "rangeStrategy": "pin",
       "semanticCommitType": "build"
     }
   ]
