@@ -34,20 +34,20 @@
   },
   "prettier": "./dist/index.js",
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
-    "prettier-plugin-packagejson": "^2.5.19",
-    "prettier-plugin-tailwindcss": "^0.6.14"
+    "@ianvs/prettier-plugin-sort-imports": "4.7.0",
+    "prettier-plugin-packagejson": "2.5.19",
+    "prettier-plugin-tailwindcss": "0.6.14"
   },
   "devDependencies": {
     "@rajzik/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "prettier": "catalog:",
-    "prettier-plugin-tailwindcss": "^0.6.14",
+    "prettier-plugin-tailwindcss": "0.6.14",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
   "peerDependencies": {
-    "prettier-plugin-tailwindcss": "^0.6.13"
+    "prettier-plugin-tailwindcss": "^0.6.14"
   },
   "peerDependenciesMeta": {
     "prettier-plugin-tailwindcss": {

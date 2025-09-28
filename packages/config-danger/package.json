@@ -40,7 +40,7 @@
   "prettier": "@rajzik/prettier-config",
   "dependencies": {
     "@rajzik/conventional-changelog-types": "workspace:*",
-    "danger": "^13.0.4"
+    "danger": "13.0.4"
   },
   "devDependencies": {
     "@rajzik/eslint-config": "workspace:*",
