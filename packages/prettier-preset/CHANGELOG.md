@@ -1,5 +1,13 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.4.0
+
+### Minor Changes
+
+- [#732](https://github.com/rajzik/configs/pull/732)
+  [`a27ecea`](https://github.com/rajzik/configs/commit/a27eceaddbc3af3c8f50ecbd075342722a5fa9de)
+  Thanks [@rajzik](https://github.com/rajzik)! - Pin dependencies
+
 ## 2.3.5
 
 ## 2.3.4

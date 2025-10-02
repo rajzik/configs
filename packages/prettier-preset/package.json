@@ -1,6 +1,6 @@
 {
   "name": "@rajzik/prettier-config",
-  "version": "2.3.5",
+  "version": "2.4.0",
   "description": "Reusable Prettier config for personal projects",
   "keywords": [],
   "homepage": "https://github.com/rajzik/configs/tree/main/packages/prettier-preset",
