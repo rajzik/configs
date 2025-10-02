@@ -1,5 +1,28 @@
 # `@rajzik/conventional-commit-lint-config` CHANGELOG
 
+## 2.1.0
+
+### Minor Changes
+
+- [#732](https://github.com/rajzik/configs/pull/732)
+  [`a27ecea`](https://github.com/rajzik/configs/commit/a27eceaddbc3af3c8f50ecbd075342722a5fa9de)
+  Thanks [@rajzik](https://github.com/rajzik)! - Pin dependencies
+
+### Patch Changes
+
+- [#728](https://github.com/rajzik/configs/pull/728)
+  [`14f3a25`](https://github.com/rajzik/configs/commit/14f3a25a9cc6a93af8488ec9a2fd774ab390a05a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@commitlint/cli` to `^20.0.0`.
+
+- [#738](https://github.com/rajzik/configs/pull/738)
+  [`cc74f46`](https://github.com/rajzik/configs/commit/cc74f46a371719eaacbb1a01e08d93749afd844e)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@commitlint/cli` to `20.1.0`.
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.1.0
+
 ## 2.0.6
 
 ### Patch Changes
