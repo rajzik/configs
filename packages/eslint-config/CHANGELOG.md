@@ -1,5 +1,27 @@
 # `eslint-config-rajzik` CHANGELOG
 
+## 2.4.1
+
+### Patch Changes
+
+- [#746](https://github.com/rajzik/configs/pull/746)
+  [`6d47be1`](https://github.com/rajzik/configs/commit/6d47be122afee44cc45b3f583583c59f3ef8f7e9)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `eslint-plugin-react-hooks` to `6.1.1`.
+
+- [#745](https://github.com/rajzik/configs/pull/745)
+  [`1f2f2ab`](https://github.com/rajzik/configs/commit/1f2f2ab624b01fa2f19d5a575f3ba7e71c053fb6)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@eslint/js` to `9.37.0`. Updated dependency `eslint` to `9.37.0`.
+
+- [#742](https://github.com/rajzik/configs/pull/742)
+  [`a878e7d`](https://github.com/rajzik/configs/commit/a878e7da88d39def2490622140bbfaf0aa444133)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@vitest/eslint-plugin` to `1.3.15`.
+
+- Updated dependencies []:
+  - @rajzik/configs-shared@2.4.1
+
 ## 2.4.0
 
 ### Minor Changes
