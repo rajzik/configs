@@ -4,7 +4,7 @@ packages:
   - '!**/__test__/**'
 
 catalog:
-  '@types/node': 24.6.2
+  '@types/node': 24.7.0
   eslint: 9.37.0
   prettier: 3.6.2
   tsdown: 0.15.6
