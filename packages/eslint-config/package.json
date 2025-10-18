@@ -41,7 +41,7 @@
   "dependencies": {
     "@eslint/compat": "1.4.0",
     "@eslint/css": "0.13.0",
-    "@eslint/js": "9.37.0",
+    "@eslint/js": "9.38.0",
     "@next/eslint-plugin-next": "15.5.6",
     "@rajzik/configs-shared": "workspace:*",
     "@stylistic/eslint-plugin": "5.4.0",
