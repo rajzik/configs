@@ -7,7 +7,7 @@ catalog:
   '@types/node': 24.9.2
   eslint: 9.38.0
   prettier: 3.6.2
-  tsdown: 0.15.9
+  tsdown: 0.15.11
   typescript: 5.9.3
 
 onlyBuiltDependencies:
