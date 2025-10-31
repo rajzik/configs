@@ -1,5 +1,17 @@
 # `@rajzik/config-danger` CHANGELOG
 
+## 2.4.1
+
+### Patch Changes
+
+- [#795](https://github.com/rajzik/configs/pull/795)
+  [`8f2166a`](https://github.com/rajzik/configs/commit/8f2166adb320f77196417b9dc61747383f56172d)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `danger` to `13.0.5`.
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.1.0
+
 ## 2.4.0
 
 ### Minor Changes
