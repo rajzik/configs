@@ -50,7 +50,7 @@
     "@rajzik/prettier-config": "workspace:*",
     "@rajzik/tsconfig": "workspace:*",
     "cross-env": "10.1.0",
-    "danger": "13.0.4",
+    "danger": "13.0.5",
     "eslint": "catalog:",
     "eslint-find-rules": "5.0.0",
     "prettier": "catalog:",
