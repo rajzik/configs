@@ -6,7 +6,7 @@ const options: Partial<ParserOptions> = {
   headerCorrespondence: ['azure', 'type', 'scope', 'message'],
   // Keep in sync with checkCommitFormat
   headerPattern: new RegExp(
-    `^(Merged? PR \\d+: )?${COMMIT_FORMAT_PREFIX.source} (.*)$`,
+    String.raw`^(Merged? PR \d+: )?${COMMIT_FORMAT_PREFIX.source} (.*)$`,
     'u',
   ),
   mergeCorrespondence: ['id', 'source'],
