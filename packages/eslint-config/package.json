@@ -18,12 +18,12 @@
   "exports": {
     "./package.json": "./package.json",
     "./*": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*.js"
+      "types": "./dist/*.d.mts",
+      "default": "./dist/*.mjs"
     },
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
     }
   },
   "files": [
@@ -39,9 +39,9 @@
   },
   "prettier": "@rajzik/prettier-config",
   "dependencies": {
-    "@eslint/compat": "1.4.0",
-    "@eslint/css": "0.14.0",
-    "@eslint/js": "9.38.0",
+    "@eslint/compat": "1.4.1",
+    "@eslint/css": "0.14.1",
+    "@eslint/js": "9.39.1",
     "@next/eslint-plugin-next": "16.0.1",
     "@rajzik/configs-shared": "workspace:*",
     "@stylistic/eslint-plugin": "5.5.0",
