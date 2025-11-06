@@ -46,6 +46,7 @@
     "@changesets/get-release-plan": "4.0.13",
     "@changesets/types": "6.1.0",
     "@commitlint/cli": "20.1.0",
+    "@rajzik/danger-configuration": "workspace:*",
     "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
     "@rajzik/tsconfig": "workspace:*",

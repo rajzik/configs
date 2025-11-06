@@ -1,6 +1,3 @@
-/* eslint-disable import/extensions */
-const {
-  checkForInvalidLocks,
-} = require('./packages/config-danger/dist/index.js');
+import { checkForInvalidLocks } from '@rajzik/config-danger';
 
 checkForInvalidLocks();
