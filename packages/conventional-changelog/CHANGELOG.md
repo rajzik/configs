@@ -1,5 +1,18 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
+## 2.1.1
+
+### Patch Changes
+
+- [#803](https://github.com/rajzik/configs/pull/803)
+  [`0593302`](https://github.com/rajzik/configs/commit/059330219a0d080b15a1230a9e0a622fe2abe66f)
+  Thanks [@rajzik](https://github.com/rajzik)! - Fix build and update extension
+  of the exports
+
+- Updated dependencies
+  [[`0593302`](https://github.com/rajzik/configs/commit/059330219a0d080b15a1230a9e0a622fe2abe66f)]:
+  - @rajzik/conventional-changelog-types@2.1.1
+
 ## 2.1.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # `@rajzik/configs-shared` CHANGELOG
 
+## 2.4.1
+
+### Patch Changes
+
+- [#803](https://github.com/rajzik/configs/pull/803)
+  [`0593302`](https://github.com/rajzik/configs/commit/059330219a0d080b15a1230a9e0a622fe2abe66f)
+  Thanks [@rajzik](https://github.com/rajzik)! - Fix build and update extension
+  of the exports
+
 ## 2.4.0
 
 ## 2.3.5

@@ -1,5 +1,24 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.4.1
+
+### Patch Changes
+
+- [#803](https://github.com/rajzik/configs/pull/803)
+  [`0593302`](https://github.com/rajzik/configs/commit/059330219a0d080b15a1230a9e0a622fe2abe66f)
+  Thanks [@rajzik](https://github.com/rajzik)! - Fix build and update extension
+  of the exports
+
+- [#773](https://github.com/rajzik/configs/pull/773)
+  [`2fe19fe`](https://github.com/rajzik/configs/commit/2fe19fef8a342ece981cb9bb694221f256a5ed13)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-tailwindcss` to `0.7.1`.
+
+- [#768](https://github.com/rajzik/configs/pull/768)
+  [`b6e2b9f`](https://github.com/rajzik/configs/commit/b6e2b9f21fe1f1bf54411aabf08eb369ed92c99a)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-tailwindcss` to `^0.6.14 || ^0.7.0`.
+
 ## 2.4.0
 
 ### Minor Changes
