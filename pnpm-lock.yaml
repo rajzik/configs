@@ -44,9 +44,6 @@ importers:
       '@commitlint/cli':
         specifier: 20.1.0
         version: 20.1.0(@types/node@24.10.0)(typescript@5.9.3)
-      '@rajzik/danger-configuration':
-        specifier: workspace:*
-        version: link:packages/config-danger
       '@rajzik/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
