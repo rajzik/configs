@@ -1,3 +1,3 @@
-import { checkForInvalidLocks } from './packages/config-danger/dist/index.mjs';
+import { checkForInvalidLocks } from '@rajzik/danger-configuration';
 
 checkForInvalidLocks();
