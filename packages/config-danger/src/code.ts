@@ -17,12 +17,20 @@ const changedSrcFiles = updatedFiles.filter(
   (file) => IS_SRC.test(file) && SRC_EXT.test(file),
 );
 
+/**
+ * Options for test-related checks.
+ */
 export interface TestOptions extends CommonOptions {
+  /** Regular expression pattern to ignore certain files from test checks. */
   ignorePattern?: RegExp;
+  /** Root directory path to scope the check to a specific part of the codebase. */
   root?: string;
 }
 
-// Check for invalid NPM/Yarn installs by verifying the lock files.
+/**
+ * Check for invalid NPM/Yarn installs by verifying the lock files.
+ * Ensures that lock file changes are accompanied by package.json changes.
+ */
 export function checkForInvalidLocks() {
   const fileNames = new Set(touchedFiles.map((file) => path.basename(file)));
 
@@ -48,7 +56,12 @@ export function checkForInvalidLocks() {
   }
 }
 
-// Check that any test file exists when source files are updated.
+/**
+ * Check that any test file exists when source files are updated.
+ * Warns or fails if source files are changed but no test files are modified.
+ *
+ * @param options - Configuration options for the test check
+ */
 export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
   if (isRevert()) {
     return;
@@ -73,7 +86,12 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
   }
 }
 
-// Check that all touched source files have an accompanying test file change.
+/**
+ * Check that all touched source files have an accompanying test file change.
+ * More strict than checkForAnyTests - ensures each source file has a corresponding test.
+ *
+ * @param options - Configuration options for the test check
+ */
 export function checkSourceFilesHaveTests({
   ignorePattern,
   root,
@@ -128,14 +146,23 @@ export function checkSourceFilesHaveTests({
   }
 }
 
-// Component snapshot testing is deprecated, so disallow new snapshots.
+/**
+ * Options for snapshot testing checks.
+ */
 export interface SnapshotOptions {
+  /** URL to documentation about snapshot testing deprecation. */
   docsUrl?: string;
 }
 
 const fileFilter = (file: string) =>
   file.endsWith('jsx.snap') || file.endsWith('tsx.snap');
 
+/**
+ * Component snapshot testing is deprecated, so disallow new snapshots.
+ * Fails on new snapshots, warns on updated snapshots.
+ *
+ * @param options - Configuration options for the snapshot check
+ */
 export function disableComponentSnapshots(options: SnapshotOptions = {}) {
   if (isRevert()) {
     return;
@@ -162,7 +189,10 @@ export function disableComponentSnapshots(options: SnapshotOptions = {}) {
   }
 }
 
-// Disable new JavaScript files from being created.
+/**
+ * Disable new JavaScript files from being created.
+ * Ensures all new files in src/ or tests/ directories are TypeScript.
+ */
 export function disableNewJavaScript() {
   const hasJS = danger.git.created_files.some(
     (file) => (IS_SRC.test(file) || IS_TEST.test(file)) && JS_EXT.test(file),

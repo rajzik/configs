@@ -3,6 +3,9 @@ import type { Linter } from 'eslint';
 import css from '@eslint/css';
 import { tailwind3, tailwind4 } from 'tailwind-csstree';
 
+/**
+ * ESLint configuration for CSS files with Tailwind CSS v3 support.
+ */
 export const cssTailwindConfig3: Linter.Config[] = [
   {
     files: ['**/*.css'],
@@ -19,6 +22,9 @@ export const cssTailwindConfig3: Linter.Config[] = [
   },
 ];
 
+/**
+ * ESLint configuration for CSS files with Tailwind CSS v4 support.
+ */
 export const cssTailwindConfig4: Linter.Config[] = [
   {
     files: ['**/*.css'],
@@ -35,6 +41,9 @@ export const cssTailwindConfig4: Linter.Config[] = [
   },
 ];
 
+/**
+ * ESLint configuration for CSS files.
+ */
 const config: Linter.Config[] = [
   {
     files: ['**/*.css'],

@@ -4,8 +4,14 @@ import type { PluginOptions } from 'prettier-plugin-tailwindcss';
 
 import baseConfig from './index';
 
+/**
+ * Extended Prettier configuration type that includes Tailwind CSS plugin options.
+ */
 export type ExtendedConfig = Config | PluginOptions | PluginConfig;
 
+/**
+ * Prettier configuration with Tailwind CSS class sorting.
+ */
 const config = {
   ...baseConfig,
   plugins: [...baseConfig.plugins, 'prettier-plugin-tailwindcss'],

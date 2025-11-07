@@ -35,6 +35,12 @@ const sortWeights: GroupMap<number> = {
 
 const { SYSTEM_TASKDEFINITIONSURI } = process.env;
 
+/**
+ * Create a link to an Azure DevOps work item.
+ *
+ * @param workItemId - The work item ID
+ * @returns The work item URL, or empty string if workItemId is not provided
+ */
 function createWorkItemLink(workItemId: string) {
   const serverUrl = SYSTEM_TASKDEFINITIONSURI!;
 
@@ -45,6 +51,14 @@ function createWorkItemLink(workItemId: string) {
   return '';
 }
 
+/**
+ * Create a URL link from path segments, context, and optional reference.
+ *
+ * @param paths - Array of path segments to append
+ * @param context - Changelog context with repository information
+ * @param reference - Optional reference to override context values
+ * @returns The constructed URL string
+ */
 function createLink(
   paths: string[],
   context: Context,
@@ -86,6 +100,10 @@ function createLink(
   return [base, ...paths].join('/');
 }
 
+/**
+ * Writer options for conventional changelog.
+ * Configures how changelog entries are formatted and transformed.
+ */
 const options: Partial<WriterOptions> = {
   mainTemplate: fs.readFileSync(
     path.join(import.meta.dirname, '../templates/template.hbs'),

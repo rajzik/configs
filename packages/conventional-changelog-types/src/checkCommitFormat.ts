@@ -1,6 +1,12 @@
 import type { CommitType } from './types';
 import { COMMIT_FORMAT_PREFIX } from './constants';
 
+/**
+ * Check if a commit message follows the conventional commit format.
+ *
+ * @param commit - The commit message to check
+ * @returns Object with type and scope if format is valid, null otherwise
+ */
 export function checkCommitFormat(
   commit: string,
 ): { scope: string; type: CommitType } | null {

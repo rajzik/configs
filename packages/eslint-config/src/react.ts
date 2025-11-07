@@ -6,6 +6,9 @@ import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 
+/**
+ * ESLint configuration for React projects.
+ */
 const config: Linter.Config[] = [
   {
     files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],

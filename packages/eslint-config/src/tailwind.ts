@@ -2,6 +2,9 @@ import type { Linter } from 'eslint';
 
 import tailwind from 'eslint-plugin-tailwindcss';
 
+/**
+ * ESLint configuration for Tailwind CSS projects.
+ */
 const config: Linter.Config[] = [
   {
     plugins: {

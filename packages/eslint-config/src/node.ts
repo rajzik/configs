@@ -3,6 +3,9 @@ import type { Linter } from 'eslint';
 import { EXTS } from '@rajzik/configs-shared';
 import node from 'eslint-plugin-n';
 
+/**
+ * ESLint configuration for Node.js projects.
+ */
 const config: Linter.Config[] = [
   {
     plugins: {
