@@ -1,6 +1,8 @@
 # `@rajzik/eslint-config`
 
-Shareable ESLint configuration for ESLint v9+ (flat config). Provides comprehensive linting rules for TypeScript, JavaScript, React, Next.js, Node.js, and more.
+Shareable ESLint configuration for ESLint v9+ (flat config). Provides
+comprehensive linting rules for TypeScript, JavaScript, React, Next.js, Node.js,
+and more.
 
 ## Installation
 
@@ -39,6 +41,7 @@ export default config;
 Base configuration with TypeScript, JavaScript, and test file support.
 
 **Features:**
+
 - TypeScript ESLint recommended rules
 - Type-checked rules enabled
 - Stylistic rules
@@ -47,6 +50,7 @@ Base configuration with TypeScript, JavaScript, and test file support.
 - Vitest and Testing Library support for test files
 
 **Example:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 
@@ -54,6 +58,7 @@ export default baseConfig;
 ```
 
 **Included Rules:**
+
 - TypeScript strict type checking
 - Consistent type imports (`type` imports)
 - Naming conventions (PascalCase for types, interfaces)
@@ -70,24 +75,23 @@ export default baseConfig;
 Enables React-specific linting rules.
 
 **Installation:**
+
 ```sh
 npm install --save-dev eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-plugin-react-refresh
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
-import reactConfig from '@rajzik/eslint-config/react';
 import prettierConfig from '@rajzik/eslint-config/prettier';
+import reactConfig from '@rajzik/eslint-config/react';
 
-export default [
-  ...baseConfig,
-  ...reactConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...reactConfig, ...prettierConfig];
 ```
 
 **Rules:**
+
 - React JSX runtime rules
 - React Hooks rules
 - JSX accessibility rules
@@ -107,16 +111,18 @@ export default [
 Enables React Compiler linting rules. Requires React preset.
 
 **Installation:**
+
 ```sh
 npm install --save-dev eslint-plugin-react-compiler
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
+import prettierConfig from '@rajzik/eslint-config/prettier';
 import reactConfig from '@rajzik/eslint-config/react';
 import reactCompilerConfig from '@rajzik/eslint-config/react-compiler';
-import prettierConfig from '@rajzik/eslint-config/prettier';
 
 export default [
   ...baseConfig,
@@ -127,6 +133,7 @@ export default [
 ```
 
 **Rules:**
+
 - React Compiler recommended rules
 - Validates React Compiler compatibility
 
@@ -137,24 +144,23 @@ export default [
 Enables Next.js-specific linting rules.
 
 **Installation:**
+
 ```sh
 npm install --save-dev @next/eslint-plugin-next
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 import nextjsConfig from '@rajzik/eslint-config/nextjs';
 import prettierConfig from '@rajzik/eslint-config/prettier';
 
-export default [
-  ...baseConfig,
-  ...nextjsConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...nextjsConfig, ...prettierConfig];
 ```
 
 **Rules:**
+
 - Next.js recommended rules
 - Core Web Vitals rules
 - Next.js best practices
@@ -166,26 +172,26 @@ export default [
 Enables Node.js-specific linting rules.
 
 **Installation:**
+
 ```sh
 npm install --save-dev eslint-plugin-n
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 import nodeConfig from '@rajzik/eslint-config/node';
 import prettierConfig from '@rajzik/eslint-config/prettier';
 
-export default [
-  ...baseConfig,
-  ...nodeConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...nodeConfig, ...prettierConfig];
 ```
 
 **Rules:**
+
 - Node.js recommended rules
-- File extension resolution (`.ts`, `.tsx`, `.mts`, `.mtsx`, `.cts`, `.ctsx`, `.js`, `.jsx`, `.cjs`, `.cjsx`, `.json`)
+- File extension resolution (`.ts`, `.tsx`, `.mts`, `.mtsx`, `.cts`, `.ctsx`,
+  `.js`, `.jsx`, `.cjs`, `.cjsx`, `.json`)
 
 ---
 
@@ -194,32 +200,34 @@ export default [
 Enables Tailwind CSS linting rules.
 
 **Installation:**
+
 ```sh
 npm install --save-dev eslint-plugin-tailwindcss
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
-import tailwindConfig from '@rajzik/eslint-config/tailwind';
 import prettierConfig from '@rajzik/eslint-config/prettier';
+import tailwindConfig from '@rajzik/eslint-config/tailwind';
 
-export default [
-  ...baseConfig,
-  ...tailwindConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...tailwindConfig, ...prettierConfig];
 ```
 
 **Rules:**
+
 - Tailwind recommended rules
-- Custom classname detection (supports `twMerge`, `classnames`, `clsx`, `ctl`, `cva`, `tv`, `cn`)
+- Custom classname detection (supports `twMerge`, `classnames`, `clsx`, `ctl`,
+  `cva`, `tv`, `cn`)
 - No unnecessary arbitrary values
 - No contradicting classnames
 - Enforces shorthand classes
 
 **Settings:**
-- Configures Tailwind CSS plugin to recognize utility functions: `twMerge`, `classnames`, `clsx`, `ctl`, `cva`, `tv`, `cn`
+
+- Configures Tailwind CSS plugin to recognize utility functions: `twMerge`,
+  `classnames`, `clsx`, `ctl`, `cva`, `tv`, `cn`
 
 ---
 
@@ -228,24 +236,23 @@ export default [
 Enables CSS linting rules.
 
 **Installation:**
+
 ```sh
 npm install --save-dev @eslint/css
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 import cssConfig from '@rajzik/eslint-config/css';
 import prettierConfig from '@rajzik/eslint-config/prettier';
 
-export default [
-  ...baseConfig,
-  ...cssConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...cssConfig, ...prettierConfig];
 ```
 
 **Rules:**
+
 - CSS recommended rules
 - CSS syntax validation
 
@@ -256,21 +263,19 @@ export default [
 CSS linting with Tailwind CSS v3 support.
 
 **Installation:**
+
 ```sh
 npm install --save-dev @eslint/css tailwind-csstree
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 import { cssTailwindConfig3 } from '@rajzik/eslint-config/css';
 import prettierConfig from '@rajzik/eslint-config/prettier';
 
-export default [
-  ...baseConfig,
-  ...cssTailwindConfig3,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...cssTailwindConfig3, ...prettierConfig];
 ```
 
 ---
@@ -280,21 +285,19 @@ export default [
 CSS linting with Tailwind CSS v4 support.
 
 **Installation:**
+
 ```sh
 npm install --save-dev @eslint/css tailwind-csstree
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 import { cssTailwindConfig4 } from '@rajzik/eslint-config/css';
 import prettierConfig from '@rajzik/eslint-config/prettier';
 
-export default [
-  ...baseConfig,
-  ...cssTailwindConfig4,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...cssTailwindConfig4, ...prettierConfig];
 ```
 
 ---
@@ -304,24 +307,23 @@ export default [
 Enables Turbo monorepo linting rules.
 
 **Installation:**
+
 ```sh
 npm install --save-dev eslint-plugin-turbo
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
-import turboConfig from '@rajzik/eslint-config/turbo';
 import prettierConfig from '@rajzik/eslint-config/prettier';
+import turboConfig from '@rajzik/eslint-config/turbo';
 
-export default [
-  ...baseConfig,
-  ...turboConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...turboConfig, ...prettierConfig];
 ```
 
 **Rules:**
+
 - Turbo recommended rules
 - Turbo monorepo best practices
 
@@ -332,11 +334,13 @@ export default [
 Disables ESLint rules that conflict with Prettier. **Must be included last.**
 
 **Installation:**
+
 ```sh
 npm install --save-dev eslint-config-prettier
 ```
 
 **Usage:**
+
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 import prettierConfig from '@rajzik/eslint-config/prettier';
@@ -349,6 +353,7 @@ export default [
 ```
 
 **Rules:**
+
 - Disables conflicting formatting rules
 - Re-enables `curly` rule (requires braces for all control statements)
 
@@ -360,10 +365,10 @@ export default [
 
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
-import reactConfig from '@rajzik/eslint-config/react';
 import nextjsConfig from '@rajzik/eslint-config/nextjs';
-import tailwindConfig from '@rajzik/eslint-config/tailwind';
 import prettierConfig from '@rajzik/eslint-config/prettier';
+import reactConfig from '@rajzik/eslint-config/react';
+import tailwindConfig from '@rajzik/eslint-config/tailwind';
 
 /** @type {import('@rajzik/eslint-config').Config} */
 const config = [
@@ -383,8 +388,8 @@ export default config;
 ```javascript
 import baseConfig from '@rajzik/eslint-config';
 import nodeConfig from '@rajzik/eslint-config/node';
-import turboConfig from '@rajzik/eslint-config/turbo';
 import prettierConfig from '@rajzik/eslint-config/prettier';
+import turboConfig from '@rajzik/eslint-config/turbo';
 
 /** @type {import('@rajzik/eslint-config').Config} */
 const config = [
@@ -411,7 +416,8 @@ import type { Config } from '@rajzik/eslint-config';
 
 - **Strict type checking**: All unsafe operations are errors
 - **Consistent type imports**: Enforces `import type` for type-only imports
-- **Naming conventions**: PascalCase for types/interfaces, camelCase for variables
+- **Naming conventions**: PascalCase for types/interfaces, camelCase for
+  variables
 - **No explicit `any`**: Warns on `any` types (except rest args)
 - **No deprecated APIs**: Errors on deprecated TypeScript features
 - **Nullish coalescing**: Prefers `??` over `||` for null/undefined
@@ -458,4 +464,6 @@ If migrating from ESLint v8, note that:
 3. Plugin imports are different
 4. Some rule names may have changed
 
-See [ESLint Migration Guide](https://eslint.org/docs/latest/use/migrate-to-9.0.0) for details.
+See
+[ESLint Migration Guide](https://eslint.org/docs/latest/use/migrate-to-9.0.0)
+for details.

@@ -1,6 +1,8 @@
 # `@rajzik/conventional-commit-lint-config`
 
-Commitlint configuration for the [rajzik conventional changelog preset](../conventional-changelog). Enforces conventional commit message format in your repository.
+Commitlint configuration for the
+[rajzik conventional changelog preset](../conventional-changelog). Enforces
+conventional commit message format in your repository.
 
 ## Installation
 
@@ -14,7 +16,8 @@ yarn add --dev @commitlint/cli @rajzik/conventional-commit-lint-config
 
 ### Configuration
 
-Create a `commitlint.config.cjs` (CommonJS) or `commitlint.config.mjs` (ESM) file:
+Create a `commitlint.config.cjs` (CommonJS) or `commitlint.config.mjs` (ESM)
+file:
 
 **CommonJS (`commitlint.config.cjs`):**
 
@@ -52,9 +55,7 @@ npx --no -- commitlint --edit $1
 ```json
 {
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "commitlint --edit"
-    ]
+    "*.{ts,tsx,js,jsx}": ["commitlint --edit"]
   }
 }
 ```
@@ -99,6 +100,7 @@ Enforces that commit types match the conventional changelog types.
 **Severity:** `2` (error)
 
 **Valid Types:**
+
 - `break`, `breaking` - Breaking changes
 - `build` - Build system changes
 - `ci`, `cd` - CI/CD changes
@@ -119,6 +121,7 @@ Enforces that commit types match the conventional changelog types.
 - `update` - Feature updates
 
 **Example:**
+
 ```bash
 # ✅ Valid
 fix: Fix button styling
@@ -141,6 +144,7 @@ Enforces sentence-case for commit subjects.
 **Format:** `sentence-case` (first letter capitalized, rest lowercase)
 
 **Example:**
+
 ```bash
 # ✅ Valid
 fix: Fix button styling
@@ -162,6 +166,7 @@ Enforces trailing period in commit subjects.
 **Format:** Always require trailing period
 
 **Example:**
+
 ```bash
 # ✅ Valid
 fix: Fix button styling.
@@ -183,6 +188,7 @@ Allows flexible scope casing (disabled by default).
 **Format:** `start-case` (when enabled)
 
 **Example:**
+
 ```bash
 # All of these are valid:
 fix(Button): Fix styling.
@@ -207,6 +213,7 @@ This config enforces the following format:
 ```
 
 Where:
+
 - `<type>`: One of the valid commit types (see above)
 - `<scope>`: Optional scope in parentheses
 - `<subject>`: Sentence-case description ending with a period
@@ -214,6 +221,7 @@ Where:
 ### Examples
 
 **Valid commits:**
+
 ```
 fix: Fix authentication bug.
 new(Button): Add new Button component.
@@ -223,6 +231,7 @@ fix(auth): Fixed a bug with the authentication flow.
 ```
 
 **Invalid commits:**
+
 ```
 fix: fix bug                    # Wrong case, missing period
 feat: Add feature              # Invalid type, missing period
@@ -264,7 +273,9 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
       - run: npm install
-      - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.sha }} --verbose
+      - run:
+          npx commitlint --from ${{ github.event.pull_request.base.sha }} --to
+          ${{ github.sha }} --verbose
 ```
 
 ### Pre-commit Hook
@@ -279,8 +290,10 @@ npx commitlint --edit "$1" || exit 1
 
 ## Related Packages
 
-- [`@rajzik/conventional-changelog`](../conventional-changelog) - Changelog generation
-- [`@rajzik/conventional-changelog-types`](../conventional-changelog-types) - Type definitions
+- [`@rajzik/conventional-changelog`](../conventional-changelog) - Changelog
+  generation
+- [`@rajzik/conventional-changelog-types`](../conventional-changelog-types) -
+  Type definitions
 - [`@rajzik/danger-configuration`](../config-danger) - PR validation
 
 ## Further Reading

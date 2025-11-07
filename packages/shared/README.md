@@ -1,10 +1,12 @@
 # `@rajzik/configs-shared`
 
-Internal package providing shared constants and utilities used across other `@rajzik/configs` packages.
+Internal package providing shared constants and utilities used across other
+`@rajzik/configs` packages.
 
 ## Installation
 
-This package is primarily used internally by other `@rajzik/configs` packages. If you need to use it directly:
+This package is primarily used internally by other `@rajzik/configs` packages.
+If you need to use it directly:
 
 ```sh
 npm install --save-dev @rajzik/configs-shared
@@ -16,22 +18,22 @@ yarn add --dev @rajzik/configs-shared
 
 ```typescript
 import {
-  ROOT,
-  EXTS,
-  IGNORE_PATHS,
-  TSX_EXTS_GROUP,
+  ALIAS_PATTERN,
   ASSET_EXT_PATTERN,
   CSS_EXT_PATTERN,
-  GQL_EXT_PATTERN,
-  TJSX_EXTS_GROUP,
-  JSX_EXTS_GROUP,
-  ALIAS_PATTERN,
-  TSCONFIG_JSON_PATH,
-  PACKAGE_JSON_PATH,
-  parseJSON,
-  getRootTSConfig,
+  EXTS,
   getRootPackageJson,
   getRootProjectReferences,
+  getRootTSConfig,
+  GQL_EXT_PATTERN,
+  IGNORE_PATHS,
+  JSX_EXTS_GROUP,
+  PACKAGE_JSON_PATH,
+  parseJSON,
+  ROOT,
+  TJSX_EXTS_GROUP,
+  TSCONFIG_JSON_PATH,
+  TSX_EXTS_GROUP,
 } from '@rajzik/configs-shared';
 ```
 
@@ -46,6 +48,7 @@ Current working directory path.
 **Type:** `string`
 
 **Example:**
+
 ```typescript
 import { ROOT } from '@rajzik/configs-shared';
 
@@ -61,6 +64,7 @@ Array of supported file extensions.
 **Type:** `string[]`
 
 **Value:**
+
 ```typescript
 [
   '.ts',
@@ -76,10 +80,11 @@ Array of supported file extensions.
   '.js',
   '.jsx',
   '.json',
-]
+];
 ```
 
 **Example:**
+
 ```typescript
 import { EXTS } from '@rajzik/configs-shared';
 
@@ -97,6 +102,7 @@ Array of paths to ignore in various tools.
 **Type:** `string[]`
 
 **Value:**
+
 ```typescript
 [
   '.next/',
@@ -109,10 +115,11 @@ Array of paths to ignore in various tools.
   'tmp/',
   'dist/',
   'build/',
-]
+];
 ```
 
 **Example:**
+
 ```typescript
 import { IGNORE_PATHS } from '@rajzik/configs-shared';
 
@@ -133,6 +140,7 @@ Glob pattern group for TypeScript/TSX extensions.
 **Value:** `'{ts,tsx,mts,mtsx,cts,ctsx}'`
 
 **Example:**
+
 ```typescript
 import { TSX_EXTS_GROUP } from '@rajzik/configs-shared';
 
@@ -151,6 +159,7 @@ Regular expression matching asset file extensions.
 **Pattern:** `/\.(ttf|eot|otf|svg|woff|woff2|mp3|png|jpg|jpeg|gif|ico)$/`
 
 **Example:**
+
 ```typescript
 import { ASSET_EXT_PATTERN } from '@rajzik/configs-shared';
 
@@ -161,6 +170,7 @@ isAsset('styles.css'); // false
 ```
 
 **Matches:**
+
 - Font files: `.ttf`, `.eot`, `.otf`, `.woff`, `.woff2`
 - Images: `.svg`, `.png`, `.jpg`, `.jpeg`, `.gif`, `.ico`
 - Audio: `.mp3`
@@ -176,6 +186,7 @@ Regular expression matching CSS file extensions.
 **Pattern:** `/\.(css|scss)$/`
 
 **Example:**
+
 ```typescript
 import { CSS_EXT_PATTERN } from '@rajzik/configs-shared';
 
@@ -197,6 +208,7 @@ Regular expression matching GraphQL file extensions.
 **Pattern:** `/\.(gql|graphql)$/`
 
 **Example:**
+
 ```typescript
 import { GQL_EXT_PATTERN } from '@rajzik/configs-shared';
 
@@ -218,6 +230,7 @@ Glob pattern group for TypeScript and JavaScript extensions.
 **Value:** `'{ts,tsx,mts,mtsx,cts,ctsx,mjs,mjsx,cjs,cjsx,js,jsx}'`
 
 **Example:**
+
 ```typescript
 import { TJSX_EXTS_GROUP } from '@rajzik/configs-shared';
 
@@ -236,6 +249,7 @@ Glob pattern group for JavaScript extensions only.
 **Value:** `'{js,jsx,mjs,mjsx,cjs,cjsx}'`
 
 **Example:**
+
 ```typescript
 import { JSX_EXTS_GROUP } from '@rajzik/configs-shared';
 
@@ -254,6 +268,7 @@ Pattern for import aliases (typically `~`).
 **Value:** `'~'`
 
 **Example:**
+
 ```typescript
 import { ALIAS_PATTERN } from '@rajzik/configs-shared';
 
@@ -277,9 +292,11 @@ Path to `tsconfig.json` file in the project root.
 **Value:** `path.join(ROOT, 'tsconfig.json')`
 
 **Example:**
+
 ```typescript
-import { TSCONFIG_JSON_PATH } from '@rajzik/configs-shared';
 import fs from 'fs';
+
+import { TSCONFIG_JSON_PATH } from '@rajzik/configs-shared';
 
 const tsconfig = JSON.parse(fs.readFileSync(TSCONFIG_JSON_PATH, 'utf8'));
 ```
@@ -295,9 +312,11 @@ Path to `package.json` file in the project root.
 **Value:** `path.join(ROOT, 'package.json')`
 
 **Example:**
+
 ```typescript
-import { PACKAGE_JSON_PATH } from '@rajzik/configs-shared';
 import fs from 'fs';
+
+import { PACKAGE_JSON_PATH } from '@rajzik/configs-shared';
 
 const pkg = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, 'utf8'));
 ```
@@ -308,15 +327,19 @@ const pkg = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, 'utf8'));
 
 #### `parseJSON<T>(filePath: string): T`
 
-Parses a JSON file, removing comments and handling common JSON-with-comments formats.
+Parses a JSON file, removing comments and handling common JSON-with-comments
+formats.
 
 **Parameters:**
+
 - `filePath` (string): Path to the JSON file
 
 **Returns:**
+
 - `T`: Parsed JSON object
 
 **Example:**
+
 ```typescript
 import { parseJSON } from '@rajzik/configs-shared';
 
@@ -329,6 +352,7 @@ const config = parseJSON<Config>('./config.json');
 ```
 
 **Features:**
+
 - Removes lines starting with `#` or `//` (comments)
 - Handles JSONC (JSON with Comments) format
 - Type-safe parsing with generics
@@ -340,6 +364,7 @@ const config = parseJSON<Config>('./config.json');
 Gets and caches the root `tsconfig.json` file.
 
 **Returns:**
+
 ```typescript
 interface TSConfigJSON {
   compilerOptions?: CompilerOptions;
@@ -348,6 +373,7 @@ interface TSConfigJSON {
 ```
 
 **Example:**
+
 ```typescript
 import { getRootTSConfig } from '@rajzik/configs-shared';
 
@@ -356,6 +382,7 @@ console.log(tsconfig.compilerOptions?.target); // 'es2024'
 ```
 
 **Features:**
+
 - Caches the result after first read
 - Returns parsed `tsconfig.json` with TypeScript types
 - Handles project references for monorepos
@@ -367,6 +394,7 @@ console.log(tsconfig.compilerOptions?.target); // 'es2024'
 Gets and caches the root `package.json` file.
 
 **Returns:**
+
 ```typescript
 interface PackageJSON {
   name: string;
@@ -378,6 +406,7 @@ interface PackageJSON {
 ```
 
 **Example:**
+
 ```typescript
 import { getRootPackageJson } from '@rajzik/configs-shared';
 
@@ -387,6 +416,7 @@ console.log(pkg.devDependencies); // { ... }
 ```
 
 **Features:**
+
 - Caches the result after first read
 - Returns parsed `package.json` with typed structure
 - Includes common package.json fields
@@ -398,9 +428,12 @@ console.log(pkg.devDependencies); // { ... }
 Gets TypeScript project references from the root `tsconfig.json`.
 
 **Returns:**
-- `ProjectReference[] | undefined`: Array of project references, or `undefined` if not present
+
+- `ProjectReference[] | undefined`: Array of project references, or `undefined`
+  if not present
 
 **Example:**
+
 ```typescript
 import { getRootProjectReferences } from '@rajzik/configs-shared';
 
@@ -413,6 +446,7 @@ if (references) {
 ```
 
 **Use Case:**
+
 - Monorepo project reference resolution
 - TypeScript project dependency management
 
@@ -448,7 +482,7 @@ interface PackageJSON {
 ### Check File Extension
 
 ```typescript
-import { EXTS, ASSET_EXT_PATTERN } from '@rajzik/configs-shared';
+import { ASSET_EXT_PATTERN, EXTS } from '@rajzik/configs-shared';
 
 function isSupportedFile(file: string): boolean {
   return EXTS.some((ext) => file.endsWith(ext));
@@ -463,8 +497,8 @@ function isAssetFile(file: string): boolean {
 
 ```typescript
 import {
-  getRootTSConfig,
   getRootPackageJson,
+  getRootTSConfig,
   parseJSON,
 } from '@rajzik/configs-shared';
 
@@ -479,7 +513,7 @@ const customConfig = parseJSON<CustomConfig>('./custom.config.json');
 ### Build Glob Patterns
 
 ```typescript
-import { TSX_EXTS_GROUP, TJSX_EXTS_GROUP } from '@rajzik/configs-shared';
+import { TJSX_EXTS_GROUP, TSX_EXTS_GROUP } from '@rajzik/configs-shared';
 
 const tsFiles = `src/**/*.${TSX_EXTS_GROUP}`;
 const allJsFiles = `**/*.${TJSX_EXTS_GROUP}`;
@@ -488,7 +522,7 @@ const allJsFiles = `**/*.${TJSX_EXTS_GROUP}`;
 ### Filter Files
 
 ```typescript
-import { IGNORE_PATHS, CSS_EXT_PATTERN } from '@rajzik/configs-shared';
+import { CSS_EXT_PATTERN, IGNORE_PATHS } from '@rajzik/configs-shared';
 
 function filterFiles(files: string[]): string[] {
   return files.filter((file) => {
@@ -511,4 +545,5 @@ This package is primarily used internally by:
 - `@rajzik/eslint-config` - For file extension patterns and path resolution
 - Other `@rajzik/configs` packages - For shared constants and utilities
 
-If you're building a tool that integrates with the `@rajzik/configs` ecosystem, you may find these utilities helpful.
+If you're building a tool that integrates with the `@rajzik/configs` ecosystem,
+you may find these utilities helpful.

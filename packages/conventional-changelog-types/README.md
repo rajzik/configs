@@ -1,6 +1,9 @@
 # `@rajzik/conventional-changelog-types`
 
-Internal types and utilities for the [conventional-changelog](../conventional-changelog) package. Provides type definitions, constants, and helper functions for working with conventional commits.
+Internal types and utilities for the
+[conventional-changelog](../conventional-changelog) package. Provides type
+definitions, constants, and helper functions for working with conventional
+commits.
 
 ## Installation
 
@@ -13,14 +16,17 @@ yarn add --dev @rajzik/conventional-changelog-types
 ## Usage
 
 ```typescript
+import type {
+  Commit,
+  CommitType,
+  Group,
+} from '@rajzik/conventional-changelog-types';
+
 import {
-  GROUPS,
+  checkCommitFormat,
   COMMIT_FORMAT_PREFIX,
   getTypeGroup,
-  checkCommitFormat,
-  type CommitType,
-  type Group,
-  type Commit,
+  GROUPS,
 } from '@rajzik/conventional-changelog-types';
 
 // Check if a commit message matches the format
@@ -44,12 +50,16 @@ GROUPS.forEach((group) => {
 Validates and parses a commit message to extract the type and scope.
 
 **Parameters:**
+
 - `commit` (string): The commit message to check
 
 **Returns:**
-- `{ type: CommitType; scope: string } | null`: Parsed commit type and scope, or `null` if invalid
+
+- `{ type: CommitType; scope: string } | null`: Parsed commit type and scope, or
+  `null` if invalid
 
 **Example:**
+
 ```typescript
 import { checkCommitFormat } from '@rajzik/conventional-changelog-types';
 
@@ -70,15 +80,19 @@ checkCommitFormat('invalid commit message');
 Retrieves the group configuration for a given commit type.
 
 **Parameters:**
+
 - `type` (CommitType): The commit type to look up
 
 **Returns:**
+
 - `Group`: The group configuration object
 
 **Throws:**
+
 - `Error`: If the type is not found in any group
 
 **Example:**
+
 ```typescript
 import { getTypeGroup } from '@rajzik/conventional-changelog-types';
 
@@ -106,11 +120,13 @@ const breakingGroup = getTypeGroup('breaking');
 Array of all commit type groups with their configuration.
 
 **Type:**
+
 ```typescript
 const GROUPS: Group[];
 ```
 
 **Example:**
+
 ```typescript
 import { GROUPS } from '@rajzik/conventional-changelog-types';
 
@@ -179,16 +195,19 @@ GROUPS.forEach((group) => {
 Regular expression matching the commit format prefix (type and optional scope).
 
 **Type:**
+
 ```typescript
 const COMMIT_FORMAT_PREFIX: RegExp;
 ```
 
 **Pattern:**
+
 ```
 /(break|breaking|build|ci|cd|deps|docs|feature|fix|internal|misc|new|patch|release|revert|security|style|styles|test|tests|type|types|update)(?:\(([a-zA-Z0-9\-., ]+)\))?:/u
 ```
 
 **Example:**
+
 ```typescript
 import { COMMIT_FORMAT_PREFIX } from '@rajzik/conventional-changelog-types';
 
@@ -388,9 +407,21 @@ interface WriterOptions {
   commitsSort: Sorter<Commit>;
   debug: () => void;
   doFlush: boolean;
-  finalizeContext?: (context: Context, options: WriterOptions, commits: Commit[], keyCommit: Commit) => Context;
+  finalizeContext?: (
+    context: Context,
+    options: WriterOptions,
+    commits: Commit[],
+    keyCommit: Commit,
+  ) => Context;
   footerPartial: string;
-  generateOn: string | ((commit: Commit, commits: Commit[], context: Context, options: WriterOptions) => unknown);
+  generateOn:
+    | string
+    | ((
+        commit: Commit,
+        commits: Commit[],
+        context: Context,
+        options: WriterOptions,
+      ) => unknown);
   groupBy: string;
   headerPartial: string;
   ignoreReverted: boolean;

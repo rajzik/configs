@@ -1,6 +1,8 @@
 # `conventional-changelog-rajzik`
 
-Commit message guidelines and changelog structure with emoji support. Provides configuration for generating changelogs from conventional commits, with support for Azure DevOps PR message format.
+Commit message guidelines and changelog structure with emoji support. Provides
+configuration for generating changelogs from conventional commits, with support
+for Azure DevOps PR message format.
 
 ## Installation
 
@@ -15,12 +17,11 @@ yarn add --dev conventional-changelog-rajzik
 ### With conventional-changelog CLI
 
 ```javascript
+// Use with conventional-changelog
+import conventionalChangelog from 'conventional-changelog';
 import changelog from 'conventional-changelog-rajzik';
 
 const config = await changelog;
-
-// Use with conventional-changelog
-import conventionalChangelog from 'conventional-changelog';
 
 conventionalChangelog({
   config: config.conventionalChangelog,
@@ -51,7 +52,7 @@ The default export is a Promise that resolves to a configuration object:
   conventionalChangelog: {
     parserOpts: ParserOptions;
     writerOpts: WriterOptions;
-  };
+  }
   parserOpts: Partial<ParserOptions>;
   recommendedBumpOpts: BumpOptions;
   writerOpts: Partial<WriterOptions>;
@@ -63,6 +64,7 @@ The default export is a Promise that resolves to a configuration object:
 Main changelog configuration object containing `parserOpts` and `writerOpts`.
 
 **Example:**
+
 ```javascript
 import changelog from 'conventional-changelog-rajzik';
 
@@ -73,9 +75,11 @@ const config = await changelog;
 
 ### `parserOpts`
 
-Parser options for parsing commit messages. Supports Azure DevOps PR format and standard conventional commits.
+Parser options for parsing commit messages. Supports Azure DevOps PR format and
+standard conventional commits.
 
 **Features:**
+
 - Supports Azure DevOps format: `Merged PR 123: type(scope): message`
 - Standard format: `type(scope): message`
 - Merge commit parsing
@@ -83,6 +87,7 @@ Parser options for parsing commit messages. Supports Azure DevOps PR format and 
 - Breaking change detection
 
 **Example:**
+
 ```javascript
 import { parserOpts } from 'conventional-changelog-rajzik';
 
@@ -93,7 +98,9 @@ import { parserOpts } from 'conventional-changelog-rajzik';
 ```
 
 **Configuration:**
-- `headerPattern`: Regex matching commit format with optional Azure DevOps prefix
+
+- `headerPattern`: Regex matching commit format with optional Azure DevOps
+  prefix
 - `headerCorrespondence`: Maps to `['azure', 'type', 'scope', 'message']`
 - `mergePattern`: Matches merge commits
 - `revertPattern`: Matches revert commits
@@ -104,6 +111,7 @@ import { parserOpts } from 'conventional-changelog-rajzik';
 Options for determining semantic version bumps based on commit types.
 
 **Example:**
+
 ```javascript
 import { recommendedBumpOpts } from 'conventional-changelog-rajzik';
 
@@ -114,6 +122,7 @@ import { recommendedBumpOpts } from 'conventional-changelog-rajzik';
 ```
 
 **Behavior:**
+
 - Analyzes commits and determines highest required version bump
 - Returns `{ level: 0|1|2|null, reason: string }`
 - Level `0` = major, `1` = minor, `2` = patch, `null` = no bump
@@ -123,6 +132,7 @@ import { recommendedBumpOpts } from 'conventional-changelog-rajzik';
 Writer options for formatting changelog output with emojis and custom templates.
 
 **Features:**
+
 - Emoji support for each commit group
 - Custom Handlebars templates
 - Azure DevOps work item linking
@@ -131,6 +141,7 @@ Writer options for formatting changelog output with emojis and custom templates.
 - Grouped and sorted commits
 
 **Example:**
+
 ```javascript
 import { writerOpts } from 'conventional-changelog-rajzik';
 
@@ -142,12 +153,14 @@ import { writerOpts } from 'conventional-changelog-rajzik';
 ```
 
 **Templates:**
+
 - `mainTemplate`: Main changelog template
 - `commitPartial`: Individual commit template
 - `headerPartial`: Version header template
 - `footerPartial`: Footer template
 
 **Group Emojis:**
+
 - 💥 Breaking
 - 📦 Dependencies
 - 📘 Docs
@@ -163,7 +176,8 @@ import { writerOpts } from 'conventional-changelog-rajzik';
 
 ## Commit Message Format
 
-The commit message format consists of a **type**, optional **scope** in parenthesis, and a required **message**:
+The commit message format consists of a **type**, optional **scope** in
+parenthesis, and a required **message**:
 
 ```
 <type>: <message>
@@ -209,9 +223,12 @@ The type determines the commit group and semver bump level.
 
 ### Scope
 
-The scope is optional but useful in defining granularity in a commit message. Scope is ideally used to target a specific feature or module within the project, for example: `new(Button): Add a new Button component`.
+The scope is optional but useful in defining granularity in a commit message.
+Scope is ideally used to target a specific feature or module within the project,
+for example: `new(Button): Add a new Button component`.
 
-Scopes will appear in the changelog before each line item and accept the following characters: `A-Z`, `a-z`, `0-9`, `-`, `.`, `,`, and spaces.
+Scopes will appear in the changelog before each line item and accept the
+following characters: `A-Z`, `a-z`, `0-9`, `-`, `.`, `,`, and spaces.
 
 ### Message
 
@@ -269,7 +286,8 @@ interface BumpOptions {
 }
 ```
 
-All types are exported from `@rajzik/conventional-changelog-types`. See that package's documentation for complete type definitions.
+All types are exported from `@rajzik/conventional-changelog-types`. See that
+package's documentation for complete type definitions.
 
 ## Azure DevOps Integration
 
@@ -277,6 +295,8 @@ When running in Azure DevOps pipelines, the changelog generator automatically:
 
 - Links to Azure DevOps work items using `SYSTEM_TASKDEFINITIONSURI`
 - Handles Azure DevOps PR merge commit format
-- Creates work item links in the format: `{SYSTEM_TASKDEFINITIONSURI}/_workitems/edit/{workItemId}`
+- Creates work item links in the format:
+  `{SYSTEM_TASKDEFINITIONSURI}/_workitems/edit/{workItemId}`
 
-Set the `SYSTEM_TASKDEFINITIONSURI` environment variable in your Azure DevOps pipeline.
+Set the `SYSTEM_TASKDEFINITIONSURI` environment variable in your Azure DevOps
+pipeline.

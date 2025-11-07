@@ -1,6 +1,7 @@
 # `@rajzik/prettier-config`
 
-Shareable Prettier configuration with import sorting and package.json formatting.
+Shareable Prettier configuration with import sorting and package.json
+formatting.
 
 ## Installation
 
@@ -82,6 +83,7 @@ export default {
 Base Prettier configuration with import sorting and package.json formatting.
 
 **Configuration:**
+
 ```typescript
 {
   arrowParens: 'always';
@@ -118,6 +120,7 @@ Base Prettier configuration with import sorting and package.json formatting.
 ```
 
 **Example:**
+
 ```javascript
 import config from '@rajzik/prettier-config';
 
@@ -131,6 +134,7 @@ export default config;
 Prettier configuration with Tailwind CSS class sorting.
 
 **Configuration:**
+
 ```typescript
 {
   ...baseConfig,
@@ -142,13 +146,15 @@ Prettier configuration with Tailwind CSS class sorting.
 ```
 
 **Example:**
+
 ```javascript
 import tailwindConfig from '@rajzik/prettier-config/tailwind';
 
 export default tailwindConfig;
 ```
 
-**Note:** The Tailwind plugin must be the last plugin in the array for proper class sorting.
+**Note:** The Tailwind plugin must be the last plugin in the array for proper
+class sorting.
 
 ---
 
@@ -161,13 +167,14 @@ Always include parentheses around arrow function parameters.
 **Value:** `'always'`
 
 **Example:**
+
 ```javascript
 // ✅ Formatted
 const fn = (x) => x * 2;
 const fn2 = (a, b) => a + b;
 
 // ❌ Not formatted this way
-const fn = x => x * 2;
+const fn = (x) => x * 2;
 ```
 
 ---
@@ -179,12 +186,13 @@ Include spaces inside object literals.
 **Value:** `true`
 
 **Example:**
+
 ```javascript
 // ✅ Formatted
 const obj = { a: 1, b: 2 };
 
 // ❌ Not formatted this way
-const obj = {a: 1, b: 2};
+const obj = { a: 1, b: 2 };
 ```
 
 ---
@@ -196,12 +204,10 @@ Maximum line length before wrapping.
 **Value:** `80`
 
 **Example:**
+
 ```javascript
 // Lines longer than 80 characters are wrapped
-const longFunction = (
-  veryLongParameterName,
-  anotherVeryLongParameterName,
-) => {
+const longFunction = (veryLongParameterName, anotherVeryLongParameterName) => {
   // ...
 };
 ```
@@ -223,14 +229,15 @@ Add semicolons at the end of statements.
 **Value:** `true`
 
 **Example:**
+
 ```javascript
 // ✅ Formatted
 const x = 1;
 const y = 2;
 
 // ❌ Not formatted this way
-const x = 1
-const y = 2
+const x = 1;
+const y = 2;
 ```
 
 ---
@@ -242,6 +249,7 @@ Put each HTML/JSX attribute on its own line.
 **Value:** `true`
 
 **Example:**
+
 ```jsx
 // ✅ Formatted
 <Component
@@ -263,13 +271,14 @@ Use single quotes instead of double quotes.
 **Value:** `true`
 
 **Example:**
+
 ```javascript
 // ✅ Formatted
 const str = 'Hello, world!';
 const obj = { key: 'value' };
 
 // ❌ Not formatted this way
-const str = "Hello, world!";
+const str = 'Hello, world!';
 ```
 
 ---
@@ -281,13 +290,10 @@ Add trailing commas wherever possible.
 **Value:** `'all'`
 
 **Example:**
+
 ```javascript
 // ✅ Formatted
-const arr = [
-  1,
-  2,
-  3,
-];
+const arr = [1, 2, 3];
 
 const obj = {
   a: 1,
@@ -295,11 +301,7 @@ const obj = {
 };
 
 // ❌ Not formatted this way
-const arr = [
-  1,
-  2,
-  3
-];
+const arr = [1, 2, 3];
 ```
 
 ---
@@ -329,31 +331,27 @@ import path from 'node:path';
 
 // Type imports
 import type { ComponentProps } from 'react';
-
 // React
 import { useState } from 'react';
-import { render } from 'react-dom';
-
 // Next.js
 import { NextRequest } from 'next/server';
 
 // Third-party
 import axios from 'axios';
 import lodash from 'lodash';
+import { render } from 'react-dom';
 
 // Type imports from @org
 import type { User } from '@org/types';
-
 // Internal @org imports
 import { api } from '@org/api';
 import { utils } from '@org/utils';
 
 // Type imports from relative
 import type { Props } from '../types';
-
+import { Header } from '../Header';
 // Relative imports
 import { Button } from './Button';
-import { Header } from '../Header';
 ```
 
 ---
@@ -365,6 +363,7 @@ import { Header } from '../Header';
 Automatically formats `package.json` files.
 
 **Features:**
+
 - Sorts dependencies alphabetically
 - Formats JSON structure
 - Consistent indentation
@@ -376,6 +375,7 @@ Automatically formats `package.json` files.
 Sorts and organizes import statements.
 
 **Features:**
+
 - Groups imports by type
 - Separates groups with blank lines
 - Handles type imports separately
@@ -388,6 +388,7 @@ Sorts and organizes import statements.
 Sorts Tailwind CSS classes according to the recommended order.
 
 **Features:**
+
 - Automatic class sorting
 - Follows Tailwind CSS best practices
 - Must be the last plugin in the array
@@ -506,9 +507,7 @@ Using `lint-staged`:
 ```json
 {
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md}": [
-      "prettier --write"
-    ]
+    "*.{js,jsx,ts,tsx,json,css,md}": ["prettier --write"]
   }
 }
 ```

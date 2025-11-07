@@ -1,6 +1,7 @@
 # `@rajzik/tsconfig`
 
-Shareable TypeScript configuration with strict type checking and modern JavaScript support.
+Shareable TypeScript configuration with strict type checking and modern
+JavaScript support.
 
 ## Installation
 
@@ -44,9 +45,11 @@ Or reference the file directly:
 
 ### Base Configuration (`@rajzik/tsconfig`)
 
-The base configuration provides a modern TypeScript setup optimized for bundlers and modern tooling.
+The base configuration provides a modern TypeScript setup optimized for bundlers
+and modern tooling.
 
 **Configuration:**
+
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -87,22 +90,28 @@ The base configuration provides a modern TypeScript setup optimized for bundlers
 
 #### Base Options
 
-- **`esModuleInterop`**: Enables interoperability between CommonJS and ES Modules
-- **`skipLibCheck`**: Skips type checking of declaration files for faster compilation
+- **`esModuleInterop`**: Enables interoperability between CommonJS and ES
+  Modules
+- **`skipLibCheck`**: Skips type checking of declaration files for faster
+  compilation
 - **`target`**: `es2024` - Latest ECMAScript features
 - **`lib`**: `["ES2024"]` - Latest standard library types
 - **`allowJs`**: Allows JavaScript files to be imported
 - **`resolveJsonModule`**: Allows importing JSON files
 - **`moduleDetection`**: `"force"` - Treats all files as modules
-- **`isolatedModules`**: Ensures each file can be safely transpiled independently
-- **`allowArbitraryExtensions`**: Allows importing files with arbitrary extensions
+- **`isolatedModules`**: Ensures each file can be safely transpiled
+  independently
+- **`allowArbitraryExtensions`**: Allows importing files with arbitrary
+  extensions
 - **`jsx`**: `"preserve"` - Preserves JSX for bundler processing
 
 #### Performance (Monorepo Optimized)
 
 - **`incremental`**: Enables incremental compilation
-- **`disableSourceOfProjectReferenceRedirect`**: Improves performance in monorepos
-- **`tsBuildInfoFile`**: Stores incremental compilation info in `.cache/tsbuildinfo.json`
+- **`disableSourceOfProjectReferenceRedirect`**: Improves performance in
+  monorepos
+- **`tsBuildInfoFile`**: Stores incremental compilation info in
+  `.cache/tsbuildinfo.json`
 
 #### Strictness
 
@@ -114,7 +123,8 @@ The base configuration provides a modern TypeScript setup optimized for bundlers
   - `noImplicitThis`
   - `alwaysStrict`
 - **`checkJs`**: Type checks JavaScript files
-- **`noUncheckedIndexedAccess`**: Requires explicit checks for array/object access
+- **`noUncheckedIndexedAccess`**: Requires explicit checks for array/object
+  access
 
 #### Bundler Mode
 
@@ -125,6 +135,7 @@ The base configuration provides a modern TypeScript setup optimized for bundlers
 #### Exclusions
 
 Excludes common build and dependency directories:
+
 - `node_modules`
 - `dist`
 - `dts`
@@ -135,9 +146,11 @@ Excludes common build and dependency directories:
 
 ### Package Configuration (`@rajzik/tsconfig/tsconfig.package.json`)
 
-Extended configuration for packages that need to emit TypeScript declaration files.
+Extended configuration for packages that need to emit TypeScript declaration
+files.
 
 **Configuration:**
+
 ```json
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -162,6 +175,7 @@ Extended configuration for packages that need to emit TypeScript declaration fil
 - **`outDir`**: Output directory for declaration files
 
 **Use Case:**
+
 - Internal packages in monorepos
 - Libraries that need to provide types to consumers
 - Packages where type-only emission improves editor performance
@@ -172,9 +186,11 @@ Extended configuration for packages that need to emit TypeScript declaration fil
 
 ### `target: "es2024"`
 
-Compiles to ES2024 syntax. Modern bundlers will further transpile as needed for target environments.
+Compiles to ES2024 syntax. Modern bundlers will further transpile as needed for
+target environments.
 
 **Benefits:**
+
 - Access to latest JavaScript features
 - Smaller output when targeting modern environments
 - Better tree-shaking support
@@ -186,6 +202,7 @@ Compiles to ES2024 syntax. Modern bundlers will further transpile as needed for 
 Preserves module syntax (`import`/`export`) for bundler processing.
 
 **Benefits:**
+
 - Bundlers can optimize module resolution
 - Better tree-shaking
 - Supports modern module formats
@@ -197,6 +214,7 @@ Preserves module syntax (`import`/`export`) for bundler processing.
 Uses bundler-friendly module resolution strategy.
 
 **Features:**
+
 - Supports `package.json` `exports` field
 - Handles modern module formats
 - Optimized for bundler tooling
@@ -212,11 +230,13 @@ Enables all strict type checking options:
 - **`strictNullChecks`**: `null` and `undefined` are separate types
 - **`strictFunctionTypes`**: Stricter function type checking
 - **`strictBindCallApply`**: Stricter `bind`, `call`, `apply` checking
-- **`strictPropertyInitialization`**: Requires class properties to be initialized
+- **`strictPropertyInitialization`**: Requires class properties to be
+  initialized
 - **`noImplicitThis`**: Error on implicit `this` usage
 - **`alwaysStrict`**: Parses in strict mode
 
 **Benefits:**
+
 - Catches more errors at compile time
 - Better type safety
 - Prevents common runtime errors
@@ -228,6 +248,7 @@ Enables all strict type checking options:
 Requires explicit checks when accessing arrays or objects by index.
 
 **Example:**
+
 ```typescript
 // ❌ Error: Object is possibly 'undefined'
 const value = obj['key'];
@@ -242,6 +263,7 @@ if ('key' in obj) {
 ```
 
 **Benefits:**
+
 - Prevents `undefined` access errors
 - Encourages defensive programming
 - Better runtime safety
@@ -253,11 +275,13 @@ if ('key' in obj) {
 Preserves JSX syntax for bundler/transformer processing.
 
 **Use Cases:**
+
 - React with modern bundlers (Vite, esbuild, etc.)
 - Next.js
 - Other JSX transformers
 
 **Alternatives:**
+
 - `"react"` - For React 17+
 - `"react-jsx"` - For React 17+ with new JSX transform
 - `"react-native"` - For React Native
@@ -336,13 +360,12 @@ Preserves JSX syntax for bundler/transformer processing.
     "composite": true,
     "outDir": "./dist"
   },
-  "references": [
-    { "path": "../shared" }
-  ]
+  "references": [{ "path": "../shared" }]
 }
 ```
 
 **Benefits:**
+
 - Incremental compilation
 - Project references for faster builds
 - Shared type definitions
@@ -355,21 +378,23 @@ Preserves JSX syntax for bundler/transformer processing.
 
 If migrating from a different TypeScript config:
 
-1. **Update `moduleResolution`**: Change from `"node"` to `"bundler"` (if using modern bundlers)
-2. **Update `module`**: Change from `"esnext"` to `"preserve"` (if using bundlers)
+1. **Update `moduleResolution`**: Change from `"node"` to `"bundler"` (if using
+   modern bundlers)
+2. **Update `module`**: Change from `"esnext"` to `"preserve"` (if using
+   bundlers)
 3. **Enable `noUncheckedIndexedAccess`**: May require adding null checks
 4. **Review `target`**: Update to `"es2024"` if targeting modern environments
 
 ### Common Issues
 
-**Issue:** `Cannot find module` errors
-**Solution:** Ensure `moduleResolution: "bundler"` and check `package.json` `exports` field
+**Issue:** `Cannot find module` errors **Solution:** Ensure
+`moduleResolution: "bundler"` and check `package.json` `exports` field
 
-**Issue:** JSX not working
-**Solution:** Set `jsx: "react-jsx"` or `jsx: "preserve"` based on your setup
+**Issue:** JSX not working **Solution:** Set `jsx: "react-jsx"` or
+`jsx: "preserve"` based on your setup
 
-**Issue:** Slow compilation in monorepos
-**Solution:** Enable `incremental: true` and use project references
+**Issue:** Slow compilation in monorepos **Solution:** Enable
+`incremental: true` and use project references
 
 ---
 
@@ -430,9 +455,7 @@ If migrating from a different TypeScript config:
     "composite": true,
     "outDir": "./dist"
   },
-  "references": [
-    { "path": "../shared" }
-  ]
+  "references": [{ "path": "../shared" }]
 }
 ```
 
