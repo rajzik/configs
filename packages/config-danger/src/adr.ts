@@ -8,14 +8,29 @@ import {
   touchedFiles,
 } from './helpers';
 
-// Check that large PRs have an associated ADR file documenting the change.
-// Ignore lock, tests, and snapshot files in the calculation.
+/**
+ * Options for checking ADR (Architecture Decision Record) requirements.
+ */
 export type CheckAdrOptions = CommonOptions & {
+  /** Threshold for number of line changes before requiring ADR. Defaults to 200. */
   changeThreshold?: number;
+  /** URL to documentation about ADR requirements. */
   docsUrl?: string;
+  /** Additional file patterns to exclude from change count calculation. */
   exclusions?: string[];
 };
 
+/**
+ * Check that large PRs have an associated ADR file documenting the change.
+ * Ignores lock, tests, and snapshot files in the calculation.
+ *
+ * @param {string} docsPath - Path to the documentation directory (e.g., 'docs/adr')
+ * @param {CheckAdrOptions} options - Configuration options for the ADR check
+ * @param {number} [options.changeThreshold=200] - Threshold for number of line changes before requiring ADR
+ * @param {string} [options.docsUrl=''] - URL to documentation about ADR requirements
+ * @param {string[]} [options.exclusions=[]] - Additional file patterns to exclude from change count calculation
+ * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
+ */
 export function checkForADR(docsPath: string, options: CheckAdrOptions = {}) {
   if (isRevert()) {
     return;

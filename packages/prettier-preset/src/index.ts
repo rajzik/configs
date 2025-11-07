@@ -1,8 +1,14 @@
 import type { PluginConfig } from '@ianvs/prettier-plugin-sort-imports';
 import type { Config } from 'prettier';
 
+/**
+ * Extended Prettier configuration type that includes plugin-specific options.
+ */
 export type ExtendedConfig = Config | PluginConfig;
 
+/**
+ * Base Prettier configuration with import sorting.
+ */
 const config = {
   arrowParens: 'always',
   bracketSpacing: true,

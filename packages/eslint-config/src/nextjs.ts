@@ -2,6 +2,9 @@ import type { Linter } from 'eslint';
 
 import nextPlugin from '@next/eslint-plugin-next';
 
+/**
+ * ESLint configuration for Next.js projects.
+ */
 const config: Linter.Config[] = [
   {
     files: ['**/*.ts', '**/*.tsx'],

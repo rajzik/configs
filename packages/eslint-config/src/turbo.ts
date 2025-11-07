@@ -2,6 +2,9 @@ import type { Linter } from 'eslint';
 
 import turbo from 'eslint-plugin-turbo';
 
+/**
+ * ESLint configuration for Turborepo projects.
+ */
 const config: Linter.Config[] = [
   {
     plugins: {
