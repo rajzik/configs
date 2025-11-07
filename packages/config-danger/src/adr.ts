@@ -24,8 +24,12 @@ export type CheckAdrOptions = CommonOptions & {
  * Check that large PRs have an associated ADR file documenting the change.
  * Ignores lock, tests, and snapshot files in the calculation.
  *
- * @param docsPath - Path to the documentation directory (e.g., 'docs/adr')
- * @param options - Configuration options for the ADR check
+ * @param {string} docsPath - Path to the documentation directory (e.g., 'docs/adr')
+ * @param {CheckAdrOptions} options - Configuration options for the ADR check
+ * @param {number} [options.changeThreshold=200] - Threshold for number of line changes before requiring ADR
+ * @param {string} [options.docsUrl=''] - URL to documentation about ADR requirements
+ * @param {string[]} [options.exclusions=[]] - Additional file patterns to exclude from change count calculation
+ * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
  */
 export function checkForADR(docsPath: string, options: CheckAdrOptions = {}) {
   if (isRevert()) {

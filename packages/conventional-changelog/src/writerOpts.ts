@@ -38,8 +38,8 @@ const { SYSTEM_TASKDEFINITIONSURI } = process.env;
 /**
  * Create a link to an Azure DevOps work item.
  *
- * @param workItemId - The work item ID
- * @returns The work item URL, or empty string if workItemId is not provided
+ * @param {string} workItemId - The work item ID
+ * @returns {string} The work item URL, or empty string if workItemId is not provided
  */
 function createWorkItemLink(workItemId: string) {
   const serverUrl = SYSTEM_TASKDEFINITIONSURI!;
@@ -54,10 +54,10 @@ function createWorkItemLink(workItemId: string) {
 /**
  * Create a URL link from path segments, context, and optional reference.
  *
- * @param paths - Array of path segments to append
- * @param context - Changelog context with repository information
- * @param reference - Optional reference to override context values
- * @returns The constructed URL string
+ * @param {string[]} paths - Array of path segments to append
+ * @param {Context} context - Changelog context with repository information
+ * @param {Partial<Reference>} [reference={}] - Optional reference to override context values
+ * @returns {string} The constructed URL string
  */
 function createLink(
   paths: string[],

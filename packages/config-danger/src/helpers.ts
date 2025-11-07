@@ -29,8 +29,8 @@ export const touchedFiles = [
 /**
  * Debug logging function that only outputs when dangerfile.js is modified.
  *
- * @param msg - Debug message to log
- * @param args - Additional arguments to include in the message
+ * @param {string} msg - Debug message to log
+ * @param {...string} args - Additional arguments to include in the message
  */
 export function debug(msg: string, ...args: string[]) {
   if (danger.git.modified_files.includes('dangerfile.js')) {
@@ -53,8 +53,8 @@ export function isRevert(): boolean {
 /**
  * Count the number of line changes (additions + deletions) in a specific file.
  *
- * @param file - Path to the file to analyze
- * @returns Promise resolving to the total number of line changes
+ * @param {string} file - Path to the file to analyze
+ * @returns {Promise<number>} Promise resolving to the total number of line changes
  */
 export async function countChangesInFile(file: string): Promise<number> {
   return new Promise((resolve) => {

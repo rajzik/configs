@@ -7,8 +7,8 @@ import { PACKAGE_JSON_PATH, TSCONFIG_JSON_PATH } from './constants';
 /**
  * Parse a JSON file, removing comments and blank lines.
  *
- * @param filePath - Path to the JSON file to parse
- * @returns Parsed JSON object
+ * @param {string} filePath - Path to the JSON file to parse
+ * @returns {T} Parsed JSON object
  * @template T - The expected type of the parsed JSON
  */
 export function parseJSON<T>(filePath: string): T {

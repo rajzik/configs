@@ -60,7 +60,10 @@ export function checkForInvalidLocks() {
  * Check that any test file exists when source files are updated.
  * Warns or fails if source files are changed but no test files are modified.
  *
- * @param options - Configuration options for the test check
+ * @param {TestOptions} options - Configuration options for the test check
+ * @param {string} [options.root] - Root directory path to scope the check to a specific part of the codebase
+ * @param {RegExp} [options.ignorePattern] - Regular expression pattern to ignore certain files from test checks
+ * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
  */
 export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
   if (isRevert()) {
@@ -90,7 +93,10 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
  * Check that all touched source files have an accompanying test file change.
  * More strict than checkForAnyTests - ensures each source file has a corresponding test.
  *
- * @param options - Configuration options for the test check
+ * @param {TestOptions} options - Configuration options for the test check
+ * @param {RegExp} [options.ignorePattern] - Regular expression pattern to ignore certain files from test checks
+ * @param {string} [options.root] - Root directory path to scope the check to a specific part of the codebase
+ * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
  */
 export function checkSourceFilesHaveTests({
   ignorePattern,
@@ -161,7 +167,8 @@ const fileFilter = (file: string) =>
  * Component snapshot testing is deprecated, so disallow new snapshots.
  * Fails on new snapshots, warns on updated snapshots.
  *
- * @param options - Configuration options for the snapshot check
+ * @param {SnapshotOptions} options - Configuration options for the snapshot check
+ * @param {string} [options.docsUrl] - URL to documentation about snapshot testing deprecation
  */
 export function disableComponentSnapshots(options: SnapshotOptions = {}) {
   if (isRevert()) {
