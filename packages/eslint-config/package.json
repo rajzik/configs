@@ -58,7 +58,7 @@
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-react-refresh": "0.4.24",
     "eslint-plugin-tailwindcss": "3.18.2",
-    "eslint-plugin-testing-library": "7.13.3",
+    "eslint-plugin-testing-library": "7.13.4",
     "eslint-plugin-turbo": "2.6.1",
     "eslint-plugin-unicorn": "62.0.0",
     "json5": "2.2.3",
