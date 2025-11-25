@@ -1,5 +1,29 @@
 # `@rajzik/conventional-commit-lint-config` CHANGELOG
 
+## 2.1.2
+
+### Patch Changes
+
+- [#804](https://github.com/rajzik/configs/pull/804)
+  [`b37056f`](https://github.com/rajzik/configs/commit/b37056f6a6a57a40350e24ceb9d94ef95b98b8af)
+  Thanks [@rajzik](https://github.com/rajzik)! - docs: Generate comprehensive
+  API documentation for all packages
+
+  Added comprehensive documentation for all public APIs, functions, and
+  components across all packages. Each package README now includes:
+  - Installation instructions
+  - Usage examples
+  - Complete API reference with detailed descriptions
+  - Configuration options
+  - Type definitions
+  - Code examples
+  - Integration guides
+
+- Updated dependencies
+  [[`6e47002`](https://github.com/rajzik/configs/commit/6e47002cf03323cf31395339de14b5e4d43fc060),
+  [`b37056f`](https://github.com/rajzik/configs/commit/b37056f6a6a57a40350e24ceb9d94ef95b98b8af)]:
+  - @rajzik/conventional-changelog-types@2.1.2
+
 ## 2.1.1
 
 ### Patch Changes
