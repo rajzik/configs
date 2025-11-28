@@ -1,5 +1,14 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.4.3
+
+### Patch Changes
+
+- [#844](https://github.com/rajzik/configs/pull/844)
+  [`f865356`](https://github.com/rajzik/configs/commit/f865356112b1220f1925069b27731e0c252f1880)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-packagejson` to `2.5.20`.
+
 ## 2.4.2
 
 ### Patch Changes
