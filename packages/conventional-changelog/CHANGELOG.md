@@ -1,5 +1,12 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
+## 2.1.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.1.3
+
 ## 2.1.2
 
 ### Patch Changes
