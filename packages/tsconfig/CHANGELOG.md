@@ -1,5 +1,7 @@
 # `@rajzik/tsconfig` CHANGELOG
 
+## 2.4.3
+
 ## 2.4.2
 
 ### Patch Changes
