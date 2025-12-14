@@ -16,8 +16,8 @@ catalogs:
       specifier: 3.7.4
       version: 3.7.4
     tsdown:
-      specifier: 0.17.3
-      version: 0.17.3
+      specifier: 0.17.4
+      version: 0.17.4
     typescript:
       specifier: 5.9.3
       version: 5.9.3
@@ -107,7 +107,7 @@ importers:
         version: 3.7.4
       tsdown:
         specifier: 'catalog:'
-        version: 0.17.3(synckit@0.11.11)(typescript@5.9.3)
+        version: 0.17.4(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -150,7 +150,7 @@ importers:
         version: 0.2.5
       tsdown:
         specifier: 'catalog:'
-        version: 0.17.3(synckit@0.11.11)(typescript@5.9.3)
+        version: 0.17.4(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -177,7 +177,7 @@ importers:
         version: 3.7.4
       tsdown:
         specifier: 'catalog:'
-        version: 0.17.3(synckit@0.11.11)(typescript@5.9.3)
+        version: 0.17.4(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -208,7 +208,7 @@ importers:
         version: 3.7.4
       tsdown:
         specifier: 'catalog:'
-        version: 0.17.3(synckit@0.11.11)(typescript@5.9.3)
+        version: 0.17.4(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -308,7 +308,7 @@ importers:
         version: 3.7.4
       tsdown:
         specifier: 'catalog:'
-        version: 0.17.3(synckit@0.11.11)(typescript@5.9.3)
+        version: 0.17.4(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -336,7 +336,7 @@ importers:
         version: 3.7.4
       tsdown:
         specifier: 'catalog:'
-        version: 0.17.3(synckit@0.11.11)(typescript@5.9.3)
+        version: 0.17.4(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -357,7 +357,7 @@ importers:
         version: 3.7.4
       tsdown:
         specifier: 'catalog:'
-        version: 0.17.3(synckit@0.11.11)(typescript@5.9.3)
+        version: 0.17.4(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -3477,8 +3477,8 @@ packages:
   tsconfig-paths@3.15.0:
     resolution: {integrity: sha512-2Ac2RgzDe/cn48GvOe3M+o82pEFewD3UPbyoUHHdKasHwJKjds4fLXWf/Ux5kATBKN20oaFGu+jbElp1pos0mg==}
 
-  tsdown@0.17.3:
-    resolution: {integrity: sha512-bgLgTog+oyadDTr9SZ57jZtb+A4aglCjo3xgJrkCDxbzcQl2l2iDDr4b06XHSQHwyDNIhYFDgPRhuu1wL3pNsw==}
+  tsdown@0.17.4:
+    resolution: {integrity: sha512-z+kNuv1rwM1POQIufDUVrdNc/uGy0ueRVafCyDH39IdHxin4JXgB8DNGSPoqdIpcOpqUoRbNreK8NxENFmlhKw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -7194,7 +7194,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.17.3(synckit@0.11.11)(typescript@5.9.3):
+  tsdown@0.17.4(synckit@0.11.11)(typescript@5.9.3):
     dependencies:
       ansis: 4.2.0
       cac: 6.7.14
