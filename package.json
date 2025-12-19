@@ -55,7 +55,7 @@
     "eslint": "catalog:",
     "eslint-find-rules": "5.0.0",
     "prettier": "catalog:",
-    "turbo": "2.6.3",
+    "turbo": "2.7.0",
     "typescript": "catalog:"
   },
   "packageManager": "pnpm@10.26.1"
