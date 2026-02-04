@@ -42,7 +42,7 @@
     "@rajzik/conventional-changelog-types": "workspace:*"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.4.0",
+    "@commitlint/cli": "20.4.1",
     "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
     "@types/node": "catalog:",

@@ -45,7 +45,7 @@
     "@changesets/get-github-info": "0.7.0",
     "@changesets/get-release-plan": "4.0.14",
     "@changesets/types": "6.1.0",
-    "@commitlint/cli": "20.4.0",
+    "@commitlint/cli": "20.4.1",
     "@rajzik/danger-configuration": "workspace:*",
     "@rajzik/eslint-config": "workspace:*",
     "@rajzik/prettier-config": "workspace:*",
