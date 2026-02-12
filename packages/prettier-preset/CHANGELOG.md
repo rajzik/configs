@@ -1,5 +1,29 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.4.4
+
+### Patch Changes
+
+- [#926](https://github.com/rajzik/configs/pull/926)
+  [`592f0d7`](https://github.com/rajzik/configs/commit/592f0d7c31a01e741b45ffc845643b0ff9985162)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-packagejson` to `3.0.0`.
+
+- [#943](https://github.com/rajzik/configs/pull/943)
+  [`4e72905`](https://github.com/rajzik/configs/commit/4e7290560c3bc68b3f26929c285efc2e8c8fb39f)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@ianvs/prettier-plugin-sort-imports` to `4.7.1`.
+
+- [#914](https://github.com/rajzik/configs/pull/914)
+  [`9e4c67b`](https://github.com/rajzik/configs/commit/9e4c67b2da8d1223a8be7df0ca964db771b23be7)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-packagejson` to `2.5.21`.
+
+- [#922](https://github.com/rajzik/configs/pull/922)
+  [`eb78e80`](https://github.com/rajzik/configs/commit/eb78e806f89588745d1d291f8675f31138091967)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `prettier-plugin-packagejson` to `2.5.22`.
+
 ## 2.4.3
 
 ### Patch Changes
