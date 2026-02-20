@@ -231,8 +231,8 @@ importers:
         specifier: workspace:*
         version: link:../shared
       '@stylistic/eslint-plugin':
-        specifier: 5.8.0
-        version: 5.8.0(eslint@9.39.2(jiti@2.6.0))
+        specifier: 5.9.0
+        version: 5.9.0(eslint@9.39.2(jiti@2.6.0))
       '@vitest/eslint-plugin':
         specifier: 1.6.9
         version: 1.6.9(eslint@9.39.2(jiti@2.6.0))(typescript@5.9.3)
@@ -1010,11 +1010,11 @@ packages:
     resolution: {integrity: sha512-6rsHTjodIn/t90lv5snQjRPVtOosM7Vp0AKdrObymq45ojlgVwnpAqdc+0OBBrpEiy31zZ6/TKeIVqV1HwvnuQ==}
     engines: {node: '>=18'}
 
-  '@stylistic/eslint-plugin@5.8.0':
-    resolution: {integrity: sha512-WNPVF/FfBAjyi3OA7gok8swRiImNLKI4dmV3iK/GC/0xSJR7eCzBFsw9hLZVgb1+MYNLy7aDsjohxN1hA/FIfQ==}
+  '@stylistic/eslint-plugin@5.9.0':
+    resolution: {integrity: sha512-FqqSkvDMYJReydrMhlugc71M76yLLQWNfmGq+SIlLa7N3kHp8Qq8i2PyWrVNAfjOyOIY+xv9XaaYwvVW7vroMA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: '>=9.0.0'
+      eslint: ^9.0.0 || ^10.0.0
 
   '@tootallnate/once@2.0.0':
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -4536,10 +4536,10 @@ snapshots:
     dependencies:
       '@types/node': 22.18.6
 
-  '@stylistic/eslint-plugin@5.8.0(eslint@9.39.2(jiti@2.6.0))':
+  '@stylistic/eslint-plugin@5.9.0(eslint@9.39.2(jiti@2.6.0))':
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.2(jiti@2.6.0))
-      '@typescript-eslint/types': 8.55.0
+      '@typescript-eslint/types': 8.56.0
       eslint: 9.39.2(jiti@2.6.0)
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
