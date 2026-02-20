@@ -1,0 +1,5 @@
+---
+'@rajzik/conventional-commit-lint-config': patch
+---
+
+Updated dependency `@commitlint/cli` to `20.4.2`.
