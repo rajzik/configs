@@ -1,6 +1,6 @@
 {
   "name": "@rajzik/conventional-changelog-types",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Internal package for rajzik conventional changelog tools",
   "keywords": [
     "internal",

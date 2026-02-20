@@ -1,6 +1,6 @@
 {
   "name": "@rajzik/tsconfig",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "description": "Pre-packaged tsconfig.json's for personal configured projects",
   "keywords": [
     "tsconfig",
