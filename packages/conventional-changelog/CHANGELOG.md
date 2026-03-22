@@ -1,5 +1,17 @@
 # `conventional-changelog-rajzik` CHANGELOG
 
+## 2.1.4
+
+### Patch Changes
+
+- [#869](https://github.com/rajzik/configs/pull/869)
+  [`f4b3fe7`](https://github.com/rajzik/configs/commit/f4b3fe78d8078f04b3889beeb2486e14324d9016)
+  Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency
+  `@types/shelljs` to `0.10.0`.
+
+- Updated dependencies []:
+  - @rajzik/conventional-changelog-types@2.1.4
+
 ## 2.1.3
 
 ### Patch Changes
