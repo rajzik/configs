@@ -12,6 +12,10 @@ env:
   CI: 1
   ARTIFACT_DIR: ./artifacts
 
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
+
 jobs:
   release:
     name: 🦋 Changesets Release
@@ -33,12 +37,6 @@ jobs:
       - name: Tests
         run: pnpm test:all
 
-      - name: 🔐 Setup npm auth
-        shell: bash
-        run: |
-          echo "registry=https://registry.npmjs.org" >> ~/.npmrc
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_PUBLISH_TOKEN }}" >> ~/.npmrc
-
       # This action has two responsibilities. The first time the workflow runs
       # (initial push to a `release-*` branch) it will create a new branch and
       # then open a PR with the related changes for the new version. After the
@@ -54,8 +52,6 @@ jobs:
           title: "chore: Update version for release"
           createGithubReleases: true
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   find_package_version:
