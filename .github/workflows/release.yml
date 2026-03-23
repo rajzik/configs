@@ -14,7 +14,7 @@ env:
 
 permissions:
   id-token: write  # Required for OIDC
-  contents: read
+  contents: write
 
 jobs:
   release:
@@ -47,11 +47,12 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm release
+          publish: npm config set "//registry.npmjs.org/:_authToken" "${NPM_TOKEN}" && pnpm release
           commit: "chore: Update version for release"
           title: "chore: Update version for release"
           createGithubReleases: true
         env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   find_package_version:
