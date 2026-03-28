@@ -1,5 +1,7 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 2.4.5
+
 ## 2.4.4
 
 ### Patch Changes
