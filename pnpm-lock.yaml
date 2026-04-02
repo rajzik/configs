@@ -292,8 +292,8 @@ importers:
         version: 8.58.0(eslint@10.1.0(jiti@2.6.0))(typescript@5.9.3)
     devDependencies:
       '@eslint/css-tree':
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.0.1
+        version: 4.0.1
       '@rajzik/prettier-config':
         specifier: workspace:*
         version: link:../prettier-preset
@@ -715,8 +715,8 @@ packages:
     resolution: {integrity: sha512-3D5/OHibNEGk+wKwNwMbz63NMf367EoR4mVNNpxddCHKEb2Nez7z62J2U6YjtErSsZDoY0CsccmoUpdEbkogNA==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0}
 
-  '@eslint/css-tree@4.0.0':
-    resolution: {integrity: sha512-n/4vCyZI5LkIsJrYt7BQIvgOlyk9v/j1dUpp3UoOxEB9vjpoDVgADrb8+lkcJwkCOBkyGW7bZ/ttakMncuU59Q==}
+  '@eslint/css-tree@4.0.1':
+    resolution: {integrity: sha512-2fCSKRwoUHntYq9J1Lm28s2zeoCSNh1Cbk6Tg7k7ViwOnveIfZwPRFGwBglz+dzw2MHe5w5Fo9+VJfqL9nco2w==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
   '@eslint/css@1.1.0':
@@ -4303,7 +4303,7 @@ snapshots:
       mdn-data: 2.23.0
       source-map-js: 1.2.1
 
-  '@eslint/css-tree@4.0.0':
+  '@eslint/css-tree@4.0.1':
     dependencies:
       mdn-data: 2.27.1
       source-map-js: 1.2.1
