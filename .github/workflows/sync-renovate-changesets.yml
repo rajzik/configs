@@ -25,7 +25,7 @@ jobs:
           git config --global user.email silhanu+releasebot@gmail.com
 
       - name: 🔨 Generate changeset
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const { promises: fs } = require("fs");
