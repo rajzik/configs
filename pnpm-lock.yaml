@@ -285,8 +285,8 @@ importers:
         specifier: 2.2.3
         version: 2.2.3
       tailwind-csstree:
-        specifier: 0.3.0
-        version: 0.3.0(@eslint/css@1.1.0)
+        specifier: 0.3.1
+        version: 0.3.1(@eslint/css@1.1.0)
       typescript-eslint:
         specifier: 8.58.1
         version: 8.58.1(eslint@10.2.0(jiti@2.6.0))(typescript@5.9.3)
@@ -3414,8 +3414,8 @@ packages:
     resolution: {integrity: sha512-MeQTA1r0litLUf0Rp/iisCaL8761lKAZHaimlbGK4j0HysC4PLfqygQj9srcs0m2RdtDYnF8UuYyKpbjHYp7Jw==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  tailwind-csstree@0.3.0:
-    resolution: {integrity: sha512-FJmLCkH1ZDTEqJRVxMVhdiEbk/W67exqvDYrIQ759jsfv3mp3Gp/rrlgtr7dD5q7BK/t8LfaNqXM+BN6BrTKGA==}
+  tailwind-csstree@0.3.1:
+    resolution: {integrity: sha512-v147gLOR+E+9H4dNaP9rBeS/S/CTQJMRItlX9jLOXjdBGfSRauLwiz7LBCViaQmn6URXIlOdN6iMzSzOaeoUUw==}
     engines: {node: '>=18.18'}
     peerDependencies:
       '@eslint/css': '>=1.0.0'
@@ -7086,7 +7086,7 @@ snapshots:
       '@pkgr/core': 0.2.9
     optional: true
 
-  tailwind-csstree@0.3.0(@eslint/css@1.1.0):
+  tailwind-csstree@0.3.1(@eslint/css@1.1.0):
     optionalDependencies:
       '@eslint/css': 1.1.0
 
