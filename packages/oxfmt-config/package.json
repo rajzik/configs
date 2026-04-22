@@ -1,6 +1,6 @@
 {
   "name": "@rajzik/oxfmt-config",
-  "version": "2.4.4",
+  "version": "3.0.0",
   "description": "Reusable Oxfmt config for personal projects",
   "keywords": [
     "config",
