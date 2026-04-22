@@ -1,5 +1,16 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 4.0.0
+
+### Major Changes
+
+- [#1043](https://github.com/rajzik/configs/pull/1043) [`14eb312`](https://github.com/rajzik/configs/commit/14eb31285e8fb21e6a4658a264a4eae4ce85d054) Thanks [@rajzik](https://github.com/rajzik)! - Remove packages and cleanup monorepo
+
+### Patch Changes
+
+- Updated dependencies [[`14eb312`](https://github.com/rajzik/configs/commit/14eb31285e8fb21e6a4658a264a4eae4ce85d054)]:
+  - @rajzik/oxfmt-config@4.0.0
+
 ## 3.0.2
 
 ### Patch Changes
