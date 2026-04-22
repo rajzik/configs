@@ -3,6 +3,9 @@ name: 📝 Comment on Release
 on:
   workflow_call:
 
+permissions:
+  contents: write
+
 jobs:
   comment:
     name: 📝 Comment on related issues and pull requests
