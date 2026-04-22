@@ -1,5 +1,14 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 3.0.2
+
+### Patch Changes
+
+- [#1041](https://github.com/rajzik/configs/pull/1041) [`25109f0`](https://github.com/rajzik/configs/commit/25109f0d53cb7e266d730d4f5135fc8c20aa20f3) Thanks [@rajzik](https://github.com/rajzik)! - Rerelease fix
+
+- Updated dependencies [[`25109f0`](https://github.com/rajzik/configs/commit/25109f0d53cb7e266d730d4f5135fc8c20aa20f3)]:
+  - @rajzik/oxfmt-config@3.0.2
+
 ## 3.0.1
 
 ### Patch Changes
