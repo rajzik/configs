@@ -15,8 +15,8 @@ yarn add --dev @rajzik/oxfmt-config oxfmt
 Create an `oxfmt.config.ts` file:
 
 ```ts
-import { defineConfig } from "oxfmt";
-import config from "@rajzik/oxfmt-config";
+import { defineConfig } from 'oxfmt';
+import config from '@rajzik/oxfmt-config';
 
 export default defineConfig(config);
 ```
@@ -24,8 +24,8 @@ export default defineConfig(config);
 ## Extend the config
 
 ```ts
-import { defineConfig } from "oxfmt";
-import { extendOxfmtConfig } from "@rajzik/oxfmt-config";
+import { defineConfig } from 'oxfmt';
+import { extendOxfmtConfig } from '@rajzik/oxfmt-config';
 
 export default defineConfig(
   extendOxfmtConfig({

@@ -1,111 +1,124 @@
 export interface Note {
-  title: string;
-  text: string;
+  readonly title: string;
+  readonly text: string;
 }
 
 export interface Reference {
-  action: string;
-  owner: string | null;
-  repository: string | null;
-  issue: string;
-  raw: string;
-  prefix: string;
-  // Beemo
-  issueLink: string;
-  source: string;
+  readonly action: string;
+  readonly owner: string | null;
+  readonly repository: string | null;
+  readonly issue: string;
+  readonly raw: string;
+  readonly prefix: string;
+  readonly issueLink: string;
+  readonly source: string;
 }
 
 export type CommitType =
-  | "break"
-  | "breaking"
-  | "build"
-  | "cd"
-  | "ci"
-  | "deps"
-  | "docs"
-  | "feature"
-  | "fix"
-  | "internal"
-  | "misc"
-  | "new"
-  | "patch"
-  | "release"
-  | "revert"
-  | "security"
-  | "style"
-  | "styles"
-  | "test"
-  | "tests"
-  | "type"
-  | "types"
-  | "update";
+  | 'break'
+  | 'breaking'
+  | 'build'
+  | 'cd'
+  | 'ci'
+  | 'deps'
+  | 'docs'
+  | 'feature'
+  | 'fix'
+  | 'internal'
+  | 'misc'
+  | 'new'
+  | 'patch'
+  | 'release'
+  | 'revert'
+  | 'security'
+  | 'style'
+  | 'styles'
+  | 'test'
+  | 'tests'
+  | 'type'
+  | 'types'
+  | 'update';
 
 export type CommitGroupLabel =
-  | "Breaking"
-  | "Dependencies"
-  | "Docs"
-  | "Fixes"
-  | "Internals"
-  | "Misc"
-  | "Release"
-  | "Reverts"
-  | "Security"
-  | "Styles"
-  | "Types"
-  | "Updates";
+  | 'Breaking'
+  | 'Dependencies'
+  | 'Docs'
+  | 'Fixes'
+  | 'Internals'
+  | 'Misc'
+  | 'Release'
+  | 'Reverts'
+  | 'Security'
+  | 'Styles'
+  | 'Types'
+  | 'Updates';
 
 export interface Group {
-  bump?: "major" | "minor" | "patch";
-  emoji: string;
-  label: CommitGroupLabel;
-  types: CommitType[];
+  readonly bump?: 'major' | 'minor' | 'patch';
+  readonly emoji: string;
+  readonly label: Readonly<CommitGroupLabel>;
+  readonly types: readonly CommitType[];
 }
 
 export interface Commit {
-  body: string | null;
-  footer: string | null;
-  header: string;
-  mentions: string[];
-  merge: string | null;
-  notes: Note[];
-  references: Reference[];
-  revert: Record<string, string> | null;
-  // Beemo
-  hash: string;
-  hashLink: string;
-  label: CommitGroupLabel;
-  message: string;
-  pr: string;
-  scope: string;
-  source: string;
-  type: CommitType;
+  readonly body: string | null;
+  readonly footer: string | null;
+  readonly header: string;
+  readonly mentions: readonly string[];
+  readonly merge: string | null;
+  readonly notes: readonly Note[];
+  readonly references: readonly Reference[];
+  readonly revert: Readonly<Record<string, string>> | null;
+  readonly hash: string;
+  readonly hashLink: string;
+  readonly label: CommitGroupLabel;
+  readonly message: string;
+  readonly pr: string;
+  readonly scope: string;
+  readonly source: string;
+  readonly type: CommitType;
 }
 
 export interface Context {
-  commit: string;
-  date: string;
-  host: string;
-  isPatch: boolean;
-  isMinor: boolean;
-  isMajor: boolean;
-  issue: string;
-  linkReferences: boolean;
-  options: Record<string, unknown>;
-  owner: string;
-  repository: string;
-  repoUrl: string;
-  title: string;
-  version: string;
-  // Beemo
-  headerLevel?: "#" | "##" | "###";
-  groupEmojis?: Record<CommitGroupLabel, string>;
+  readonly commit: string;
+  readonly date: string;
+  readonly host: string;
+  readonly isPatch: boolean;
+  readonly isMinor: boolean;
+  readonly isMajor: boolean;
+  readonly issue: string;
+  readonly linkReferences: boolean;
+  readonly options: Readonly<Record<string, unknown>>;
+  readonly owner: string;
+  readonly repository: string;
+  readonly repoUrl: string;
+  readonly title: string;
+  readonly version: string;
+  readonly headerLevel?: '#' | '##' | '###';
+  readonly groupEmojis?: Record<CommitGroupLabel, string>;
 }
 
-export type Pattern = RegExp | string | null;
+export type Pattern = Readonly<RegExp> | string | null;
 
-export type Correspondence = string[] | string;
+export type Correspondence = readonly string[] | string;
 
-export type Sorter<T> = string[] | string | ((a: T, b: T) => number);
+export type Sorter<T> = readonly string[] | string | ((a: T, b: T) => number);
+
+// oxlint-disable-next-line eslint/max-params
+export type FinalizeContext = (
+  context: Readonly<Context>,
+  options: Readonly<WriterOptions>,
+  commits: readonly Commit[],
+  keyCommit: Readonly<Commit>,
+) => Readonly<Context>;
+
+// oxlint-disable-next-line eslint/max-params
+export type GenerateOn = (
+  commit: Readonly<Commit>,
+  commits: readonly Commit[],
+  context: Readonly<Context>,
+  options: Readonly<WriterOptions>,
+) => unknown;
 
 export interface ParserOptions {
   fieldPattern: Pattern;
@@ -122,34 +135,33 @@ export interface ParserOptions {
 }
 
 export interface WriterOptions {
-  commitGroupsSort: Sorter<{
-    title: CommitGroupLabel;
-    commits: Commit[];
+  readonly commitGroupsSort: Sorter<{
+    readonly title: CommitGroupLabel;
+    readonly commits: readonly Commit[];
   }>;
-  commitPartial: string;
-  commitsSort: Sorter<Commit>;
-  debug: () => void;
-  doFlush: boolean;
-  finalizeContext:
-    | ((context: Context, options: WriterOptions, commits: Commit[], keyCommit: Commit) => Context)
-    | undefined;
-  footerPartial: string;
-  generateOn:
-    | string
-    | ((commit: Commit, commits: Commit[], context: Context, options: WriterOptions) => unknown);
-  groupBy: string;
-  headerPartial: string;
-  ignoreReverted: boolean;
+  readonly commitPartial: string;
+  readonly commitsSort: Sorter<Commit>;
+  readonly debug: () => void;
+  readonly doFlush: boolean;
+  readonly finalizeContext: FinalizeContext | undefined;
+  readonly footerPartial: string;
+  readonly generateOn: string | GenerateOn;
+  readonly groupBy: string;
+  readonly headerPartial: string;
+  readonly ignoreReverted: boolean;
   includeDetails: boolean;
-  mainTemplate: string;
+  readonly mainTemplate: string;
   noteGroupsSort: Sorter<{
-    title: string;
-    notes: Note[];
+    readonly title: string;
+    readonly notes: readonly Note[];
   }>;
-  notesSort: Sorter<Note>;
-  partials: Record<string, unknown>;
-  reverse: boolean;
-  transform: (commit: Commit, context: Context) => Commit | undefined;
+  readonly notesSort: Sorter<Readonly<Note>>;
+  readonly partials: Readonly<Record<string, unknown>>;
+  readonly reverse: boolean;
+  transform: (
+    commit: Readonly<Commit>,
+    context: Readonly<Context>,
+  ) => Commit | undefined;
 }
 
 export type SemverLevel = 0 | 1 | 2 | null; // major | minor | patch

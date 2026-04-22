@@ -14,7 +14,10 @@ export const SNAP_EXT = /\.snap$/;
 export const GLOBAL_IGNORE = /Icon[A-Z][A-Za-z]+\.(t|j)sx$/;
 
 /** Array of files that were created or modified in the PR. */
-export const updatedFiles = [...danger.git.created_files, ...danger.git.modified_files];
+export const updatedFiles = [
+  ...danger.git.created_files,
+  ...danger.git.modified_files,
+];
 
 /** Array of files that were created, deleted, or modified in the PR. */
 export const touchedFiles = [
@@ -29,8 +32,8 @@ export const touchedFiles = [
  * @param {string} msg - Debug message to log
  * @param {...string} args - Additional arguments to include in the message
  */
-export function debug(msg: string, ...args: string[]) {
-  if (danger.git.modified_files.includes("dangerfile.js")) {
+export function debug(msg: string, ...args: readonly string[]) {
+  if (danger.git.modified_files.includes('dangerfile.js')) {
     message(`[debug] ${msg}`, ...args);
   }
 }
@@ -38,12 +41,13 @@ export function debug(msg: string, ...args: string[]) {
 /**
  * Check if the current PR is a revert commit.
  *
- * @returns True if the PR title starts with "Revert" or includes "Automatic revert"
+ * @returns {boolean} True if the PR title starts with "Revert" or includes
+ *   "Automatic revert"
  */
 export function isRevert(): boolean {
   return (
-    danger.github.pr.title.startsWith("Revert") ||
-    danger.github.pr.title.includes("Automatic revert")
+    danger.github.pr.title.startsWith('Revert') ||
+    danger.github.pr.title.includes('Automatic revert')
   );
 }
 
@@ -51,17 +55,13 @@ export function isRevert(): boolean {
  * Count the number of line changes (additions + deletions) in a specific file.
  *
  * @param {string} file - Path to the file to analyze
- * @returns {Promise<number>} Promise resolving to the total number of line changes
+ * @returns {Promise<number>} Promise resolving to the total number of line
+ *   changes
  */
 export async function countChangesInFile(file: string): Promise<number> {
-  return new Promise((resolve) => {
-    void danger.git.diffForFile(file).then((d) => {
-      const added = d?.added.split("\n").length ?? 0;
-      const removed = d?.removed.split("\n").length ?? 0;
+  const diff = await danger.git.diffForFile(file);
+  const added = diff?.added?.split('\n').length ?? 0;
+  const removed = diff?.removed?.split('\n').length ?? 0;
 
-      resolve(added + removed);
-
-      return d;
-    });
-  });
+  return added + removed;
 }

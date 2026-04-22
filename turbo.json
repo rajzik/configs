@@ -1,10 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": [
-    "SYSTEM_TASKDEFINITIONSURI",
-    "NODE_ENV",
-    "PWD"
-  ],
+  "globalEnv": ["SYSTEM_TASKDEFINITIONSURI", "NODE_ENV", "PWD"],
   "tasks": {
     "topo": {
       "dependsOn": ["^topo"]
@@ -21,8 +17,9 @@
       "cache": false
     },
     "lint": {
-      "dependsOn": ["^topo"],
-      "outputs": [".cache/.eslintcache"]
+      "cache": false,
+      "outputLogs": "new-only",
+      "dependsOn": ["^topo"]
     },
     "test": {
       "cache": false

@@ -1,6 +1,6 @@
-import path from "node:path";
+import path from 'node:path';
 
-import type { CommonOptions } from "./types";
+import type { CommonOptions } from './types';
 
 import {
   GLOBAL_IGNORE,
@@ -12,63 +12,75 @@ import {
   TEST_EXT,
   touchedFiles,
   updatedFiles,
-} from "./helpers";
+} from './helpers';
 
-const changedSrcFiles = updatedFiles.filter((file) => IS_SRC.test(file) && SRC_EXT.test(file));
+const changedSrcFiles = updatedFiles.filter(
+  (file) => IS_SRC.test(file) && SRC_EXT.test(file),
+);
 
-/**
- * Options for test-related checks.
- */
-export interface TestOptions extends CommonOptions {
+/** Options for test-related checks. */
+export interface TestOptions extends Readonly<CommonOptions> {
   /** Regular expression pattern to ignore certain files from test checks. */
-  ignorePattern?: RegExp;
+  readonly ignorePattern?: Readonly<RegExp>;
   /** Root directory path to scope the check to a specific part of the codebase. */
-  root?: string;
+  readonly root?: string;
 }
 
 /**
- * Check for invalid NPM/Yarn installs by verifying the lock files.
- * Ensures that lock file changes are accompanied by package.json changes.
+ * Check for invalid NPM/Yarn installs by verifying the lock files. Ensures that
+ * lock file changes are accompanied by package.json changes.
  */
 export function checkForInvalidLocks() {
   const fileNames = new Set(touchedFiles.map((file) => path.basename(file)));
 
-  if (fileNames.has("package-lock.json") && !fileNames.has("package.json")) {
-    fail("Your PR contains changes to package-lock.json, but not package.json.");
-  } else if (fileNames.has("npm-shrinkwrap.json") && !fileNames.has("package.json")) {
-    fail("Your PR contains changes to npm-shrinkwrap.json, but not package.json.");
+  if (fileNames.has('package-lock.json') && !fileNames.has('package.json')) {
+    fail(
+      'Your PR contains changes to package-lock.json, but not package.json.',
+    );
   } else if (
-    fileNames.has("pnpm-lock.yaml") &&
-    !fileNames.has("package.json") &&
-    !fileNames.has("pnpm-workspace.yaml")
+    fileNames.has('npm-shrinkwrap.json') &&
+    !fileNames.has('package.json')
   ) {
     fail(
-      "Your PR contains changes to pnpm-lock.yaml, but not package.json or pnpm-workspace.yaml.",
+      'Your PR contains changes to npm-shrinkwrap.json, but not package.json.',
+    );
+  } else if (
+    fileNames.has('pnpm-lock.yaml') &&
+    !fileNames.has('package.json') &&
+    !fileNames.has('pnpm-workspace.yaml')
+  ) {
+    fail(
+      'Your PR contains changes to pnpm-lock.yaml, but not package.json or pnpm-workspace.yaml.',
     );
   }
 }
 
 /**
- * Check that any test file exists when source files are updated.
- * Warns or fails if source files are changed but no test files are modified.
+ * Check that any test file exists when source files are updated. Warns or fails
+ * if source files are changed but no test files are modified.
  *
- * @param {TestOptions} options - Configuration options for the test check
- * @param {string} [options.root] - Root directory path to scope the check to a specific part of the codebase
- * @param {RegExp} [options.ignorePattern] - Regular expression pattern to ignore certain files from test checks
- * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
+ * @param {TestOptions} props - Configuration options for the test check
+ * @param {string} [props.root] - Root directory path to scope the check to a
+ *   specific part of the codebase
+ * @param {RegExp} [props.ignorePattern] - Regular expression pattern to ignore
+ *   certain files from test checks
+ * @param {boolean} [props.fail] - If true, fail the check instead of warning.
+ *   Default is `false`
  */
-export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
+export function checkForAnyTests(props: Readonly<TestOptions> = {}) {
+  const { root, ...options } = props;
   if (isRevert()) {
     return;
   }
 
-  const hasTestFiles = touchedFiles.some((file) => Boolean(TEST_EXT.test(file)));
+  const hasTestFiles = touchedFiles.some((file) => TEST_EXT.test(file));
   const srcFiles = root
     ? changedSrcFiles.filter((srcFile) => srcFile.startsWith(root))
     : changedSrcFiles;
 
   if (srcFiles.length > 0 && !hasTestFiles) {
-    const msg = "Your PR contains changes to source files, but no test changes were found.";
+    const msg =
+      'Your PR contains changes to source files, but no test changes were found.';
 
     if (options.fail) {
       fail(msg);
@@ -80,14 +92,19 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
 
 /**
  * Check that all touched source files have an accompanying test file change.
- * More strict than checkForAnyTests - ensures each source file has a corresponding test.
+ * More strict than checkForAnyTests - ensures each source file has a
+ * corresponding test.
  *
- * @param {TestOptions} options - Configuration options for the test check
- * @param {RegExp} [options.ignorePattern] - Regular expression pattern to ignore certain files from test checks
- * @param {string} [options.root] - Root directory path to scope the check to a specific part of the codebase
- * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
+ * @param {TestOptions} props - Configuration options for the test check
+ * @param {RegExp} [props.ignorePattern] - Regular expression pattern to ignore
+ *   certain files from test checks
+ * @param {string} [props.root] - Root directory path to scope the check to a
+ *   specific part of the codebase
+ * @param {boolean} [props.fail] - If true, fail the check instead of warning.
+ *   Default is `false`
  */
-export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: TestOptions = {}) {
+export function checkSourceFilesHaveTests(props: Readonly<TestOptions> = {}) {
+  const { ignorePattern, root, ...options } = props;
   if (isRevert()) {
     return;
   }
@@ -103,15 +120,16 @@ export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: T
     }
 
     const testFile = srcFile
-      .replace(IS_SRC, "tests?/")
+      .replace(IS_SRC, 'tests?/')
       // Foo/index.tsx -> Foo.test.tsx | Foo/index.test.tsx
       .replace(
         /(\w+)\/index\.((t|j)sx?)$/,
-        (match, name, ext) => `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
+        (match, name, ext) =>
+          `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
       )
       // Foo.tsx -> Foo.test.tsx
       .replace(/(\w+)\.((t|j)sx?)$/, (match, name, ext) =>
-        name === "test" ? match : `${name}.test.${ext}`,
+        name === 'test' ? match : `${name}.test.${ext}`,
       );
 
     const regex = new RegExp(testFile);
@@ -125,7 +143,7 @@ export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: T
 
   if (missingTestFiles.length > 0) {
     const msg = `Your PR contains changes to the following source files, but no test changes were found.\n\n\n${missingTestFiles.join(
-      "\n",
+      '\n',
     )}`;
 
     if (options.fail) {
@@ -136,22 +154,23 @@ export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: T
   }
 }
 
-/**
- * Options for snapshot testing checks.
- */
+/** Options for snapshot testing checks. */
 export interface SnapshotOptions {
   /** URL to documentation about snapshot testing deprecation. */
-  docsUrl?: string;
+  readonly docsUrl?: string;
 }
 
-const fileFilter = (file: string) => file.endsWith("jsx.snap") || file.endsWith("tsx.snap");
+const fileFilter = (file: string) =>
+  file.endsWith('jsx.snap') || file.endsWith('tsx.snap');
 
 /**
- * Component snapshot testing is deprecated, so disallow new snapshots.
- * Fails on new snapshots, warns on updated snapshots.
+ * Component snapshot testing is deprecated, so disallow new snapshots. Fails on
+ * new snapshots, warns on updated snapshots.
  *
- * @param {SnapshotOptions} options - Configuration options for the snapshot check
- * @param {string} [options.docsUrl] - URL to documentation about snapshot testing deprecation
+ * @param {SnapshotOptions} options - Configuration options for the snapshot
+ *   check
+ * @param {string} [options.docsUrl] - URL to documentation about snapshot
+ *   testing deprecation
  */
 export function disableComponentSnapshots(options: SnapshotOptions = {}) {
   if (isRevert()) {
@@ -165,7 +184,8 @@ export function disableComponentSnapshots(options: SnapshotOptions = {}) {
     return;
   }
 
-  let message = "Snapshot testing has been deprecated. Please migrate to standard React testing.";
+  let message =
+    'Snapshot testing has been deprecated. Please migrate to standard React testing.';
 
   if (options.docsUrl) {
     message += ` [View for more information](${options.docsUrl})`;
@@ -179,8 +199,8 @@ export function disableComponentSnapshots(options: SnapshotOptions = {}) {
 }
 
 /**
- * Disable new JavaScript files from being created.
- * Ensures all new files in src/ or tests/ directories are TypeScript.
+ * Disable new JavaScript files from being created. Ensures all new files in
+ * src/ or tests/ directories are TypeScript.
  */
 export function disableNewJavaScript() {
   const hasJS = danger.git.created_files.some(
@@ -188,6 +208,6 @@ export function disableNewJavaScript() {
   );
 
   if (hasJS) {
-    fail("JavaScript detected. All new files must be TypeScript.");
+    fail('JavaScript detected. All new files must be TypeScript.');
   }
 }

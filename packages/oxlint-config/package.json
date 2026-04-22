@@ -1,0 +1,65 @@
+{
+  "name": "@rajzik/oxlint-config",
+  "version": "2.4.4",
+  "description": "Reusable Oxlint config for personal projects",
+  "keywords": [
+    "config",
+    "lint",
+    "oxc",
+    "oxlint"
+  ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/oxlint-config",
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajzik/configs.git",
+    "directory": "packages/oxlint-config"
+  },
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./*": {
+      "types": "./dist/*.d.mts",
+      "default": "./dist/*.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache dist dts .turbo node_modules",
+    "format": "oxfmt --ignore-path ../../.gitignore",
+    "lint": "oxlint --type-aware --type-check",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@rajzik/configs-shared": "workspace:*",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-turbo": "2.9.6"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "tsdown": "catalog:"
+  },
+  "peerDependencies": {
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
+  },
+  "peerDependenciesMeta": {
+    "oxlint-tsgolint": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": "^21.2.0 || ^20.11.0 || >=22.16.0"
+  }
+}

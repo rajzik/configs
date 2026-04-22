@@ -1,0 +1,1 @@
+# `@rajzik/oxlint-config` CHANGELOG

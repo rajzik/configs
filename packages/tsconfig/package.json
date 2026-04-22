@@ -3,26 +3,26 @@
   "version": "2.4.4",
   "description": "Pre-packaged tsconfig.json's for personal configured projects",
   "keywords": [
-    "tsconfig",
+    "config",
     "sharable",
-    "config"
+    "tsconfig"
   ],
   "homepage": "https://github.com/rajzik/configs/tree/main/packages/tsconfig",
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/tsconfig"
   },
-  "license": "MIT",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "files": [
+    "*.json"
+  ],
+  "main": "base.json",
   "exports": {
     ".": "./base.json",
     "./tsconfig.package.json": "./tsconfig.package.json"
   },
-  "main": "base.json",
-  "files": [
-    "*.json"
-  ],
   "publishConfig": {
     "access": "public"
   }

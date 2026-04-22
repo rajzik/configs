@@ -33,18 +33,21 @@
     "build": "tsdown",
     "clean": "git clean -xdf .cache dist dts .turbo node_modules",
     "format": "oxfmt --ignore-path ../../.gitignore",
+    "lint": "oxlint --type-aware --type-check",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "4.7.1",
+    "@ianvs/prettier-plugin-sort-imports": "catalog:",
     "@rajzik/oxfmt-config": "workspace:*",
-    "prettier-plugin-packagejson": "3.0.2",
+    "prettier-plugin-packagejson": "catalog:",
     "prettier-plugin-tailwindcss": "0.7.2"
   },
   "devDependencies": {
     "@rajzik/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-tailwindcss": "0.7.2",
     "tsdown": "catalog:",

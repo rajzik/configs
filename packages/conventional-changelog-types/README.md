@@ -16,21 +16,25 @@ yarn add --dev @rajzik/conventional-changelog-types
 ## Usage
 
 ```typescript
-import type { Commit, CommitType, Group } from "@rajzik/conventional-changelog-types";
+import type {
+  Commit,
+  CommitType,
+  Group,
+} from '@rajzik/conventional-changelog-types';
 
 import {
   checkCommitFormat,
   COMMIT_FORMAT_PREFIX,
   getTypeGroup,
   GROUPS,
-} from "@rajzik/conventional-changelog-types";
+} from '@rajzik/conventional-changelog-types';
 
 // Check if a commit message matches the format
-const result = checkCommitFormat("fix(Button): Fix button styling");
+const result = checkCommitFormat('fix(Button): Fix button styling');
 // { type: 'fix', scope: 'Button' } | null
 
 // Get the group for a commit type
-const group = getTypeGroup("fix");
+const group = getTypeGroup('fix');
 // { bump: 'patch', emoji: '🐞', label: 'Fixes', types: ['fix', 'patch'] }
 
 // Access commit type groups
@@ -57,15 +61,15 @@ Validates and parses a commit message to extract the type and scope.
 **Example:**
 
 ```typescript
-import { checkCommitFormat } from "@rajzik/conventional-changelog-types";
+import { checkCommitFormat } from '@rajzik/conventional-changelog-types';
 
-checkCommitFormat("fix: Fix bug");
+checkCommitFormat('fix: Fix bug');
 // { type: 'fix', scope: '' }
 
-checkCommitFormat("new(Button): Add Button component");
+checkCommitFormat('new(Button): Add Button component');
 // { type: 'new', scope: 'Button' }
 
-checkCommitFormat("invalid commit message");
+checkCommitFormat('invalid commit message');
 // null
 ```
 
@@ -90,9 +94,9 @@ Retrieves the group configuration for a given commit type.
 **Example:**
 
 ```typescript
-import { getTypeGroup } from "@rajzik/conventional-changelog-types";
+import { getTypeGroup } from '@rajzik/conventional-changelog-types';
 
-const group = getTypeGroup("fix");
+const group = getTypeGroup('fix');
 // {
 //   bump: 'patch',
 //   emoji: '🐞',
@@ -100,7 +104,7 @@ const group = getTypeGroup("fix");
 //   types: ['fix', 'patch']
 // }
 
-const breakingGroup = getTypeGroup("breaking");
+const breakingGroup = getTypeGroup('breaking');
 // {
 //   bump: 'major',
 //   emoji: '💥',
@@ -124,10 +128,10 @@ const GROUPS: Group[];
 **Example:**
 
 ```typescript
-import { GROUPS } from "@rajzik/conventional-changelog-types";
+import { GROUPS } from '@rajzik/conventional-changelog-types';
 
 GROUPS.forEach((group) => {
-  console.log(`${group.emoji} ${group.label}: ${group.types.join(", ")}`);
+  console.log(`${group.emoji} ${group.label}: ${group.types.join(', ')}`);
   if (group.bump) {
     console.log(`  Bump: ${group.bump}`);
   }
@@ -205,9 +209,9 @@ const COMMIT_FORMAT_PREFIX: RegExp;
 **Example:**
 
 ```typescript
-import { COMMIT_FORMAT_PREFIX } from "@rajzik/conventional-changelog-types";
+import { COMMIT_FORMAT_PREFIX } from '@rajzik/conventional-changelog-types';
 
-const match = COMMIT_FORMAT_PREFIX.exec("fix(Button): Fix styling");
+const match = COMMIT_FORMAT_PREFIX.exec('fix(Button): Fix styling');
 // match[1] = 'fix'
 // match[2] = 'Button'
 ```
@@ -220,29 +224,29 @@ Union type of all valid commit types.
 
 ```typescript
 type CommitType =
-  | "break"
-  | "breaking"
-  | "build"
-  | "cd"
-  | "ci"
-  | "deps"
-  | "docs"
-  | "feature"
-  | "fix"
-  | "internal"
-  | "misc"
-  | "new"
-  | "patch"
-  | "release"
-  | "revert"
-  | "security"
-  | "style"
-  | "styles"
-  | "test"
-  | "tests"
-  | "type"
-  | "types"
-  | "update";
+  | 'break'
+  | 'breaking'
+  | 'build'
+  | 'cd'
+  | 'ci'
+  | 'deps'
+  | 'docs'
+  | 'feature'
+  | 'fix'
+  | 'internal'
+  | 'misc'
+  | 'new'
+  | 'patch'
+  | 'release'
+  | 'revert'
+  | 'security'
+  | 'style'
+  | 'styles'
+  | 'test'
+  | 'tests'
+  | 'type'
+  | 'types'
+  | 'update';
 ```
 
 ---
@@ -253,18 +257,18 @@ Union type of all commit group labels.
 
 ```typescript
 type CommitGroupLabel =
-  | "Breaking"
-  | "Dependencies"
-  | "Docs"
-  | "Fixes"
-  | "Internals"
-  | "Misc"
-  | "Release"
-  | "Reverts"
-  | "Security"
-  | "Styles"
-  | "Types"
-  | "Updates";
+  | 'Breaking'
+  | 'Dependencies'
+  | 'Docs'
+  | 'Fixes'
+  | 'Internals'
+  | 'Misc'
+  | 'Release'
+  | 'Reverts'
+  | 'Security'
+  | 'Styles'
+  | 'Types'
+  | 'Updates';
 ```
 
 ---
@@ -275,7 +279,7 @@ Configuration for a commit type group.
 
 ```typescript
 interface Group {
-  bump?: "major" | "minor" | "patch"; // Semver bump level
+  bump?: 'major' | 'minor' | 'patch'; // Semver bump level
   emoji: string; // Emoji for the group
   label: CommitGroupLabel; // Display label
   types: CommitType[]; // Commit types in this group
@@ -363,7 +367,7 @@ interface Context {
   repoUrl: string; // Full repository URL
   title: string; // Release title
   version: string; // Version number
-  headerLevel?: "#" | "##" | "###";
+  headerLevel?: '#' | '##' | '###';
   groupEmojis?: Record<CommitGroupLabel, string>;
 }
 ```
@@ -412,7 +416,12 @@ interface WriterOptions {
   footerPartial: string;
   generateOn:
     | string
-    | ((commit: Commit, commits: Commit[], context: Context, options: WriterOptions) => unknown);
+    | ((
+        commit: Commit,
+        commits: Commit[],
+        context: Context,
+        options: WriterOptions,
+      ) => unknown);
   groupBy: string;
   headerPartial: string;
   ignoreReverted: boolean;
@@ -441,37 +450,37 @@ type SemverLevel = 0 | 1 | 2 | null; // major | minor | patch | none
 ### Validating Commit Messages
 
 ```typescript
-import { checkCommitFormat } from "@rajzik/conventional-changelog-types";
+import { checkCommitFormat } from '@rajzik/conventional-changelog-types';
 
 function validateCommitMessage(message: string): boolean {
   return checkCommitFormat(message) !== null;
 }
 
-validateCommitMessage("fix: Fix bug"); // true
-validateCommitMessage("invalid"); // false
+validateCommitMessage('fix: Fix bug'); // true
+validateCommitMessage('invalid'); // false
 ```
 
 ### Getting Bump Level
 
 ```typescript
-import { getTypeGroup } from "@rajzik/conventional-changelog-types";
+import { getTypeGroup } from '@rajzik/conventional-changelog-types';
 
-function getBumpLevel(type: CommitType): "major" | "minor" | "patch" | null {
+function getBumpLevel(type: CommitType): 'major' | 'minor' | 'patch' | null {
   const group = getTypeGroup(type);
   return group.bump ?? null;
 }
 
-getBumpLevel("breaking"); // 'major'
-getBumpLevel("new"); // 'minor'
-getBumpLevel("fix"); // 'patch'
-getBumpLevel("ci"); // null
+getBumpLevel('breaking'); // 'major'
+getBumpLevel('new'); // 'minor'
+getBumpLevel('fix'); // 'patch'
+getBumpLevel('ci'); // null
 ```
 
 ### Listing All Types
 
 ```typescript
-import { GROUPS } from "@rajzik/conventional-changelog-types";
+import { GROUPS } from '@rajzik/conventional-changelog-types';
 
 const allTypes = GROUPS.flatMap((group) => group.types);
-console.log("Valid commit types:", allTypes.join(", "));
+console.log('Valid commit types:', allTypes.join(', '));
 ```

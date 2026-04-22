@@ -1,21 +1,26 @@
-import type { PluginConfig } from "@ianvs/prettier-plugin-sort-imports";
-import type { Config } from "prettier";
-import type { PluginOptions } from "prettier-plugin-tailwindcss";
+import type { PluginConfig } from '@ianvs/prettier-plugin-sort-imports';
+import type { Config } from 'prettier';
+import type { PluginOptions } from 'prettier-plugin-tailwindcss';
 
-import baseConfig from "./index";
+import baseConfig from './index';
 
 /**
- * Extended Prettier configuration type that includes Tailwind CSS plugin options.
+ * Extended Prettier configuration type that includes Tailwind CSS plugin
+ * options.
  */
 export type ExtendedConfig = Config | PluginOptions | PluginConfig;
 
-/**
- * Prettier configuration with Tailwind CSS class sorting.
- */
+/** Prettier configuration with Tailwind CSS class sorting. */
+const plugins =
+  'plugins' in baseConfig && Array.isArray(baseConfig.plugins)
+    ? baseConfig.plugins.filter(
+        (plugin): plugin is string => typeof plugin === 'string',
+      )
+    : [];
+
 const config: ExtendedConfig = {
   ...baseConfig,
-  // @ts-expect-error - Tailwind plugin is not a plugin config
-  plugins: [...baseConfig.plugins, "prettier-plugin-tailwindcss"],
+  plugins: [...plugins, 'prettier-plugin-tailwindcss'],
 };
 
 export default config;

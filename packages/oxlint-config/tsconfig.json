@@ -1,9 +1,10 @@
 {
   "extends": "@rajzik/tsconfig/tsconfig.package.json",
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "lib": ["ES2024", "dom", "dom.iterable"],
-    "rootDir": "."
+    "typeRoots": ["node"]
   },
-  "include": ["src", "tsdown.config.ts", "eslint.config.js", "prettier.config.js", "types"],
+  "include": ["src", "tsdown.config.ts", "eslint.config.js"],
   "exclude": ["node_modules"]
 }

@@ -1,8 +1,15 @@
 {
   "extends": "@rajzik/tsconfig/tsconfig.package.json",
   "compilerOptions": {
-    "lib": ["ES2024", "dom", "dom.iterable"]
+    "lib": ["ES2024", "dom", "dom.iterable"],
+    "types": ["node"]
   },
-  "include": ["src", "tsdown.config.ts", "types", "eslint.config.js", "prettier.config.js"],
+  "include": [
+    "src",
+    "tsdown.config.ts",
+    "types",
+    "eslint.config.js",
+    "prettier.config.js"
+  ],
   "exclude": ["node_modules"]
 }

@@ -45,6 +45,8 @@
     "@rajzik/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },

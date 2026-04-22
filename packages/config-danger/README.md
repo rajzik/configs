@@ -25,7 +25,7 @@ import {
   checkSourceFilesHaveTests,
   disableComponentSnapshots,
   disableNewJavaScript,
-} from "@rajzik/danger-configuration";
+} from '@rajzik/danger-configuration';
 
 // Check for conventional commit prefix in PR title
 checkForConventionalPrefix();
@@ -37,25 +37,25 @@ checkForConventionalSquashCommit();
 checkForInvalidLocks();
 
 // Check for ADR documentation on large PRs
-checkForADR("docs/adr", {
+checkForADR('docs/adr', {
   changeThreshold: 200,
-  docsUrl: "https://example.com/docs/adr",
+  docsUrl: 'https://example.com/docs/adr',
   fail: true,
 });
 
 // Check for test files
-checkForAnyTests({ root: "src", fail: true });
+checkForAnyTests({ root: 'src', fail: true });
 
 // Ensure all source files have tests
 checkSourceFilesHaveTests({
-  root: "src",
+  root: 'src',
   ignorePattern: /Icon[A-Z][A-Za-z]+\.tsx$/,
   fail: true,
 });
 
 // Disable component snapshots
 disableComponentSnapshots({
-  docsUrl: "https://example.com/docs/testing",
+  docsUrl: 'https://example.com/docs/testing',
 });
 
 // Disable new JavaScript files
@@ -149,10 +149,10 @@ documenting the changes.
 **Example:**
 
 ```javascript
-checkForADR("docs/adr", {
+checkForADR('docs/adr', {
   changeThreshold: 200,
-  docsUrl: "https://example.com/docs/adr",
-  exclusions: ["*.md"],
+  docsUrl: 'https://example.com/docs/adr',
+  exclusions: ['*.md'],
   fail: true,
 });
 ```
@@ -180,7 +180,7 @@ Checks that test files exist when source files are updated.
 **Example:**
 
 ```javascript
-checkForAnyTests({ root: "src", fail: true });
+checkForAnyTests({ root: 'src', fail: true });
 ```
 
 **Behavior:**
@@ -207,7 +207,7 @@ Ensures that all touched source files have an accompanying test file change.
 
 ```javascript
 checkSourceFilesHaveTests({
-  root: "src",
+  root: 'src',
   ignorePattern: /Icon[A-Z][A-Za-z]+\.tsx$/,
   fail: true,
 });
@@ -244,7 +244,7 @@ Prevents creation or updates of component snapshot files (`.jsx.snap`,
 
 ```javascript
 disableComponentSnapshots({
-  docsUrl: "https://example.com/docs/testing",
+  docsUrl: 'https://example.com/docs/testing',
 });
 ```
 
