@@ -16,46 +16,46 @@ export interface Reference {
 }
 
 export type CommitType =
-  | 'break'
-  | 'breaking'
-  | 'build'
-  | 'cd'
-  | 'ci'
-  | 'deps'
-  | 'docs'
-  | 'feature'
-  | 'fix'
-  | 'internal'
-  | 'misc'
-  | 'new'
-  | 'patch'
-  | 'release'
-  | 'revert'
-  | 'security'
-  | 'style'
-  | 'styles'
-  | 'test'
-  | 'tests'
-  | 'type'
-  | 'types'
-  | 'update';
+  | "break"
+  | "breaking"
+  | "build"
+  | "cd"
+  | "ci"
+  | "deps"
+  | "docs"
+  | "feature"
+  | "fix"
+  | "internal"
+  | "misc"
+  | "new"
+  | "patch"
+  | "release"
+  | "revert"
+  | "security"
+  | "style"
+  | "styles"
+  | "test"
+  | "tests"
+  | "type"
+  | "types"
+  | "update";
 
 export type CommitGroupLabel =
-  | 'Breaking'
-  | 'Dependencies'
-  | 'Docs'
-  | 'Fixes'
-  | 'Internals'
-  | 'Misc'
-  | 'Release'
-  | 'Reverts'
-  | 'Security'
-  | 'Styles'
-  | 'Types'
-  | 'Updates';
+  | "Breaking"
+  | "Dependencies"
+  | "Docs"
+  | "Fixes"
+  | "Internals"
+  | "Misc"
+  | "Release"
+  | "Reverts"
+  | "Security"
+  | "Styles"
+  | "Types"
+  | "Updates";
 
 export interface Group {
-  bump?: 'major' | 'minor' | 'patch';
+  bump?: "major" | "minor" | "patch";
   emoji: string;
   label: CommitGroupLabel;
   types: CommitType[];
@@ -97,7 +97,7 @@ export interface Context {
   title: string;
   version: string;
   // Beemo
-  headerLevel?: '#' | '##' | '###';
+  headerLevel?: "#" | "##" | "###";
   groupEmojis?: Record<CommitGroupLabel, string>;
 }
 
@@ -131,22 +131,12 @@ export interface WriterOptions {
   debug: () => void;
   doFlush: boolean;
   finalizeContext:
-    | ((
-        context: Context,
-        options: WriterOptions,
-        commits: Commit[],
-        keyCommit: Commit,
-      ) => Context)
+    | ((context: Context, options: WriterOptions, commits: Commit[], keyCommit: Commit) => Context)
     | undefined;
   footerPartial: string;
   generateOn:
     | string
-    | ((
-        commit: Commit,
-        commits: Commit[],
-        context: Context,
-        options: WriterOptions,
-      ) => unknown);
+    | ((commit: Commit, commits: Commit[], context: Context, options: WriterOptions) => unknown);
   groupBy: string;
   headerPartial: string;
   ignoreReverted: boolean;

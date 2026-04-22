@@ -1,12 +1,6 @@
-import type { CommonOptions } from './types';
-import {
-  countChangesInFile,
-  debug,
-  isRevert,
-  SNAP_EXT,
-  TEST_EXT,
-  touchedFiles,
-} from './helpers';
+import type { CommonOptions } from "./types";
+
+import { countChangesInFile, debug, isRevert, SNAP_EXT, TEST_EXT, touchedFiles } from "./helpers";
 
 /**
  * Options for checking ADR (Architecture Decision Record) requirements.
@@ -36,23 +30,16 @@ export function checkForADR(docsPath: string, options: CheckAdrOptions = {}) {
     return;
   }
 
-  const { changeThreshold = 200, docsUrl = '', exclusions = [] } = options;
+  const { changeThreshold = 200, docsUrl = "", exclusions = [] } = options;
   const hasDocsFiles = touchedFiles.some((file) => file.includes(docsPath));
-  const docsExclusions = [
-    ...exclusions,
-    'package-lock.json',
-    'yarn.lock',
-    TEST_EXT,
-    SNAP_EXT,
-  ];
+  const docsExclusions = [...exclusions, "package-lock.json", "yarn.lock", TEST_EXT, SNAP_EXT];
   const modifiedExclusions = danger.git.modified_files.filter((file) =>
     // eslint-disable-next-line unicorn/prefer-regexp-test
     docsExclusions.some((ex) => Boolean(file.match(ex))),
   );
 
   void Promise.all(modifiedExclusions.map(countChangesInFile)).then((vals) => {
-    const totalChangeCount =
-      danger.github.pr.additions + danger.github.pr.deletions;
+    const totalChangeCount = danger.github.pr.additions + danger.github.pr.deletions;
     const exclusionChangeCount = vals.reduce((acc, val) => acc + val, 0);
     const changeCount = totalChangeCount - exclusionChangeCount;
 
@@ -61,7 +48,7 @@ export function checkForADR(docsPath: string, options: CheckAdrOptions = {}) {
     );
 
     if (hasDocsFiles) {
-      message('Thank you for adding documentation! :tada:');
+      message("Thank you for adding documentation! :tada:");
     } else if (changeCount > changeThreshold) {
       let msg = `This PR has over ${changeThreshold} additions/deletions, but no documentation which describes the changes.`;
 

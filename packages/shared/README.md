@@ -34,7 +34,7 @@ import {
   TJSX_EXTS_GROUP,
   TSCONFIG_JSON_PATH,
   TSX_EXTS_GROUP,
-} from '@rajzik/configs-shared';
+} from "@rajzik/configs-shared";
 ```
 
 ## API Reference
@@ -50,7 +50,7 @@ Current working directory path.
 **Example:**
 
 ```typescript
-import { ROOT } from '@rajzik/configs-shared';
+import { ROOT } from "@rajzik/configs-shared";
 
 console.log(ROOT); // '/path/to/project'
 ```
@@ -67,26 +67,26 @@ Array of supported file extensions.
 
 ```typescript
 [
-  '.ts',
-  '.tsx',
-  '.mts',
-  '.mtsx',
-  '.cts',
-  '.ctsx',
-  '.js',
-  '.jsx',
-  '.cjs',
-  '.cjsx',
-  '.js',
-  '.jsx',
-  '.json',
+  ".ts",
+  ".tsx",
+  ".mts",
+  ".mtsx",
+  ".cts",
+  ".ctsx",
+  ".js",
+  ".jsx",
+  ".cjs",
+  ".cjsx",
+  ".js",
+  ".jsx",
+  ".json",
 ];
 ```
 
 **Example:**
 
 ```typescript
-import { EXTS } from '@rajzik/configs-shared';
+import { EXTS } from "@rajzik/configs-shared";
 
 const isSupported = (file: string) => {
   return EXTS.some((ext) => file.endsWith(ext));
@@ -105,26 +105,26 @@ Array of paths to ignore in various tools.
 
 ```typescript
 [
-  '.next/',
-  'coverage/',
-  'node_modules/',
-  'public/',
-  'esm/',
-  'lib/',
-  '!src/lib',
-  'tmp/',
-  'dist/',
-  'build/',
+  ".next/",
+  "coverage/",
+  "node_modules/",
+  "public/",
+  "esm/",
+  "lib/",
+  "!src/lib",
+  "tmp/",
+  "dist/",
+  "build/",
 ];
 ```
 
 **Example:**
 
 ```typescript
-import { IGNORE_PATHS } from '@rajzik/configs-shared';
+import { IGNORE_PATHS } from "@rajzik/configs-shared";
 
 // Use with glob patterns
-const files = glob('**/*.ts', {
+const files = glob("**/*.ts", {
   ignore: IGNORE_PATHS,
 });
 ```
@@ -142,7 +142,7 @@ Glob pattern group for TypeScript/TSX extensions.
 **Example:**
 
 ```typescript
-import { TSX_EXTS_GROUP } from '@rajzik/configs-shared';
+import { TSX_EXTS_GROUP } from "@rajzik/configs-shared";
 
 const pattern = `**/*.${TSX_EXTS_GROUP}`;
 // '**/*.{ts,tsx,mts,mtsx,cts,ctsx}'
@@ -161,12 +161,12 @@ Regular expression matching asset file extensions.
 **Example:**
 
 ```typescript
-import { ASSET_EXT_PATTERN } from '@rajzik/configs-shared';
+import { ASSET_EXT_PATTERN } from "@rajzik/configs-shared";
 
 const isAsset = (file: string) => ASSET_EXT_PATTERN.test(file);
 
-isAsset('image.png'); // true
-isAsset('styles.css'); // false
+isAsset("image.png"); // true
+isAsset("styles.css"); // false
 ```
 
 **Matches:**
@@ -188,13 +188,13 @@ Regular expression matching CSS file extensions.
 **Example:**
 
 ```typescript
-import { CSS_EXT_PATTERN } from '@rajzik/configs-shared';
+import { CSS_EXT_PATTERN } from "@rajzik/configs-shared";
 
 const isStylesheet = (file: string) => CSS_EXT_PATTERN.test(file);
 
-isStylesheet('styles.css'); // true
-isStylesheet('styles.scss'); // true
-isStylesheet('styles.ts'); // false
+isStylesheet("styles.css"); // true
+isStylesheet("styles.scss"); // true
+isStylesheet("styles.ts"); // false
 ```
 
 ---
@@ -210,13 +210,13 @@ Regular expression matching GraphQL file extensions.
 **Example:**
 
 ```typescript
-import { GQL_EXT_PATTERN } from '@rajzik/configs-shared';
+import { GQL_EXT_PATTERN } from "@rajzik/configs-shared";
 
 const isGraphQL = (file: string) => GQL_EXT_PATTERN.test(file);
 
-isGraphQL('schema.gql'); // true
-isGraphQL('query.graphql'); // true
-isGraphQL('query.ts'); // false
+isGraphQL("schema.gql"); // true
+isGraphQL("query.graphql"); // true
+isGraphQL("query.ts"); // false
 ```
 
 ---
@@ -232,7 +232,7 @@ Glob pattern group for TypeScript and JavaScript extensions.
 **Example:**
 
 ```typescript
-import { TJSX_EXTS_GROUP } from '@rajzik/configs-shared';
+import { TJSX_EXTS_GROUP } from "@rajzik/configs-shared";
 
 const pattern = `**/*.${TJSX_EXTS_GROUP}`;
 // '**/*.{ts,tsx,mts,mtsx,cts,ctsx,mjs,mjsx,cjs,cjsx,js,jsx}'
@@ -251,7 +251,7 @@ Glob pattern group for JavaScript extensions only.
 **Example:**
 
 ```typescript
-import { JSX_EXTS_GROUP } from '@rajzik/configs-shared';
+import { JSX_EXTS_GROUP } from "@rajzik/configs-shared";
 
 const pattern = `**/*.${JSX_EXTS_GROUP}`;
 // '**/*.{js,jsx,mjs,mjsx,cjs,cjsx}'
@@ -270,12 +270,12 @@ Pattern for import aliases (typically `~`).
 **Example:**
 
 ```typescript
-import { ALIAS_PATTERN } from '@rajzik/configs-shared';
+import { ALIAS_PATTERN } from "@rajzik/configs-shared";
 
 // Used in import resolution
 const resolveAlias = (importPath: string) => {
   if (importPath.startsWith(ALIAS_PATTERN)) {
-    return importPath.replace(ALIAS_PATTERN, './src');
+    return importPath.replace(ALIAS_PATTERN, "./src");
   }
   return importPath;
 };
@@ -294,11 +294,11 @@ Path to `tsconfig.json` file in the project root.
 **Example:**
 
 ```typescript
-import fs from 'fs';
+import fs from "fs";
 
-import { TSCONFIG_JSON_PATH } from '@rajzik/configs-shared';
+import { TSCONFIG_JSON_PATH } from "@rajzik/configs-shared";
 
-const tsconfig = JSON.parse(fs.readFileSync(TSCONFIG_JSON_PATH, 'utf8'));
+const tsconfig = JSON.parse(fs.readFileSync(TSCONFIG_JSON_PATH, "utf8"));
 ```
 
 ---
@@ -314,11 +314,11 @@ Path to `package.json` file in the project root.
 **Example:**
 
 ```typescript
-import fs from 'fs';
+import fs from "fs";
 
-import { PACKAGE_JSON_PATH } from '@rajzik/configs-shared';
+import { PACKAGE_JSON_PATH } from "@rajzik/configs-shared";
 
-const pkg = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, 'utf8'));
+const pkg = JSON.parse(fs.readFileSync(PACKAGE_JSON_PATH, "utf8"));
 ```
 
 ---
@@ -341,14 +341,14 @@ formats.
 **Example:**
 
 ```typescript
-import { parseJSON } from '@rajzik/configs-shared';
+import { parseJSON } from "@rajzik/configs-shared";
 
 interface Config {
   name: string;
   version: string;
 }
 
-const config = parseJSON<Config>('./config.json');
+const config = parseJSON<Config>("./config.json");
 ```
 
 **Features:**
@@ -375,7 +375,7 @@ interface TSConfigJSON {
 **Example:**
 
 ```typescript
-import { getRootTSConfig } from '@rajzik/configs-shared';
+import { getRootTSConfig } from "@rajzik/configs-shared";
 
 const tsconfig = getRootTSConfig();
 console.log(tsconfig.compilerOptions?.target); // 'es2024'
@@ -408,7 +408,7 @@ interface PackageJSON {
 **Example:**
 
 ```typescript
-import { getRootPackageJson } from '@rajzik/configs-shared';
+import { getRootPackageJson } from "@rajzik/configs-shared";
 
 const pkg = getRootPackageJson();
 console.log(pkg.name); // '@rajzik/configs-shared'
@@ -435,7 +435,7 @@ Gets TypeScript project references from the root `tsconfig.json`.
 **Example:**
 
 ```typescript
-import { getRootProjectReferences } from '@rajzik/configs-shared';
+import { getRootProjectReferences } from "@rajzik/configs-shared";
 
 const references = getRootProjectReferences();
 if (references) {
@@ -482,7 +482,7 @@ interface PackageJSON {
 ### Check File Extension
 
 ```typescript
-import { ASSET_EXT_PATTERN, EXTS } from '@rajzik/configs-shared';
+import { ASSET_EXT_PATTERN, EXTS } from "@rajzik/configs-shared";
 
 function isSupportedFile(file: string): boolean {
   return EXTS.some((ext) => file.endsWith(ext));
@@ -496,24 +496,20 @@ function isAssetFile(file: string): boolean {
 ### Read Configuration Files
 
 ```typescript
-import {
-  getRootPackageJson,
-  getRootTSConfig,
-  parseJSON,
-} from '@rajzik/configs-shared';
+import { getRootPackageJson, getRootTSConfig, parseJSON } from "@rajzik/configs-shared";
 
 // Cached reads
 const tsconfig = getRootTSConfig();
 const pkg = getRootPackageJson();
 
 // Direct parse
-const customConfig = parseJSON<CustomConfig>('./custom.config.json');
+const customConfig = parseJSON<CustomConfig>("./custom.config.json");
 ```
 
 ### Build Glob Patterns
 
 ```typescript
-import { TJSX_EXTS_GROUP, TSX_EXTS_GROUP } from '@rajzik/configs-shared';
+import { TJSX_EXTS_GROUP, TSX_EXTS_GROUP } from "@rajzik/configs-shared";
 
 const tsFiles = `src/**/*.${TSX_EXTS_GROUP}`;
 const allJsFiles = `**/*.${TJSX_EXTS_GROUP}`;
@@ -522,7 +518,7 @@ const allJsFiles = `**/*.${TJSX_EXTS_GROUP}`;
 ### Filter Files
 
 ```typescript
-import { CSS_EXT_PATTERN, IGNORE_PATHS } from '@rajzik/configs-shared';
+import { CSS_EXT_PATTERN, IGNORE_PATHS } from "@rajzik/configs-shared";
 
 function filterFiles(files: string[]): string[] {
   return files.filter((file) => {

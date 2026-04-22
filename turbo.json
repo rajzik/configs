@@ -3,7 +3,6 @@
   "globalEnv": [
     "SYSTEM_TASKDEFINITIONSURI",
     "NODE_ENV",
-    "PRETTIER_EXPERIMENTAL_CLI",
     "PWD"
   ],
   "tasks": {
@@ -15,8 +14,8 @@
       "outputs": ["dist/**", "lib/**", "dts/**"]
     },
     "format": {
-      "outputLogs": "new-only",
-      "outputs": [".cache/.prettiercache"]
+      "cache": false,
+      "outputLogs": "new-only"
     },
     "clean": {
       "cache": false

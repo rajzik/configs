@@ -1,5 +1,6 @@
-import type { CommitType } from './types';
-import { COMMIT_FORMAT_PREFIX } from './constants';
+import type { CommitType } from "./types";
+
+import { COMMIT_FORMAT_PREFIX } from "./constants";
 
 /**
  * Check if a commit message follows the conventional commit format.
@@ -9,18 +10,16 @@ import { COMMIT_FORMAT_PREFIX } from './constants';
  * @returns {string} return.scope - The commit scope
  * @returns {CommitType} return.type - The commit type
  */
-export function checkCommitFormat(
-  commit: string,
-): { scope: string; type: CommitType } | null {
-  const match = new RegExp(`${COMMIT_FORMAT_PREFIX.source}`, 'u').exec(commit);
+export function checkCommitFormat(commit: string): { scope: string; type: CommitType } | null {
+  const match = new RegExp(`${COMMIT_FORMAT_PREFIX.source}`, "u").exec(commit);
 
   if (!match) {
     return null;
   }
-  const [, type, scope = ''] = match;
+  const [, type, scope = ""] = match;
 
   return {
-    scope: scope || '',
+    scope: scope || "",
     type: type as CommitType,
   };
 }

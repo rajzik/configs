@@ -17,10 +17,10 @@ yarn add --dev @rajzik/eslint-config eslint
 Create an `eslint.config.js` file:
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import nodeConfig from '@rajzik/eslint-config/node';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import turboConfig from '@rajzik/eslint-config/turbo';
+import baseConfig from "@rajzik/eslint-config";
+import nodeConfig from "@rajzik/eslint-config/node";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import turboConfig from "@rajzik/eslint-config/turbo";
 
 /** @type {import('@rajzik/eslint-config').Config} */
 const config = [
@@ -52,7 +52,7 @@ Base configuration with TypeScript, JavaScript, and test file support.
 **Example:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
+import baseConfig from "@rajzik/eslint-config";
 
 export default baseConfig;
 ```
@@ -83,9 +83,9 @@ npm install --save-dev eslint-plugin-react eslint-plugin-react-hooks eslint-plug
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import reactConfig from '@rajzik/eslint-config/react';
+import baseConfig from "@rajzik/eslint-config";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import reactConfig from "@rajzik/eslint-config/react";
 
 export default [...baseConfig, ...reactConfig, ...prettierConfig];
 ```
@@ -119,17 +119,12 @@ npm install --save-dev eslint-plugin-react-compiler
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import reactConfig from '@rajzik/eslint-config/react';
-import reactCompilerConfig from '@rajzik/eslint-config/react-compiler';
+import baseConfig from "@rajzik/eslint-config";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import reactConfig from "@rajzik/eslint-config/react";
+import reactCompilerConfig from "@rajzik/eslint-config/react-compiler";
 
-export default [
-  ...baseConfig,
-  ...reactConfig,
-  ...reactCompilerConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...reactConfig, ...reactCompilerConfig, ...prettierConfig];
 ```
 
 **Rules:**
@@ -152,9 +147,9 @@ npm install --save-dev @next/eslint-plugin-next
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import nextjsConfig from '@rajzik/eslint-config/nextjs';
-import prettierConfig from '@rajzik/eslint-config/prettier';
+import baseConfig from "@rajzik/eslint-config";
+import nextjsConfig from "@rajzik/eslint-config/nextjs";
+import prettierConfig from "@rajzik/eslint-config/prettier";
 
 export default [...baseConfig, ...nextjsConfig, ...prettierConfig];
 ```
@@ -180,9 +175,9 @@ npm install --save-dev eslint-plugin-n
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import nodeConfig from '@rajzik/eslint-config/node';
-import prettierConfig from '@rajzik/eslint-config/prettier';
+import baseConfig from "@rajzik/eslint-config";
+import nodeConfig from "@rajzik/eslint-config/node";
+import prettierConfig from "@rajzik/eslint-config/prettier";
 
 export default [...baseConfig, ...nodeConfig, ...prettierConfig];
 ```
@@ -208,9 +203,9 @@ npm install --save-dev eslint-plugin-tailwindcss
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import tailwindConfig from '@rajzik/eslint-config/tailwind';
+import baseConfig from "@rajzik/eslint-config";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import tailwindConfig from "@rajzik/eslint-config/tailwind";
 
 export default [...baseConfig, ...tailwindConfig, ...prettierConfig];
 ```
@@ -244,9 +239,9 @@ npm install --save-dev @eslint/css
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import cssConfig from '@rajzik/eslint-config/css';
-import prettierConfig from '@rajzik/eslint-config/prettier';
+import baseConfig from "@rajzik/eslint-config";
+import cssConfig from "@rajzik/eslint-config/css";
+import prettierConfig from "@rajzik/eslint-config/prettier";
 
 export default [...baseConfig, ...cssConfig, ...prettierConfig];
 ```
@@ -271,9 +266,9 @@ npm install --save-dev @eslint/css tailwind-csstree
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import { cssTailwindConfig3 } from '@rajzik/eslint-config/css';
-import prettierConfig from '@rajzik/eslint-config/prettier';
+import baseConfig from "@rajzik/eslint-config";
+import { cssTailwindConfig3 } from "@rajzik/eslint-config/css";
+import prettierConfig from "@rajzik/eslint-config/prettier";
 
 export default [...baseConfig, ...cssTailwindConfig3, ...prettierConfig];
 ```
@@ -293,9 +288,9 @@ npm install --save-dev @eslint/css tailwind-csstree
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import { cssTailwindConfig4 } from '@rajzik/eslint-config/css';
-import prettierConfig from '@rajzik/eslint-config/prettier';
+import baseConfig from "@rajzik/eslint-config";
+import { cssTailwindConfig4 } from "@rajzik/eslint-config/css";
+import prettierConfig from "@rajzik/eslint-config/prettier";
 
 export default [...baseConfig, ...cssTailwindConfig4, ...prettierConfig];
 ```
@@ -315,9 +310,9 @@ npm install --save-dev eslint-plugin-turbo
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import turboConfig from '@rajzik/eslint-config/turbo';
+import baseConfig from "@rajzik/eslint-config";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import turboConfig from "@rajzik/eslint-config/turbo";
 
 export default [...baseConfig, ...turboConfig, ...prettierConfig];
 ```
@@ -342,8 +337,8 @@ npm install --save-dev eslint-config-prettier
 **Usage:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import prettierConfig from '@rajzik/eslint-config/prettier';
+import baseConfig from "@rajzik/eslint-config";
+import prettierConfig from "@rajzik/eslint-config/prettier";
 
 export default [
   ...baseConfig,
@@ -364,11 +359,11 @@ export default [
 **React + Next.js + Tailwind + Prettier:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import nextjsConfig from '@rajzik/eslint-config/nextjs';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import reactConfig from '@rajzik/eslint-config/react';
-import tailwindConfig from '@rajzik/eslint-config/tailwind';
+import baseConfig from "@rajzik/eslint-config";
+import nextjsConfig from "@rajzik/eslint-config/nextjs";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import reactConfig from "@rajzik/eslint-config/react";
+import tailwindConfig from "@rajzik/eslint-config/tailwind";
 
 /** @type {import('@rajzik/eslint-config').Config} */
 const config = [
@@ -386,18 +381,13 @@ export default config;
 **Node.js + Turbo:**
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import nodeConfig from '@rajzik/eslint-config/node';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import turboConfig from '@rajzik/eslint-config/turbo';
+import baseConfig from "@rajzik/eslint-config";
+import nodeConfig from "@rajzik/eslint-config/node";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import turboConfig from "@rajzik/eslint-config/turbo";
 
 /** @type {import('@rajzik/eslint-config').Config} */
-const config = [
-  ...baseConfig,
-  ...nodeConfig,
-  ...turboConfig,
-  ...prettierConfig,
-];
+const config = [...baseConfig, ...nodeConfig, ...turboConfig, ...prettierConfig];
 
 export default config;
 ```
@@ -407,7 +397,7 @@ export default config;
 All TypeScript ESLint types are re-exported:
 
 ```typescript
-import type { Config } from '@rajzik/eslint-config';
+import type { Config } from "@rajzik/eslint-config";
 ```
 
 ## Key Rules
@@ -440,15 +430,15 @@ import type { Config } from '@rajzik/eslint-config';
 You can override rules in your config:
 
 ```javascript
-import baseConfig from '@rajzik/eslint-config';
-import prettierConfig from '@rajzik/eslint-config/prettier';
+import baseConfig from "@rajzik/eslint-config";
+import prettierConfig from "@rajzik/eslint-config/prettier";
 
 export default [
   ...baseConfig,
   {
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off', // Override rule
-      'no-console': 'off', // Allow all console methods
+      "@typescript-eslint/no-explicit-any": "off", // Override rule
+      "no-console": "off", // Allow all console methods
     },
   },
   ...prettierConfig,

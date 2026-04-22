@@ -1,2 +1,2 @@
-declare module 'conventional-changelog-core';
-declare module 'conventional-recommended-bump';
+declare module "conventional-changelog-core";
+declare module "conventional-recommended-bump";

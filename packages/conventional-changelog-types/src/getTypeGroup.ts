@@ -1,5 +1,6 @@
-import type { CommitType, Group } from './types';
-import { GROUPS } from './constants';
+import type { CommitType, Group } from "./types";
+
+import { GROUPS } from "./constants";
 
 /**
  * Get the group configuration for a given commit type.

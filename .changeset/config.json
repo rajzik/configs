@@ -6,6 +6,7 @@
     [
       "@rajzik/tsconfig",
       "@rajzik/configs-shared",
+      "@rajzik/oxfmt-config",
       "@rajzik/prettier-config",
       "@rajzik/eslint-config",
       "@rajzik/danger-configuration"
@@ -20,5 +21,6 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
+  "prettier": true,
   "ignore": []
 }

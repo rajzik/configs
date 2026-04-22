@@ -1,8 +1,8 @@
-import fs from 'node:fs';
+import fs from "node:fs";
 
-import type { CompilerOptions, ProjectReference } from 'typescript';
+import type { CompilerOptions, ProjectReference } from "typescript";
 
-import { PACKAGE_JSON_PATH, TSCONFIG_JSON_PATH } from './constants';
+import { PACKAGE_JSON_PATH, TSCONFIG_JSON_PATH } from "./constants";
 
 /**
  * Parse a JSON file, removing comments and blank lines.
@@ -13,11 +13,11 @@ import { PACKAGE_JSON_PATH, TSCONFIG_JSON_PATH } from './constants';
  */
 export function parseJSON<T>(filePath: string): T {
   const content = fs
-    .readFileSync(filePath, 'utf8')
-    .split('\n')
+    .readFileSync(filePath, "utf8")
+    .split("\n")
     // Remove comments from JSON files
     .filter((line) => !/^\s*(#|\/)/.test(line))
-    .join('\n');
+    .join("\n");
 
   return JSON.parse(content) as T;
 }

@@ -1,13 +1,13 @@
-import path from 'node:path';
+import path from "node:path";
 
-import baseConfig, { includeIgnoreFile } from '@rajzik/eslint-config';
-import nodeConfig from '@rajzik/eslint-config/node';
-import prettierConfig from '@rajzik/eslint-config/prettier';
-import turboConfig from '@rajzik/eslint-config/turbo';
+import baseConfig, { includeIgnoreFile } from "@rajzik/eslint-config";
+import nodeConfig from "@rajzik/eslint-config/node";
+import prettierConfig from "@rajzik/eslint-config/prettier";
+import turboConfig from "@rajzik/eslint-config/turbo";
 
 /** @type {import('@rajzik/eslint-config').Config} */
 const config = [
-  includeIgnoreFile(path.join(import.meta.dirname, '../../.gitignore')),
+  includeIgnoreFile(path.join(import.meta.dirname, "../../.gitignore")),
   ...baseConfig,
   ...nodeConfig,
   ...turboConfig,

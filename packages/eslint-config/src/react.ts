@@ -1,60 +1,60 @@
-import type { Linter } from 'eslint';
+import type { Linter } from "eslint";
 
-import stylisticPlugin from '@stylistic/eslint-plugin';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import reactPlugin from 'eslint-plugin-react';
-import hooksPlugin from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
+import stylisticPlugin from "@stylistic/eslint-plugin";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import reactPlugin from "eslint-plugin-react";
+import hooksPlugin from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
 
 /**
  * ESLint configuration for React projects.
  */
 const config: Linter.Config[] = [
   {
-    files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
     plugins: {
       react: reactPlugin,
-      'react-hooks': hooksPlugin,
-      'jsx-a11y': jsxA11y,
-      '@stylistic': stylisticPlugin,
-      'react-refresh': reactRefresh,
+      "react-hooks": hooksPlugin,
+      "jsx-a11y": jsxA11y,
+      "@stylistic": stylisticPlugin,
+      "react-refresh": reactRefresh,
     },
     rules: {
-      ...reactPlugin.configs['jsx-runtime'].rules,
+      ...reactPlugin.configs["jsx-runtime"].rules,
       ...hooksPlugin.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
       ...reactRefresh.configs.recommended.rules,
 
-      '@stylistic/jsx-quotes': ['error', 'prefer-double'],
-      '@stylistic/jsx-sort-props': 'warn',
-      '@stylistic/jsx-pascal-case': 'warn',
+      "@stylistic/jsx-quotes": ["error", "prefer-double"],
+      "@stylistic/jsx-sort-props": "warn",
+      "@stylistic/jsx-pascal-case": "warn",
 
-      'react/jsx-boolean-value': ['error', 'never'],
+      "react/jsx-boolean-value": ["error", "never"],
 
-      'react/jsx-curly-brace-presence': [
-        'error',
-        { children: 'never', propElementValues: 'always', props: 'never' },
+      "react/jsx-curly-brace-presence": [
+        "error",
+        { children: "never", propElementValues: "always", props: "never" },
       ],
 
-      'react/self-closing-comp': 'error',
+      "react/self-closing-comp": "error",
 
-      'react/jsx-no-leaked-render': 'warn',
+      "react/jsx-no-leaked-render": "warn",
 
-      'react/jsx-fragments': 'warn',
+      "react/jsx-fragments": "warn",
 
-      'react/button-has-type': 'warn',
+      "react/button-has-type": "warn",
 
-      'react/jsx-no-useless-fragment': ['warn', { allowExpressions: true }],
+      "react/jsx-no-useless-fragment": ["warn", { allowExpressions: true }],
 
-      'react/no-array-index-key': 'warn',
+      "react/no-array-index-key": "warn",
 
-      'react/no-unstable-nested-components': 'error',
+      "react/no-unstable-nested-components": "error",
 
-      'react/hook-use-state': 'warn',
+      "react/hook-use-state": "warn",
     },
     languageOptions: {
       globals: {
-        React: 'writable',
+        React: "writable",
       },
       parserOptions: {
         ecmaFeatures: {
@@ -64,7 +64,7 @@ const config: Linter.Config[] = [
     },
     settings: {
       react: {
-        version: 'detect',
+        version: "detect",
       },
     },
   },

@@ -1,6 +1,6 @@
 # Personal Sharable Configs
 
-A collection of shareable configuration packages for modern JavaScript/TypeScript development, including ESLint, Prettier, TypeScript, DangerJS, and conventional changelog configurations.
+A collection of shareable configuration packages for modern JavaScript/TypeScript development, including ESLint, Oxfmt, Prettier, TypeScript, DangerJS, and conventional changelog configurations.
 
 ## Packages
 
@@ -18,6 +18,20 @@ Comprehensive ESLint configuration for ESLint v9+ (flat config) with support for
 - Tailwind CSS and CSS linting
 - Turbo monorepo support
 - Prettier integration
+
+---
+
+#### [`@rajzik/oxfmt-config`](./packages/oxfmt-config)
+
+Shareable Oxfmt configuration with import sorting and package.json sorting.
+
+[📖 Documentation](./packages/oxfmt-config/README.md)
+
+**Features:**
+- Oxfmt-compatible defaults
+- Import sorting with grouped ordering
+- Package.json script sorting
+- Shared ignore patterns
 
 ---
 
@@ -138,10 +152,10 @@ Internal package providing shared constants and utilities.
 ```sh
 pnpm add -D \
   @rajzik/eslint-config \
-  @rajzik/prettier-config \
+  @rajzik/oxfmt-config \
   @rajzik/tsconfig \
   eslint \
-  prettier \
+  oxfmt \
   typescript
 ```
 
@@ -163,10 +177,13 @@ export default [
 ];
 ```
 
-**3. Create `prettier.config.js`:**
+**3. Create `oxfmt.config.ts`:**
 
-```javascript
-export { default } from '@rajzik/prettier-config/tailwind';
+```ts
+import { defineConfig } from 'oxfmt';
+import config from '@rajzik/oxfmt-config';
+
+export default defineConfig(config);
 ```
 
 **4. Create `tsconfig.json`:**
@@ -186,7 +203,7 @@ export { default } from '@rajzik/prettier-config/tailwind';
 {
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier --write .",
+    "format": "oxfmt --write .",
     "typecheck": "tsc --noEmit"
   }
 }
@@ -201,10 +218,10 @@ export { default } from '@rajzik/prettier-config/tailwind';
 ```sh
 pnpm add -D \
   @rajzik/eslint-config \
-  @rajzik/prettier-config \
+  @rajzik/oxfmt-config \
   @rajzik/tsconfig \
   eslint \
-  prettier \
+  oxfmt \
   typescript
 ```
 
@@ -222,10 +239,13 @@ export default [
 ];
 ```
 
-**3. Create `prettier.config.js`:**
+**3. Create `oxfmt.config.ts`:**
 
-```javascript
-export { default } from '@rajzik/prettier-config';
+```ts
+import { defineConfig } from 'oxfmt';
+import config from '@rajzik/oxfmt-config';
+
+export default defineConfig(config);
 ```
 
 **4. Create `tsconfig.json`:**
@@ -243,6 +263,7 @@ export { default } from '@rajzik/prettier-config';
 | Package | Purpose | Key Features |
 |---------|---------|--------------|
 | `@rajzik/eslint-config` | ESLint configuration | TypeScript, React, Next.js, Node.js, Tailwind |
+| `@rajzik/oxfmt-config` | Oxfmt configuration | Import sorting, package.json script sorting |
 | `@rajzik/prettier-config` | Prettier configuration | Import sorting, Tailwind class sorting |
 | `@rajzik/tsconfig` | TypeScript configuration | Strict types, modern JS, bundler-optimized |
 | `conventional-changelog-rajzik` | Changelog generation | Emoji support, Azure DevOps |
@@ -270,6 +291,7 @@ Jan Šilhan <silhanu@gmail.com>
 ## Related Resources
 
 - [ESLint Documentation](https://eslint.org/)
+- [Oxfmt Documentation](https://oxc.rs/docs/guide/usage/formatter)
 - [Prettier Documentation](https://prettier.io/)
 - [TypeScript Documentation](https://www.typescriptlang.org/)
 - [Conventional Commits](https://www.conventionalcommits.org/)

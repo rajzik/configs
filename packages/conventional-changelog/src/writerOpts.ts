@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion -- needed */
 
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
 import type {
   CommitGroupLabel,
   Context,
   Reference,
   WriterOptions,
-} from '@rajzik/conventional-changelog-types';
+} from "@rajzik/conventional-changelog-types";
 
-import { getTypeGroup, GROUPS } from '@rajzik/conventional-changelog-types';
+import { getTypeGroup, GROUPS } from "@rajzik/conventional-changelog-types";
 
 type GroupMap<T> = Record<CommitGroupLabel, T>;
 
@@ -48,7 +48,7 @@ function createWorkItemLink(workItemId: string) {
     return new URL(`/_workitems/edit/${workItemId}`, serverUrl).toString();
   }
 
-  return '';
+  return "";
 }
 
 /**
@@ -59,11 +59,7 @@ function createWorkItemLink(workItemId: string) {
  * @param {Partial<Reference>} [reference={}] - Optional reference to override context values
  * @returns {string} The constructed URL string
  */
-function createLink(
-  paths: string[],
-  context: Context,
-  reference: Partial<Reference> = {},
-): string {
+function createLink(paths: string[], context: Context, reference: Partial<Reference> = {}): string {
   const owner = reference.owner ?? context.owner;
   const repository = reference.repository ?? context.repository;
   const url: string[] = [];
@@ -81,23 +77,23 @@ function createLink(
   } else {
     url.push(context.repoUrl);
   }
-  let base = url.join('/');
+  let base = url.join("/");
 
   // If deep linking to a sub-folder (monorepo project, etc),
   // extract the base URL if possible.
   [
     // github, gitlab
-    'tree',
-    'blob',
+    "tree",
+    "blob",
     // bitbucket
-    'src',
+    "src",
   ].forEach((browsePart) => {
     if (base.includes(`/${browsePart}/`)) {
       base = base.split(`/${browsePart}/`).at(0)!;
     }
   });
 
-  return [base, ...paths].join('/');
+  return [base, ...paths].join("/");
 }
 
 /**
@@ -106,25 +102,16 @@ function createLink(
  */
 const options: Partial<WriterOptions> = {
   mainTemplate: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/template.hbs'),
-    'utf8',
+    path.join(import.meta.dirname, "../templates/template.hbs"),
+    "utf8",
   ),
-  commitPartial: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/commit.hbs'),
-    'utf8',
-  ),
-  headerPartial: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/header.hbs'),
-    'utf8',
-  ),
-  footerPartial: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/footer.hbs'),
-    'utf8',
-  ),
+  commitPartial: fs.readFileSync(path.join(import.meta.dirname, "../templates/commit.hbs"), "utf8"),
+  headerPartial: fs.readFileSync(path.join(import.meta.dirname, "../templates/header.hbs"), "utf8"),
+  footerPartial: fs.readFileSync(path.join(import.meta.dirname, "../templates/footer.hbs"), "utf8"),
 
   // Commits
-  groupBy: 'label',
-  commitsSort: ['scope', 'message'],
+  groupBy: "label",
+  commitsSort: ["scope", "message"],
   commitGroupsSort(groupA, groupB) {
     const aWeight = sortWeights[groupA.title] || 0;
     const bWeight = sortWeights[groupB.title] || 0;
@@ -137,7 +124,7 @@ const options: Partial<WriterOptions> = {
   },
 
   // Notes
-  noteGroupsSort: 'title',
+  noteGroupsSort: "title",
 
   // Add metadata
   transform(commit, context) {
@@ -150,16 +137,16 @@ const options: Partial<WriterOptions> = {
     const { NODE_ENV } = process.env;
 
     // Use consistent values for snapshots
-    if (NODE_ENV === 'test') {
-      commit.hash = 'a1b2c3d';
-      context.date = '2019-02-26';
+    if (NODE_ENV === "test") {
+      commit.hash = "a1b2c3d";
+      context.date = "2019-02-26";
     }
 
     // Override type for specific scenarios
     if (commit.revert) {
-      commit.type = 'revert';
+      commit.type = "revert";
     } else if (commit.merge) {
-      commit.type = 'misc';
+      commit.type = "misc";
     }
 
     // Define metadata based on type
@@ -167,22 +154,22 @@ const options: Partial<WriterOptions> = {
 
     commit.label = group.label;
 
-    if (group.bump === 'major') {
+    if (group.bump === "major") {
       context.isMajor = true;
-    } else if (group.bump === 'minor') {
+    } else if (group.bump === "minor") {
       context.isMinor = true;
     }
 
-    if (context.commit.endsWith('s')) {
+    if (context.commit.endsWith("s")) {
       // Workaround for azure devops
-      commit.hashLink = createLink(['commit', commit.hash], context);
+      commit.hashLink = createLink(["commit", commit.hash], context);
     } else {
       // Pre-generate links instead of doing it in handlebars
       commit.hashLink = createLink([context.commit, commit.hash], context);
     }
 
     // Use shorthand hashes
-    if (typeof commit.hash === 'string') {
+    if (typeof commit.hash === "string") {
       commit.hash = commit.hash.slice(0, 7);
     }
 
@@ -191,14 +178,10 @@ const options: Partial<WriterOptions> = {
       if (SYSTEM_TASKDEFINITIONSURI) {
         reference.issueLink = createWorkItemLink(reference.issue);
       } else {
-        reference.issueLink = createLink(
-          [context.issue, reference.issue],
-          context,
-          reference,
-        );
+        reference.issueLink = createLink([context.issue, reference.issue], context, reference);
       }
 
-      let source = `${reference.repository ?? ''}#${reference.issue}`;
+      let source = `${reference.repository ?? ""}#${reference.issue}`;
 
       if (reference.owner) {
         source = `${reference.owner}/${source}`;
@@ -213,10 +196,10 @@ const options: Partial<WriterOptions> = {
         /\B@([a-z0-9](?:-?[a-z0-9/]){0,38})/gu,
         (match, username: string, index: number) => {
           if (
-            username.includes('/') ||
+            username.includes("/") ||
             // Avoid when wrapped in backticks (inline code)
-            commit.message.at(index - 1) === '`' ||
-            commit.message.at(index + match.length + 1) === '`'
+            commit.message.at(index - 1) === "`" ||
+            commit.message.at(index + match.length + 1) === "`"
           ) {
             return match;
           }

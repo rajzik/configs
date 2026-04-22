@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint';
+import type { Linter } from "eslint";
 
-import turbo from 'eslint-plugin-turbo';
+import turbo from "eslint-plugin-turbo";
 
 /**
  * ESLint configuration for Turborepo projects.
@@ -11,7 +11,7 @@ const config: Linter.Config[] = [
       turbo,
     },
     rules: {
-      ...turbo.configs['flat/recommended'].rules,
+      ...turbo.configs["flat/recommended"].rules,
     },
   },
 ];

@@ -1,18 +1,18 @@
-import type { Linter } from 'eslint';
+import type { Linter } from "eslint";
 
-import css from '@eslint/css';
-import { tailwind3, tailwind4 } from 'tailwind-csstree';
+import css from "@eslint/css";
+import { tailwind3, tailwind4 } from "tailwind-csstree";
 
 /**
  * ESLint configuration for CSS files with Tailwind CSS v3 support.
  */
 export const cssTailwindConfig3: Linter.Config[] = [
   {
-    files: ['**/*.css'],
+    files: ["**/*.css"],
     plugins: {
       css,
     },
-    language: 'css/css',
+    language: "css/css",
     languageOptions: {
       customSyntax: tailwind3,
     },
@@ -27,11 +27,11 @@ export const cssTailwindConfig3: Linter.Config[] = [
  */
 export const cssTailwindConfig4: Linter.Config[] = [
   {
-    files: ['**/*.css'],
+    files: ["**/*.css"],
     plugins: {
       css,
     },
-    language: 'css/css',
+    language: "css/css",
     languageOptions: {
       customSyntax: tailwind4,
     },
@@ -46,11 +46,11 @@ export const cssTailwindConfig4: Linter.Config[] = [
  */
 const config: Linter.Config[] = [
   {
-    files: ['**/*.css'],
+    files: ["**/*.css"],
     plugins: {
       css,
     },
-    language: 'css/css',
+    language: "css/css",
     rules: {
       ...css.configs.recommended.rules,
     },

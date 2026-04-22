@@ -18,8 +18,8 @@ yarn add --dev conventional-changelog-rajzik
 
 ```javascript
 // Use with conventional-changelog
-import conventionalChangelog from 'conventional-changelog';
-import changelog from 'conventional-changelog-rajzik';
+import conventionalChangelog from "conventional-changelog";
+import changelog from "conventional-changelog-rajzik";
 
 const config = await changelog;
 
@@ -35,7 +35,7 @@ conventionalChangelog({
 {
   "standard-version": {
     "scripts": {
-      "postchangelog": "prettier --write CHANGELOG.md"
+      "postchangelog": "oxfmt --write CHANGELOG.md"
     }
   }
 }
@@ -66,7 +66,7 @@ Main changelog configuration object containing `parserOpts` and `writerOpts`.
 **Example:**
 
 ```javascript
-import changelog from 'conventional-changelog-rajzik';
+import changelog from "conventional-changelog-rajzik";
 
 const config = await changelog;
 // config.conventionalChangelog.parserOpts
@@ -89,7 +89,7 @@ standard conventional commits.
 **Example:**
 
 ```javascript
-import { parserOpts } from 'conventional-changelog-rajzik';
+import { parserOpts } from "conventional-changelog-rajzik";
 
 // parserOpts.headerPattern matches:
 // - "fix: Fix bug"
@@ -113,7 +113,7 @@ Options for determining semantic version bumps based on commit types.
 **Example:**
 
 ```javascript
-import { recommendedBumpOpts } from 'conventional-changelog-rajzik';
+import { recommendedBumpOpts } from "conventional-changelog-rajzik";
 
 // Automatically determines version bump level:
 // - Major: break, breaking, release
@@ -143,7 +143,7 @@ Writer options for formatting changelog output with emojis and custom templates.
 **Example:**
 
 ```javascript
-import { writerOpts } from 'conventional-changelog-rajzik';
+import { writerOpts } from "conventional-changelog-rajzik";
 
 // Generates changelog with:
 // - Emoji prefixes (🚀 Updates, 🐞 Fixes, etc.)

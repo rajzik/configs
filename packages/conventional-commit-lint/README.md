@@ -23,7 +23,7 @@ file:
 
 ```javascript
 module.exports = {
-  extends: ['@rajzik/conventional-commit-lint-config'],
+  extends: ["@rajzik/conventional-commit-lint-config"],
 };
 ```
 
@@ -31,7 +31,7 @@ module.exports = {
 
 ```javascript
 export default {
-  extends: ['@rajzik/conventional-commit-lint-config'],
+  extends: ["@rajzik/conventional-commit-lint-config"],
 };
 ```
 
@@ -245,10 +245,10 @@ You can extend and override the configuration:
 
 ```javascript
 export default {
-  extends: ['@rajzik/conventional-commit-lint-config'],
+  extends: ["@rajzik/conventional-commit-lint-config"],
   rules: {
-    'subject-full-stop': [2, 'always', '.'], // Keep default
-    'subject-case': [2, 'always', 'lower-case'], // Override to lowercase
+    "subject-full-stop": [2, "always", "."], // Keep default
+    "subject-case": [2, "always", "lower-case"], // Override to lowercase
   },
 };
 ```
@@ -273,8 +273,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
       - run: npm install
-      - run:
-          npx commitlint --from ${{ github.event.pull_request.base.sha }} --to
+      - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to
           ${{ github.sha }} --verbose
 ```
 

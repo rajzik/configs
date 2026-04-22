@@ -1,8 +1,4 @@
-import type {
-  Commit,
-  ParserOptions,
-  SemverLevel,
-} from '@rajzik/conventional-changelog-types';
+import type { Commit, ParserOptions, SemverLevel } from "@rajzik/conventional-changelog-types";
 
 /**
  * Options for determining version bumps from commits.

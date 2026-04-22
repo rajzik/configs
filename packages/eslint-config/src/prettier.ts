@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint';
+import type { Linter } from "eslint";
 
-import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintConfigPrettier from "eslint-config-prettier";
 
 /**
  * ESLint configuration that disables rules conflicting with Prettier.
@@ -10,7 +10,7 @@ const config: Linter.Config[] = [
   {
     rules: {
       // re-enable ESLint rules
-      curly: ['error', 'all'],
+      curly: ["error", "all"],
     },
   },
 ] as Linter.Config[];

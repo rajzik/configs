@@ -3,6 +3,23 @@
 Shareable Prettier configuration with import sorting and package.json
 formatting.
 
+> This repository now uses [`@rajzik/oxfmt-config`](../oxfmt-config) with
+> `oxfmt` for its own formatter workflow. Keep using this package when you need
+> a Prettier-based setup, but prefer `@rajzik/oxfmt-config` for new projects.
+
+## Prefer Oxfmt for New Projects
+
+```sh
+pnpm install --save-dev @rajzik/oxfmt-config oxfmt
+```
+
+```ts
+import { defineConfig } from "oxfmt";
+import config from "@rajzik/oxfmt-config";
+
+export default defineConfig(config);
+```
+
 ## Installation
 
 ```sh
@@ -34,13 +51,13 @@ yarn add --dev @rajzik/prettier-config prettier prettier-plugin-tailwindcss
 **Option 2: `prettier.config.js`**
 
 ```javascript
-export { default } from '@rajzik/prettier-config';
+export { default } from "@rajzik/prettier-config";
 ```
 
 **Option 3: Extend and override**
 
 ```javascript
-import config from '@rajzik/prettier-config';
+import config from "@rajzik/prettier-config";
 
 export default {
   ...config,
@@ -62,13 +79,13 @@ export default {
 **Option 2: `prettier.config.js`**
 
 ```javascript
-export { default } from '@rajzik/prettier-config/tailwind';
+export { default } from "@rajzik/prettier-config/tailwind";
 ```
 
 **Option 3: Extend and override**
 
 ```javascript
-import config from '@rajzik/prettier-config/tailwind';
+import config from "@rajzik/prettier-config/tailwind";
 
 export default {
   ...config,
@@ -86,35 +103,32 @@ Base Prettier configuration with import sorting and package.json formatting.
 
 ```typescript
 {
-  arrowParens: 'always';
+  arrowParens: "always";
   bracketSpacing: true;
-  plugins: [
-    'prettier-plugin-packagejson',
-    '@ianvs/prettier-plugin-sort-imports',
-  ];
+  plugins: ["prettier-plugin-packagejson", "@ianvs/prettier-plugin-sort-imports"];
   printWidth: 80;
-  proseWrap: 'always';
+  proseWrap: "always";
   semi: true;
   singleAttributePerLine: true;
   singleQuote: true;
-  trailingComma: 'all';
+  trailingComma: "all";
   importOrder: [
-    '<BUILTIN_MODULES>', // Node.js built-in modules
-    '',
-    '<TYPES>',
-    '^(react/(.*)$)|^(react$)|^(react-native(.*)$)',
-    '^(next/(.*)$)|^(next$)',
-    '^(expo(.*)$)|^(expo$)',
-    '',
-    '<THIRD_PARTY_MODULES>', // Imports not matched by other special words or groups.
-    '',
-    '<TYPES>^@org',
-    '^@org/(.*)$',
-    '',
-    '<TYPES>^[.|..|~]',
-    '^~/',
-    '^[../]',
-    '^[./]',
+    "<BUILTIN_MODULES>", // Node.js built-in modules
+    "",
+    "<TYPES>",
+    "^(react/(.*)$)|^(react$)|^(react-native(.*)$)",
+    "^(next/(.*)$)|^(next$)",
+    "^(expo(.*)$)|^(expo$)",
+    "",
+    "<THIRD_PARTY_MODULES>", // Imports not matched by other special words or groups.
+    "",
+    "<TYPES>^@org",
+    "^@org/(.*)$",
+    "",
+    "<TYPES>^[.|..|~]",
+    "^~/",
+    "^[../]",
+    "^[./]",
   ];
 }
 ```
@@ -122,7 +136,7 @@ Base Prettier configuration with import sorting and package.json formatting.
 **Example:**
 
 ```javascript
-import config from '@rajzik/prettier-config';
+import config from "@rajzik/prettier-config";
 
 export default config;
 ```
@@ -148,7 +162,7 @@ Prettier configuration with Tailwind CSS class sorting.
 **Example:**
 
 ```javascript
-import tailwindConfig from '@rajzik/prettier-config/tailwind';
+import tailwindConfig from "@rajzik/prettier-config/tailwind";
 
 export default tailwindConfig;
 ```
@@ -274,11 +288,11 @@ Use single quotes instead of double quotes.
 
 ```javascript
 // ✅ Formatted
-const str = 'Hello, world!';
-const obj = { key: 'value' };
+const str = "Hello, world!";
+const obj = { key: "value" };
 
 // ❌ Not formatted this way
-const str = 'Hello, world!';
+const str = "Hello, world!";
 ```
 
 ---
@@ -326,32 +340,32 @@ The configuration includes automatic import sorting with the following order:
 
 ```typescript
 // Built-in modules
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
 // Type imports
-import type { ComponentProps } from 'react';
+import type { ComponentProps } from "react";
 // React
-import { useState } from 'react';
+import { useState } from "react";
 // Next.js
-import { NextRequest } from 'next/server';
+import { NextRequest } from "next/server";
 
 // Third-party
-import axios from 'axios';
-import lodash from 'lodash';
-import { render } from 'react-dom';
+import axios from "axios";
+import lodash from "lodash";
+import { render } from "react-dom";
 
 // Type imports from @org
-import type { User } from '@org/types';
+import type { User } from "@org/types";
 // Internal @org imports
-import { api } from '@org/api';
-import { utils } from '@org/utils';
+import { api } from "@org/api";
+import { utils } from "@org/utils";
 
 // Type imports from relative
-import type { Props } from '../types';
-import { Header } from '../Header';
+import type { Props } from "../types";
+import { Header } from "../Header";
 // Relative imports
-import { Button } from './Button';
+import { Button } from "./Button";
 ```
 
 ---
@@ -412,7 +426,7 @@ Sorts Tailwind CSS classes according to the recommended order.
 Type for extended Prettier configuration.
 
 ```typescript
-import type { ExtendedConfig } from '@rajzik/prettier-config';
+import type { ExtendedConfig } from "@rajzik/prettier-config";
 
 const config: ExtendedConfig = {
   // ...
@@ -426,7 +440,7 @@ const config: ExtendedConfig = {
 ### Override Print Width
 
 ```javascript
-import config from '@rajzik/prettier-config';
+import config from "@rajzik/prettier-config";
 
 export default {
   ...config,
@@ -437,7 +451,7 @@ export default {
 ### Disable Semicolons
 
 ```javascript
-import config from '@rajzik/prettier-config';
+import config from "@rajzik/prettier-config";
 
 export default {
   ...config,
@@ -448,26 +462,18 @@ export default {
 ### Custom Import Order
 
 ```javascript
-import config from '@rajzik/prettier-config';
+import config from "@rajzik/prettier-config";
 
 export default {
   ...config,
-  importOrder: [
-    '<BUILTIN_MODULES>',
-    '',
-    '<THIRD_PARTY_MODULES>',
-    '',
-    '^@myorg/(.*)$',
-    '',
-    '^[./]',
-  ],
+  importOrder: ["<BUILTIN_MODULES>", "", "<THIRD_PARTY_MODULES>", "", "^@myorg/(.*)$", "", "^[./]"],
 };
 ```
 
 ### Tailwind with Custom Options
 
 ```javascript
-import tailwindConfig from '@rajzik/prettier-config/tailwind';
+import tailwindConfig from "@rajzik/prettier-config/tailwind";
 
 export default {
   ...tailwindConfig,

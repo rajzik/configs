@@ -1,4 +1,4 @@
-import { checkCommitFormat } from '@rajzik/conventional-changelog-types';
+import { checkCommitFormat } from "@rajzik/conventional-changelog-types";
 
 // Verify the PR title contains the conventional-changelog required prefix.
 /**
@@ -8,7 +8,7 @@ import { checkCommitFormat } from '@rajzik/conventional-changelog-types';
 export function checkForConventionalPrefix() {
   if (!checkCommitFormat(danger.github.pr.title)) {
     fail(
-      'Pull request title requires a conventional changelog prefix. [View commit message format](https://github.com/rajzik/configs/tree/main/packages/conventional-changelog#commit-message-format).',
+      "Pull request title requires a conventional changelog prefix. [View commit message format](https://github.com/rajzik/configs/tree/main/packages/conventional-changelog#commit-message-format).",
     );
   }
 }
@@ -23,12 +23,10 @@ export function checkForConventionalPrefix() {
 export function checkForConventionalSquashCommit() {
   if (
     danger.github.pr.commits <= 1 &&
-    !danger.github.commits
-      .at(0)
-      ?.commit.message.includes(danger.github.pr.title)
+    !danger.github.commits.at(0)?.commit.message.includes(danger.github.pr.title)
   ) {
     fail(
-      'Automatic releases requires commit message to match PR title if PR contains only 1 commit.',
+      "Automatic releases requires commit message to match PR title if PR contains only 1 commit.",
     );
   }
 }

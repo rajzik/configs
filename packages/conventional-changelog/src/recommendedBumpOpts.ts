@@ -1,9 +1,10 @@
-import type { Group, SemverLevel } from '@rajzik/conventional-changelog-types';
+import type { Group, SemverLevel } from "@rajzik/conventional-changelog-types";
 
-import { getTypeGroup } from '@rajzik/conventional-changelog-types';
+import { getTypeGroup } from "@rajzik/conventional-changelog-types";
 
-import type { BumpOptions } from './types';
-import parserOpts from './parserOpts';
+import type { BumpOptions } from "./types";
+
+import parserOpts from "./parserOpts";
 
 /**
  * Options for determining recommended version bumps based on commit types.
@@ -28,13 +29,13 @@ const options: BumpOptions = {
       }
 
       switch (group.bump) {
-        case 'major': {
+        case "major": {
           breakings += 1;
           level = 0;
 
           break;
         }
-        case 'minor': {
+        case "minor": {
           features += 1;
           if (level === null || level === 2) {
             level = 1;
@@ -42,7 +43,7 @@ const options: BumpOptions = {
 
           break;
         }
-        case 'patch': {
+        case "patch": {
           fixes += 1;
           level ??= 2;
 

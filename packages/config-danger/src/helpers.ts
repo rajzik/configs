@@ -14,10 +14,7 @@ export const SNAP_EXT = /\.snap$/;
 export const GLOBAL_IGNORE = /Icon[A-Z][A-Za-z]+\.(t|j)sx$/;
 
 /** Array of files that were created or modified in the PR. */
-export const updatedFiles = [
-  ...danger.git.created_files,
-  ...danger.git.modified_files,
-];
+export const updatedFiles = [...danger.git.created_files, ...danger.git.modified_files];
 
 /** Array of files that were created, deleted, or modified in the PR. */
 export const touchedFiles = [
@@ -33,7 +30,7 @@ export const touchedFiles = [
  * @param {...string} args - Additional arguments to include in the message
  */
 export function debug(msg: string, ...args: string[]) {
-  if (danger.git.modified_files.includes('dangerfile.js')) {
+  if (danger.git.modified_files.includes("dangerfile.js")) {
     message(`[debug] ${msg}`, ...args);
   }
 }
@@ -45,8 +42,8 @@ export function debug(msg: string, ...args: string[]) {
  */
 export function isRevert(): boolean {
   return (
-    danger.github.pr.title.startsWith('Revert') ||
-    danger.github.pr.title.includes('Automatic revert')
+    danger.github.pr.title.startsWith("Revert") ||
+    danger.github.pr.title.includes("Automatic revert")
   );
 }
 
@@ -59,8 +56,8 @@ export function isRevert(): boolean {
 export async function countChangesInFile(file: string): Promise<number> {
   return new Promise((resolve) => {
     void danger.git.diffForFile(file).then((d) => {
-      const added = d?.added.split('\n').length ?? 0;
-      const removed = d?.removed.split('\n').length ?? 0;
+      const added = d?.added.split("\n").length ?? 0;
+      const removed = d?.removed.split("\n").length ?? 0;
 
       resolve(added + removed);
 

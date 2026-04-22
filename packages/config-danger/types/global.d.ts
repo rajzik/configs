@@ -1,4 +1,4 @@
-import type * as dng from 'danger';
+import type * as dng from "danger";
 
 declare global {
   const danger: typeof dng.danger;

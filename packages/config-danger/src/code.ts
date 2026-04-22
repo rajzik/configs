@@ -1,6 +1,7 @@
-import path from 'node:path';
+import path from "node:path";
 
-import type { CommonOptions } from './types';
+import type { CommonOptions } from "./types";
+
 import {
   GLOBAL_IGNORE,
   IS_SRC,
@@ -11,11 +12,9 @@ import {
   TEST_EXT,
   touchedFiles,
   updatedFiles,
-} from './helpers';
+} from "./helpers";
 
-const changedSrcFiles = updatedFiles.filter(
-  (file) => IS_SRC.test(file) && SRC_EXT.test(file),
-);
+const changedSrcFiles = updatedFiles.filter((file) => IS_SRC.test(file) && SRC_EXT.test(file));
 
 /**
  * Options for test-related checks.
@@ -34,24 +33,17 @@ export interface TestOptions extends CommonOptions {
 export function checkForInvalidLocks() {
   const fileNames = new Set(touchedFiles.map((file) => path.basename(file)));
 
-  if (fileNames.has('package-lock.json') && !fileNames.has('package.json')) {
-    fail(
-      'Your PR contains changes to package-lock.json, but not package.json.',
-    );
+  if (fileNames.has("package-lock.json") && !fileNames.has("package.json")) {
+    fail("Your PR contains changes to package-lock.json, but not package.json.");
+  } else if (fileNames.has("npm-shrinkwrap.json") && !fileNames.has("package.json")) {
+    fail("Your PR contains changes to npm-shrinkwrap.json, but not package.json.");
   } else if (
-    fileNames.has('npm-shrinkwrap.json') &&
-    !fileNames.has('package.json')
+    fileNames.has("pnpm-lock.yaml") &&
+    !fileNames.has("package.json") &&
+    !fileNames.has("pnpm-workspace.yaml")
   ) {
     fail(
-      'Your PR contains changes to npm-shrinkwrap.json, but not package.json.',
-    );
-  } else if (
-    fileNames.has('pnpm-lock.yaml') &&
-    !fileNames.has('package.json') &&
-    !fileNames.has('pnpm-workspace.yaml')
-  ) {
-    fail(
-      'Your PR contains changes to pnpm-lock.yaml, but not package.json or pnpm-workspace.yaml.',
+      "Your PR contains changes to pnpm-lock.yaml, but not package.json or pnpm-workspace.yaml.",
     );
   }
 }
@@ -70,16 +62,13 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
     return;
   }
 
-  const hasTestFiles = touchedFiles.some((file) =>
-    Boolean(TEST_EXT.test(file)),
-  );
+  const hasTestFiles = touchedFiles.some((file) => Boolean(TEST_EXT.test(file)));
   const srcFiles = root
     ? changedSrcFiles.filter((srcFile) => srcFile.startsWith(root))
     : changedSrcFiles;
 
   if (srcFiles.length > 0 && !hasTestFiles) {
-    const msg =
-      'Your PR contains changes to source files, but no test changes were found.';
+    const msg = "Your PR contains changes to source files, but no test changes were found.";
 
     if (options.fail) {
       fail(msg);
@@ -98,11 +87,7 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
  * @param {string} [options.root] - Root directory path to scope the check to a specific part of the codebase
  * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
  */
-export function checkSourceFilesHaveTests({
-  ignorePattern,
-  root,
-  ...options
-}: TestOptions = {}) {
+export function checkSourceFilesHaveTests({ ignorePattern, root, ...options }: TestOptions = {}) {
   if (isRevert()) {
     return;
   }
@@ -118,16 +103,15 @@ export function checkSourceFilesHaveTests({
     }
 
     const testFile = srcFile
-      .replace(IS_SRC, 'tests?/')
+      .replace(IS_SRC, "tests?/")
       // Foo/index.tsx -> Foo.test.tsx | Foo/index.test.tsx
       .replace(
         /(\w+)\/index\.((t|j)sx?)$/,
-        (match, name, ext) =>
-          `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
+        (match, name, ext) => `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
       )
       // Foo.tsx -> Foo.test.tsx
       .replace(/(\w+)\.((t|j)sx?)$/, (match, name, ext) =>
-        name === 'test' ? match : `${name}.test.${ext}`,
+        name === "test" ? match : `${name}.test.${ext}`,
       );
 
     const regex = new RegExp(testFile);
@@ -141,7 +125,7 @@ export function checkSourceFilesHaveTests({
 
   if (missingTestFiles.length > 0) {
     const msg = `Your PR contains changes to the following source files, but no test changes were found.\n\n\n${missingTestFiles.join(
-      '\n',
+      "\n",
     )}`;
 
     if (options.fail) {
@@ -160,8 +144,7 @@ export interface SnapshotOptions {
   docsUrl?: string;
 }
 
-const fileFilter = (file: string) =>
-  file.endsWith('jsx.snap') || file.endsWith('tsx.snap');
+const fileFilter = (file: string) => file.endsWith("jsx.snap") || file.endsWith("tsx.snap");
 
 /**
  * Component snapshot testing is deprecated, so disallow new snapshots.
@@ -182,8 +165,7 @@ export function disableComponentSnapshots(options: SnapshotOptions = {}) {
     return;
   }
 
-  let message =
-    'Snapshot testing has been deprecated. Please migrate to standard React testing.';
+  let message = "Snapshot testing has been deprecated. Please migrate to standard React testing.";
 
   if (options.docsUrl) {
     message += ` [View for more information](${options.docsUrl})`;
@@ -206,6 +188,6 @@ export function disableNewJavaScript() {
   );
 
   if (hasJS) {
-    fail('JavaScript detected. All new files must be TypeScript.');
+    fail("JavaScript detected. All new files must be TypeScript.");
   }
 }

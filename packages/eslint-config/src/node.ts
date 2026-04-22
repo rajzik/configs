@@ -1,7 +1,8 @@
-import type { Linter } from 'eslint';
+import type { Linter } from "eslint";
 
-import { EXTS } from '@rajzik/configs-shared';
-import node from 'eslint-plugin-n';
+import node from "eslint-plugin-n";
+
+import { EXTS } from "@rajzik/configs-shared";
 
 /**
  * ESLint configuration for Node.js projects.
@@ -12,7 +13,7 @@ const config: Linter.Config[] = [
       n: node,
     },
     rules: {
-      ...node.configs['flat/recommended'].rules,
+      ...node.configs["flat/recommended"].rules,
     },
   },
   {

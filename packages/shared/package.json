@@ -6,13 +6,16 @@
     "private"
   ],
   "homepage": "https://github.com/rajzik/configs/tree/main/packages/shared",
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/shared"
   },
-  "license": "MIT",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -25,28 +28,23 @@
       "default": "./dist/index.mjs"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsdown",
     "clean": "git clean -xdf .cache dist dts .turbo node_modules",
-    "format": "prettier --check . --ignore-path ../../.gitignore --cache --cache-location .cache/.prettiercache",
+    "format": "oxfmt --ignore-path ../../.gitignore",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
-  "prettier": "@rajzik/prettier-config",
   "devDependencies": {
-    "@rajzik/prettier-config": "workspace:*",
     "@rajzik/tsconfig": "workspace:*",
     "@types/node": "catalog:",
-    "prettier": "catalog:",
+    "oxfmt": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {
     "node": "^21.2.0 || ^20.11.0 || >=22.16.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
