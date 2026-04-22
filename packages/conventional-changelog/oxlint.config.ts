@@ -8,4 +8,7 @@ export default defineConfig({
     denyWarnings: true,
     reportUnusedDisableDirectives: 'error',
   },
+  rules: {
+    'typescript/prefer-readonly-parameter-types': 'allow',
+  },
 });

@@ -78,8 +78,7 @@ function createWorkItemLink(workItemId: string) {
  */
 function createLink(
   paths: readonly string[],
-  // oxlint-disable-next-line typescript/prefer-readonly-parameter-types
-  context: Readonly<Context>,
+  context: Context,
   reference: Partial<Reference> = {},
 ): string {
   const owner = reference.owner ?? context.owner;

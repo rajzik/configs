@@ -12,7 +12,6 @@ export interface BumpOptions {
    * Function that analyzes commits and returns the recommended version bump
    * level.
    */
-  // oxlint-disable-next-line typescript/prefer-readonly-parameter-types
   whatBump: (commits: Commit[]) => {
     level: SemverLevel;
     reason: string;
