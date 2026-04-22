@@ -6,21 +6,6 @@ A collection of shareable configuration packages for modern JavaScript/TypeScrip
 
 ### 🛡️ Code Quality & Linting
 
-#### [`@rajzik/eslint-config`](./packages/eslint-config)
-
-Comprehensive ESLint configuration for ESLint v9+ (flat config) with support for TypeScript, React, Next.js, Node.js, Tailwind CSS, and more.
-
-[📖 Documentation](./packages/eslint-config/README.md)
-
-**Features:**
-- TypeScript ESLint with strict type checking
-- React, Next.js, and Node.js presets
-- Tailwind CSS and CSS linting
-- Turbo monorepo support
-- Prettier integration
-
----
-
 #### [`@rajzik/oxfmt-config`](./packages/oxfmt-config)
 
 Shareable Oxfmt configuration with import sorting and package.json sorting.
@@ -28,6 +13,7 @@ Shareable Oxfmt configuration with import sorting and package.json sorting.
 [📖 Documentation](./packages/oxfmt-config/README.md)
 
 **Features:**
+
 - Oxfmt-compatible defaults
 - Import sorting with grouped ordering
 - Package.json script sorting
@@ -42,6 +28,7 @@ Shareable Prettier configuration with automatic import sorting and package.json 
 [📖 Documentation](./packages/prettier-preset/README.md)
 
 **Features:**
+
 - Import sorting with custom order
 - Package.json formatting
 - Tailwind CSS class sorting (optional)
@@ -56,6 +43,7 @@ Shareable TypeScript configuration with strict type checking and modern JavaScri
 [📖 Documentation](./packages/tsconfig/README.md)
 
 **Features:**
+
 - Strict type checking enabled
 - Modern ES2024 target
 - Bundler-optimized module resolution
@@ -73,6 +61,7 @@ Commit message guidelines and changelog generation with emoji support and Azure 
 [📖 Documentation](./packages/conventional-changelog/README.md)
 
 **Features:**
+
 - Conventional commit format
 - Emoji support for commit groups
 - Azure DevOps PR format support
@@ -88,6 +77,7 @@ Type definitions and utilities for conventional commits and changelog generation
 [📖 Documentation](./packages/conventional-changelog-types/README.md)
 
 **Features:**
+
 - Type-safe commit type definitions
 - Commit format validation
 - Type group utilities
@@ -102,6 +92,7 @@ Commitlint configuration enforcing conventional commit message format.
 [📖 Documentation](./packages/conventional-commit-lint/README.md)
 
 **Features:**
+
 - Enforces conventional commit format
 - Sentence-case subject validation
 - Trailing period requirement
@@ -118,6 +109,7 @@ DangerJS configuration for automated code review checks in pull requests.
 [📖 Documentation](./packages/config-danger/README.md)
 
 **Features:**
+
 - Conventional commit prefix validation
 - Lock file validation
 - Test file checking
@@ -136,6 +128,7 @@ Internal package providing shared constants and utilities.
 [📖 Documentation](./packages/shared/README.md)
 
 **Features:**
+
 - File extension constants
 - Path patterns and globs
 - JSON parsing utilities
@@ -232,11 +225,7 @@ import baseConfig from '@rajzik/eslint-config';
 import nodeConfig from '@rajzik/eslint-config/node';
 import prettierConfig from '@rajzik/eslint-config/prettier';
 
-export default [
-  ...baseConfig,
-  ...nodeConfig,
-  ...prettierConfig,
-];
+export default [...baseConfig, ...nodeConfig, ...prettierConfig];
 ```
 
 **3. Create `oxfmt.config.ts`:**
@@ -260,17 +249,17 @@ export default defineConfig(config);
 
 ## Package Overview
 
-| Package | Purpose | Key Features |
-|---------|---------|--------------|
-| `@rajzik/eslint-config` | ESLint configuration | TypeScript, React, Next.js, Node.js, Tailwind |
-| `@rajzik/oxfmt-config` | Oxfmt configuration | Import sorting, package.json script sorting |
-| `@rajzik/prettier-config` | Prettier configuration | Import sorting, Tailwind class sorting |
-| `@rajzik/tsconfig` | TypeScript configuration | Strict types, modern JS, bundler-optimized |
-| `conventional-changelog-rajzik` | Changelog generation | Emoji support, Azure DevOps |
-| `@rajzik/conventional-changelog-types` | Type definitions | Commit types, validation utilities |
-| `@rajzik/conventional-commit-lint-config` | Commit linting | Conventional commit enforcement |
-| `@rajzik/danger-configuration` | PR validation | Automated code review checks |
-| `@rajzik/configs-shared` | Shared utilities | Constants, helpers |
+| Package                                   | Purpose                  | Key Features                                  |
+| ----------------------------------------- | ------------------------ | --------------------------------------------- |
+| `@rajzik/eslint-config`                   | ESLint configuration     | TypeScript, React, Next.js, Node.js, Tailwind |
+| `@rajzik/oxfmt-config`                    | Oxfmt configuration      | Import sorting, package.json script sorting   |
+| `@rajzik/prettier-config`                 | Prettier configuration   | Import sorting, Tailwind class sorting        |
+| `@rajzik/tsconfig`                        | TypeScript configuration | Strict types, modern JS, bundler-optimized    |
+| `conventional-changelog-rajzik`           | Changelog generation     | Emoji support, Azure DevOps                   |
+| `@rajzik/conventional-changelog-types`    | Type definitions         | Commit types, validation utilities            |
+| `@rajzik/conventional-commit-lint-config` | Commit linting           | Conventional commit enforcement               |
+| `@rajzik/danger-configuration`            | PR validation            | Automated code review checks                  |
+| `@rajzik/configs-shared`                  | Shared utilities         | Constants, helpers                            |
 
 ---
 

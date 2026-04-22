@@ -52,7 +52,6 @@ Run commands from the repository root unless there is a clear reason not to.
 
 Prefer package-scoped validation for focused changes:
 
-- `pnpm --filter @rajzik/eslint-config lint`
 - `pnpm --filter @rajzik/prettier-config build`
 - `pnpm --filter @rajzik/oxfmt-config typecheck`
 

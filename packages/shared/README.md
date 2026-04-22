@@ -542,7 +542,6 @@ function filterFiles(files: string[]): string[] {
 
 This package is primarily used internally by:
 
-- `@rajzik/eslint-config` - For file extension patterns and path resolution
 - Other `@rajzik/configs` packages - For shared constants and utilities
 
 If you're building a tool that integrates with the `@rajzik/configs` ecosystem,
