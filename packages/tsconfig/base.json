@@ -1,34 +1,38 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Rajzik config",
-
+  "display": "@epa/tsconfig",
   "compilerOptions": {
-    /* Base options */
+    /** Base Options */
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2024",
-    "lib": ["ES2024"],
+    "target": "ES2022",
+    "lib": ["ES2025", "ES2024", "DOM"],
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
-    "allowArbitraryExtensions": true,
-    "jsx": "preserve",
+    "rootDir": "${configDir}",
 
-    /* Keep TSC performant in monorepos */
+    /** Keep TSC performant in monorepos */
     "incremental": true,
     "disableSourceOfProjectReferenceRedirect": true,
     "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json",
 
-    /* Strictness */
+    /** Strictness */
     "strict": true,
-    "checkJs": true,
     "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUncheckedSideEffectImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowUnreachableCode": false,
+    "erasableSyntaxOnly": true,
+    "noErrorTruncation": true,
+    "checkJs": true,
 
-    /* Transpile using bundler */
-    "module": "preserve",
-    "moduleResolution": "bundler",
+    /** Transpile using Bundler (not tsc) */
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
     "noEmit": true
   },
-  "exclude": ["node_modules", "dist", "dts", ".next", "build"]
+  "exclude": ["node_modules", "build", "dist"]
 }
