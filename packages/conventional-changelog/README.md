@@ -35,7 +35,7 @@ conventionalChangelog({
 {
   "standard-version": {
     "scripts": {
-      "postchangelog": "prettier --write CHANGELOG.md"
+      "postchangelog": "oxfmt --write CHANGELOG.md"
     }
   }
 }

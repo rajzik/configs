@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion -- needed */
-
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -10,38 +8,56 @@ import type {
   WriterOptions,
 } from '@rajzik/conventional-changelog-types';
 
-import { getTypeGroup, GROUPS } from '@rajzik/conventional-changelog-types';
+import { getTypeGroup } from '@rajzik/conventional-changelog-types';
 
-type GroupMap<T> = Record<CommitGroupLabel, T>;
+const groupEmojis = new Map<CommitGroupLabel, string>([
+  ['Breaking', '💥'],
+  ['Dependencies', '📦'],
+  ['Docs', '📘'],
+  ['Fixes', '🐞'],
+  ['Internals', '🛠'],
+  ['Misc', '📋'],
+  ['Release', '🎉'],
+  ['Reverts', '↩️'],
+  ['Security', '🔑'],
+  ['Styles', '🎨'],
+  ['Types', '⚙️'],
+  ['Updates', '🚀'],
+]);
 
-const groupEmojis = Object.fromEntries(
-  GROUPS.map((group) => [group.label, group.emoji]),
-) as GroupMap<string>;
+const sortWeights = new Map<CommitGroupLabel, number>([
+  ['Release', 4],
+  ['Breaking', 3],
+  ['Updates', 2],
+  ['Fixes', 1],
+  ['Security', 0],
+  ['Styles', -1],
+  ['Types', -1],
+  ['Docs', -2],
+  ['Dependencies', -3],
+  ['Misc', -3],
+  ['Reverts', -4],
+  ['Internals', -5],
+]);
 
-const sortWeights: GroupMap<number> = {
-  Release: 4,
-  Breaking: 3,
-  Updates: 2,
-  Fixes: 1,
-  Security: 0,
-  Styles: -1,
-  Types: -1,
-  Docs: -2,
-  Dependencies: -3,
-  Misc: -3,
-  Reverts: -4,
-  Internals: -5,
-};
+const templateDirectory = path.join(import.meta.dirname, '../templates');
 
-const { SYSTEM_TASKDEFINITIONSURI } = process.env;
+const getEnvironmentValue = (name: string): string | undefined =>
+  globalThis.process?.env[name];
+
+const SYSTEM_TASKDEFINITIONSURI = getEnvironmentValue(
+  'SYSTEM_TASKDEFINITIONSURI',
+);
 
 /**
  * Create a link to an Azure DevOps work item.
  *
  * @param {string} workItemId - The work item ID
- * @returns {string} The work item URL, or empty string if workItemId is not provided
+ * @returns {string} The work item URL, or empty string if workItemId is not
+ *   provided
  */
 function createWorkItemLink(workItemId: string) {
+  // oxlint-disable-next-line typescript/no-non-null-assertion
   const serverUrl = SYSTEM_TASKDEFINITIONSURI!;
 
   if (workItemId) {
@@ -56,11 +72,12 @@ function createWorkItemLink(workItemId: string) {
  *
  * @param {string[]} paths - Array of path segments to append
  * @param {Context} context - Changelog context with repository information
- * @param {Partial<Reference>} [reference={}] - Optional reference to override context values
+ * @param {Partial<Reference>} [reference] - Optional reference to override
+ *   context values
  * @returns {string} The constructed URL string
  */
 function createLink(
-  paths: string[],
+  paths: readonly string[],
   context: Context,
   reference: Partial<Reference> = {},
 ): string {
@@ -93,6 +110,7 @@ function createLink(
     'src',
   ].forEach((browsePart) => {
     if (base.includes(`/${browsePart}/`)) {
+      // oxlint-disable-next-line typescript/no-non-null-assertion
       base = base.split(`/${browsePart}/`).at(0)!;
     }
   });
@@ -101,24 +119,24 @@ function createLink(
 }
 
 /**
- * Writer options for conventional changelog.
- * Configures how changelog entries are formatted and transformed.
+ * Writer options for conventional changelog. Configures how changelog entries
+ * are formatted and transformed.
  */
 const options: Partial<WriterOptions> = {
   mainTemplate: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/template.hbs'),
+    path.join(templateDirectory, 'template.hbs'),
     'utf8',
   ),
   commitPartial: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/commit.hbs'),
+    path.join(templateDirectory, 'commit.hbs'),
     'utf8',
   ),
   headerPartial: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/header.hbs'),
+    path.join(templateDirectory, 'header.hbs'),
     'utf8',
   ),
   footerPartial: fs.readFileSync(
-    path.join(import.meta.dirname, '../templates/footer.hbs'),
+    path.join(templateDirectory, 'footer.hbs'),
     'utf8',
   ),
 
@@ -126,8 +144,8 @@ const options: Partial<WriterOptions> = {
   groupBy: 'label',
   commitsSort: ['scope', 'message'],
   commitGroupsSort(groupA, groupB) {
-    const aWeight = sortWeights[groupA.title] || 0;
-    const bWeight = sortWeights[groupB.title] || 0;
+    const aWeight = sortWeights.get(groupA.title) ?? 0;
+    const bWeight = sortWeights.get(groupB.title) ?? 0;
 
     if (aWeight === 0 && bWeight === 0) {
       return groupA.title.localeCompare(groupB.title);
@@ -141,16 +159,19 @@ const options: Partial<WriterOptions> = {
 
   // Add metadata
   transform(commit, context) {
-    context.groupEmojis = groupEmojis;
+    // oxlint-disable-next-line typescript/no-unsafe-type-assertion
+    context.groupEmojis = Object.fromEntries(groupEmojis.entries()) as Record<
+      CommitGroupLabel,
+      string
+    >;
 
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- false positive
     if (!commit.type) {
       return undefined;
     }
-    const { NODE_ENV } = process.env;
+    const nodeEnv = getEnvironmentValue('NODE_ENV');
 
     // Use consistent values for snapshots
-    if (NODE_ENV === 'test') {
+    if (nodeEnv === 'test') {
       commit.hash = 'a1b2c3d';
       context.date = '2019-02-26';
     }
@@ -173,13 +194,9 @@ const options: Partial<WriterOptions> = {
       context.isMinor = true;
     }
 
-    if (context.commit.endsWith('s')) {
-      // Workaround for azure devops
-      commit.hashLink = createLink(['commit', commit.hash], context);
-    } else {
-      // Pre-generate links instead of doing it in handlebars
-      commit.hashLink = createLink([context.commit, commit.hash], context);
-    }
+    commit.hashLink = context.commit.endsWith('s')
+      ? createLink(['commit', commit.hash], context)
+      : createLink([context.commit, commit.hash], context);
 
     // Use shorthand hashes
     if (typeof commit.hash === 'string') {
@@ -188,15 +205,9 @@ const options: Partial<WriterOptions> = {
 
     commit.references.forEach((reference) => {
       // Azure devops
-      if (SYSTEM_TASKDEFINITIONSURI) {
-        reference.issueLink = createWorkItemLink(reference.issue);
-      } else {
-        reference.issueLink = createLink(
-          [context.issue, reference.issue],
-          context,
-          reference,
-        );
-      }
+      reference.issueLink = SYSTEM_TASKDEFINITIONSURI
+        ? createWorkItemLink(reference.issue)
+        : createLink([context.issue, reference.issue], context, reference);
 
       let source = `${reference.repository ?? ''}#${reference.issue}`;
 

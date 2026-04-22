@@ -10,7 +10,6 @@ export interface Reference {
   issue: string;
   raw: string;
   prefix: string;
-  // Beemo
   issueLink: string;
   source: string;
 }
@@ -70,7 +69,6 @@ export interface Commit {
   notes: Note[];
   references: Reference[];
   revert: Record<string, string> | null;
-  // Beemo
   hash: string;
   hashLink: string;
   label: CommitGroupLabel;
@@ -96,16 +94,31 @@ export interface Context {
   repoUrl: string;
   title: string;
   version: string;
-  // Beemo
   headerLevel?: '#' | '##' | '###';
   groupEmojis?: Record<CommitGroupLabel, string>;
 }
 
-export type Pattern = RegExp | string | null;
+export type Pattern = Readonly<RegExp> | string | null;
 
 export type Correspondence = string[] | string;
 
 export type Sorter<T> = string[] | string | ((a: T, b: T) => number);
+
+// oxlint-disable-next-line eslint/max-params
+export type FinalizeContext = (
+  context: Context,
+  options: WriterOptions,
+  commits: Commit[],
+  keyCommit: Commit,
+) => Context;
+
+// oxlint-disable-next-line eslint/max-params
+export type GenerateOn = (
+  commit: Commit,
+  commits: Commit[],
+  context: Context,
+  options: WriterOptions,
+) => unknown;
 
 export interface ParserOptions {
   fieldPattern: Pattern;
@@ -130,23 +143,9 @@ export interface WriterOptions {
   commitsSort: Sorter<Commit>;
   debug: () => void;
   doFlush: boolean;
-  finalizeContext:
-    | ((
-        context: Context,
-        options: WriterOptions,
-        commits: Commit[],
-        keyCommit: Commit,
-      ) => Context)
-    | undefined;
+  finalizeContext: FinalizeContext | undefined;
   footerPartial: string;
-  generateOn:
-    | string
-    | ((
-        commit: Commit,
-        commits: Commit[],
-        context: Context,
-        options: WriterOptions,
-      ) => unknown);
+  generateOn: string | GenerateOn;
   groupBy: string;
   headerPartial: string;
   ignoreReverted: boolean;
@@ -156,8 +155,8 @@ export interface WriterOptions {
     title: string;
     notes: Note[];
   }>;
-  notesSort: Sorter<Note>;
-  partials: Record<string, unknown>;
+  notesSort: Sorter<Readonly<Note>>;
+  partials: Readonly<Record<string, unknown>>;
   reverse: boolean;
   transform: (commit: Commit, context: Context) => Commit | undefined;
 }

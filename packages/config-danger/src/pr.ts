@@ -3,6 +3,7 @@ import { checkCommitFormat } from '@rajzik/conventional-changelog-types';
 // Verify the PR title contains the conventional-changelog required prefix.
 /**
  * Check for conventional changelog prefix in the PR title.
+ *
  * @see https://github.com/rajzik/configs/tree/main/packages/conventional-changelog#commit-message-format
  */
 export function checkForConventionalPrefix() {
@@ -14,9 +15,10 @@ export function checkForConventionalPrefix() {
 }
 
 /**
- * Check for conventional changelog prefix in the commit message when PR has only 1 commit.
- * When a PR only has 1 commit and a squash merge occurs, the commit is used as-is,
- * and the PR title is lost, resulting in the semver prefix also being lost.
+ * Check for conventional changelog prefix in the commit message when PR has
+ * only 1 commit. When a PR only has 1 commit and a squash merge occurs, the
+ * commit is used as-is, and the PR title is lost, resulting in the semver
+ * prefix also being lost.
  *
  * @see https://github.com/rajzik/configs/tree/main/packages/conventional-changelog#commit-message-format
  */

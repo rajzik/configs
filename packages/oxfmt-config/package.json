@@ -1,0 +1,56 @@
+{
+  "name": "@rajzik/oxfmt-config",
+  "version": "2.4.4",
+  "description": "Reusable Oxfmt config for personal projects",
+  "keywords": [
+    "config",
+    "formatter",
+    "oxc",
+    "oxfmt"
+  ],
+  "homepage": "https://github.com/rajzik/configs/tree/main/packages/oxfmt-config",
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajzik/configs.git",
+    "directory": "packages/oxfmt-config"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./dist/*.d.mts",
+      "default": "./dist/*.mjs"
+    },
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "clean": "git clean -xdf .cache dist dts .turbo node_modules",
+    "format": "oxfmt --ignore-path ../../.gitignore",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@rajzik/configs-shared": "workspace:*",
+    "@rajzik/tsconfig": "workspace:*",
+    "@types/node": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": "^21.2.0 || ^20.11.0 || >=22.16.0"
+  }
+}

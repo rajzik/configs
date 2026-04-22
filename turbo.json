@@ -1,11 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": [
-    "SYSTEM_TASKDEFINITIONSURI",
-    "NODE_ENV",
-    "PRETTIER_EXPERIMENTAL_CLI",
-    "PWD"
-  ],
+  "globalEnv": ["SYSTEM_TASKDEFINITIONSURI", "NODE_ENV", "PWD"],
   "tasks": {
     "topo": {
       "dependsOn": ["^topo"]
@@ -15,15 +10,16 @@
       "outputs": ["dist/**", "lib/**", "dts/**"]
     },
     "format": {
-      "outputLogs": "new-only",
-      "outputs": [".cache/.prettiercache"]
+      "cache": false,
+      "outputLogs": "new-only"
     },
     "clean": {
       "cache": false
     },
     "lint": {
-      "dependsOn": ["^topo"],
-      "outputs": [".cache/.eslintcache"]
+      "cache": false,
+      "outputLogs": "new-only",
+      "dependsOn": ["^topo"]
     },
     "test": {
       "cache": false

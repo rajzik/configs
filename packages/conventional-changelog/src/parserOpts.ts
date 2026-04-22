@@ -3,8 +3,8 @@ import type { ParserOptions } from '@rajzik/conventional-changelog-types';
 import { COMMIT_FORMAT_PREFIX } from '@rajzik/conventional-changelog-types';
 
 /**
- * Parser options for conventional changelog.
- * Configures how commit messages are parsed and structured.
+ * Parser options for conventional changelog. Configures how commit messages are
+ * parsed and structured.
  */
 const options: Partial<ParserOptions> = {
   headerCorrespondence: ['azure', 'type', 'scope', 'message'],

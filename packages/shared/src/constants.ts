@@ -32,6 +32,9 @@ export const IGNORE_PATHS = [
   'tmp/',
   'dist/',
   'build/',
+  '.turbo/',
+  'coverage/',
+  '.cache',
 ];
 
 /** Glob pattern for TypeScript and TSX file extensions. */

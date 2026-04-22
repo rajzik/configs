@@ -3,6 +3,23 @@
 Shareable Prettier configuration with import sorting and package.json
 formatting.
 
+> This repository now uses [`@rajzik/oxfmt-config`](../oxfmt-config) with
+> `oxfmt` for its own formatter workflow. Keep using this package when you need
+> a Prettier-based setup, but prefer `@rajzik/oxfmt-config` for new projects.
+
+## Prefer Oxfmt for New Projects
+
+```sh
+pnpm install --save-dev @rajzik/oxfmt-config oxfmt
+```
+
+```ts
+import { defineConfig } from 'oxfmt';
+import config from '@rajzik/oxfmt-config';
+
+export default defineConfig(config);
+```
+
 ## Installation
 
 ```sh

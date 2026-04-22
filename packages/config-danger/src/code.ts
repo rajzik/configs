@@ -1,6 +1,7 @@
 import path from 'node:path';
 
 import type { CommonOptions } from './types';
+
 import {
   GLOBAL_IGNORE,
   IS_SRC,
@@ -17,19 +18,17 @@ const changedSrcFiles = updatedFiles.filter(
   (file) => IS_SRC.test(file) && SRC_EXT.test(file),
 );
 
-/**
- * Options for test-related checks.
- */
-export interface TestOptions extends CommonOptions {
+/** Options for test-related checks. */
+export interface TestOptions extends Readonly<CommonOptions> {
   /** Regular expression pattern to ignore certain files from test checks. */
-  ignorePattern?: RegExp;
+  readonly ignorePattern?: Readonly<RegExp>;
   /** Root directory path to scope the check to a specific part of the codebase. */
-  root?: string;
+  readonly root?: string;
 }
 
 /**
- * Check for invalid NPM/Yarn installs by verifying the lock files.
- * Ensures that lock file changes are accompanied by package.json changes.
+ * Check for invalid NPM/Yarn installs by verifying the lock files. Ensures that
+ * lock file changes are accompanied by package.json changes.
  */
 export function checkForInvalidLocks() {
   const fileNames = new Set(touchedFiles.map((file) => path.basename(file)));
@@ -57,22 +56,24 @@ export function checkForInvalidLocks() {
 }
 
 /**
- * Check that any test file exists when source files are updated.
- * Warns or fails if source files are changed but no test files are modified.
+ * Check that any test file exists when source files are updated. Warns or fails
+ * if source files are changed but no test files are modified.
  *
- * @param {TestOptions} options - Configuration options for the test check
- * @param {string} [options.root] - Root directory path to scope the check to a specific part of the codebase
- * @param {RegExp} [options.ignorePattern] - Regular expression pattern to ignore certain files from test checks
- * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
+ * @param {TestOptions} props - Configuration options for the test check
+ * @param {string} [props.root] - Root directory path to scope the check to a
+ *   specific part of the codebase
+ * @param {RegExp} [props.ignorePattern] - Regular expression pattern to ignore
+ *   certain files from test checks
+ * @param {boolean} [props.fail] - If true, fail the check instead of warning.
+ *   Default is `false`
  */
-export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
+export function checkForAnyTests(props: Readonly<TestOptions> = {}) {
+  const { root, ...options } = props;
   if (isRevert()) {
     return;
   }
 
-  const hasTestFiles = touchedFiles.some((file) =>
-    Boolean(TEST_EXT.test(file)),
-  );
+  const hasTestFiles = touchedFiles.some((file) => TEST_EXT.test(file));
   const srcFiles = root
     ? changedSrcFiles.filter((srcFile) => srcFile.startsWith(root))
     : changedSrcFiles;
@@ -91,18 +92,19 @@ export function checkForAnyTests({ root, ...options }: TestOptions = {}) {
 
 /**
  * Check that all touched source files have an accompanying test file change.
- * More strict than checkForAnyTests - ensures each source file has a corresponding test.
+ * More strict than checkForAnyTests - ensures each source file has a
+ * corresponding test.
  *
- * @param {TestOptions} options - Configuration options for the test check
- * @param {RegExp} [options.ignorePattern] - Regular expression pattern to ignore certain files from test checks
- * @param {string} [options.root] - Root directory path to scope the check to a specific part of the codebase
- * @param {boolean} [options.fail=false] - If true, fail the check instead of warning
+ * @param {TestOptions} props - Configuration options for the test check
+ * @param {RegExp} [props.ignorePattern] - Regular expression pattern to ignore
+ *   certain files from test checks
+ * @param {string} [props.root] - Root directory path to scope the check to a
+ *   specific part of the codebase
+ * @param {boolean} [props.fail] - If true, fail the check instead of warning.
+ *   Default is `false`
  */
-export function checkSourceFilesHaveTests({
-  ignorePattern,
-  root,
-  ...options
-}: TestOptions = {}) {
+export function checkSourceFilesHaveTests(props: Readonly<TestOptions> = {}) {
+  const { ignorePattern, root, ...options } = props;
   if (isRevert()) {
     return;
   }
@@ -152,23 +154,23 @@ export function checkSourceFilesHaveTests({
   }
 }
 
-/**
- * Options for snapshot testing checks.
- */
+/** Options for snapshot testing checks. */
 export interface SnapshotOptions {
   /** URL to documentation about snapshot testing deprecation. */
-  docsUrl?: string;
+  readonly docsUrl?: string;
 }
 
 const fileFilter = (file: string) =>
   file.endsWith('jsx.snap') || file.endsWith('tsx.snap');
 
 /**
- * Component snapshot testing is deprecated, so disallow new snapshots.
- * Fails on new snapshots, warns on updated snapshots.
+ * Component snapshot testing is deprecated, so disallow new snapshots. Fails on
+ * new snapshots, warns on updated snapshots.
  *
- * @param {SnapshotOptions} options - Configuration options for the snapshot check
- * @param {string} [options.docsUrl] - URL to documentation about snapshot testing deprecation
+ * @param {SnapshotOptions} options - Configuration options for the snapshot
+ *   check
+ * @param {string} [options.docsUrl] - URL to documentation about snapshot
+ *   testing deprecation
  */
 export function disableComponentSnapshots(options: SnapshotOptions = {}) {
   if (isRevert()) {
@@ -197,8 +199,8 @@ export function disableComponentSnapshots(options: SnapshotOptions = {}) {
 }
 
 /**
- * Disable new JavaScript files from being created.
- * Ensures all new files in src/ or tests/ directories are TypeScript.
+ * Disable new JavaScript files from being created. Ensures all new files in
+ * src/ or tests/ directories are TypeScript.
  */
 export function disableNewJavaScript() {
   const hasJS = danger.git.created_files.some(

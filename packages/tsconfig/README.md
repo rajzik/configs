@@ -464,4 +464,5 @@ If migrating from a different TypeScript config:
 ## Related Packages
 
 - [`@rajzik/eslint-config`](../eslint-config) - ESLint configuration
+- [`@rajzik/oxfmt-config`](../oxfmt-config) - Oxfmt configuration
 - [`@rajzik/prettier-config`](../prettier-preset) - Prettier configuration

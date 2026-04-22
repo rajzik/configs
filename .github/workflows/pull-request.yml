@@ -86,8 +86,8 @@ jobs:
       - name: 🔎 Type check
         run: pnpm typecheck
 
-  prettier:
-    name: 📝 Prettier
+  oxfmt:
+    name: 📝 Oxfmt
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
@@ -96,7 +96,7 @@ jobs:
       - name: 📥 Setup
         uses: ./.github/common-actions/install
 
-      - name: 📝 Run prettier
+      - name: 📝 Run oxfmt
         run: pnpm format
 
   continuous-release:

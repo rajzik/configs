@@ -1,4 +1,5 @@
 import type { CommitType, Group } from './types';
+
 import { GROUPS } from './constants';
 
 /**
