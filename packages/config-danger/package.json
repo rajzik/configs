@@ -41,7 +41,6 @@
     "lint": "oxlint --type-aware --type-check"
   },
   "dependencies": {
-    "@rajzik/conventional-changelog-types": "workspace:*",
     "danger": "13.0.7"
   },
   "devDependencies": {

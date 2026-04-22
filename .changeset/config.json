@@ -10,11 +10,6 @@
       "@rajzik/prettier-config",
       "@rajzik/oxlint-config",
       "@rajzik/danger-configuration"
-    ],
-    [
-      "@rajzik/conventional-commit-lint-config",
-      "@rajzik/conventional-changelog-types",
-      "conventional-changelog-rajzik"
     ]
   ],
   "linked": [],

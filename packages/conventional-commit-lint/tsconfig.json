@@ -1,9 +1,0 @@
-{
-  "extends": "@rajzik/tsconfig/tsconfig.package.json",
-  "compilerOptions": {
-    "lib": ["ES2024", "dom", "dom.iterable"],
-    "typeRoots": ["node"]
-  },
-  "include": ["src", "tsdown.config.ts", "eslint.config.js"],
-  "exclude": ["node_modules"]
-}
