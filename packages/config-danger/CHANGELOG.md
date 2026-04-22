@@ -1,5 +1,14 @@
 # `@rajzik/config-danger` CHANGELOG
 
+## 3.0.1
+
+### Patch Changes
+
+- [`235a5e3`](https://github.com/rajzik/configs/commit/235a5e366fae06801ff8aa4f1d8785fc0ed76988) Thanks [@rajzik](https://github.com/rajzik)! - Internal release trigger
+
+- Updated dependencies [[`235a5e3`](https://github.com/rajzik/configs/commit/235a5e366fae06801ff8aa4f1d8785fc0ed76988)]:
+  - @rajzik/conventional-changelog-types@2.1.6
+
 ## 3.0.0
 
 ### Patch Changes

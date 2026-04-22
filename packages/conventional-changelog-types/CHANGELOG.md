@@ -1,5 +1,11 @@
 # `@rajzik/conventional-changelog-types` CHANGELOG
 
+## 2.1.6
+
+### Patch Changes
+
+- [`235a5e3`](https://github.com/rajzik/configs/commit/235a5e366fae06801ff8aa4f1d8785fc0ed76988) Thanks [@rajzik](https://github.com/rajzik)! - Internal release trigger
+
 ## 2.1.5
 
 ### Patch Changes
