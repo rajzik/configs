@@ -1,7 +1,6 @@
 # `@rajzik/danger-configuration`
 
-A comprehensive DangerJS configuration package providing utilities for automated
-code review checks in pull requests.
+Reusable Danger.js helpers for automated pull request checks.
 
 ## Installation
 
@@ -19,19 +18,11 @@ Create a `dangerfile.js` in your repository root:
 import {
   checkForADR,
   checkForAnyTests,
-  checkForConventionalPrefix,
-  checkForConventionalSquashCommit,
   checkForInvalidLocks,
   checkSourceFilesHaveTests,
   disableComponentSnapshots,
   disableNewJavaScript,
 } from '@rajzik/danger-configuration';
-
-// Check for conventional commit prefix in PR title
-checkForConventionalPrefix();
-
-// Check for squash commit format
-checkForConventionalSquashCommit();
 
 // Validate lock file changes
 checkForInvalidLocks();
@@ -63,45 +54,6 @@ disableNewJavaScript();
 ```
 
 ## API Reference
-
-### `checkForConventionalPrefix()`
-
-Verifies that the PR title contains a conventional changelog prefix according to
-the
-[conventional-changelog format](https://github.com/rajzik/configs/tree/main/packages/conventional-changelog#commit-message-format).
-
-**Example:**
-
-```javascript
-checkForConventionalPrefix();
-```
-
-**Behavior:**
-
-- Fails the PR if the title doesn't match the conventional commit format
-- Valid formats include: `fix:`, `new(scope):`, `update(Button):`, etc.
-
----
-
-### `checkForConventionalSquashCommit()`
-
-Ensures that when a PR has only 1 commit and will be squash-merged, the commit
-message matches the PR title. This prevents losing the semver prefix during
-automatic releases.
-
-**Example:**
-
-```javascript
-checkForConventionalSquashCommit();
-```
-
-**Behavior:**
-
-- Fails if PR has exactly 1 commit and the commit message doesn't include the PR
-  title
-- Prevents semver prefix loss during squash merges
-
----
 
 ### `checkForInvalidLocks()`
 
@@ -321,13 +273,12 @@ The following helper functions are exported but primarily used internally:
 - `touchedFiles`: Array of all created, deleted, and modified files
 - `updatedFiles`: Array of all created and modified files
 
-## Constants
+## Exported Constants
 
-- `IS_SRC`: Regex matching `src/` directory
-- `IS_TEST`: Regex matching `tests?/` directory
-- `JS_EXT`: Regex matching `.js` or `.jsx` files
-- `SRC_EXT`: Regex matching `.ts`, `.tsx`, `.js`, `.jsx` files
-- `TEST_EXT`: Regex matching `.test.ts`, `.test.tsx`, `.test.js`, `.test.jsx`
-  files
+- `IS_SRC`: Regex matching `src/` directories
+- `IS_TEST`: Regex matching `test/` and `tests/` directories
+- `JS_EXT`: Regex matching `.js` and `.jsx` files
+- `SRC_EXT`: Regex matching `.ts`, `.tsx`, `.js`, and `.jsx` source files
+- `TEST_EXT`: Regex matching `*.test.(ts|tsx|js|jsx)` files
 - `SNAP_EXT`: Regex matching `.snap` files
-- `GLOBAL_IGNORE`: Regex for globally ignored files (e.g., icon components)
+- `GLOBAL_IGNORE`: Regex for icon component files skipped by strict test checks
