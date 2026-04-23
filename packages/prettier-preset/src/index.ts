@@ -1,5 +1,3 @@
-/* oxlint-disable typescript-eslint/no-deprecated */
-
 import type { PluginConfig } from '@ianvs/prettier-plugin-sort-imports';
 import type { Config } from 'prettier';
 
