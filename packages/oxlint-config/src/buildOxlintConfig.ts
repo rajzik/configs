@@ -42,12 +42,6 @@ export interface BuildOxlintConfigArgs {
    */
   readonly turbo?: boolean;
   /**
-   * When `epa: true` enables epa specific rules.
-   *
-   * @default true
-   */
-  readonly epa?: boolean;
-  /**
    * When `jsdoc: true` enables jsdoc specific rules.
    *
    * @default false
@@ -84,7 +78,7 @@ export interface BuildOxlintConfigArgs {
  *       },
  *     },
  *   });
- *   ```
+ *   ```;
  *
  * @function buildOxlintConfig
  * @param {BuildOxlintConfigArgs} configuration Configuration
@@ -98,7 +92,6 @@ export const buildOxlintConfig = (
     node = false,
     turbo = false,
     jsdoc = false,
-    epa: _epa = true,
     library = false,
     overrides,
   } = configuration;
