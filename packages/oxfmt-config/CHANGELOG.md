@@ -1,5 +1,11 @@
 # `@rajzik/oxfmt-config` CHANGELOG
 
+## 4.0.1
+
+### Patch Changes
+
+- [#1045](https://github.com/rajzik/configs/pull/1045) [`822d61a`](https://github.com/rajzik/configs/commit/822d61af0ed8360232b19de6cc143640b7b58f32) Thanks [@rajzik](https://github.com/rajzik)! - Fix bundled dependencies
+
 ## 4.0.0
 
 ### Major Changes
