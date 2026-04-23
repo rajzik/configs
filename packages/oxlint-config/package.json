@@ -1,6 +1,6 @@
 {
   "name": "@rajzik/oxlint-config",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Reusable Oxlint config for personal projects",
   "keywords": [
     "config",
