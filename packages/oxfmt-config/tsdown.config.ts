@@ -1,9 +1,11 @@
 import { defineConfig } from 'tsdown';
 
-export default defineConfig([
-  {
-    entry: ['./src/*.ts'],
-    sourcemap: true,
-    dts: true,
+export default defineConfig({
+  dts: true,
+  format: 'esm',
+  entry: ['./src/**/*.ts'],
+  sourcemap: true,
+  deps: {
+    neverBundle: ['oxfmt'],
   },
-]);
+});
