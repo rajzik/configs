@@ -60,3 +60,13 @@ const runCheckSourceFilesHaveTests = ({
   assert.equal(failures.length, 1);
   assert.match(failures[0], /Button\.ts/);
 }
+
+{
+  const { failures, warnings } = runCheckSourceFilesHaveTests({
+    createdFiles: ['src/Button.ts', 'tests/Button.test.ts.snap'],
+  });
+
+  assert.equal(warnings.length, 0);
+  assert.equal(failures.length, 1);
+  assert.match(failures[0], /Button\.ts/);
+}
