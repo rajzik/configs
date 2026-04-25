@@ -4,11 +4,17 @@
   "description": "Reusable Oxlint config for personal projects",
   "keywords": [
     "config",
+    "eslint",
+    "javascript",
     "lint",
     "oxc",
-    "oxlint"
+    "oxlint",
+    "typescript"
   ],
   "homepage": "https://github.com/rajzik/configs/tree/main/packages/oxlint-config",
+  "bugs": {
+    "url": "https://github.com/rajzik/configs/issues"
+  },
   "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
@@ -16,7 +22,11 @@
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/oxlint-config"
   },
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     "./package.json": "./package.json",
     ".": {

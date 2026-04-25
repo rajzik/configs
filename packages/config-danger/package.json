@@ -3,12 +3,18 @@
   "version": "4.0.1",
   "description": "Reusable Danger.js scripts",
   "keywords": [
+    "automation",
+    "ci",
     "config",
     "danger",
-    "lumos",
+    "danger-js",
+    "pull-request",
     "scripts"
   ],
   "homepage": "https://github.com/rajzik/configs/tree/main/packages/config-danger",
+  "bugs": {
+    "url": "https://github.com/rajzik/configs/issues"
+  },
   "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
@@ -20,6 +26,7 @@
     "dist"
   ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     "./package.json": "./package.json",
     "./*": {

@@ -3,7 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "description": "personal sharable configs",
+  "keywords": [
+    "config",
+    "danger",
+    "formatter",
+    "lint",
+    "oxfmt",
+    "oxlint",
+    "prettier",
+    "tsconfig",
+    "typescript"
+  ],
   "homepage": "https://github.com/rajzik/configs",
+  "bugs": {
+    "url": "https://github.com/rajzik/configs/issues"
+  },
   "license": "MIT",
   "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
