@@ -15,18 +15,15 @@
   "bugs": {
     "url": "https://github.com/rajzik/configs/issues"
   },
-  "license": "MIT",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/config-danger"
   },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
   "sideEffects": false,
+  "type": "module",
   "exports": {
     "./package.json": "./package.json",
     "./*": {
@@ -38,9 +35,9 @@
       "default": "./dist/index.mjs"
     }
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsdown",
     "clean": "git clean -xdf .cache dist dts .turbo node_modules",
@@ -62,5 +59,8 @@
   },
   "engines": {
     "node": "^21.2.0 || ^20.11.0 || >=22.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

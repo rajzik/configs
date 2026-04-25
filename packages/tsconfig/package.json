@@ -14,22 +14,22 @@
   "bugs": {
     "url": "https://github.com/rajzik/configs/issues"
   },
-  "license": "MIT",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/tsconfig"
   },
-  "files": [
-    "*.json"
-  ],
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
   "sideEffects": false,
-  "main": "base.json",
   "exports": {
     ".": "./base.json",
     "./tsconfig.package.json": "./tsconfig.package.json"
   },
+  "main": "base.json",
+  "files": [
+    "*.json"
+  ],
   "publishConfig": {
     "access": "public"
   }
