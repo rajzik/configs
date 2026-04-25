@@ -3,19 +3,24 @@
   "version": "4.0.1",
   "description": "Shared functionality for personal configs.",
   "keywords": [
-    "private"
+    "config",
+    "configs",
+    "ignore-patterns",
+    "shared",
+    "tooling"
   ],
   "homepage": "https://github.com/rajzik/configs/tree/main/packages/shared",
-  "license": "MIT",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/rajzik/configs/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/shared"
   },
-  "files": [
-    "dist"
-  ],
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -28,9 +33,9 @@
       "default": "./dist/index.mjs"
     }
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsdown",
     "clean": "git clean -xdf .cache dist dts .turbo node_modules",
@@ -49,5 +54,8 @@
   },
   "engines": {
     "node": "^21.2.0 || ^20.11.0 || >=22.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

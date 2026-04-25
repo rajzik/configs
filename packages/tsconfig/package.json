@@ -4,25 +4,32 @@
   "description": "Pre-packaged tsconfig.json's for personal configured projects",
   "keywords": [
     "config",
+    "typescript",
+    "typescript-config",
     "sharable",
-    "tsconfig"
+    "tsconfig",
+    "tsconfig-base"
   ],
   "homepage": "https://github.com/rajzik/configs/tree/main/packages/tsconfig",
-  "license": "MIT",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/rajzik/configs/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/tsconfig"
   },
-  "files": [
-    "*.json"
-  ],
-  "main": "base.json",
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
+  "sideEffects": false,
   "exports": {
     ".": "./base.json",
     "./tsconfig.package.json": "./tsconfig.package.json"
   },
+  "main": "base.json",
+  "files": [
+    "*.json"
+  ],
   "publishConfig": {
     "access": "public"
   }
