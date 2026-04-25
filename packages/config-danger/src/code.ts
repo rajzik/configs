@@ -134,11 +134,11 @@ export function checkSourceFilesHaveTests(props: Readonly<TestOptions> = {}) {
 
     const regex = new RegExp(testFile);
 
-    updatedFiles.forEach((file) => {
-      if (regex.test(file)) {
-        missingTestFiles.push(`- ${srcFile.split(IS_SRC).at(1)}`);
-      }
-    });
+    const hasTestFile = updatedFiles.some((file) => regex.test(file));
+
+    if (!hasTestFile) {
+      missingTestFiles.push(`- ${srcFile.split(IS_SRC).at(1)}`);
+    }
   });
 
   if (missingTestFiles.length > 0) {
