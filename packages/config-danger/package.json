@@ -39,7 +39,7 @@
     "clean": "git clean -xdf .cache dist dts .turbo node_modules",
     "format": "oxfmt --ignore-path ../../.gitignore",
     "lint": "oxlint --type-aware --type-check",
-    "test": "pnpm run build && node tests/code.test.mjs"
+    "test": "vitest run --globals"
   },
   "dependencies": {
     "danger": "13.0.7"
@@ -52,7 +52,8 @@
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   },
   "engines": {
     "node": "^21.2.0 || ^20.11.0 || >=22.16.0"
