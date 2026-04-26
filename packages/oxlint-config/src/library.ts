@@ -1,7 +1,7 @@
 import { defineConfig } from 'oxlint';
 
 /**
- * Library specific rules. To build fully configured oxlint configuration @see
+ * Library specific config. To build fully configured oxlint configuration @see
  * {buildOxlintConfig}.
  *
  * > This config must be last in extends array to work properly.

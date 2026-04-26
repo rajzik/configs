@@ -48,7 +48,7 @@ export interface BuildOxlintConfigArgs {
    */
   readonly jsdoc?: boolean;
   /**
-   * When `library: true` enables library specific rules.
+   * When `library: true` appends the library preset after all other extends.
    *
    * @default false;
    */
