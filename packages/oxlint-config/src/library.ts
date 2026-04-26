@@ -17,9 +17,4 @@ import { defineConfig } from 'oxlint';
  *   });
  *   ```;
  */
-export const libraryConfig = defineConfig({
-  rules: {
-    // Typescript disabled rules
-    'typescript/prefer-readonly-parameter-types': 'allow',
-  },
-});
+export const libraryConfig = defineConfig({});

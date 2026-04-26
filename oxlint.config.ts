@@ -8,6 +8,7 @@ export default buildOxlintConfig({
     ignorePatterns: [
       '**/fixtures/**',
       '**/dist/**',
+      '**/lib/**',
       'node_modules',
       '**/coverage/**',
     ],

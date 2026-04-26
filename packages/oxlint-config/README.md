@@ -240,7 +240,7 @@ export default defineConfig({
 
 ### `libraryConfig`
 
-Applies library-specific rule relaxations.
+Applies library-specific rule configuration.
 
 This preset must be last in the `extends` array when used manually.
 
