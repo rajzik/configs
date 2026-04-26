@@ -32,7 +32,7 @@ export const touchedFiles = [
  * @param {string} msg - Debug message to log
  * @param {...string} args - Additional arguments to include in the message
  */
-export function debug(msg: string, ...args: readonly string[]) {
+export function debug(msg: string, ...args: string[]) {
   if (danger.git.modified_files.includes('dangerfile.js')) {
     message(`[debug] ${msg}`, ...args);
   }

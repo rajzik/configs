@@ -12,11 +12,11 @@ import {
 /** Options for checking ADR (Architecture Decision Record) requirements. */
 export type CheckAdrOptions = CommonOptions & {
   /** Threshold for number of line changes before requiring ADR. Defaults to 200. */
-  readonly changeThreshold?: number;
+  changeThreshold?: number;
   /** URL to documentation about ADR requirements. */
-  readonly docsUrl?: string;
+  docsUrl?: string;
   /** Additional file patterns to exclude from change count calculation. */
-  readonly exclusions?: readonly string[];
+  exclusions?: string[];
 };
 
 /**
@@ -37,7 +37,7 @@ export type CheckAdrOptions = CommonOptions & {
  */
 export async function checkForADR(
   docsPath: string,
-  options: Readonly<CheckAdrOptions> = {},
+  options: CheckAdrOptions = {},
 ) {
   if (isRevert()) {
     return;

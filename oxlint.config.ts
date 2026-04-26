@@ -4,6 +4,7 @@ export default buildOxlintConfig({
   node: true,
   turbo: true,
   jsdoc: true,
+  library: true,
   overrides: {
     ignorePatterns: [
       '**/fixtures/**',
