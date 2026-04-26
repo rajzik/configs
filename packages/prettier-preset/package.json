@@ -48,7 +48,7 @@
     "@ianvs/prettier-plugin-sort-imports": "catalog:",
     "@rajzik/oxfmt-config": "workspace:*",
     "prettier-plugin-packagejson": "catalog:",
-    "prettier-plugin-tailwindcss": "0.7.3"
+    "prettier-plugin-tailwindcss": "catalog:"
   },
   "devDependencies": {
     "@rajzik/tsconfig": "workspace:*",
@@ -57,7 +57,7 @@
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
     "prettier": "catalog:",
-    "prettier-plugin-tailwindcss": "0.7.3",
+    "prettier-plugin-tailwindcss": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
   },
