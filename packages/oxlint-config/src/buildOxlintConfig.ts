@@ -1,5 +1,3 @@
-/* oxlint-disable typescript-eslint/prefer-readonly-parameter-types */
-
 import type { OxlintConfig } from 'oxlint';
 
 import { defineConfig } from 'oxlint';
@@ -17,9 +15,8 @@ import { turboConfig } from './turbo';
  * @returns {boolean} IsDefined
  */
 const isDefined = (
-  input: Readonly<OxlintConfig> | boolean | undefined,
-): input is Readonly<OxlintConfig> =>
-  input !== undefined && typeof input !== 'boolean';
+  input: OxlintConfig | boolean | undefined,
+): input is OxlintConfig => input !== undefined && typeof input !== 'boolean';
 
 export interface BuildOxlintConfigArgs {
   /**
@@ -28,36 +25,36 @@ export interface BuildOxlintConfigArgs {
    *
    * @default false
    */
-  readonly react?: boolean;
+  react?: boolean;
   /**
    * When `node: true` enables node specific rules.
    *
    * @default false
    */
-  readonly node?: boolean;
+  node?: boolean;
   /**
    * When `turbo: true` enables turborepo specific rules.
    *
    * @default false
    */
-  readonly turbo?: boolean;
+  turbo?: boolean;
   /**
    * When `jsdoc: true` enables jsdoc specific rules.
    *
    * @default false
    */
-  readonly jsdoc?: boolean;
+  jsdoc?: boolean;
   /**
    * When `library: true` enables library specific rules.
    *
    * @default false;
    */
-  readonly library?: boolean;
+  library?: boolean;
   /**
    * Overrides of the configuration, supports all possible overrides. Extends
    * array is appended not overridden.
    */
-  readonly overrides?: Readonly<OxlintConfig>;
+  overrides?: OxlintConfig;
 }
 
 /**
@@ -85,7 +82,7 @@ export interface BuildOxlintConfigArgs {
  * @returns {OxlintConfig} Oxlint config
  */
 export const buildOxlintConfig = (
-  configuration: Readonly<BuildOxlintConfigArgs> = {},
+  configuration: BuildOxlintConfigArgs = {},
 ): OxlintConfig => {
   const {
     react = false,

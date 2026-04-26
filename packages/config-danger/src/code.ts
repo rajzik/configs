@@ -19,11 +19,11 @@ const changedSrcFiles = updatedFiles.filter(
 );
 
 /** Options for test-related checks. */
-export interface TestOptions extends Readonly<CommonOptions> {
+export interface TestOptions extends CommonOptions {
   /** Regular expression pattern to ignore certain files from test checks. */
-  readonly ignorePattern?: Readonly<RegExp>;
+  ignorePattern?: RegExp;
   /** Root directory path to scope the check to a specific part of the codebase. */
-  readonly root?: string;
+  root?: string;
 }
 
 /**
@@ -67,7 +67,7 @@ export function checkForInvalidLocks() {
  * @param {boolean} [props.fail] - If true, fail the check instead of warning.
  *   Default is `false`
  */
-export function checkForAnyTests(props: Readonly<TestOptions> = {}) {
+export function checkForAnyTests(props: TestOptions = {}) {
   const { root, ...options } = props;
   if (isRevert()) {
     return;
@@ -103,7 +103,7 @@ export function checkForAnyTests(props: Readonly<TestOptions> = {}) {
  * @param {boolean} [props.fail] - If true, fail the check instead of warning.
  *   Default is `false`
  */
-export function checkSourceFilesHaveTests(props: Readonly<TestOptions> = {}) {
+export function checkSourceFilesHaveTests(props: TestOptions = {}) {
   const { ignorePattern, root, ...options } = props;
   if (isRevert()) {
     return;
@@ -157,7 +157,7 @@ export function checkSourceFilesHaveTests(props: Readonly<TestOptions> = {}) {
 /** Options for snapshot testing checks. */
 export interface SnapshotOptions {
   /** URL to documentation about snapshot testing deprecation. */
-  readonly docsUrl?: string;
+  docsUrl?: string;
 }
 
 const fileFilter = (file: string) =>
