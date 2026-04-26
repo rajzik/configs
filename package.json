@@ -57,7 +57,7 @@
     "@changesets/get-github-info": "0.8.0",
     "@changesets/get-release-plan": "4.0.16",
     "@changesets/types": "6.1.0",
-    "@commitlint/cli": "20.5.0",
+    "@commitlint/cli": "20.5.2",
     "@ianvs/prettier-plugin-sort-imports": "catalog:",
     "@rajzik/danger-configuration": "workspace:*",
     "@rajzik/oxlint-config": "workspace:*",
