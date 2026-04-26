@@ -1,5 +1,11 @@
 # `@rajzik/tsconfig` CHANGELOG
 
+## 4.0.2
+
+### Patch Changes
+
+- [#1053](https://github.com/rajzik/configs/pull/1053) [`9a8e473`](https://github.com/rajzik/configs/commit/9a8e4733cd055a6ecb943edfb7671c5bf0aeedf8) Thanks [@rajzik](https://github.com/rajzik)! - Improved npm package metadata with package-specific keywords, issue tracker links, and publish optimizations.
+
 ## 4.0.1
 
 ## 4.0.0

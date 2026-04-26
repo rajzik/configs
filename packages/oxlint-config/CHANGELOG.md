@@ -1,5 +1,18 @@
 # `@rajzik/oxlint-config` CHANGELOG
 
+## 4.0.2
+
+### Patch Changes
+
+- [#1053](https://github.com/rajzik/configs/pull/1053) [`9a8e473`](https://github.com/rajzik/configs/commit/9a8e4733cd055a6ecb943edfb7671c5bf0aeedf8) Thanks [@rajzik](https://github.com/rajzik)! - Improved npm package metadata with package-specific keywords, issue tracker links, and publish optimizations.
+
+- [#1056](https://github.com/rajzik/configs/pull/1056) [`4fe89d3`](https://github.com/rajzik/configs/commit/4fe89d3d811a0ef35d18b04400cf6656e84b19f8) Thanks [@rajzik](https://github.com/rajzik)! - Relaxed peer dependency ranges and moved the Tailwind Prettier plugin version into the shared catalog.
+
+- [#1055](https://github.com/rajzik/configs/pull/1055) [`1fe7776`](https://github.com/rajzik/configs/commit/1fe7776bee13e678ee5fc603014cace7609ed43b) Thanks [@rajzik](https://github.com/rajzik)! - Removed readonly modifiers from exported option types and function arguments, and enabled the library oxlint preset for the repository config.
+
+- Updated dependencies [[`9a8e473`](https://github.com/rajzik/configs/commit/9a8e4733cd055a6ecb943edfb7671c5bf0aeedf8)]:
+  - @rajzik/configs-shared@4.0.2
+
 ## 4.0.1
 
 ### Patch Changes
