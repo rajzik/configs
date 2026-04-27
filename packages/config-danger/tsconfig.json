@@ -2,8 +2,8 @@
   "extends": "@rajzik/tsconfig/tsconfig.package.json",
   "compilerOptions": {
     "lib": ["ES2024", "dom", "dom.iterable"],
-    "types": ["node"]
+    "types": ["node", "vitest/globals"]
   },
-  "include": ["src", "tsdown.config.ts", "types", "eslint.config.js"],
+  "include": ["src", "tests", "tsdown.config.ts", "types", "eslint.config.js"],
   "exclude": ["node_modules"]
 }
