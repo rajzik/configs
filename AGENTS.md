@@ -61,6 +61,7 @@ If the exact package name is unclear, confirm it in that package's `package.json
 
 - For a small, isolated package change, run the smallest meaningful package-scoped checks first.
 - For shared config, build tooling, workspace config, or cross-package changes, run broader validation from the root.
+- When adding or changing tests, use Vitest and write tests in TypeScript. Do not add JavaScript test files.
 - If you changed formatting-related behavior, run `pnpm format`.
 - If you changed lint rules or lint config, run `pnpm lint`.
 - If you changed TypeScript config, exports, or types, run `pnpm typecheck`.
