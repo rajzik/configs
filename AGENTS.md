@@ -119,8 +119,7 @@ pnpm typecheck  # TypeScript type checking
 pnpm test       # No packages currently define tests
 ```
 
-### Known issues
+### Notes
 
-- `pnpm lint` exits non-zero due to pre-existing `require-unicode-regexp` warnings in `@rajzik/danger-configuration`. This is not an environment issue — 3 of 4 lint tasks pass cleanly.
-- `pnpm test` completes with 0 tasks because no package defines a test script with actual tests.
+- `pnpm test` completes with 0 tasks because no package currently defines a test script.
 - The `prepare` script runs `pnpm build` automatically after `pnpm install`, so `dist/` directories are populated on install.
