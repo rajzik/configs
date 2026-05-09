@@ -96,3 +96,30 @@ Before finishing:
 2. Check whether docs or changesets should be updated.
 3. Run targeted validation appropriate to the scope.
 4. Summarize the change and any unverified risk clearly.
+
+## Cursor Cloud specific instructions
+
+This is a pure configuration monorepo — no runtime services, databases, or external dependencies are needed. Everything runs locally with Node.js and pnpm.
+
+### Environment
+
+- **Node.js**: `.nvmrc` specifies `24.15.0`; engine constraints accept `^21.2.0 || ^20.11.0 || >=22.16.0`. The pre-installed `v22.22.2` satisfies the engines field.
+- **pnpm**: `10.33.3` (matches `packageManager` field).
+- **turbo**: installed as a devDependency via pnpm catalog.
+
+### Quick validation
+
+All commands are documented in `AGENTS.md > Common Commands` and `README.md > Workspace Commands`. The key ones:
+
+```
+pnpm build      # Build all packages (tsdown)
+pnpm lint       # Lint all packages (oxlint)
+pnpm format     # Check formatting (oxfmt)
+pnpm typecheck  # TypeScript type checking
+pnpm test       # No packages currently define tests
+```
+
+### Notes
+
+- `pnpm test` completes with 0 tasks because no package currently defines a test script.
+- The `prepare` script runs `pnpm build` automatically after `pnpm install`, so `dist/` directories are populated on install.
