@@ -29,13 +29,13 @@ export const touchedFiles = [
 ];
 
 /**
- * Debug logging function that only outputs when dangerfile.js is modified.
+ * Debug logging function that only outputs when dangerfile.ts is modified.
  *
  * @param {string} msg - Debug message to log
  * @param {...string} args - Additional arguments to include in the message
  */
 export function debug(msg: string, ...args: string[]) {
-  if (danger.git.modified_files.includes('dangerfile.js')) {
+  if (danger.git.modified_files.includes('dangerfile.ts')) {
     message(`[debug] ${msg}`, ...args);
   }
 }

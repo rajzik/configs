@@ -12,9 +12,9 @@ yarn add --dev @rajzik/danger-configuration danger
 
 ## Usage
 
-Create a `dangerfile.js` in your repository root:
+Create a `dangerfile.ts` in your repository root:
 
-```javascript
+```typescript
 import {
   checkForADR,
   checkForAnyTests,
@@ -62,7 +62,7 @@ changes.
 
 **Example:**
 
-```javascript
+```typescript
 checkForInvalidLocks();
 ```
 
@@ -100,7 +100,7 @@ documenting the changes.
 
 **Example:**
 
-```javascript
+```typescript
 checkForADR('docs/adr', {
   changeThreshold: 200,
   docsUrl: 'https://example.com/docs/adr',
@@ -131,7 +131,7 @@ Checks that test files exist when source files are updated.
 
 **Example:**
 
-```javascript
+```typescript
 checkForAnyTests({ root: 'src', fail: true });
 ```
 
@@ -157,7 +157,7 @@ Ensures that all touched source files have an accompanying test file change.
 
 **Example:**
 
-```javascript
+```typescript
 checkSourceFilesHaveTests({
   root: 'src',
   ignorePattern: /Icon[A-Z][A-Za-z]+\.tsx$/,
@@ -194,7 +194,7 @@ Prevents creation or updates of component snapshot files (`.jsx.snap`,
 
 **Example:**
 
-```javascript
+```typescript
 disableComponentSnapshots({
   docsUrl: 'https://example.com/docs/testing',
 });
@@ -214,7 +214,7 @@ Prevents creation of new JavaScript files, enforcing TypeScript usage.
 
 **Example:**
 
-```javascript
+```typescript
 disableNewJavaScript();
 ```
 
@@ -267,7 +267,7 @@ interface SnapshotOptions {
 
 The following helper functions are exported but primarily used internally:
 
-- `debug(msg, ...args)`: Debug logging (only when `dangerfile.js` is modified)
+- `debug(msg, ...args)`: Debug logging (only when `dangerfile.ts` is modified)
 - `isRevert()`: Checks if PR is a revert
 - `countChangesInFile(file)`: Counts additions/deletions in a file
 - `touchedFiles`: Array of all created, deleted, and modified files
