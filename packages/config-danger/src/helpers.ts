@@ -1,17 +1,17 @@
 /** Regular expression matching files in src/ directory. */
-export const IS_SRC = /src\//;
+export const IS_SRC = /src\//u;
 /** Regular expression matching files in tests?/ directory. */
-export const IS_TEST = /tests?\//;
+export const IS_TEST = /tests?\//u;
 /** Regular expression matching JavaScript file extensions (.js, .jsx). */
-export const JS_EXT = /\.jsx?$/;
+export const JS_EXT = /\.jsx?$/u;
 /** Regular expression matching source file extensions (.ts, .tsx, .js, .jsx). */
-export const SRC_EXT = /\.(t|j)sx?$/;
+export const SRC_EXT = /\.(t|j)sx?$/u;
 /** Regular expression matching test file extensions (.test.ts, .test.tsx, etc.). */
-export const TEST_EXT = /\.test\.(t|j)sx?$/;
+export const TEST_EXT = /\.test\.(t|j)sx?$/u;
 /** Regular expression matching snapshot file extensions (.snap). */
-export const SNAP_EXT = /\.snap$/;
+export const SNAP_EXT = /\.snap$/u;
 /** Regular expression matching icon component files to ignore in test checks. */
-export const GLOBAL_IGNORE = /Icon[A-Z][A-Za-z]+\.(t|j)sx$/;
+export const GLOBAL_IGNORE = /Icon[A-Z][A-Za-z]+\.(t|j)sx$/u;
 
 /** Array of files that were created or modified in the PR. */
 export const updatedFiles = [

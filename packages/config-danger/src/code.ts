@@ -123,16 +123,16 @@ export function checkSourceFilesHaveTests(props: TestOptions = {}) {
       .replace(IS_SRC, 'tests?/')
       // Foo/index.tsx -> Foo.test.tsx | Foo/index.test.tsx
       .replace(
-        /(\w+)\/index\.((t|j)sx?)$/,
+        /(\w+)\/index\.((t|j)sx?)$/u,
         (match, name, ext) =>
           `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
       )
       // Foo.tsx -> Foo.test.tsx
-      .replace(/(\w+)\.((t|j)sx?)$/, (match, name, ext) =>
+      .replace(/(\w+)\.((t|j)sx?)$/u, (match, name, ext) =>
         name === 'test' ? match : `${name}.test.${ext}`,
       );
 
-    const regex = new RegExp(testFile);
+    const regex = new RegExp(testFile, 'u');
 
     updatedFiles.forEach((file) => {
       if (regex.test(file)) {
