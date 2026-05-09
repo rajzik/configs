@@ -1,4 +1,4 @@
-import { danger, fail, message, warn } from 'danger';
+import dangerModule from 'danger';
 
 import type { CommonOptions } from './types';
 
@@ -10,6 +10,8 @@ import {
   TEST_EXT,
   touchedFiles,
 } from './helpers';
+
+const { danger, fail, message, warn } = dangerModule;
 
 /** Options for checking ADR (Architecture Decision Record) requirements. */
 export type CheckAdrOptions = CommonOptions & {

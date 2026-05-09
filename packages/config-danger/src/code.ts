@@ -1,4 +1,4 @@
-import { danger, fail, warn } from 'danger';
+import dangerModule from 'danger';
 
 import path from 'node:path';
 
@@ -15,6 +15,8 @@ import {
   touchedFiles,
   updatedFiles,
 } from './helpers';
+
+const { danger, fail, warn } = dangerModule;
 
 const changedSrcFiles = updatedFiles.filter(
   (file) => IS_SRC.test(file) && SRC_EXT.test(file),

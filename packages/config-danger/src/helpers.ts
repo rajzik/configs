@@ -1,4 +1,6 @@
-import { danger, message } from 'danger';
+import dangerModule from 'danger';
+
+const { danger, message } = dangerModule;
 
 /** Regular expression matching files in src/ directory. */
 export const IS_SRC = /src\//u;
