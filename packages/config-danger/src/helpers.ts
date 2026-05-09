@@ -1,7 +1,3 @@
-import dangerModule from 'danger';
-
-const { danger, message } = dangerModule;
-
 /** Regular expression matching files in src/ directory. */
 export const IS_SRC = /src\//u;
 /** Regular expression matching files in tests?/ directory. */
