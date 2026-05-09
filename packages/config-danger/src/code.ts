@@ -1,3 +1,5 @@
+import { danger, fail, warn } from 'danger';
+
 import path from 'node:path';
 
 import type { CommonOptions } from './types';

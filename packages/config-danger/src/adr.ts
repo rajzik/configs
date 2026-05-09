@@ -1,3 +1,5 @@
+import { danger, fail, message, warn } from 'danger';
+
 import type { CommonOptions } from './types';
 
 import {
