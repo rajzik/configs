@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   generate-changeset:
@@ -126,3 +127,9 @@ jobs:
             await exec.exec("git", ["add", fileName]);
             await exec.exec("git commit -C HEAD --amend --no-edit");
             await exec.exec("git push --force");
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "pull-request.yml",
+              ref: branch.stdout.trim(),
+            });

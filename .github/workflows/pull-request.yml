@@ -2,6 +2,7 @@ name: 🔥 Pull requests
 
 on:
   pull_request:
+  workflow_dispatch:
   check_run:
     types:
       - requested_action
@@ -22,12 +23,13 @@ env:
 jobs:
   danger:
     name: 🔥 Danger
+    if: github.event_name != 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout branch
         uses: actions/checkout@v6
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.event.check_run.head_sha }}
           fetch-depth: 0
 
       - uses: ./.github/common-actions/install
