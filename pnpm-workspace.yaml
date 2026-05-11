@@ -22,14 +22,16 @@ catalogMode: prefer
 ignoreWorkspaceRootCheck: true
 
 linkWorkspacePackages: true
-
-onlyBuiltDependencies:
-  - '@swc/core'
-  - core-js
-  - unrs-resolver
+verifyDepsBeforeRun: warn
 
 publicHoistPattern:
   - '*eslint*'
+  - '*prettier*'
   - '*vitest*'
 
 savePrefix: ''
+
+allowBuilds:
+  '@swc/core': true
+  core-js: true
+  unrs-resolver: true
