@@ -65,7 +65,6 @@
     "@rajzik/tsconfig": "workspace:*",
     "cross-env": "10.1.0",
     "danger": "13.0.7",
-    "eslint": "catalog:",
     "oxfmt": "catalog:",
     "oxlint": "catalog:",
     "oxlint-tsgolint": "catalog:",
