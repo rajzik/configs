@@ -6,7 +6,6 @@ packages:
 catalog:
   '@ianvs/prettier-plugin-sort-imports': 4.7.1
   '@types/node': 25.6.2
-  eslint: 10.2.1
   oxfmt: 0.47.0
   oxlint: ^1.63.0
   oxlint-tsgolint: ^0.22.1
@@ -22,14 +21,16 @@ catalogMode: prefer
 ignoreWorkspaceRootCheck: true
 
 linkWorkspacePackages: true
-
-onlyBuiltDependencies:
-  - '@swc/core'
-  - core-js
-  - unrs-resolver
+verifyDepsBeforeRun: warn
 
 publicHoistPattern:
   - '*eslint*'
+  - '*prettier*'
   - '*vitest*'
 
 savePrefix: ''
+
+allowBuilds:
+  '@swc/core': true
+  core-js: true
+  unrs-resolver: true
