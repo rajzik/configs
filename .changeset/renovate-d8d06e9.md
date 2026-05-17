@@ -1,5 +1,0 @@
----
-
----
-
-Updated dependency `oxlint` to `^1.63.0`.

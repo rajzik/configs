@@ -1,5 +1,14 @@
 # `@rajzik/prettier-config` CHANGELOG
 
+## 4.0.3
+
+### Patch Changes
+
+- [#1061](https://github.com/rajzik/configs/pull/1061) [`3f8a5b4`](https://github.com/rajzik/configs/commit/3f8a5b4b6d474876edccd122b0a6e8935c1d75ad) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `prettier-plugin-tailwindcss` to `^0.8.0`.
+
+- Updated dependencies []:
+  - @rajzik/oxfmt-config@4.0.3
+
 ## 4.0.2
 
 ### Patch Changes
@@ -126,7 +135,6 @@
 
   Added comprehensive documentation for all public APIs, functions, and
   components across all packages. Each package README now includes:
-
   - Installation instructions
   - Usage examples
   - Complete API reference with detailed descriptions

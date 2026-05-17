@@ -1,5 +1,7 @@
 # `@rajzik/configs-shared` CHANGELOG
 
+## 4.0.3
+
 ## 4.0.2
 
 ### Patch Changes
@@ -56,7 +58,6 @@
 
   Added comprehensive documentation for all public APIs, functions, and
   components across all packages. Each package README now includes:
-
   - Installation instructions
   - Usage examples
   - Complete API reference with detailed descriptions
