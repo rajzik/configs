@@ -1,5 +1,20 @@
 # `@rajzik/oxlint-config` CHANGELOG
 
+## 4.0.3
+
+### Patch Changes
+
+- [#1064](https://github.com/rajzik/configs/pull/1064) [`686c10f`](https://github.com/rajzik/configs/commit/686c10f1b86d2df228c631839a0649d7f60d8b4b) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `eslint-plugin-turbo` to `2.9.7`.
+  Updated dependency `turbo` to `2.9.7`.
+
+- [#1066](https://github.com/rajzik/configs/pull/1066) [`92ff3d6`](https://github.com/rajzik/configs/commit/92ff3d6146c14ee9b07248af9fad3a87d294b4cb) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `eslint-plugin-turbo` to `2.9.8`.
+  Updated dependency `turbo` to `2.9.8`.
+
+- [#1068](https://github.com/rajzik/configs/pull/1068) [`4e375ba`](https://github.com/rajzik/configs/commit/4e375ba4b816de81f9baebdb4d259fa8d3ad3e66) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `eslint-plugin-turbo` to `2.9.14`.
+  Updated dependency `turbo` to `2.9.14`.
+- Updated dependencies []:
+  - @rajzik/configs-shared@4.0.3
+
 ## 4.0.2
 
 ### Patch Changes
