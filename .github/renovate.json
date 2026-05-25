@@ -80,8 +80,5 @@
       ".changeset/renovate-*.md"
     ],
     "executionMode": "branch"
-  },
-  "allowedCommands": [
-    "node scripts/create-renovate-changeset.js"
-  ]
+  }
 }
