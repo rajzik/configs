@@ -76,7 +76,8 @@
     ],
     "fileFilters": [
       "**/package.json",
-      "pnpm-workspace.yaml"
+      "pnpm-workspace.yaml",
+      ".changeset/renovate-*.md"
     ],
     "executionMode": "branch"
   }
