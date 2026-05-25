@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:monorepos"],
+  "extends": [
+    "config:recommended",
+    "group:monorepos"
+  ],
   "rebaseWhen": "behind-base-branch",
   "rangeStrategy": "bump",
   "prConcurrentLimit": 8,
@@ -20,31 +23,62 @@
   },
   "dependencyDashboard": true,
   "osvVulnerabilityAlerts": true,
-  "npm": { "enabled": true },
+  "npm": {
+    "enabled": true
+  },
   "updateLockFiles": true,
   "minimumReleaseAge": "3 days",
   "packageRules": [
-    { "matchManagers": ["github-actions"], "semanticCommitType": "ci" },
     {
-      "matchDepTypes": ["peerDependencies"],
+      "matchManagers": [
+        "github-actions"
+      ],
+      "semanticCommitType": "ci"
+    },
+    {
+      "matchDepTypes": [
+        "peerDependencies"
+      ],
       "rangeStrategy": "widen",
       "semanticCommitType": "deps"
     },
-    { "matchDepTypes": ["packageManager"], "semanticCommitType": "build" },
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchDepTypes": [
+        "packageManager"
+      ],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
       "rangeStrategy": "pin",
       "semanticCommitType": "build"
     },
     {
-      "matchDepTypes": ["dependencies"],
+      "matchDepTypes": [
+        "dependencies"
+      ],
       "rangeStrategy": "pin",
       "semanticCommitType": "deps"
     },
     {
-      "matchDepTypes": ["resolutions"],
+      "matchDepTypes": [
+        "resolutions"
+      ],
       "rangeStrategy": "pin",
       "semanticCommitType": "build"
     }
-  ]
+  ],
+  "postUpgradeTasks": {
+    "commands": [
+      "node scripts/create-renovate-changeset.js"
+    ],
+    "fileFilters": [
+      "**/package.json",
+      "pnpm-workspace.yaml",
+      ".changeset/renovate-*.md"
+    ],
+    "executionMode": "branch"
+  }
 }
