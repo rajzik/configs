@@ -27,6 +27,7 @@
     "enabled": true
   },
   "updateLockFiles": true,
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchManagers": [
