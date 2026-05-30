@@ -69,16 +69,5 @@
       "rangeStrategy": "pin",
       "semanticCommitType": "build"
     }
-  ],
-  "postUpgradeTasks": {
-    "commands": [
-      "node scripts/create-renovate-changeset.js"
-    ],
-    "fileFilters": [
-      "**/package.json",
-      "pnpm-workspace.yaml",
-      ".changeset/renovate-*.md"
-    ],
-    "executionMode": "branch"
-  }
+  ]
 }
