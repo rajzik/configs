@@ -29,4 +29,4 @@ jobs:
       - uses: ./.github/common-actions/install
 
       - name: Run changesets-renovate
-        run: pnpm dlx changesets-renovate
+        run: pnpm dlx @scaleway/changesets-renovate
