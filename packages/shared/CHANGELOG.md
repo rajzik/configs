@@ -1,5 +1,11 @@
 # `@rajzik/configs-shared` CHANGELOG
 
+## 4.0.4
+
+### Patch Changes
+
+- [#1102](https://github.com/rajzik/configs/pull/1102) [`f36d326`](https://github.com/rajzik/configs/commit/f36d326f7c41dccb6cfc02da1742d16c858313c1) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `tsdown` to `0.22.1`.
+
 ## 4.0.3
 
 ## 4.0.2
