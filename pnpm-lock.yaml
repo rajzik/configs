@@ -22,8 +22,8 @@ catalogs:
       specifier: ^0.23.0
       version: 0.23.0
     prettier:
-      specifier: 3.8.3
-      version: 3.8.3
+      specifier: 3.8.4
+      version: 3.8.4
     prettier-plugin-packagejson:
       specifier: 3.0.2
       version: 3.0.2
@@ -64,7 +64,7 @@ importers:
         version: 21.0.0(@types/node@25.8.0)(conventional-commits-parser@6.4.0)(typescript@6.0.3)
       '@ianvs/prettier-plugin-sort-imports':
         specifier: 'catalog:'
-        version: 4.7.1(prettier@3.8.3)
+        version: 4.7.1(prettier@3.8.4)
       '@rajzik/danger-configuration':
         specifier: workspace:*
         version: link:packages/config-danger
@@ -94,7 +94,7 @@ importers:
         version: 0.23.0
       prettier-plugin-packagejson:
         specifier: 'catalog:'
-        version: 3.0.2(prettier@3.8.3)
+        version: 3.0.2(prettier@3.8.4)
       turbo:
         specifier: 'catalog:'
         version: 2.9.14
@@ -189,16 +189,16 @@ importers:
     dependencies:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: 'catalog:'
-        version: 4.7.1(prettier@3.8.3)
+        version: 4.7.1(prettier@3.8.4)
       '@rajzik/oxfmt-config':
         specifier: workspace:*
         version: link:../oxfmt-config
       prettier-plugin-packagejson:
         specifier: 'catalog:'
-        version: 3.0.2(prettier@3.8.3)
+        version: 3.0.2(prettier@3.8.4)
       prettier-plugin-tailwindcss:
         specifier: 'catalog:'
-        version: 0.8.0(@ianvs/prettier-plugin-sort-imports@4.7.1(prettier@3.8.3))(prettier@3.8.3)
+        version: 0.8.0(@ianvs/prettier-plugin-sort-imports@4.7.1(prettier@3.8.4))(prettier@3.8.4)
     devDependencies:
       '@rajzik/tsconfig':
         specifier: workspace:*
@@ -217,7 +217,7 @@ importers:
         version: 0.23.0
       prettier:
         specifier: 'catalog:'
-        version: 3.8.3
+        version: 3.8.4
       tsdown:
         specifier: 'catalog:'
         version: 0.22.2(typescript@6.0.3)
@@ -2063,8 +2063,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.8.3:
-    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2883,13 +2883,13 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@ianvs/prettier-plugin-sort-imports@4.7.1(prettier@3.8.3)':
+  '@ianvs/prettier-plugin-sort-imports@4.7.1(prettier@3.8.4)':
     dependencies:
       '@babel/generator': 7.29.1
       '@babel/parser': 7.29.2
       '@babel/traverse': 7.29.0
       '@babel/types': 7.29.0
-      prettier: 3.8.3
+      prettier: 3.8.4
       semver: 7.7.4
     transitivePeerDependencies:
       - supports-color
@@ -4109,21 +4109,21 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-packagejson@3.0.2(prettier@3.8.3):
+  prettier-plugin-packagejson@3.0.2(prettier@3.8.4):
     dependencies:
       sort-package-json: 3.6.1
     optionalDependencies:
-      prettier: 3.8.3
+      prettier: 3.8.4
 
-  prettier-plugin-tailwindcss@0.8.0(@ianvs/prettier-plugin-sort-imports@4.7.1(prettier@3.8.3))(prettier@3.8.3):
+  prettier-plugin-tailwindcss@0.8.0(@ianvs/prettier-plugin-sort-imports@4.7.1(prettier@3.8.4))(prettier@3.8.4):
     dependencies:
-      prettier: 3.8.3
+      prettier: 3.8.4
     optionalDependencies:
-      '@ianvs/prettier-plugin-sort-imports': 4.7.1(prettier@3.8.3)
+      '@ianvs/prettier-plugin-sort-imports': 4.7.1(prettier@3.8.4)
 
   prettier@2.8.8: {}
 
-  prettier@3.8.3: {}
+  prettier@3.8.4: {}
 
   prettyjson@1.2.5:
     dependencies:
