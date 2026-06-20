@@ -1,5 +1,16 @@
 # `@rajzik/oxlint-config` CHANGELOG
 
+## 4.0.4
+
+### Patch Changes
+
+- [#1102](https://github.com/rajzik/configs/pull/1102) [`f36d326`](https://github.com/rajzik/configs/commit/f36d326f7c41dccb6cfc02da1742d16c858313c1) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `tsdown` to `0.22.1`.
+
+- [#1106](https://github.com/rajzik/configs/pull/1106) [`25ca816`](https://github.com/rajzik/configs/commit/25ca81684766b5ba22ffa60af55a7c917a37b3a8) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `tsdown` to `0.22.2`.
+
+- Updated dependencies [[`f36d326`](https://github.com/rajzik/configs/commit/f36d326f7c41dccb6cfc02da1742d16c858313c1), [`25ca816`](https://github.com/rajzik/configs/commit/25ca81684766b5ba22ffa60af55a7c917a37b3a8)]:
+  - @rajzik/configs-shared@4.0.4
+
 ## 4.0.3
 
 ### Patch Changes
