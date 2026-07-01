@@ -1,0 +1,24 @@
+name: Add changesets to dependency updates
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  add-changeset:
+    name: Add dependency changeset
+    if: github.actor == 'renovate[bot]' && github.repository == 'rajzik/configs'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add changeset
+        uses: mscharley/dependency-changesets-action@v1.2.4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          use-conventional-commits: true
+          author-name: rajzik-bot
+          author-email: silhanu+releasebot@gmail.com
