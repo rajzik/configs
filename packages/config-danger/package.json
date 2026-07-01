@@ -45,7 +45,7 @@
     "lint": "oxlint --type-aware --type-check"
   },
   "dependencies": {
-    "danger": "13.0.7"
+    "danger": "13.0.10"
   },
   "devDependencies": {
     "@rajzik/tsconfig": "workspace:*",
