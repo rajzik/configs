@@ -5,6 +5,9 @@
     "group:monorepos"
   ],
   "rebaseWhen": "behind-base-branch",
+  "gitIgnoredAuthors": [
+    "silhanu+releasebot@gmail.com"
+  ],
   "rangeStrategy": "bump",
   "prConcurrentLimit": 8,
   "prHourlyLimit": 4,
