@@ -1,5 +1,24 @@
 # `@rajzik/oxlint-config` CHANGELOG
 
+## 4.0.4
+
+### Patch Changes
+
+- [#1092](https://github.com/rajzik/configs/pull/1092) [`1e8f89d`](https://github.com/rajzik/configs/commit/1e8f89d84ca36587a492f070c9a40489a798f73c) Thanks [@renovate](https://github.com/apps/renovate)! - chore: update dependency oxfmt to v0.59.0
+
+- [#1111](https://github.com/rajzik/configs/pull/1111) [`ad15ffe`](https://github.com/rajzik/configs/commit/ad15ffef469d29a272a9f9fa56c7a914325e5dfe) Thanks [@renovate](https://github.com/apps/renovate)! - chore: update dependency tsdown to v0.22.3
+
+- [#1114](https://github.com/rajzik/configs/pull/1114) [`e2ab244`](https://github.com/rajzik/configs/commit/e2ab244728bc4836f97c901bede584fba30e4d24) Thanks [@renovate](https://github.com/apps/renovate)! - chore: update dependency oxlint-tsgolint to ^0.24.0
+
+- [#1120](https://github.com/rajzik/configs/pull/1120) [`1e180a9`](https://github.com/rajzik/configs/commit/1e180a904655551c84b75e8280583f4555fb39c6) Thanks [@rajzik](https://github.com/rajzik)! - chore: refresh toolchain and formatting dependencies to current releases, including the TypeScript 7 and Oxlint type-aware linting upgrade.
+
+- [#1102](https://github.com/rajzik/configs/pull/1102) [`f36d326`](https://github.com/rajzik/configs/commit/f36d326f7c41dccb6cfc02da1742d16c858313c1) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `tsdown` to `0.22.1`.
+
+- [#1106](https://github.com/rajzik/configs/pull/1106) [`25ca816`](https://github.com/rajzik/configs/commit/25ca81684766b5ba22ffa60af55a7c917a37b3a8) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `tsdown` to `0.22.2`.
+
+- Updated dependencies [[`1e8f89d`](https://github.com/rajzik/configs/commit/1e8f89d84ca36587a492f070c9a40489a798f73c), [`ad15ffe`](https://github.com/rajzik/configs/commit/ad15ffef469d29a272a9f9fa56c7a914325e5dfe), [`e2ab244`](https://github.com/rajzik/configs/commit/e2ab244728bc4836f97c901bede584fba30e4d24), [`1e180a9`](https://github.com/rajzik/configs/commit/1e180a904655551c84b75e8280583f4555fb39c6), [`f36d326`](https://github.com/rajzik/configs/commit/f36d326f7c41dccb6cfc02da1742d16c858313c1), [`25ca816`](https://github.com/rajzik/configs/commit/25ca81684766b5ba22ffa60af55a7c917a37b3a8)]:
+  - @rajzik/configs-shared@4.0.4
+
 ## 4.0.3
 
 ### Patch Changes

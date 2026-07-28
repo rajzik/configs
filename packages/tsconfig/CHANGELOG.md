@@ -1,5 +1,11 @@
 # `@rajzik/tsconfig` CHANGELOG
 
+## 4.0.4
+
+### Patch Changes
+
+- [#1120](https://github.com/rajzik/configs/pull/1120) [`1e180a9`](https://github.com/rajzik/configs/commit/1e180a904655551c84b75e8280583f4555fb39c6) Thanks [@rajzik](https://github.com/rajzik)! - chore: refresh toolchain and formatting dependencies to current releases, including the TypeScript 7 and Oxlint type-aware linting upgrade.
+
 ## 4.0.3
 
 ## 4.0.2
