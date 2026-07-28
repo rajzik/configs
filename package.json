@@ -38,6 +38,7 @@
     "create-changeset": "pnpm dlx changeset",
     "format": "turbo run format --continue",
     "format:fix": "turbo run format --continue -- --write",
+    "generate:renovate-changeset": "node ./scripts/generate-renovate-changeset.js",
     "lint": "turbo run lint --continue",
     "lint:fix": "turbo run lint --continue -- --fix",
     "lint:ws": "pnpm dlx sherif@latest",

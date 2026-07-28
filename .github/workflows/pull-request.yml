@@ -24,6 +24,54 @@ env:
   ARTIFACT_DIR: ./artifacts
 
 jobs:
+  renovate-changeset:
+    name: 🦋 Renovate Changeset
+    if: |
+      github.repository == 'rajzik/configs' &&
+      (
+        (
+          github.event_name == 'pull_request' &&
+          github.event.pull_request.user.login == 'renovate[bot]'
+        ) ||
+        (
+          github.event_name == 'push' &&
+          startsWith(github.ref_name, 'renovate/')
+        )
+      )
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: ⬇️ Checkout branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: 🔄 Fetch main
+        run: git fetch origin main:refs/remotes/origin/main
+
+      - name: 🦋 Generate changeset
+        run: node ./scripts/generate-renovate-changeset.js
+
+      - name: 💾 Commit generated changeset
+        run: |
+          if git diff --quiet -- .changeset; then
+            echo "No generated changeset changes"
+            exit 0
+          fi
+
+          git config user.name rajzik-bot
+          git config user.email silhanu+releasebot@gmail.com
+          git add .changeset
+          git commit -m "chore: add renovate changeset"
+          git push origin "HEAD:${{ github.event.pull_request.head.ref || github.ref_name }}"
+
   danger:
     name: 🔥 Danger
     if: github.event_name != 'workflow_dispatch'
