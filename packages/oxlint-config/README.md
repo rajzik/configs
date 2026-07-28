@@ -85,13 +85,7 @@ import {
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
-  extends: [
-    baseConfig,
-    nodeConfig,
-    reactConfig,
-    turboConfig,
-    libraryConfig,
-  ],
+  extends: [baseConfig, nodeConfig, reactConfig, turboConfig, libraryConfig],
 });
 ```
 

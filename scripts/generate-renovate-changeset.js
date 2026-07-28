@@ -134,14 +134,18 @@ function detectAffectedPackages(changedFiles) {
       changedFile.endsWith('package.json')
     ) {
       const relativeToPackages = changedFile.slice(packageDirectoryPrefix.length);
-      const [directoryName] = relativeToPackages.split('/');
-      const packageName = packageNameByDirectory.get(directoryName);
+      const [directoryName, ...rest] = relativeToPackages.split('/');
 
-      if (!packageName) {
-        throw new Error(`Unknown package directory ${directoryName}`);
+      // Only match direct package.json files (packages/<dir>/package.json)
+      if (rest.length === 1 && rest[0] === 'package.json') {
+        const packageName = packageNameByDirectory.get(directoryName);
+
+        if (!packageName) {
+          throw new Error(`Unknown package directory ${directoryName}`);
+        }
+
+        affectedPackages.add(packageName);
       }
-
-      affectedPackages.add(packageName);
     }
   }
 
@@ -167,9 +171,28 @@ function sanitize(value) {
 }
 
 /**
- * @returns {string} Identifier derived from the current git branch.
+ * @returns {string} Identifier derived from PR number or current git branch.
  */
 function resolveIdentifier() {
+  // Check for PR number from GitHub Actions environment
+  const prNumber = process.env.GITHUB_PR_NUMBER;
+  if (prNumber) {
+    return sanitize(`pr-${prNumber}`);
+  }
+
+  // Fallback to GitHub Actions environment variables
+  const githubHeadRef = process.env.GITHUB_HEAD_REF;
+  const githubRefName = process.env.GITHUB_REF_NAME;
+
+  if (githubHeadRef) {
+    return sanitize(githubHeadRef);
+  }
+
+  if (githubRefName) {
+    return sanitize(githubRefName);
+  }
+
+  // Final fallback to git command
   const fallbackBranch = run('git', ['branch', '--show-current']);
 
   if (!fallbackBranch) {

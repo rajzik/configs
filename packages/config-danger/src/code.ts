@@ -128,8 +128,8 @@ export function checkSourceFilesHaveTests(props: TestOptions = {}) {
       )
       // Foo.tsx -> Foo.test.tsx
       .replace(
-        /(?<name>(?!test\.)\w+)\.(?<ext>(?:t|j)sx?)$/u,
-        '$<name>.test.$<ext>',
+        /(?:^|\/)(?<name>(?!test\.)\w+)\.(?<ext>(?:t|j)sx?)$/u,
+        '/$<name>.test.$<ext>',
       );
 
     const regex = new RegExp(testFile, 'u');

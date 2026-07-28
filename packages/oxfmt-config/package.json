@@ -15,15 +15,18 @@
   "bugs": {
     "url": "https://github.com/rajzik/configs/issues"
   },
+  "license": "MIT",
+  "author": "Jan Šilhan <silhanu@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajzik/configs.git",
     "directory": "packages/oxfmt-config"
   },
-  "license": "MIT",
-  "author": "Jan Šilhan <silhanu@gmail.com>",
-  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     "./package.json": "./package.json",
     "./*": {
@@ -35,9 +38,9 @@
       "default": "./dist/index.mjs"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsdown",
     "clean": "git clean -xdf .cache dist dts .turbo node_modules",
@@ -56,8 +59,5 @@
   },
   "engines": {
     "node": "^21.2.0 || ^20.11.0 || >=22.16.0"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
