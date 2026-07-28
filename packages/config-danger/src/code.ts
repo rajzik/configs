@@ -123,13 +123,13 @@ export function checkSourceFilesHaveTests(props: TestOptions = {}) {
       .replace(IS_SRC, 'tests?/')
       // Foo/index.tsx -> Foo.test.tsx | Foo/index.test.tsx
       .replace(
-        /(\w+)\/index\.((t|j)sx?)$/u,
-        (match, name, ext) =>
-          `(?:(${name}.test.${ext})|(${name}/index.test.${ext}))`,
+        /(?<name>\w+)\/index\.(?<ext>(?:t|j)sx?)$/u,
+        '(?:($<name>.test.$<ext>)|($<name>/index.test.$<ext>))',
       )
       // Foo.tsx -> Foo.test.tsx
-      .replace(/(\w+)\.((t|j)sx?)$/u, (match, name, ext) =>
-        name === 'test' ? match : `${name}.test.${ext}`,
+      .replace(
+        /(?<name>(?!test\.)\w+)\.(?<ext>(?:t|j)sx?)$/u,
+        '$<name>.test.$<ext>',
       );
 
     const regex = new RegExp(testFile, 'u');

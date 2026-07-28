@@ -5,16 +5,16 @@ packages:
 
 catalog:
   '@ianvs/prettier-plugin-sort-imports': 4.7.1
-  '@types/node': 25.8.0
-  oxfmt: 0.59.0
-  oxlint: ^1.65.0
-  oxlint-tsgolint: ^0.24.0
-  prettier: 3.9.5
+  '@types/node': 26.1.1
+  oxfmt: 0.61.0
+  oxlint: ^1.76.0
+  oxlint-tsgolint: ^7.0.2001
+  prettier: 3.9.6
   prettier-plugin-packagejson: 3.0.2
-  prettier-plugin-tailwindcss: ^0.8.0
-  tsdown: 0.22.3
-  turbo: 2.9.14
-  typescript: 6.0.3
+  prettier-plugin-tailwindcss: ^0.8.1
+  tsdown: 0.22.14
+  turbo: 2.10.7
+  typescript: 7.0.2
 
 catalogMode: prefer
 
@@ -34,3 +34,45 @@ allowBuilds:
   '@swc/core': true
   core-js: true
   unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - '@oxfmt/binding-android-arm-eabi@0.61.0'
+  - '@oxfmt/binding-android-arm64@0.61.0'
+  - '@oxfmt/binding-darwin-arm64@0.61.0'
+  - '@oxfmt/binding-darwin-x64@0.61.0'
+  - '@oxfmt/binding-freebsd-x64@0.61.0'
+  - '@oxfmt/binding-linux-arm-gnueabihf@0.61.0'
+  - '@oxfmt/binding-linux-arm-musleabihf@0.61.0'
+  - '@oxfmt/binding-linux-arm64-gnu@0.61.0'
+  - '@oxfmt/binding-linux-arm64-musl@0.61.0'
+  - '@oxfmt/binding-linux-ppc64-gnu@0.61.0'
+  - '@oxfmt/binding-linux-riscv64-gnu@0.61.0'
+  - '@oxfmt/binding-linux-riscv64-musl@0.61.0'
+  - '@oxfmt/binding-linux-s390x-gnu@0.61.0'
+  - '@oxfmt/binding-linux-x64-gnu@0.61.0'
+  - '@oxfmt/binding-linux-x64-musl@0.61.0'
+  - '@oxfmt/binding-openharmony-arm64@0.61.0'
+  - '@oxfmt/binding-win32-arm64-msvc@0.61.0'
+  - '@oxfmt/binding-win32-ia32-msvc@0.61.0'
+  - '@oxfmt/binding-win32-x64-msvc@0.61.0'
+  - '@oxlint/binding-android-arm-eabi@1.76.0'
+  - '@oxlint/binding-android-arm64@1.76.0'
+  - '@oxlint/binding-darwin-arm64@1.76.0'
+  - '@oxlint/binding-darwin-x64@1.76.0'
+  - '@oxlint/binding-freebsd-x64@1.76.0'
+  - '@oxlint/binding-linux-arm-gnueabihf@1.76.0'
+  - '@oxlint/binding-linux-arm-musleabihf@1.76.0'
+  - '@oxlint/binding-linux-arm64-gnu@1.76.0'
+  - '@oxlint/binding-linux-arm64-musl@1.76.0'
+  - '@oxlint/binding-linux-ppc64-gnu@1.76.0'
+  - '@oxlint/binding-linux-riscv64-gnu@1.76.0'
+  - '@oxlint/binding-linux-riscv64-musl@1.76.0'
+  - '@oxlint/binding-linux-s390x-gnu@1.76.0'
+  - '@oxlint/binding-linux-x64-gnu@1.76.0'
+  - '@oxlint/binding-linux-x64-musl@1.76.0'
+  - '@oxlint/binding-openharmony-arm64@1.76.0'
+  - '@oxlint/binding-win32-arm64-msvc@1.76.0'
+  - '@oxlint/binding-win32-ia32-msvc@1.76.0'
+  - '@oxlint/binding-win32-x64-msvc@1.76.0'
+  - oxfmt@0.61.0
+  - oxlint@1.76.0
