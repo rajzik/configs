@@ -57,9 +57,13 @@ jobs:
         run: git fetch origin main:refs/remotes/origin/main
 
       - name: 🦋 Generate changeset
+        env:
+          GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
         run: node ./scripts/generate-renovate-changeset.js
 
       - name: 💾 Commit generated changeset
+        env:
+          BRANCH_REF: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
           if git diff --quiet -- .changeset; then
             echo "No generated changeset changes"
@@ -70,7 +74,7 @@ jobs:
           git config user.email silhanu+releasebot@gmail.com
           git add .changeset
           git commit -m "chore: add renovate changeset"
-          git push origin "HEAD:${{ github.event.pull_request.head.ref || github.ref_name }}"
+          git push origin "HEAD:$BRANCH_REF"
 
   danger:
     name: 🔥 Danger
